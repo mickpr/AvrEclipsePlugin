@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Schema file written by PDE -->
+<schema targetNamespace="de.innot.avreclipse.debug.ui" xmlns="http://www.w3.org/2001/XMLSchema">
+<annotation>
+      <appInfo>
+         <meta.schema plugin="de.innot.avreclipse.debug.ui" id="gdbserverSettingsPage" name="GDBServerSettingsPage"/>
+      </appInfo>
+      <documentation>
+         Extension to this extension point implement the the GUI settings for a gdbserver suitable for debugging AVR applications.
+      </documentation>
+   </annotation>
+
+   <element name="extension">
+      <annotation>
+         <appInfo>
+            <meta.element />
+         </appInfo>
+      </annotation>
+      <complexType>
+         <sequence minOccurs="1" maxOccurs="unbounded">
+            <element ref="settingspage"/>
+         </sequence>
+         <attribute name="point" type="string" use="required">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="id" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="name" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="settingspage">
+      <complexType>
+         <attribute name="gdbserverid" type="string" use="required">
+            <annotation>
+               <documentation>
+                  ID of the gdbserver to which this settings page extension applies.
+               </documentation>
+            </annotation>
+         </attribute>
+         <attribute name="description" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Contains a descriptive name for the gdbserver. The value is presented on the user interface when the user selects a gdbserver.
+               </documentation>
+               <appInfo>
+                  <meta.attribute translatable="true"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+         <attribute name="class" type="string" use="required">
+            <annotation>
+               <documentation>
+                  Class implementing the IGDBServerSettingsPage interface.
+               </documentation>
+               <appInfo>
+                  <meta.attribute kind="java" basedOn=":de.innot.avreclipse.debug.ui.IGDBServerSettingsPage"/>
+               </appInfo>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="since"/>
+      </appInfo>
+      <documentation>
+         2.4
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="examples"/>
+      </appInfo>
+      <documentation>
+         TODO once the API has been finished
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="apiinfo"/>
+      </appInfo>
+      <documentation>
+         [Enter API information here.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="implementation"/>
+      </appInfo>
+      <documentation>
+         [Enter information about supplied implementation of this extension point.]
+      </documentation>
+   </annotation>
+
+   <annotation>
+      <appInfo>
+         <meta.section type="copyright"/>
+      </appInfo>
+      <documentation>
+         &lt;p&gt;Copyright &amp;copy; 2007, 2011 &lt;a href=&quot;mailto:thomas@innot.de&quot;&gt;Thomas Holland&lt;/a&gt; and others.&lt;/p&gt;
+
+&lt;p&gt;All rights reserved. This program and the accompanying materials
+are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at
+http://www.eclipse.org/legal/epl-v10.html&lt;/p&gt;
+      </documentation>
+   </annotation>
+
+</schema>

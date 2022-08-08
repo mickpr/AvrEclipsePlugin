@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Atmel8.xsd" generated="2014-11-11T17:30:37">
+<device>
+  <Name>ATmega8</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>4.5 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega8-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega8-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega8A</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega8-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega8-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega16</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega16-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega16-TQFP44.xml"></Package>
+  </Packages>
+  <Resources>
+  </Resources>
+</device>
+<device>
+  <Name>ATmega162</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega162-DIP40.xml"></Package>
+	<Package name="TQFP44"  file="ATmega162-TQFP44.xml"></Package>
+  </Packages>
+  <Resources>
+  </Resources>
+</device>
+<device>
+  <Name>ATmega32</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega32-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega32-TQFP44.xml"></Package>
+  </Packages>
+  <Resources>
+  </Resources>
+</device>
+<device>
+  <Name>ATmega48</Name>
+  <Type>ATmega</Type>
+  <Flash>4096</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>512</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega48-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega48-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega88</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega88-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega88-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega88P</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega88P-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega88P-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega128</Name>
+  <Type>ATmega</Type>
+  <Flash>131072</Flash>
+  <EEPROM>4096</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>4.5 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP64" file="ATmega128-TQFP64.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega128A</Name>
+  <Type>ATmega</Type>
+  <Flash>131072</Flash>
+  <EEPROM>4096</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP64" file="ATmega128A-TQFP64.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega168</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega168-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega168-TQFP32.xml"></Package>
+  </Packages>
+</device><device>
+  <Name>ATmega2560</Name>
+  <Type>ATmega</Type>
+  <Flash>262144</Flash>
+  <EEPROM>4096</EEPROM>
+  <RAM>8192</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>4.5 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP100" file="ATmega256-TQFP100.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega328P</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega328P-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega328P-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny11</Name>
+  <Type>ATtiny</Type>
+  <Flash>1024</Flash>
+  <EEPROM>0</EEPROM>
+  <RAM>32</RAM>
+  <Freq>6MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny11-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny11-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny12</Name>
+  <Type>ATtiny</Type>
+  <Flash>1024</Flash>
+  <EEPROM>64</EEPROM>
+  <RAM>32</RAM>
+  <Freq>8MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny12-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny12-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny13</Name>
+  <Type>ATtiny</Type>
+  <Flash>1024</Flash>
+  <EEPROM>64</EEPROM>
+  <RAM>64</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny13-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny13-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny13V</Name>
+  <Type>ATtiny</Type>
+  <Flash>1024</Flash>
+  <EEPROM>64</EEPROM>
+  <RAM>64</RAM>
+  <Freq>10MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny13-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny13-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny85</Name>
+  <Type>ATtiny</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATmega88P-DIP28.xml"></Package>
+	<Package name="SOIC8" file="ATtiny85-TQFP32.xml"></Package>
+  </Packages>
+</device>
+</dataroot>

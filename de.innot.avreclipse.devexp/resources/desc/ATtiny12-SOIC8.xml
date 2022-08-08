@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<pins>
+	<pin name="1">
+		<role name="/RESET" resource="CORE" descr="Reset pin for MCU, active at low."/>
+		<role name="PB5" resource="PORTB" descr="Generic IO pin PB5"/>
+	</pin>
+	<pin name="2">
+		<role name="PB3" resource="PORTB" descr="Generic IO pin PB3"/>
+		<role name="XTAL1" resource="CORE" descr="Crystal pin input"/>
+	</pin>
+	<pin name="3">
+		<role name="PB4" resource="PORTB" descr="Generic IO pin PB4"/>
+		<role name="XTAL2" resource="CORE" descr="Crystal pin output"/>
+	</pin>
+	<pin name="4">
+		<role name="GND" resource="CORE" descr="Common ground"/>
+	</pin>
+    <pin name="5">
+		<role name="PB0" resource="PORTB" descr="Generic IO pin PB0"/>
+		<role name="MOSI" resource="SPI" descr="Data input pin for memory downloading or SPI."/>
+		<role name="AIN0" resource="ACOMP" descr="Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator."/>
+ 	</pin>
+    <pin name="6">
+		<role name="PB1" resource="PORTB" descr="Generic IO pin PB1"/>
+		<role name="MISO" resource="SPI" descr="Data output pin for memory uploading or SPI."/>
+		<role name="INT0" resource="EXTINT" descr="External Interrupt source 0 to the MCU."/>
+		<role name="AIN1" resource="ACOMP" descr="Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator."/>
+ 	</pin>
+    <pin name="7">
+		<role name="PB2" resource="PORTB" descr="Generic IO pin PB2"/>
+		<role name="SCK" resource="SPI" descr="Clock input pin for memory up/downloading or SPI."/>
+		<role name="T0" resource="TIMER0" descr="Timer/Counter0 clock source."/>
+ 	</pin>
+	<pin name="8">
+		<role name="VCC" resource="CORE" descr="Power supply."/>
+	</pin>
+</pins>

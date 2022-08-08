@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AVR Eclipse Plugin
+Bundle-SymbolicName: de.innot.avreclipse.doc; singleton:=true
+Bundle-Localization: plugin
+Bundle-Version: 2.5.0.qualifier
+Bundle-Vendor: Thomas Holland
+Bundle-ActivationPolicy: lazy
+

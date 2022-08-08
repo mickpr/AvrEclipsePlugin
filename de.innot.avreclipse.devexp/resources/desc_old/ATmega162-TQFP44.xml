@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<core>
+      <chip>ATmega162</chip>
+      <packagecount>1</packagecount>
+      <package1>TQFP44</package1>
+      <file>tqfp44.png</file>
+      <pincount>44</pincount>
+<resourcecount>18</resourcecount>
+<resource1>
+  <resourcename>FLASH</resourcename>
+  <resourcedata>16</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource1>
+<resource2>
+  <resourcename>SRAM</resourcename>
+  <resourcedata>1</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource2>
+<resource3>
+  <resourcename>EEPROM</resourcename>
+  <resourcedata>512</resourcedata>
+  <resourceunits>bytes</resourceunits>
+</resource3>
+<resource4>
+  <resourcename>Fmax</resourcename>
+  <resourcedata>16</resourcedata>
+  <resourceunits>MHz</resourceunits>
+</resource4>
+<resource5>
+  <resourcename>Vcc</resourcename>
+  <resourcedata>1.8-5.5</resourcedata>
+  <resourceunits>V</resourceunits>
+</resource5>
+<resource6>
+  <resourcename>JTAG</resourcename>
+  <resourcedata>1</resourcedata>
+</resource6>
+<resource7>
+  <resourcename>Timer 8bit</resourcename>
+  <resourcedata>2</resourcedata>
+</resource7>
+<resource8>
+  <resourcename>Timer 16bit</resourcename>
+  <resourcedata>2</resourcedata>
+</resource8>
+<resource9>
+  <resourcename>RTC</resourcename>
+  <resourcedata>1</resourcedata>
+</resource9>
+<resource10>
+  <resourcename>PWM channels</resourcename>
+  <resourcedata>6</resourcedata>
+</resource10>
+<resource11>
+  <resourcename>UART</resourcename>
+  <resourcedata>2</resourcedata>
+</resource11>
+<resource12>
+  <resourcename>SPI</resourcename>
+  <resourcedata>1</resourcedata>
+</resource12>
+<resource13>
+  <resourcename>Watchdog</resourcename>
+  <resourcedata>1</resourcedata>
+</resource13>
+<resource14>
+  <resourcename>Analog comparator</resourcename>
+  <resourcedata>1</resourcedata>
+</resource14>
+<resource15>
+  <resourcename>BrownOut</resourcename>
+  <resourcedata>1</resourcedata>
+</resource15>
+<resource16>
+  <resourcename>I/O Pins</resourcename>
+  <resourcedata>35</resourcedata>
+</resource16>
+<resource17>
+  <resourcename>Interrupts</resourcename>
+  <resourcedata>28</resourcedata>
+</resource17>
+<resource18>
+  <resourcename>Ext.interrupts</resourcename>
+  <resourcedata>19</resourcedata>
+</resource18>
+<layout>
+       <desc1>
+       <pin>1</pin>
+  		<pindescount>2</pindescount>        <pins1>PB5 - Generic IO pin PB5</pins1>
+        <pins2>MOSI - Data input pin for memory downloading or SPI.</pins2>
+       </desc1>
+       <desc2>
+       <pin>2</pin>
+  		<pindescount>2</pindescount>        <pins1>PB6 - Generic IO pin PB6</pins1>
+        <pins2>MISO - Data output pin for memory uploading or SPI.</pins2>
+       </desc2>
+       <desc3>
+       <pin>3</pin>
+  		<pindescount>2</pindescount>        <pins1>PB7 - Generic IO pin PB7</pins1>
+        <pins2>SCK - Clock input pin for memory up/downloading or SPI.</pins2>
+       </desc3>
+       <desc4>
+       <pin>4</pin>
+  		<pindescount>1</pindescount>        <pins1>/RESET - Reset pin for MCU, active at low.</pins1>
+       </desc4>
+       <desc5>
+       <pin>5</pin>
+  		<pindescount>2</pindescount>        <pins1>PD0 - Generic IO pin PD0</pins1>
+        <pins2>RXD0 - Receive Data (data input pin for the UART). When the UART receiver is enabled, this pin is configured as an input. When the UART forces this pin to be an input, a logical state on PORT register will turn on the internal pull-up. Channel 0</pins2>
+       </desc5>
+       <desc6>
+       <pin>6</pin>
+  		<pindescount>1</pindescount>        <pins1>NC - Not Connected pin</pins1>
+       </desc6>
+       <desc7>
+       <pin>7</pin>
+  		<pindescount>2</pindescount>        <pins1>PD1 - Generic IO pin PD1</pins1>
+        <pins2>TXD0 - Transmit Data (data output pin for the UART). When the UART transmitter is enabled, this pin is configured as an output. Channel 0 </pins2>
+       </desc7>
+       <desc8>
+       <pin>8</pin>
+  		<pindescount>3</pindescount>        <pins1>PD2 - Generic IO pin PD2</pins1>
+        <pins2>INT0 - External Interrupt source 0 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>XCK1 - USART external clock. Channel 1</pins3>
+       </desc8>
+       <desc9>
+       <pin>9</pin>
+  		<pindescount>3</pindescount>        <pins1>PD3 - Generic IO pin PD3</pins1>
+        <pins2>INT1 - External Interrupt source 1 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>ICP3 - Timer/Counter3 Input Capture pin. See the Timer/Counter3 description for further details.</pins3>
+       </desc9>
+       <desc10>
+       <pin>10</pin>
+  		<pindescount>4</pindescount>        <pins1>PD4 - Generic IO pin PD4</pins1>
+        <pins2>TOSC1 - Timer Oscillator pin 1 - clock source for asynchronous clocking of Timer/Counter2. See CONFIG CLOCK for usage as internal clock.</pins2>
+        <pins3>XCK0 - USART external clock. Channel 0</pins3>
+        <pins4>OC3A - Output compare matchA output: The pin can serve as an external output for the Timer/Counter3 output com-pareA. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC3A pin is also the output pin for the PWM mode timer function.</pins4>
+       </desc10>
+       <desc11>
+       <pin>11</pin>
+  		<pindescount>3</pindescount>        <pins1>PD5 - Generic IO pin PD5</pins1>
+        <pins2>TOSC2 - Timer Oscillator pin 2 - clock source for asynchronous clocking of Timer/Counter2. See CONFIG CLOCK for usage as internal clock.</pins2>
+        <pins3>OC1A - Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output com-pareA. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC1A pin is also the output pin for the PWM mode timer function.</pins3>
+       </desc11>
+       <desc12>
+       <pin>12</pin>
+  		<pindescount>2</pindescount>        <pins1>PD6 - Generic IO pin PD6</pins1>
+        <pins2>/WR - Write strobe signal for XRAM, active low</pins2>
+       </desc12>
+       <desc13>
+       <pin>13</pin>
+  		<pindescount>2</pindescount>        <pins1>PD7 - Generic IO pin PD7</pins1>
+        <pins2>/RD - Read strobe signal for XRAM, active low</pins2>
+       </desc13>
+       <desc14>
+       <pin>14</pin>
+  		<pindescount>1</pindescount>        <pins1>XTAL2 - Pin for connecting external clock source (crystal, resonator..) for MCU (output)</pins1>
+       </desc14>
+       <desc15>
+       <pin>15</pin>
+  		<pindescount>1</pindescount>        <pins1>XTAL1 - Pin for connecting external clock source (crystal, resonator..) for MCU (input)</pins1>
+       </desc15>
+       <desc16>
+       <pin>16</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc16>
+       <desc17>
+       <pin>17</pin>
+  		<pindescount>1</pindescount>        <pins1>VCC - Power supply</pins1>
+       </desc17>
+       <desc18>
+       <pin>18</pin>
+  		<pindescount>3</pindescount>        <pins1>PC0 - Generic IO pin PC0</pins1>
+        <pins2>A8 - Address bit A8 for XRAM</pins2>
+        <pins3>PCINT8 - Pin change interrupt 8</pins3>
+       </desc18>
+       <desc19>
+       <pin>19</pin>
+  		<pindescount>3</pindescount>        <pins1>PC1 - Generic IO pin PC1</pins1>
+        <pins2>A9 - Address bit A9 for XRAM</pins2>
+        <pins3>PCINT9 - Pin change interrupt 9</pins3>
+       </desc19>
+       <desc20>
+       <pin>20</pin>
+  		<pindescount>3</pindescount>        <pins1>PC2 - Generic IO pin PC2</pins1>
+        <pins2>A10 - Address bit A10 for XRAM</pins2>
+        <pins3>PCINT10 - Pin change interrupt 10</pins3>
+       </desc20>
+       <desc21>
+       <pin>21</pin>
+  		<pindescount>3</pindescount>        <pins1>PC3 - Generic IO pin PC3</pins1>
+        <pins2>A11 - Address bit A11 for XRAM</pins2>
+        <pins3>PCINT11 - Pin change interrupt 11</pins3>
+       </desc21>
+       <desc22>
+       <pin>22</pin>
+  		<pindescount>4</pindescount>        <pins1>PC4 - Generic IO pin PC4</pins1>
+        <pins2>A12 - Address bit A12 for XRAM</pins2>
+        <pins3>PCINT12 - Pin change interrupt 12</pins3>
+        <pins4>TCK - JTAG - Test Clock. JTAG operation is synchronous to TCK.</pins4>
+       </desc22>
+       <desc23>
+       <pin>23</pin>
+  		<pindescount>4</pindescount>        <pins1>PC5 - Generic IO pin PC5</pins1>
+        <pins2>A13 - Address bit A13 for XRAM</pins2>
+        <pins3>PCINT13 - Pin change interrupt 13</pins3>
+        <pins4>TMS - JTAG - Test Mode Select. This pin is used for navigating through the TAP-controller.</pins4>
+       </desc23>
+       <desc24>
+       <pin>24</pin>
+  		<pindescount>4</pindescount>        <pins1>PC6 - Generic IO pin PC6</pins1>
+        <pins2>A14 - Address bit A14 for XRAM</pins2>
+        <pins3>PCINT14 - Pin change interrupt 14</pins3>
+        <pins4>TDO - JTAG - Test Data Out. Serial output data from Instruction register or Data Register.</pins4>
+       </desc24>
+       <desc25>
+       <pin>25</pin>
+  		<pindescount>4</pindescount>        <pins1>PC7 - Generic IO pin PC7</pins1>
+        <pins2>A15 - Address bit A15 for XRAM</pins2>
+        <pins3>PCINT15 - Pin change interrupt 15</pins3>
+        <pins4>TDI - JTAG - Test Data In. Serial input data to be shifted in to the Instruction Register or Data Register (Scan Chains).</pins4>
+       </desc25>
+       <desc26>
+       <pin>26</pin>
+  		<pindescount>2</pindescount>        <pins1>PE2 - Generic IO pin PE2</pins1>
+        <pins2>OC1B - Output compare matchB output. The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC1B pin is also the output pin for the PWM mode timer function.</pins2>
+       </desc26>
+       <desc27>
+       <pin>27</pin>
+  		<pindescount>2</pindescount>        <pins1>PE1 - Generic IO pin PE1</pins1>
+        <pins2>ALE - Address latch enable for XRAM</pins2>
+       </desc27>
+       <desc28>
+       <pin>28</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc28>
+       <desc29>
+       <pin>29</pin>
+  		<pindescount>3</pindescount>        <pins1>PE0 - Generic IO pin PE0</pins1>
+        <pins2>ICP1 - Timer/Counter1 Input Capture pin. See the Timer/Counter1 description for further details.</pins2>
+        <pins3>INT2 - External Interrupt source 2 to the MCU. See the interrupt description for further details and how to enable the source.</pins3>
+       </desc29>
+       <desc30>
+       <pin>30</pin>
+  		<pindescount>3</pindescount>        <pins1>PA7 - Generic IO pin PA7</pins1>
+        <pins2>AD7 - Address/Data bit A7/D7 for XRAM</pins2>
+        <pins3>PCINT7 - Pin change interrupt 7</pins3>
+       </desc30>
+       <desc31>
+       <pin>31</pin>
+  		<pindescount>3</pindescount>        <pins1>PA6 - Generic IO pin PA6</pins1>
+        <pins2>AD6 - Address/Data bit A6/D6 for XRAM</pins2>
+        <pins3>PCINT6 - Pin change interrupt 6</pins3>
+       </desc31>
+       <desc32>
+       <pin>32</pin>
+  		<pindescount>3</pindescount>        <pins1>PA5 - Generic IO pin PA5</pins1>
+        <pins2>AD5 - Address/Data bit A5/D5 for XRAM</pins2>
+        <pins3>PCINT5 - Pin change interrupt 5</pins3>
+       </desc32>
+       <desc33>
+       <pin>33</pin>
+  		<pindescount>3</pindescount>        <pins1>PA4 - Generic IO pin PA4</pins1>
+        <pins2>AD4 - Address/Data bit A4/D4 for XRAM</pins2>
+        <pins3>PCINT4 - Pin change interrupt 4</pins3>
+       </desc33>
+       <desc34>
+       <pin>34</pin>
+  		<pindescount>3</pindescount>        <pins1>PA3 - Generic IO pin PA3</pins1>
+        <pins2>AD3 - Address/Data bit A3/D3 for XRAM</pins2>
+        <pins3>PCINT3 - Pin change interrupt 3</pins3>
+       </desc34>
+       <desc35>
+       <pin>35</pin>
+  		<pindescount>3</pindescount>        <pins1>PA2 - Generic IO pin PA2</pins1>
+        <pins2>AD2 - Address/Data bit A2/D2 for XRAM</pins2>
+        <pins3>PCINT2 - Pin change interrupt 2</pins3>
+       </desc35>
+       <desc36>
+       <pin>36</pin>
+  		<pindescount>3</pindescount>        <pins1>PA1 - Generic IO pin PA1</pins1>
+        <pins2>AD1 - Address/Data bit A1/D1 for XRAM</pins2>
+        <pins3>PCINT1 - Pin change interrupt 1</pins3>
+       </desc36>
+       <desc37>
+       <pin>37</pin>
+  		<pindescount>3</pindescount>        <pins1>PA0 - Generic IO pin PA0</pins1>
+        <pins2>AD0 - Address/Data bit A0/D0 for XRAM</pins2>
+        <pins3>PCINT0 - Pin change interrupt 0</pins3>
+       </desc37>
+       <desc38>
+       <pin>38</pin>
+  		<pindescount>1</pindescount>        <pins1>VCC - Power supply</pins1>
+       </desc38>
+       <desc39>
+       <pin>39</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc39>
+       <desc40>
+       <pin>40</pin>
+  		<pindescount>3</pindescount>        <pins1>PB0 - Generic IO pin PB0</pins1>
+        <pins2>OC0 - Output Compare Match Output. Pin can serve as an external output for timer 0 compare match. The pin has to be configured as an output to serve this function. See the timer description for further details, and how to enable the output.</pins2>
+        <pins3>T0 - Timer/Counter0 clock source. See the Timer description for further details.</pins3>
+       </desc40>
+       <desc41>
+       <pin>41</pin>
+  		<pindescount>3</pindescount>        <pins1>PB1 - Generic IO pin PB1</pins1>
+        <pins2>OC2 - Timer/Counter2 output compare match output: The pin can serve as an external output for the Timer/Counter2 output compare. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC2 pin is also the output pin for the PWM mode timer function.</pins2>
+        <pins3>T1 - Timer/Counter1 clock source. See the Timer description for further details.</pins3>
+       </desc41>
+       <desc42>
+       <pin>42</pin>
+  		<pindescount>3</pindescount>        <pins1>PB2 - Generic IO pin PB2</pins1>
+        <pins2>RXD1 - Receive Data (data input pin for the UART). When the UART receiver is enabled, this pin is configured as an input. When the UART forces this pin to be an input, a logical state on PORT register will turn on the internal pull-up. Channel 1</pins2>
+        <pins3>AIN0 - AIN0, Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator.</pins3>
+       </desc42>
+       <desc43>
+       <pin>43</pin>
+  		<pindescount>3</pindescount>        <pins1>PB3 - Generic IO pin PB3</pins1>
+        <pins2>TXD1 - Transmit Data (data output pin for the UART). When the UART transmitter is enabled, this pin is configured as an output. Channel 1</pins2>
+        <pins3>AIN1 - AIN1, Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator.</pins3>
+       </desc43>
+       <desc44>
+       <pin>44</pin>
+  		<pindescount>3</pindescount>        <pins1>PB4 - Generic IO pin PB4</pins1>
+        <pins2>/SS - Slave Select pin for using with SPI.</pins2>
+        <pins3>OC3B - Output compare matchB output. The pin can serve as an external output for the Timer/Counter3 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC3B pin is also the output pin for the PWM mode timer function.</pins3>
+       </desc44>
+</layout>
+</core>

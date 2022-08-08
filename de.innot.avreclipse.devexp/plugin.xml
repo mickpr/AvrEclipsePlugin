@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            name="Device Explorer"
+            icon="icons/chip.gif"
+            category="de.innot.avreclipse"
+            class="de.innot.avreclipse.devexp.DeviceExplorerView"
+            id="de.innot.avreclipse.devexp.views.PinView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.propertyPages">
+   </extension>
+</plugin>

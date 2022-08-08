@@ -1,0 +1,109 @@
+package de.innot.avreclipse.devexp;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.layout.GridData;
+import swing2swt.layout.BoxLayout;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Text;
+
+public class zzz {
+	private Text text;
+	private Text text_1;
+	private Text text_2;
+	private Text text_3;
+	private Text text_4;
+	private Text text_5;
+
+	public zzz() {
+	}
+
+	/**
+	 * Create contents of the view part.
+	 */
+	@PostConstruct
+	public void createControls(Composite parent) {
+		FillLayout fl_parent = new FillLayout(SWT.VERTICAL);
+		fl_parent.marginWidth = 5;
+		fl_parent.marginHeight = 5;
+		parent.setLayout(fl_parent);
+		
+		Group grpTimer = new Group(parent, SWT.SHADOW_IN);
+		grpTimer.setText("TIMER0");
+		grpTimer.setLayout(new GridLayout(2, true));
+		
+		Label lblNewLabel = new Label(grpTimer, SWT.NONE);
+		lblNewLabel.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 1, 1));
+		lblNewLabel.setText("Clock source :");
+		Combo combo = new Combo(grpTimer, SWT.NONE);
+		combo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, false, false, 1, 1));
+
+		
+		Label lblNewLabel_1 = new Label(grpTimer, SWT.NONE);
+		lblNewLabel_1.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, false, false, 1, 1));
+		lblNewLabel_1.setText("Prescaler :");
+		
+		Combo combo_1 = new Combo(grpTimer, SWT.NONE);
+		combo_1.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1));
+		
+		Label lblNewLabel_2 = new Label(grpTimer, SWT.NONE);
+		lblNewLabel_2.setText("Clock frequency:");
+		
+		text = new Text(grpTimer, SWT.BORDER);
+		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblCompareRegister = new Label(grpTimer, SWT.NONE);
+		lblCompareRegister.setText("Compare register :");
+		
+		text_1 = new Text(grpTimer, SWT.BORDER);
+		text_1.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblOverflows = new Label(grpTimer, SWT.NONE);
+		lblOverflows.setText("Overflows :");
+		
+		text_2 = new Text(grpTimer, SWT.BORDER);
+		text_2.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblReminder = new Label(grpTimer, SWT.NONE);
+		lblReminder.setText("Reminder :");
+		
+		text_3 = new Text(grpTimer, SWT.BORDER);
+		text_3.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblResultFreq = new Label(grpTimer, SWT.NONE);
+		lblResultFreq.setText("Result Freq :");
+		
+		text_4 = new Text(grpTimer, SWT.BORDER);
+		text_4.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Label lblResultTimems = new Label(grpTimer, SWT.NONE);
+		lblResultTimems.setText("Result time (ms) :");
+		
+		text_5 = new Text(grpTimer, SWT.BORDER);
+		text_5.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		
+		Group grpTimer_1 = new Group(parent, SWT.SHADOW_IN);
+		grpTimer_1.setEnabled(false);
+		grpTimer_1.setText("TIMER1");
+		grpTimer_1.setLayout(new GridLayout(2, false));
+	}
+
+	@PreDestroy
+	public void dispose() {
+	}
+
+	@Focus
+	public void setFocus() {
+		// TODO	Set the focus to control
+	}
+
+}

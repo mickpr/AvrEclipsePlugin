@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.3"?>
+<plugin>
+   <extension-point id="targetToolFactories" name="targetToolFactories" schema="schema/targetToolFactories.exsd"/>
+
+<!-- 
+####################################################################################### 
+#    Extension Points                                                                 # 
+####################################################################################### 
+-->
+
+
+
+
+
+<!-- 
+####################################################################################### 
+#    AVR Nature                                                                       # 
+####################################################################################### 
+-->
+ 	<extension id="avrnature" name="AVR Nature" point="org.eclipse.core.resources.natures">
+       <runtime>
+           <run class="de.innot.avreclipse.core.natures.AVRProjectNature" />
+       </runtime>
+       <requires-nature id="org.eclipse.cdt.core.cnature"/>
+   </extension>
+
+<!-- 
+####################################################################################### 
+#    Content Types                                                                    # 
+####################################################################################### 
+-->
+	<extension
+		point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="de.innot.avreclipse.contenttype.hexdump.flash"
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="hex"
+			name="HEX Dump for Flash ROM">
+		</content-type>
+	</extension>
+	<extension
+		point="org.eclipse.core.contenttype.contentTypes">
+		<content-type id="de.innot.avreclipse.contenttype.hexdump.eeprom"
+			base-type="org.eclipse.core.runtime.text"
+			file-extensions="eep"
+			name="HEX Dump for EEPROM">
+		</content-type>
+	</extension>
+	<!--  this does not work because Eclipse is non-case-sensitive, e.g. .s == .S -->
+	<extension point="org.eclipse.core.contenttype.contentTypes"> 
+		<file-association 
+	    	content-type="org.eclipse.cdt.core.asmSource"
+	       	file-extensions="s,S,asm"/>
+	</extension> 
+
+<!--
+####################################################################################### 
+#    Preference Initializer                                                           # 
+####################################################################################### 
+-->
+	<extension point="org.eclipse.core.runtime.preferences">
+		<initializer
+			class="de.innot.avreclipse.core.preferences.PreferenceInitializer">
+		</initializer>
+	</extension>
+ <extension
+       point="de.innot.avreclipse.core.targetToolFactories">
+    <toolfactory
+          class="de.innot.avreclipse.core.targets.tools.AvariceToolFactory">
+    </toolfactory>
+    <toolfactory
+          class="de.innot.avreclipse.core.targets.tools.AvrdudeToolFactory">
+    </toolfactory>
+    <toolfactory
+          class="de.innot.avreclipse.core.targets.tools.NoneToolFactory">
+    </toolfactory>
+ </extension>
+	
+ 	
+ 	
+	<extension point="org.eclipse.core.expressions.propertyTesters">
+		<propertyTester
+			class="de.innot.avreclipse.core.ProjectTypeTester"
+			id="de.innot.avreclipse.core.projectTypeTester"
+			namespace="de.innot.avreclipse.core"
+			properties="isStaticLib"
+			type="org.eclipse.core.resources.IResource">
+		</propertyTester>
+	</extension>
+
+</plugin>
+

@@ -1,0 +1,57 @@
+<pins>
+    <pin name="1">
+	    <role name="PB5" resource="PORTB" desc="Generic IO pin PB5" />
+	    <role name="ADC0" resource="ADC" desc="Analog-to-Digital input ADC0" />
+	    <role name="/RESET" resource="CORE" desc="Reset pin for MCU, active at low" />
+		<role name="dW" resource="DEBUG" desc="debugWIRE On-chip debug system uses a One-wire, bi-directional interface to control the program flow, execute AVR instructions in the CPU and to program the different non-volatile memories." />
+	    <role name="PCINT5" resource="EXTINT" desc="Pin change interrupt 5" />
+    </pin>
+    <pin name="2">        
+		<role name="PB3" resource="PORTB" desc="Generic IO pin PB3" />
+		<role name="ADC3" resource="ADC" desc="Analog-to-Digital input ADC3" />
+		<role name="CLKI" resource="CORE" desc="Clock input" />
+		<role name="XTAL1" resource="CORE" desc="Pin for connecting external clock source (crystal, resonator..) for MCU (input)" />
+		<role name="PCINT3" resource="EXTINT" desc="Pin change interrupt 3" />
+    </pin>
+    <pin name="3">        
+		<role name="PB4" resource="PORTB" desc="Generic IO pin PB4" />
+		<role name="ADC2" resource="ADC" desc="Analog-to-Digital input ADC2" />
+		<role name="OC1B" resource="PWM" desc="Output compare matchB output. The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function.  The OC1B pin is also the output pin for the PWM mode timer function." />
+		<role name="XTAL2" resource="CORE" desc="Pin for connecting external clock source (crystal, resonator..) for MCU (output)" />
+		<role name="PCINT4" resource="EXTINT" desc="Pin change interrupt 4" />
+    </pin>
+    <pin name="4">        
+		<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+    <pin name="5">
+        <role name="PB0" resource="PORTB" desc="Generic IO pin PB0" />
+        <role name="MOSI" resource="SPI" desc="Data input pin for memory downloading or SPI." />
+        <role name="SDA" resource="I2C" desc="2-wire Serial Bus Data: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Data I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal, and the pin is driven by an open collector driver with slew rate limitation." />
+        <role name="AIN0" resource="ACOMP" desc="Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator." />
+        <role name="OC0A" resource="PWM" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output com-pareA. The pin has to be configured as an output to serve this function. The OC0A pin is also the output pin for the PWM mode timer function." />
+        <role name="AREF" resource="CORE" desc="Reference voltage for AD converter." />
+        <role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0" />
+    </pin>
+    <pin name="6">
+       	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1" />
+       	<role name="MISO" resource="SPI" desc="Data output pin for memory uploading or SPI." />
+       	<role name="AIN1" resource="ACOMP" desc="Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator." />
+       	<role name="OC0B" resource="PWM" desc="Output compare matchB output. The pin can serve as an external output for the Timer/Counter0 output compareB. The pin has to be configured as an output to serve this function. The OC0B pin is also the output pin for the PWM mode timer function." />
+       	<role name="OC1A" resource="PWM" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output com-pareA. The pin has to be configured as an output to serve this function. The OC1A pin is also the output pin for the PWM mode timer function." />
+       	<role name="PCINT1" resource="EXTINT" desc="Pin change interrupt 1" />
+    </pin>
+    <pin name="7">
+       	<role name="PB2" resource="PORTB" desc="Generic IO pin PB2" />
+       	<role name="SCK" resource="SPI" desc="Clock input pin for memory up/downloading or SPI." />
+       	<role name="PCINT2" resource="EXTINT" desc="Pin change interrupt 2" />
+       	<role name="SCL" resource="I2C" desc="2-wire Serial Interface Clock: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Clock I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal." />
+       	<role name="ADC1" resource="ADC" desc="Analog-to-Digital input ADC1." />
+       	<role name="T0" resource="TIMER0" desc="T0 - Timer/Counter0 clock source." />
+       	<role name="INT0" resource="EXTINT" desc="External Interrupt source 0 to the MCU." />
+    </pin>
+    <pin name="8">
+       	<role name="VCC" resource="CORE" desc="Power supply" />
+    </pin>
+</pins>       	       	       	       	       	       	       	
+
+        

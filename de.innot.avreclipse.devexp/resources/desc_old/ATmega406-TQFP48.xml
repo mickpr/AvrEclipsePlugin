@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<core>
+      <chip>ATmega406</chip>
+      <packagecount>1</packagecount>
+      <package1>TQFP48</package1>
+      <file>tqfp48.png</file>
+      <pincount>48</pincount>
+<resourcecount>17</resourcecount>
+<resource1>
+  <resourcename>FLASH</resourcename>
+  <resourcedata>40</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource1>
+<resource2>
+  <resourcename>EEPROM</resourcename>
+  <resourcedata>0.5</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource2>
+<resource3>
+  <resourcename>SRAM</resourcename>
+  <resourcedata>2048</resourcedata>
+  <resourceunits>bytes</resourceunits>
+</resource3>
+<resource4>
+  <resourcename>I/O Pins</resourcename>
+  <resourcedata>18</resourcedata>
+</resource4>
+<resource5>
+  <resourcename>Fmax</resourcename>
+  <resourcedata>1</resourcedata>
+  <resourceunits>MHz</resourceunits>
+</resource5>
+<resource6>
+  <resourcename>Vcc</resourcename>
+  <resourcedata>4.0-25</resourcedata>
+  <resourceunits>V</resourceunits>
+</resource6>
+<resource7>
+  <resourcename>Timer 16bit</resourcename>
+  <resourcedata>1</resourcedata>
+</resource7>
+<resource8>
+  <resourcename>Timer 8bit</resourcename>
+  <resourcedata>1</resourcedata>
+</resource8>
+<resource9>
+  <resourcename>PWM channels</resourcename>
+  <resourcedata>1</resourcedata>
+</resource9>
+<resource10>
+  <resourcename>RTC</resourcename>
+  <resourcedata>1</resourcedata>
+</resource10>
+<resource11>
+  <resourcename>TWI</resourcename>
+  <resourcedata>1</resourcedata>
+</resource11>
+<resource12>
+  <resourcename>ISP</resourcename>
+  <resourcedata>1</resourcedata>
+</resource12>
+<resource13>
+  <resourcename>Analog comparator</resourcename>
+  <resourcedata>1</resourcedata>
+</resource13>
+<resource14>
+  <resourcename>BrownOut</resourcename>
+  <resourcedata>1</resourcedata>
+</resource14>
+<resource15>
+  <resourcename>Watchdog</resourcename>
+  <resourcedata>1</resourcedata>
+</resource15>
+<resource16>
+  <resourcename>Interrupts</resourcename>
+  <resourcedata>23</resourcedata>
+</resource16>
+<resource17>
+  <resourcename>Ext.interrupts</resourcename>
+  <resourcedata>4</resourcedata>
+</resource17>
+<layout>
+       <desc1>
+       <pin>1</pin>
+  		<pindescount>1</pindescount>        <pins1>SGND - Signal Ground</pins1>
+       </desc1>
+       <desc2>
+       <pin>2</pin>
+  		<pindescount>3</pindescount>        <pins1>PA0 - Generic IO pin PA0</pins1>
+        <pins2>PCINT0 - Pin change interrupt 0</pins2>
+        <pins3>ADC0 - Analog-to-Digital input ADC0</pins3>
+       </desc2>
+       <desc3>
+       <pin>3</pin>
+  		<pindescount>3</pindescount>        <pins1>PA1 - Generic IO pin PA1</pins1>
+        <pins2>PCINT1 - Pin change interrupt 1</pins2>
+        <pins3>ADC1 - Analog-to-Digital input ADC1</pins3>
+       </desc3>
+       <desc4>
+       <pin>4</pin>
+  		<pindescount>3</pindescount>        <pins1>PA2 - Generic IO pin PA2</pins1>
+        <pins2>PCINT2 - Pin change interrupt 2</pins2>
+        <pins3>ADC2 - Analog-to-Digital input ADC2</pins3>
+       </desc4>
+       <desc5>
+       <pin>5</pin>
+  		<pindescount>3</pindescount>        <pins1>PA3 - Generic IO pin PA3</pins1>
+        <pins2>PCINT3 - Pin change interrupt 3</pins2>
+        <pins3>ADC3 - Analog-to-Digital input ADC3</pins3>
+       </desc5>
+       <desc6>
+       <pin>6</pin>
+  		<pindescount>1</pindescount>        <pins1>VREG - Output from the internal voltage regulator</pins1>
+       </desc6>
+       <desc7>
+       <pin>7</pin>
+  		<pindescount>1</pindescount>        <pins1>VCC - Power supply</pins1>
+       </desc7>
+       <desc8>
+       <pin>8</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc8>
+       <desc9>
+       <pin>9</pin>
+  		<pindescount>4</pindescount>        <pins1>PA4 - Generic IO pin PA4</pins1>
+        <pins2>PCINT4 - Pin change interrupt 4</pins2>
+        <pins3>ADC4 - Analog-to-Digital input ADC4</pins3>
+        <pins4>INT0 - External Interrupt source 0 to the MCU. See the interrupt description for further details and how to enable the source.</pins4>
+       </desc9>
+       <desc10>
+       <pin>10</pin>
+  		<pindescount>4</pindescount>        <pins1>PA5 - Generic IO pin PA5</pins1>
+        <pins2>PCINT5 - Pin change interrupt 5</pins2>
+        <pins3>ADC5 - Analog-to-Digital input ADC5</pins3>
+        <pins4>INT1 - External Interrupt source 1 to the MCU. See the interrupt description for further details and how to enable the source.</pins4>
+       </desc10>
+       <desc11>
+       <pin>11</pin>
+  		<pindescount>4</pindescount>        <pins1>PA6 - Generic IO pin PA6</pins1>
+        <pins2>PCINT6 - Pin change interrupt 6</pins2>
+        <pins3>ADC6 - Analog-to-Digital input ADC6</pins3>
+        <pins4>INT2 - External Interrupt source 2 to the MCU. See the interrupt description for further details and how to enable the source.</pins4>
+       </desc11>
+       <desc12>
+       <pin>12</pin>
+  		<pindescount>4</pindescount>        <pins1>PA7 - Generic IO pin PA7</pins1>
+        <pins2>PCINT7 - Pin change interrupt 7</pins2>
+        <pins3>ADC7 - Analog-to-Digital input ADC7</pins3>
+        <pins4>INT3 - External Interrupt source 3 to the MCU. See the interrupt description for further details and how to enable the source.</pins4>
+       </desc12>
+       <desc13>
+       <pin>13</pin>
+  		<pindescount>1</pindescount>        <pins1>/RESET - Reset pin for MCU, active at low.</pins1>
+       </desc13>
+       <desc14>
+       <pin>14</pin>
+  		<pindescount>1</pindescount>        <pins1>XTAL1 - Pin for connecting external clock source (crystal, resonator..) for MCU (input)</pins1>
+       </desc14>
+       <desc15>
+       <pin>15</pin>
+  		<pindescount>1</pindescount>        <pins1>XTAL2 - Pin for connecting external clock source (crystal, resonator..) for MCU (output)</pins1>
+       </desc15>
+       <desc16>
+       <pin>16</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc16>
+       <desc17>
+       <pin>17</pin>
+  		<pindescount>3</pindescount>        <pins1>PB0 - Generic IO pin PB0</pins1>
+        <pins2>PCINT8 - Pin change interrupt 8</pins2>
+        <pins3>TDO - JTAG - Test Data Out. Serial output data from Instruction register or Data Register.</pins3>
+       </desc17>
+       <desc18>
+       <pin>18</pin>
+  		<pindescount>3</pindescount>        <pins1>PB1 - Generic IO pin PB1</pins1>
+        <pins2>PCINT9 - Pin change interrupt 9</pins2>
+        <pins3>TDI - JTAG - Test Data In. Serial input data to be shifted in to the Instruction Register or Data Register (Scan Chains).</pins3>
+       </desc18>
+       <desc19>
+       <pin>19</pin>
+  		<pindescount>3</pindescount>        <pins1>PB2 - Generic IO pin PB2</pins1>
+        <pins2>PCINT10 - Pin change interrupt 10</pins2>
+        <pins3>TMS - JTAG - Test Mode Select. This pin is used for navigating through the TAP-controller.</pins3>
+       </desc19>
+       <desc20>
+       <pin>20</pin>
+  		<pindescount>3</pindescount>        <pins1>PB3 - Generic IO pin PB3</pins1>
+        <pins2>PCINT11 - Pin change interrupt 11</pins2>
+        <pins3>TCK - JTAG - Test Clock. JTAG operation is synchronous to TCK.</pins3>
+       </desc20>
+       <desc21>
+       <pin>21</pin>
+  		<pindescount>2</pindescount>        <pins1>PB4 - Generic IO pin PB4</pins1>
+        <pins2>PCINT12 - Pin change interrupt 12</pins2>
+       </desc21>
+       <desc22>
+       <pin>22</pin>
+  		<pindescount>2</pindescount>        <pins1>PB5 - Generic IO pin PB5</pins1>
+        <pins2>PCINT13 - Pin change interrupt 13</pins2>
+       </desc22>
+       <desc23>
+       <pin>23</pin>
+  		<pindescount>1</pindescount>        <pins1>SCL - 2-wire Serial Interface Clock: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Clock I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal.</pins1>
+       </desc23>
+       <desc24>
+       <pin>24</pin>
+  		<pindescount>1</pindescount>        <pins1>SDA - 2-wire Serial Bus Data: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Data I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal, and the pin is driven by an open collector driver with slew rate limitation.</pins1>
+       </desc24>
+       <desc25>
+       <pin>25</pin>
+  		<pindescount>3</pindescount>        <pins1>PB6 - Generic IO pin PB6</pins1>
+        <pins2>OC0A - Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output com-pareA. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC0A pin is also the output pin for the PWM mode timer function.</pins2>
+        <pins3>PCINT14 - Pin change interrupt 14</pins3>
+       </desc25>
+       <desc26>
+       <pin>26</pin>
+  		<pindescount>3</pindescount>        <pins1>PB7 - Generic IO pin PB7</pins1>
+        <pins2>OC0B - Output compare matchB output. The pin can serve as an external output for the Timer/Counter0 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC0B pin is also the output pin for the PWM mode timer function.</pins2>
+        <pins3>PCINT15 - Pin change interrupt 15</pins3>
+       </desc26>
+       <desc27>
+       <pin>27</pin>
+  		<pindescount>2</pindescount>        <pins1>PD0 - Generic IO pin PD0</pins1>
+        <pins2>T0 - Timer/Counter0 clock source. See the Timer description for further details.</pins2>
+       </desc27>
+       <desc28>
+       <pin>28</pin>
+  		<pindescount>1</pindescount>        <pins1>PD1 - Generic IO pin PD1</pins1>
+       </desc28>
+       <desc29>
+       <pin>29</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc29>
+       <desc30>
+       <pin>30</pin>
+  		<pindescount>1</pindescount>        <pins1>PC0 - Generic IO pin PC0</pins1>
+       </desc30>
+       <desc31>
+       <pin>31</pin>
+  		<pindescount>1</pindescount>        <pins1>BATT - Input for detecting when a charger is connected.</pins1>
+       </desc31>
+       <desc32>
+       <pin>32</pin>
+  		<pindescount>1</pindescount>        <pins1>OPC - High voltage output to drive Pre-Charge FET</pins1>
+       </desc32>
+       <desc33>
+       <pin>33</pin>
+  		<pindescount>1</pindescount>        <pins1>OC - High voltage output to drive Charge FET</pins1>
+       </desc33>
+       <desc34>
+       <pin>34</pin>
+  		<pindescount>1</pindescount>        <pins1>VFET - Input to the internal voltage regulator</pins1>
+       </desc34>
+       <desc35>
+       <pin>35</pin>
+  		<pindescount>1</pindescount>        <pins1>OD - High voltage output to drive Discharge FET</pins1>
+       </desc35>
+       <desc36>
+       <pin>36</pin>
+  		<pindescount>1</pindescount>        <pins1>PVT - PVT defines the pull-up level for the OD output</pins1>
+       </desc36>
+       <desc37>
+       <pin>37</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc37>
+       <desc38>
+       <pin>38</pin>
+  		<pindescount>1</pindescount>        <pins1>PV4 - Input for battery cell</pins1>
+       </desc38>
+       <desc39>
+       <pin>39</pin>
+  		<pindescount>1</pindescount>        <pins1>PV3 - Input for battery cell</pins1>
+       </desc39>
+       <desc40>
+       <pin>40</pin>
+  		<pindescount>1</pindescount>        <pins1>PV2 - Input for battery cell</pins1>
+       </desc40>
+       <desc41>
+       <pin>41</pin>
+  		<pindescount>1</pindescount>        <pins1>PV1 - Input for battery cell</pins1>
+       </desc41>
+       <desc42>
+       <pin>42</pin>
+  		<pindescount>1</pindescount>        <pins1>NV - Input for battery cell</pins1>
+       </desc42>
+       <desc43>
+       <pin>43</pin>
+  		<pindescount>1</pindescount>        <pins1>VREF - Internal voltage reference for external decoupling</pins1>
+       </desc43>
+       <desc44>
+       <pin>44</pin>
+  		<pindescount>1</pindescount>        <pins1>VREFGND - Ground for decoupling of Internal Voltage regulator</pins1>
+       </desc44>
+       <desc45>
+       <pin>45</pin>
+  		<pindescount>1</pindescount>        <pins1>PPI - PPI is the unfiltered positive input from current sense resistor</pins1>
+       </desc45>
+       <desc46>
+       <pin>46</pin>
+  		<pindescount>1</pindescount>        <pins1>PI - PI is the filtered positive input from current sense resistor</pins1>
+       </desc46>
+       <desc47>
+       <pin>47</pin>
+  		<pindescount>1</pindescount>        <pins1>NI - NI is the filtered negative input from current sense resistor</pins1>
+       </desc47>
+       <desc48>
+       <pin>48</pin>
+  		<pindescount>1</pindescount>        <pins1>NNI - NI is the unfiltered negative input from current sense resistor</pins1>
+       </desc48>
+</layout>
+</core>

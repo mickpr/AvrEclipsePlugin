@@ -1,0 +1,749 @@
+<?xml version="1.0"?>
+<packages>
+  <package>
+    <name>TQFP32</name>
+    <body x="0" y="10" width="175" height="175" type="S"></body>
+    <pins count="32">
+	<pin nr="1"  x="-20" y="20" orient="L"></pin>
+	<pin nr="2"  x="-20" y="40" orient="L"></pin>
+	<pin nr="3"  x="-20" y="60" orient="L"></pin>
+	<pin nr="4"  x="-20" y="80" orient="L"></pin>
+	<pin nr="5"  x="-20" y="100" orient="L"></pin>
+	<pin nr="6"  x="-20" y="120" orient="L"></pin>
+	<pin nr="7"  x="-20" y="140" orient="L"></pin>
+	<pin nr="8"  x="-20" y="160" orient="L"></pin>
+
+	<pin nr="9"   x="10" y="185" orient="B"></pin>
+	<pin nr="10"  x="30" y="185" orient="B"></pin>
+	<pin nr="11"  x="50" y="185" orient="B"></pin>
+	<pin nr="12"  x="70" y="185" orient="B"></pin>
+	<pin nr="13"  x="90" y="185" orient="B"></pin>
+	<pin nr="14"  x="110" y="185" orient="B"></pin>
+	<pin nr="15"  x="130" y="185" orient="B"></pin>
+	<pin nr="16"  x="150" y="185" orient="B"></pin>
+
+	<pin nr="17"  x="175" y="160" orient="R"></pin>
+	<pin nr="18"  x="175" y="140" orient="R"></pin>
+	<pin nr="19"  x="175" y="120" orient="R"></pin>
+	<pin nr="20"  x="175" y="100" orient="R"></pin>
+	<pin nr="21"  x="175" y="80" orient="R"></pin>
+	<pin nr="22"  x="175" y="60" orient="R"></pin>
+	<pin nr="23"  x="175" y="40" orient="R"></pin>
+	<pin nr="24"  x="175" y="20" orient="R"></pin>
+
+	<pin nr="25"  x="150" y="-10" orient="T"></pin>
+	<pin nr="26"  x="130" y="-10" orient="T"></pin>
+	<pin nr="27"  x="110" y="-10" orient="T"></pin>
+	<pin nr="28"  x="90" y="-10" orient="T"></pin>
+	<pin nr="29"  x="70" y="-10" orient="T"></pin>
+	<pin nr="30"  x="50" y="-10" orient="T"></pin>
+	<pin nr="31"  x="30" y="-10" orient="T"></pin>
+    <pin nr="32"  x="10" y="-10" orient="T"></pin>
+    </pins>
+  </package>
+  <package>
+    <name>TQFP44</name>
+    <body x="0" y="10" width="235" height="235" type="S"></body>
+    <pins count="44">
+    	<pin nr="1"  x="-20" y="20"  orient="L"></pin>
+	<pin nr="2"  x="-20" y="40"  orient="L"></pin>
+	<pin nr="3"  x="-20" y="60"  orient="L"></pin>
+	<pin nr="4"  x="-20" y="80"  orient="L"></pin>
+	<pin nr="5"  x="-20" y="100" orient="L"></pin>
+	<pin nr="6"  x="-20" y="120" orient="L"></pin>
+	<pin nr="7"  x="-20" y="140" orient="L"></pin>
+	<pin nr="8"  x="-20" y="160" orient="L"></pin>
+	<pin nr="9"  x="-20" y="180" orient="L"></pin>
+	<pin nr="10" x="-20" y="200" orient="L"></pin>
+	<pin nr="11" x="-20" y="220" orient="L"></pin>
+
+	<pin nr="12" x="10"  y="245" orient="B"></pin>
+	<pin nr="13" x="30"  y="245" orient="B"></pin>
+	<pin nr="14" x="50"  y="245" orient="B"></pin>
+	<pin nr="15" x="70"  y="245" orient="B"></pin>
+	<pin nr="16" x="90"  y="245" orient="B"></pin>
+	<pin nr="17" x="110" y="245" orient="B"></pin>
+	<pin nr="18" x="130" y="245" orient="B"></pin>
+	<pin nr="19" x="150" y="245" orient="B"></pin>
+	<pin nr="20" x="170" y="245" orient="B"></pin>
+	<pin nr="21" x="190" y="245" orient="B"></pin>
+	<pin nr="22" x="210" y="245" orient="B"></pin>
+
+	<pin nr="23" x="235" y="220" orient="R"></pin>
+	<pin nr="24" x="235" y="200" orient="R"></pin>
+	<pin nr="25" x="235" y="180" orient="R"></pin>
+	<pin nr="26" x="235" y="160" orient="R"></pin>
+	<pin nr="27" x="235" y="140" orient="R"></pin>
+	<pin nr="28" x="235" y="120" orient="R"></pin>
+	<pin nr="29" x="235" y="100" orient="R"></pin>
+	<pin nr="30" x="235" y="80"  orient="R"></pin>
+	<pin nr="31" x="235" y="60"  orient="R"></pin>
+	<pin nr="32" x="235" y="40"  orient="R"></pin>
+	<pin nr="33" x="235" y="20"  orient="R"></pin>
+
+	<pin nr="34" x="210" y="-10" orient="T"></pin>
+	<pin nr="35" x="190" y="-10" orient="T"></pin>
+	<pin nr="36" x="170" y="-10" orient="T"></pin>
+	<pin nr="37" x="150" y="-10" orient="T"></pin>
+	<pin nr="38" x="130" y="-10" orient="T"></pin>
+	<pin nr="39" x="110" y="-10" orient="T"></pin>
+	<pin nr="40" x="90"  y="-10" orient="T"></pin>
+	<pin nr="41" x="70"  y="-10" orient="T"></pin>
+	<pin nr="42" x="50"  y="-10" orient="T"></pin>
+	<pin nr="43" x="30"  y="-10" orient="T"></pin>
+	<pin nr="44" x="10"  y="-10" orient="T"></pin>
+    </pins>
+  </package>
+  <package>
+    <name>TQFP48</name>
+    <body x="0" y="10" width="255" height="255" type="S"></body>
+    <pins count="48">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10" x="-20" y="200" orient="L"></pin>
+	    <pin nr="11" x="-20" y="220" orient="L"></pin>
+	    <pin nr="12" x="-20" y="240" orient="L"></pin>
+
+	    <pin nr="13" x="10" y="265"  orient="B"></pin>
+	    <pin nr="14" x="30" y="265"  orient="B"></pin>
+	    <pin nr="15" x="50" y="265"  orient="B"></pin>
+	    <pin nr="16" x="70" y="265"  orient="B"></pin>
+	    <pin nr="17" x="90" y="265"  orient="B"></pin>
+	    <pin nr="18" x="110" y="265" orient="B"></pin>
+	    <pin nr="19" x="130" y="265" orient="B"></pin>
+	    <pin nr="20" x="150" y="265" orient="B"></pin>
+	    <pin nr="21" x="170" y="265" orient="B"></pin>
+	    <pin nr="22" x="190" y="265" orient="B"></pin>
+	    <pin nr="23" x="210" y="265" orient="B"></pin>
+	    <pin nr="24" x="230" y="265" orient="B"></pin>
+
+	    <pin nr="25" x="255" y="240" orient="R"></pin>
+	    <pin nr="26" x="255" y="220" orient="R"></pin>
+	    <pin nr="27" x="255" y="200" orient="R"></pin>
+	    <pin nr="28" x="255" y="180" orient="R"></pin>
+	    <pin nr="29" x="255" y="160" orient="R"></pin>
+	    <pin nr="30" x="255" y="140" orient="R"></pin>
+	    <pin nr="31" x="255" y="120" orient="R"></pin>
+	    <pin nr="32" x="255" y="100" orient="R"></pin>
+	    <pin nr="33" x="255" y="80"  orient="R"></pin>
+	    <pin nr="34" x="255" y="60"  orient="R"></pin>
+	    <pin nr="35" x="255" y="40"  orient="R"></pin>
+	    <pin nr="36" x="255" y="20"  orient="R"></pin>
+
+	    <pin nr="37" x="230"  y="-10" orient="T"></pin>
+	    <pin nr="38" x="210"  y="-10" orient="T"></pin>
+	    <pin nr="39" x="190"  y="-10" orient="T"></pin>
+	    <pin nr="40" x="170"  y="-10" orient="T"></pin>
+	    <pin nr="41" x="150"  y="-10" orient="T"></pin>
+	    <pin nr="42" x="130" y="-10" orient="T"></pin>
+	    <pin nr="43" x="110" y="-10" orient="T"></pin>
+	    <pin nr="44" x="90" y="-10" orient="T"></pin>
+	    <pin nr="45" x="70" y="-10" orient="T"></pin>
+	    <pin nr="46" x="50" y="-10" orient="T"></pin>
+	    <pin nr="47" x="30" y="-10" orient="T"></pin>
+	    <pin nr="48" x="10" y="-10" orient="T"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>TQFP64</name>
+    <body x="0" y="10" width="335" height="335" type="S"></body>
+    <pins count="64">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="200" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="220" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="240" orient="L"></pin>
+	    <pin nr="13"  x="-20" y="260" orient="L"></pin>
+	    <pin nr="14"  x="-20" y="280" orient="L"></pin>
+	    <pin nr="15"  x="-20" y="300" orient="L"></pin>
+	    <pin nr="16"  x="-20" y="320" orient="L"></pin>
+
+	    <pin nr="17"  x="10" y="345" orient="B"></pin>
+	    <pin nr="18"  x="30" y="345" orient="B"></pin>
+	    <pin nr="19"  x="50" y="345" orient="B"></pin>
+	    <pin nr="20"  x="70" y="345" orient="B"></pin>
+	    <pin nr="21"  x="90" y="345" orient="B"></pin>
+	    <pin nr="22"  x="110" y="345" orient="B"></pin>
+	    <pin nr="23"  x="130" y="345" orient="B"></pin>
+	    <pin nr="24"  x="150" y="345" orient="B"></pin>
+	    <pin nr="25"  x="170" y="345" orient="B"></pin>
+	    <pin nr="26"  x="190" y="345" orient="B"></pin>
+	    <pin nr="27"  x="210" y="345" orient="B"></pin>
+	    <pin nr="28"  x="230" y="345" orient="B"></pin>
+	    <pin nr="29"  x="250" y="345" orient="B"></pin>
+	    <pin nr="30"  x="270" y="345" orient="B"></pin>
+	    <pin nr="31"  x="290" y="345" orient="B"></pin>
+	    <pin nr="32"  x="310" y="345" orient="B"></pin>
+
+	    <pin nr="33"  x="335" y="320" orient="R"></pin>
+	    <pin nr="34"  x="335" y="300" orient="R"></pin>
+	    <pin nr="35"  x="335" y="280" orient="R"></pin>
+	    <pin nr="36"  x="335" y="260" orient="R"></pin>
+	    <pin nr="37"  x="335" y="240" orient="R"></pin>
+	    <pin nr="38"  x="335" y="220" orient="R"></pin>
+	    <pin nr="39"  x="335" y="200" orient="R"></pin>
+	    <pin nr="40"  x="335" y="180" orient="R"></pin>
+	    <pin nr="41"  x="335" y="160" orient="R"></pin>
+	    <pin nr="42"  x="335" y="140" orient="R"></pin>
+	    <pin nr="43"  x="335" y="120" orient="R"></pin>
+	    <pin nr="44"  x="335" y="100" orient="R"></pin>
+	    <pin nr="45"  x="335" y="80" orient="R"></pin>
+	    <pin nr="46"  x="335" y="60" orient="R"></pin>
+	    <pin nr="47"  x="335" y="40" orient="R"></pin>
+	    <pin nr="48"  x="335" y="20" orient="R"></pin>
+
+	    <pin nr="49"  x="310" y="-10" orient="T"></pin>
+	    <pin nr="50"  x="290" y="-10" orient="T"></pin>
+	    <pin nr="51"  x="270" y="-10" orient="T"></pin>
+	    <pin nr="52"  x="250" y="-10" orient="T"></pin>
+	    <pin nr="53"  x="230" y="-10" orient="T"></pin>
+	    <pin nr="54"  x="210" y="-10" orient="T"></pin>
+	    <pin nr="55"  x="190" y="-10" orient="T"></pin>
+	    <pin nr="56"  x="170" y="-10" orient="T"></pin>
+	    <pin nr="57"  x="150" y="-10" orient="T"></pin>
+	    <pin nr="58"  x="130" y="-10" orient="T"></pin>
+	    <pin nr="59"  x="110" y="-10" orient="T"></pin>
+	    <pin nr="60"  x="90"  y="-10" orient="T"></pin>
+	    <pin nr="61"  x="70"  y="-10" orient="T"></pin>
+	    <pin nr="62"  x="50"  y="-10" orient="T"></pin>
+	    <pin nr="63"  x="30"  y="-10" orient="T"></pin>
+	    <pin nr="64"  x="10"  y="-10" orient="T"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>TQFP100</name>
+    <body x="0" y="10" width="515" height="515" type="S"></body>
+    <pins count="100">
+	    <pin nr="1"   x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"   x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"   x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"   x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"   x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"   x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"   x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"   x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"   x="-20" y="180" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="200" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="220" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="240" orient="L"></pin>
+	    <pin nr="13"  x="-20" y="260" orient="L"></pin>
+	    <pin nr="14"  x="-20" y="280" orient="L"></pin>
+	    <pin nr="15"  x="-20" y="300" orient="L"></pin>
+	    <pin nr="16"  x="-20" y="320" orient="L"></pin>
+	    <pin nr="17"  x="-20" y="340" orient="L"></pin>
+	    <pin nr="18"  x="-20" y="360" orient="L"></pin>
+	    <pin nr="19"  x="-20" y="380" orient="L"></pin>
+	    <pin nr="20"  x="-20" y="400" orient="L"></pin>
+	    <pin nr="21"  x="-20" y="420" orient="L"></pin>
+	    <pin nr="22"  x="-20" y="440" orient="L"></pin>
+	    <pin nr="23"  x="-20" y="460" orient="L"></pin>
+	    <pin nr="24"  x="-20" y="480" orient="L"></pin>
+	    <pin nr="25"  x="-20" y="500" orient="L"></pin>
+
+	    <pin nr="26"  x="10" y="525" orient="B"></pin>
+	    <pin nr="27"  x="30" y="525" orient="B"></pin>
+	    <pin nr="28"  x="50" y="525" orient="B"></pin>
+	    <pin nr="29"  x="70" y="525" orient="B"></pin>
+	    <pin nr="30"  x="90" y="525" orient="B"></pin>
+	    <pin nr="31"  x="110" y="525" orient="B"></pin>
+	    <pin nr="32"  x="130" y="525" orient="B"></pin>
+	    <pin nr="33"  x="150" y="525" orient="B"></pin>
+	    <pin nr="34"  x="170" y="525" orient="B"></pin>
+	    <pin nr="35"  x="190" y="525" orient="B"></pin>
+	    <pin nr="36"  x="210" y="525" orient="B"></pin>
+	    <pin nr="37"  x="230" y="525" orient="B"></pin>
+	    <pin nr="38"  x="250" y="525" orient="B"></pin>
+	    <pin nr="39"  x="270" y="525" orient="B"></pin>
+	    <pin nr="40"  x="290" y="525" orient="B"></pin>
+	    <pin nr="41"  x="310" y="525" orient="B"></pin>
+	    <pin nr="42"  x="330" y="525" orient="B"></pin>
+	    <pin nr="43"  x="350" y="525" orient="B"></pin>
+	    <pin nr="44"  x="370" y="525" orient="B"></pin>
+	    <pin nr="45"  x="390" y="525" orient="B"></pin>
+	    <pin nr="46"  x="410" y="525" orient="B"></pin>
+	    <pin nr="47"  x="430" y="525" orient="B"></pin>
+	    <pin nr="48"  x="450" y="525" orient="B"></pin>
+	    <pin nr="49"  x="470" y="525" orient="B"></pin>
+	    <pin nr="50"  x="490" y="525" orient="B"></pin>
+
+	    <pin nr="51"  x="515" y="500" orient="R"></pin>
+	    <pin nr="52"  x="515" y="480" orient="R"></pin>
+	    <pin nr="53"  x="515" y="460" orient="R"></pin>
+	    <pin nr="54"  x="515" y="440" orient="R"></pin>
+	    <pin nr="55"  x="515" y="420" orient="R"></pin>
+	    <pin nr="56"  x="515" y="400" orient="R"></pin>
+	    <pin nr="57"  x="515" y="380" orient="R"></pin>
+	    <pin nr="58"  x="515" y="360" orient="R"></pin>
+	    <pin nr="59"  x="515" y="340" orient="R"></pin>
+	    <pin nr="60"  x="515" y="320" orient="R"></pin>
+	    <pin nr="61"  x="515" y="300" orient="R"></pin>
+	    <pin nr="62"  x="515" y="280" orient="R"></pin>
+	    <pin nr="63"  x="515" y="260" orient="R"></pin>
+	    <pin nr="64"  x="515" y="240" orient="R"></pin>
+	    <pin nr="65"  x="515" y="220" orient="R"></pin>
+	    <pin nr="66"  x="515" y="200" orient="R"></pin>
+	    <pin nr="67"  x="515" y="180" orient="R"></pin>
+	    <pin nr="68"  x="515" y="160" orient="R"></pin>
+	    <pin nr="69"  x="515" y="140" orient="R"></pin>
+	    <pin nr="70"  x="515" y="120" orient="R"></pin>
+	    <pin nr="71"  x="515" y="100" orient="R"></pin>
+	    <pin nr="72"  x="515" y="80" orient="R"></pin>
+	    <pin nr="73"  x="515" y="60" orient="R"></pin>
+	    <pin nr="74"  x="515" y="40" orient="R"></pin>
+	    <pin nr="75"  x="515" y="20" orient="R"></pin>
+
+	    <pin nr="76"  x="490" y="-10" orient="T"></pin>
+	    <pin nr="77"  x="470" y="-10" orient="T"></pin>
+	    <pin nr="78"  x="450" y="-10" orient="T"></pin>
+	    <pin nr="79"  x="430" y="-10" orient="T"></pin>
+	    <pin nr="80"  x="410" y="-10" orient="T"></pin>
+	    <pin nr="81"  x="390" y="-10" orient="T"></pin>
+	    <pin nr="82"  x="370" y="-10" orient="T"></pin>
+	    <pin nr="83"  x="350" y="-10" orient="T"></pin>
+	    <pin nr="84"  x="330" y="-10" orient="T"></pin>
+	    <pin nr="85"  x="310" y="-10" orient="T"></pin>
+	    <pin nr="86"  x="290" y="-10" orient="T"></pin>
+	    <pin nr="87"  x="270" y="-10" orient="T"></pin>
+	    <pin nr="88"  x="250" y="-10" orient="T"></pin>
+	    <pin nr="89"  x="230" y="-10" orient="T"></pin>
+	    <pin nr="90"  x="210" y="-10" orient="T"></pin>
+	    <pin nr="91"  x="190" y="-10" orient="T"></pin>
+	    <pin nr="92"  x="170" y="-10" orient="T"></pin>
+	    <pin nr="93"  x="150" y="-10" orient="T"></pin>
+	    <pin nr="94"  x="130" y="-10" orient="T"></pin>
+	    <pin nr="95"  x="110" y="-10" orient="T"></pin>
+	    <pin nr="96"  x="90" y="-10" orient="T"></pin>
+	    <pin nr="97"  x="70" y="-10" orient="T"></pin>
+	    <pin nr="98"  x="50" y="-10" orient="T"></pin>
+	    <pin nr="99"  x="30" y="-10" orient="T"></pin>
+	    <pin nr="100" x="10" y="-10" orient="T"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>SOIC8</name>
+    <body x="0" y="10" width="80" height="95" type="D"></body>
+    <pins count="8">
+	    <pin nr="1" x="-20" y="20" orient="L"></pin>
+	    <pin nr="2" x="-20" y="40" orient="L"></pin>
+	    <pin nr="3" x="-20" y="60" orient="L"></pin>
+	    <pin nr="4" x="-20" y="80" orient="L"></pin>
+	    <pin nr="5" x="80" y="80" orient="R"></pin>
+	    <pin nr="6" x="80" y="60" orient="R"></pin>
+	    <pin nr="7" x="80" y="40" orient="R"></pin>
+	    <pin nr="8" x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>SOIC14</name>
+    <body x="0" y="10" width="80" height="95" type="D"></body>
+    <pins count="14">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="9"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="10"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="11"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="12"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="13"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="14"  x="-20" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>SOIC20</name>
+    <body x="0" y="10" width="80" height="215" type="D"></body>
+    <pins count="20">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10" x="-20" y="200" orient="L"></pin>
+	    <pin nr="11" x="80" y="200" orient="R"></pin>
+	    <pin nr="12" x="80" y="180" orient="R"></pin>
+	    <pin nr="13" x="80" y="160" orient="R"></pin>
+	    <pin nr="14" x="80" y="140" orient="R"></pin>
+	    <pin nr="15" x="80" y="120" orient="R"></pin>
+	    <pin nr="16" x="80" y="100" orient="R"></pin>
+	    <pin nr="17" x="80" y="80" orient="R"></pin>
+	    <pin nr="18" x="80" y="60" orient="R"></pin>
+	    <pin nr="19" x="80" y="40" orient="R"></pin>
+	    <pin nr="20" x="80" y="20" orient="R"></pin>
+	</pins>	   
+  </package>
+  <package>
+    <name>SOIC24</name>
+    <body x="0" y="10" width="80" height="255" type="D"></body>
+    <pins count="24">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="200" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="220" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="240" orient="L"></pin>
+	    <pin nr="13"  x="80" y="240" orient="R"></pin>
+	    <pin nr="14"  x="80" y="220" orient="R"></pin>
+	    <pin nr="15"  x="80" y="200" orient="R"></pin>
+	    <pin nr="16"  x="80" y="180" orient="R"></pin>
+	    <pin nr="17"  x="80" y="160" orient="R"></pin>
+	    <pin nr="18"  x="80" y="140" orient="R"></pin>
+	    <pin nr="19"  x="80" y="120" orient="R"></pin>
+	    <pin nr="20"  x="80" y="100" orient="R"></pin>
+	    <pin nr="21"  x="80" y="80" orient="R"></pin>
+	    <pin nr="22"  x="80" y="60" orient="R"></pin>
+	    <pin nr="23"  x="80" y="40" orient="R"></pin>
+	    <pin nr="24"  x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>SOIC32</name>
+    <body x="0" y="10" width="80" height="95" type="D"></body>
+    <pins count="32">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="13"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="14"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="15"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="16"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="17"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="18"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="19"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="20"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="21"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="22"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="23"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="24"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="25"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="26"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="27"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="28"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="29"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="30"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="31"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="32"  x="-20" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>DIP8</name>
+    <body x="0" y="10" width="80" height="95" type="D"></body>
+    <pins count="8">
+	    <pin nr="1" x="-20" y="20" orient="L"></pin>
+	    <pin nr="2" x="-20" y="40" orient="L"></pin>
+	    <pin nr="3" x="-20" y="60" orient="L"></pin>
+	    <pin nr="4" x="-20" y="80" orient="L"></pin>
+	    <pin nr="5" x="80" y="80" orient="R"></pin>
+	    <pin nr="6" x="80" y="60" orient="R"></pin>
+	    <pin nr="7" x="80" y="40" orient="R"></pin>
+	    <pin nr="8" x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>DIP14</name>
+    <body x="0" y="10" width="80" height="155" type="D"></body>
+    <pins count="14">
+	    <pin nr="1" x="-20" y="20" orient="L"></pin>
+	    <pin nr="2" x="-20" y="40" orient="L"></pin>
+	    <pin nr="3" x="-20" y="60" orient="L"></pin>
+	    <pin nr="4" x="-20" y="80" orient="L"></pin>
+	    <pin nr="5" x="-20" y="100" orient="L"></pin>
+	    <pin nr="6" x="-20" y="120" orient="L"></pin>
+	    <pin nr="7" x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="80" y="140" orient="R"></pin>
+	    <pin nr="9"  x="80" y="120" orient="R"></pin>
+	    <pin nr="10" x="80" y="100" orient="R"></pin>
+	    <pin nr="11" x="80" y="80" orient="R"></pin>
+	    <pin nr="12" x="80" y="60" orient="R"></pin>
+	    <pin nr="13" x="80" y="40" orient="R"></pin>
+	    <pin nr="14" x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>DIP20</name>
+    <body x="0" y="10" width="80" height="215" type="D"></body>
+    <pins count="20">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10" x="-20" y="200" orient="L"></pin>
+	    <pin nr="11" x="80" y="200" orient="R"></pin>
+	    <pin nr="12" x="80" y="180" orient="R"></pin>
+	    <pin nr="13" x="80" y="160" orient="R"></pin>
+	    <pin nr="14" x="80" y="140" orient="R"></pin>
+	    <pin nr="15" x="80" y="120" orient="R"></pin>
+	    <pin nr="16" x="80" y="100" orient="R"></pin>
+	    <pin nr="17" x="80" y="80" orient="R"></pin>
+	    <pin nr="18" x="80" y="60" orient="R"></pin>
+	    <pin nr="19" x="80" y="40" orient="R"></pin>
+	    <pin nr="20" x="80" y="20" orient="R"></pin>
+	</pins>	   
+  </package>
+  <package>
+    <name>DIP28</name>
+    <body x="0" y="10" width="80" height="295" type="D"></body>
+    <pins count="28">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="200" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="220" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="240" orient="L"></pin>
+	    <pin nr="13"  x="-20" y="260" orient="L"></pin>
+	    <pin nr="14"  x="-20" y="280" orient="L"></pin>
+	    <pin nr="15"  x="80" y="280" orient="R"></pin>
+	    <pin nr="16"  x="80" y="260" orient="R"></pin>
+	    <pin nr="17"  x="80" y="240" orient="R"></pin>
+	    <pin nr="18"  x="80" y="220" orient="R"></pin>
+	    <pin nr="19"  x="80" y="200" orient="R"></pin>
+	    <pin nr="20"  x="80" y="180" orient="R"></pin>
+	    <pin nr="21"  x="80" y="160" orient="R"></pin>
+	    <pin nr="22"  x="80" y="140" orient="R"></pin>
+	    <pin nr="23"  x="80" y="120" orient="R"></pin>
+	    <pin nr="24"  x="80" y="100" orient="R"></pin>
+	    <pin nr="25"  x="80" y="80" orient="R"></pin>
+	    <pin nr="26"  x="80" y="60" orient="R"></pin>
+	    <pin nr="27"  x="80" y="40" orient="R"></pin>
+	    <pin nr="28"  x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>DIP40</name>
+    <body x="0" y="10" width="80" height="415" type="D"></body>
+    <pins count="40">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10" x="-20" y="200" orient="L"></pin>
+	    <pin nr="11" x="-20" y="220" orient="L"></pin>
+	    <pin nr="12" x="-20" y="240" orient="L"></pin>
+	    <pin nr="13" x="-20" y="260" orient="L"></pin>
+	    <pin nr="14" x="-20" y="280" orient="L"></pin>
+	    <pin nr="15" x="-20" y="300" orient="L"></pin>
+	    <pin nr="16" x="-20" y="320" orient="L"></pin>
+	    <pin nr="17" x="-20" y="340" orient="L"></pin>
+	    <pin nr="18" x="-20" y="360" orient="L"></pin>
+	    <pin nr="19" x="-20" y="380" orient="L"></pin>
+	    <pin nr="20" x="-20" y="400" orient="L"></pin>
+	    <pin nr="21" x="80" y="400" orient="R"></pin>
+	    <pin nr="22" x="80" y="380" orient="R"></pin>
+	    <pin nr="23" x="80" y="360" orient="R"></pin>
+	    <pin nr="24" x="80" y="340" orient="R"></pin>
+	    <pin nr="25" x="80" y="320" orient="R"></pin>
+	    <pin nr="26" x="80" y="300" orient="R"></pin>
+	    <pin nr="27" x="80" y="280" orient="R"></pin>
+	    <pin nr="28" x="80" y="260" orient="R"></pin>
+	    <pin nr="29" x="80" y="240" orient="R"></pin>
+	    <pin nr="30" x="80" y="220" orient="R"></pin>
+	    <pin nr="31" x="80" y="200" orient="R"></pin>
+	    <pin nr="32" x="80" y="180" orient="R"></pin>
+	    <pin nr="33" x="80" y="160" orient="R"></pin>
+	    <pin nr="34" x="80" y="140" orient="R"></pin>
+	    <pin nr="35" x="80" y="120" orient="R"></pin>
+	    <pin nr="36" x="80" y="100" orient="R"></pin>
+	    <pin nr="37" x="80" y="80" orient="R"></pin>
+	    <pin nr="38" x="80" y="60" orient="R"></pin>
+	    <pin nr="39" x="80" y="40" orient="R"></pin>
+	    <pin nr="40" x="80" y="20" orient="R"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>PLCC44</name>
+    <body x="0" y="10" width="80" height="95" type="S"></body>
+    <pins count="44">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="40" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="60" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="80" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="100" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="120" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="140" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="160" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="180" orient="L"></pin>
+	    <pin nr="10" x="-20" y="200" orient="L"></pin>
+	    <pin nr="11" x="-20" y="220" orient="L"></pin>
+
+	    <pin nr="12" x="0" y="0" orient="B"></pin>
+	    <pin nr="13" x="0" y="0" orient="B"></pin>
+	    <pin nr="14" x="0" y="0" orient="B"></pin>
+	    <pin nr="15" x="0" y="0" orient="B"></pin>
+	    <pin nr="16" x="0" y="0" orient="B"></pin>
+	    <pin nr="17" x="0" y="0" orient="B"></pin>
+	    <pin nr="18" x="0" y="0" orient="B"></pin>
+	    <pin nr="19" x="0" y="0" orient="B"></pin>
+	    <pin nr="20" x="0" y="0" orient="B"></pin>
+	    <pin nr="21" x="0" y="0" orient="B"></pin>
+	    <pin nr="22" x="0" y="0" orient="B"></pin>
+
+	    <pin nr="23" x="0" y="0" orient="R"></pin>
+	    <pin nr="24" x="0" y="0" orient="R"></pin>
+	    <pin nr="25" x="0" y="0" orient="R"></pin>
+	    <pin nr="26" x="0" y="0" orient="R"></pin>
+	    <pin nr="27" x="0" y="0" orient="R"></pin>
+	    <pin nr="28" x="0" y="0" orient="R"></pin>
+	    <pin nr="29" x="0" y="0" orient="R"></pin>
+	    <pin nr="30" x="0" y="0" orient="R"></pin>
+	    <pin nr="31" x="0" y="0" orient="R"></pin>
+	    <pin nr="32" x="0" y="0" orient="R"></pin>
+	    <pin nr="33" x="0" y="0" orient="R"></pin>
+
+	    <pin nr="34" x="0" y="0" orient="T"></pin>
+	    <pin nr="35" x="0" y="0" orient="T"></pin>
+	    <pin nr="36" x="0" y="0" orient="T"></pin>
+	    <pin nr="37" x="0" y="0" orient="T"></pin>
+	    <pin nr="38" x="0" y="0" orient="T"></pin>
+	    <pin nr="39" x="0" y="0" orient="T"></pin>
+	    <pin nr="40" x="0" y="0" orient="T"></pin>
+	    <pin nr="41" x="0" y="0" orient="T"></pin>
+	    <pin nr="42" x="0" y="0" orient="T"></pin>
+	    <pin nr="43" x="0" y="0" orient="T"></pin>
+	    <pin nr="44" x="0" y="0" orient="T"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>QFN32</name>
+    <body x="0" y="10" width="80" height="95" type="S"></body>
+    <pins count="32">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="10"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="11"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="12"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="13"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="14"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="15"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="16"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="17"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="18"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="19"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="20"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="21"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="22"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="23"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="24"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="25"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="26"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="27"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="28"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="29"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="30"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="31"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="32"  x="-20" y="20" orient="T"></pin>
+	</pins>	    
+  </package>
+  <package>
+    <name>LQFP48</name>
+    <body x="0" y="10" width="80" height="95" type="S"></body>
+    <pins count="48">
+	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="2"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="3"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="4"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="5"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="6"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="7"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="8"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="9"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="10"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="11"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="12"  x="-20" y="20" orient="L"></pin>
+	    <pin nr="13"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="14"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="15"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="16"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="17"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="18"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="19"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="20"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="21"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="22"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="23"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="24"  x="-20" y="20" orient="B"></pin>
+	    <pin nr="25"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="26"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="27"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="28"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="29"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="30"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="31"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="32"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="33"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="34"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="35"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="36"  x="-20" y="20" orient="R"></pin>
+	    <pin nr="37"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="38"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="39"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="40"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="41"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="42"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="43"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="44"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="45"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="46"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="47"  x="-20" y="20" orient="T"></pin>
+	    <pin nr="48"  x="-20" y="20" orient="T"></pin>
+	</pins>	    
+  </package>
+</packages>

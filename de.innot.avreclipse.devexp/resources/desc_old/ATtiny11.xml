@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<core>
+      <chip>ATtiny11</chip>
+      <packagecount>2</packagecount>
+      <package1>DIP8</package1>
+      <file1>dip8.png</file1>
+      <package2>SOIC8</package2>
+      <file2>soic8.png</file2>
+      <pincount>8</pincount>
+<resourcecount>21</resourcecount>
+<resource1>
+  <resourcename>FLASH</resourcename>
+  <resourcedata>1</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource1>
+<resource2>
+  <resourcename>EEPROM</resourcename>
+  <resourcedata>0</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource2>
+<resource3>
+  <resourcename>SRAM</resourcename>
+  <resourcedata>0</resourcedata>
+  <resourceunits>bytes</resourceunits>
+</resource3>
+<resource4>
+  <resourcename>I/O Pins</resourcename>
+  <resourcedata>6</resourcedata>
+</resource4>
+<resource5>
+  <resourcename>Fmax</resourcename>
+  <resourcedata>6</resourcedata>
+  <resourceunits>MHz</resourceunits>
+</resource5>
+<resource6>
+  <resourcename>Vcc</resourcename>
+  <resourcedata>2.7-5.5</resourcedata>
+  <resourceunits>V</resourceunits>
+</resource6>
+<resource7>
+  <resourcename>Timer 16bit</resourcename>
+  <resourcedata>0</resourcedata>
+</resource7>
+<resource8>
+  <resourcename>Timer 8bit</resourcename>
+  <resourcedata>1</resourcedata>
+</resource8>
+<resource9>
+  <resourcename>PWM channels</resourcename>
+  <resourcedata>0</resourcedata>
+</resource9>
+<resource10>
+  <resourcename>RTC</resourcename>
+  <resourcedata>0</resourcedata>
+</resource10>
+<resource11>
+  <resourcename>SPI</resourcename>
+  <resourcedata>0</resourcedata>
+</resource11>
+<resource12>
+  <resourcename>UART</resourcename>
+  <resourcedata>0</resourcedata>
+</resource12>
+<resource13>
+  <resourcename>UART</resourcename>
+  <resourcedata>0</resourcedata>
+</resource13>
+<resource14>
+  <resourcename>TWI</resourcename>
+  <resourcedata>0</resourcedata>
+</resource14>
+<resource15>
+  <resourcename>ISP</resourcename>
+  <resourcedata>0</resourcedata>
+</resource15>
+<resource16>
+  <resourcename>A/D channels</resourcename>
+  <resourcedata>0</resourcedata>
+</resource16>
+<resource17>
+  <resourcename>Analog comparator</resourcename>
+  <resourcedata>1</resourcedata>
+</resource17>
+<resource18>
+  <resourcename>BrownOut</resourcename>
+  <resourcedata>0</resourcedata>
+</resource18>
+<resource19>
+  <resourcename>Watchdog</resourcename>
+  <resourcedata>1</resourcedata>
+</resource19>
+<resource20>
+  <resourcename>Interrupts</resourcename>
+  <resourcedata>4</resourcedata>
+</resource20>
+<resource21>
+  <resourcename>Ext.interrupts</resourcename>
+  <resourcedata>1</resourcedata>
+</resource21>
+<layout>
+       <desc1>
+       <pin>1</pin>
+  		<pindescount>2</pindescount>        <pins1>PB5 - Generic IO pin PB5</pins1>
+        <pins2>/RESET - Reset pin for MCU, active at low.</pins2>
+       </desc1>
+       <desc2>
+       <pin>2</pin>
+  		<pindescount>2</pindescount>        <pins1>PB3 - Generic IO pin PB3</pins1>
+        <pins2>XTAL1 - Pin for connecting external clock source (crystal, resonator..) for MCU (input)</pins2>
+       </desc2>
+       <desc3>
+       <pin>3</pin>
+  		<pindescount>2</pindescount>        <pins1>PB4 - Generic IO pin PB4</pins1>
+        <pins2>XTAL2 - Pin for connecting external clock source (crystal, resonator..) for MCU (output)</pins2>
+       </desc3>
+       <desc4>
+       <pin>4</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc4>
+       <desc5>
+       <pin>5</pin>
+  		<pindescount>2</pindescount>        <pins1>PB0 - Generic IO pin PB0</pins1>
+        <pins2>AIN0 - AIN0, Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator.</pins2>
+       </desc5>
+       <desc6>
+       <pin>6</pin>
+  		<pindescount>3</pindescount>        <pins1>PB1 - Generic IO pin PB1</pins1>
+        <pins2>AIN1 - AIN1, Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator.</pins2>
+        <pins3>INT0 - External Interrupt source 0 to the MCU. See the interrupt description for further details and how to enable the source.</pins3>
+       </desc6>
+       <desc7>
+       <pin>7</pin>
+  		<pindescount>2</pindescount>        <pins1>PB2 - Generic IO pin PB2</pins1>
+        <pins2>T0 - Timer/Counter0 clock source. See the Timer description for further details.</pins2>
+       </desc7>
+       <desc8>
+       <pin>8</pin>
+  		<pindescount>1</pindescount>        <pins1>VCC - Power supply</pins1>
+       </desc8>
+</layout>
+</core>

@@ -1,0 +1,7 @@
+B£EDY :
+- double click na pinie z jedn¹ funkcj¹ nie powinno odblokowywac klawisza"SAVE config", bo de facto nic sie nie zmienia w konfiguracji - poprawic
+- export pluginu nie dziala - "cycle"
+TODO:
+- ustalanie pozycji chip'a na ekranie w zale¿noœci od wybranej wersji obudowy tak, by piny siê zmiesci³y
+
+

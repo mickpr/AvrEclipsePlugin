@@ -1,6 +1,35 @@
 <?xml version="1.0"?>
 <packages>
   <package>
+    <name>QNF20</name>
+    <body x="0" y="10" width="120" height="120" type="S"></body>
+    <pins count="20">
+	<pin nr="1"  x="-20" y="20" orient="L"></pin>
+	<pin nr="2"  x="-20" y="40" orient="L"></pin>
+	<pin nr="3"  x="-20" y="60" orient="L"></pin>
+	<pin nr="4"  x="-20" y="80" orient="L"></pin>
+	<pin nr="5"  x="-20" y="100" orient="L"></pin>
+
+	<pin nr="6"  x="15" y="130" orient="B"></pin>
+	<pin nr="7"  x="35" y="130" orient="B"></pin>
+	<pin nr="8"  x="55" y="130" orient="B"></pin>
+	<pin nr="9"  x="75" y="130" orient="B"></pin>
+	<pin nr="10" x="95" y="130" orient="B"></pin>
+
+	<pin nr="11"  x="120" y="100" orient="R"></pin>
+	<pin nr="12"  x="120" y="80" orient="R"></pin>
+	<pin nr="13"  x="120" y="60" orient="R"></pin>
+	<pin nr="14"  x="120" y="40" orient="R"></pin>
+	<pin nr="15"  x="120" y="20" orient="R"></pin>
+
+	<pin nr="16"  x="95" y="-10" orient="T"></pin>
+	<pin nr="17"  x="75" y="-10" orient="T"></pin>
+	<pin nr="18"  x="55" y="-10" orient="T"></pin>
+	<pin nr="19"  x="35" y="-10" orient="T"></pin>
+	<pin nr="20"  x="15" y="-10" orient="T"></pin>
+    </pins>
+  </package>
+  <package>
     <name>TQFP32</name>
     <body x="0" y="10" width="175" height="175" type="S"></body>
     <pins count="32">

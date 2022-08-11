@@ -224,16 +224,43 @@
   </Packages>
 </device>
 <device>
+  <Name>ATtiny25</Name>
+  <Type>ATtiny</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny25-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny25-SOIC8.xml"></Package>
+	<Package name="QNF20" file="ATtiny25-QNF20.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny45</Name>
+  <Type>ATtiny</Type>
+  <Flash>4096</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>256</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny45-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny45-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny85</Name>
   <Type>ATtiny</Type>
   <Flash>8192</Flash>
   <EEPROM>512</EEPROM>
-  <RAM>1024</RAM>
+  <RAM>512</RAM>
   <Freq>20MHz</Freq>
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
-	<Package name="DIP8" file="ATmega88P-DIP28.xml"></Package>
-	<Package name="SOIC8" file="ATtiny85-TQFP32.xml"></Package>
+	<Package name="DIP8" file="ATtiny85-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny85-SOIC8.xml"></Package>
   </Packages>
 </device>
 </dataroot>

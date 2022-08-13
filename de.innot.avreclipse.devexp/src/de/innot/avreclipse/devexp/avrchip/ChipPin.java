@@ -130,6 +130,7 @@ public final class ChipPin {
 			if (pin_location==PinLocation.LEFT) drawNormalBoldNormalString(gc, normal1, bold, normal2, x-10-sizeOfAll, y+1, pin_location, color); //(name,x-10-gc.stringExtent(name).x,y+1,true);  
 			if (pin_location==PinLocation.RIGHT) drawNormalBoldNormalString(gc, normal1, bold, normal2, x+30, y+1, pin_location, color); // gc.drawText(name,x+30,y+1,true);
 		} else {
+			// top and bottom pins are rotated
 			gc.setBackground(color);
 			gc.fillRectangle(x, y, 15,20);
 			gc.drawRectangle(x, y, 15,20);
@@ -141,6 +142,7 @@ public final class ChipPin {
 	        tr.rotate(-90);
 	        tr.translate(-x,-y);
 	        
+	        gc.setFont(SWTResourceManager.getFont("Courier New", 10, SWT.NORMAL));
 	        gc.setTransform(tr);
 			if (pin_location==PinLocation.BOTTOM) drawNormalBoldNormalString(gc, normal1, bold, normal2, x-30-sizeOfAll, y+1, pin_location, color); //gc.drawText(name,x-30-gc.stringExtent(name).x,y+1,true);
 			if (pin_location==PinLocation.TOP)  drawNormalBoldNormalString(gc, normal1, bold, normal2, x+10,y+1, pin_location,color); // gc.drawText(name,x+10,y+1,true);

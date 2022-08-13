@@ -234,7 +234,7 @@
   <Packages>
 	<Package name="DIP8" file="ATtiny25-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny25-SOIC8.xml"></Package>
-	<Package name="QNF20" file="ATtiny25-QNF20.xml"></Package>
+	<Package name="QFN20" file="ATtiny25-QFN20.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -248,6 +248,7 @@
   <Packages>
 	<Package name="DIP8" file="ATtiny45-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny45-SOIC8.xml"></Package>
+	<Package name="QFN20" file="ATtiny45-QFN20.xml"></Package>
   </Packages>
 </device>
 <device>

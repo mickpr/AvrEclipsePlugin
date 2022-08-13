@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 
+
 import org.eclipse.core.resources.IBuildConfiguration;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -22,6 +23,7 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -224,16 +226,16 @@ public class DeviceExplorerView extends ViewPart {
 			tabFolder.setSelection(0);
 			
 		    //-------------------------------------------------------------------------
-			TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
-		    
-		    compositeExtInt = new Composite(tabFolder,SWT.FILL);
-		    compositeExtInt.setLayout(new FillLayout());
-
-
-		    if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
-		    	tiExtInt.dispose();
-		    }
-		    
+//			TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
+//		    
+//		    compositeExtInt = new Composite(tabFolder,SWT.FILL);
+//		    compositeExtInt.setLayout(new FillLayout());
+//
+//
+//		    if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
+//		    	tiExtInt.dispose();
+//		    }
+//		    
 		    //tiExtint = new EXTINT(compositeExtInt,tree,SWT.FILL);
 		    
 		    //tiExtInt.setText("EXTINT");
@@ -249,24 +251,24 @@ public class DeviceExplorerView extends ViewPart {
 //				tabFolder.getTabList()[1].dispose();
 //			}
 			//TabItem tiTimer = new TabItem(tabFolder,SWT.FILL);
-		    compositeTimer = new Composite(tabFolder, SWT.FILL);
-		    compositeTimer.setLayout(new FillLayout()); 	    
-		    
-		    if ((t0 != null) && (!t0.isDisposed())) {
-		    	t0.dispose();
-		    }
-	    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
+//		    compositeTimer = new Composite(tabFolder, SWT.FILL);
+//		    compositeTimer.setLayout(new FillLayout()); 	    
+//		    
+//		    if ((t0 != null) && (!t0.isDisposed())) {
+//		    	t0.dispose();
+//		    }
+//	    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
 
-	    	tiTimer.setText("TIMERS/COUNTERS");
-			tiTimer.setControl(compositeTimer);
-			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
-		    tiTimer.setControl(compositeTimer);
+//	    	tiTimer.setText("TIMERS/COUNTERS");
+//			tiTimer.setControl(compositeTimer);
+//			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
+//		    tiTimer.setControl(compositeTimer);
 			
 			int sel=tabFolder.getSelectionIndex();
 
-			compositeTimer.redraw();
-			tabFolder.redraw();
-			tabFolder.setSelection(sel);
+//			compositeTimer.redraw();
+//			tabFolder.redraw();
+//			tabFolder.setSelection(sel);
 			
 			// end timers - redraw after selection
 			
@@ -573,7 +575,13 @@ public class DeviceExplorerView extends ViewPart {
 	    tiPackage.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/chip.gif"));
 
 	    canvas = new Canvas(tabFolder, SWT.FILL);
-	    canvas_offset_x = canvas_offset_y = 250;
+	    canvas_offset_x = canvas_offset_y = 250;  //granice rysowania body
+
+	    canvas_offset_x=canvas.getBounds().width/2 + 300;
+	    canvas_offset_y=canvas.getBounds().height/2 + 300;
+
+
+	    
 	    tiPackage.setControl(canvas);
 
 	    TabItem tiGPIO = new TabItem(tabFolder,SWT.FILL);
@@ -592,20 +600,20 @@ public class DeviceExplorerView extends ViewPart {
 //	    tiPackage.setControl(scroller);
 	    
 	    
-	    tiTimer = new TabItem(tabFolder,SWT.FILL);
-	    tiTimer.setText("TIMERS/COUNTERS");
-	    tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));
+//	    tiTimer = new TabItem(tabFolder,SWT.FILL);
+//	    tiTimer.setText("TIMERS/COUNTERS");
+//	    tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));
 	    //-------------------------------------------------------------------------	    
-	    TabItem tiUsart = new TabItem(tabFolder,SWT.FILL);
-	    
-	    compositeUsart = new Composite(tabFolder, SWT.FILL);
-	    compositeUsart.setLayout(new FillLayout()); 	    
-
-	    USART u0= new USART(compositeUsart,SWT.FILL);
-	    
-		tiUsart.setText("USART/UART");
-	    tiUsart.setControl(compositeUsart);
-	    tiUsart.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/rs232.png"));
+//	    TabItem tiUsart = new TabItem(tabFolder,SWT.FILL);
+//	    
+//	    compositeUsart = new Composite(tabFolder, SWT.FILL);
+//	    compositeUsart.setLayout(new FillLayout()); 	    
+//
+//	    USART u0= new USART(compositeUsart,SWT.FILL);
+//	    
+//		tiUsart.setText("USART/UART");
+//	    tiUsart.setControl(compositeUsart);
+//	    tiUsart.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/rs232.png"));
 	    
 	    //-------------------------------------------------------------------------
 	    //TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
@@ -804,7 +812,8 @@ public class DeviceExplorerView extends ViewPart {
 		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(listenerProject);
 	}
 	
-	//--------------------------------------------------------------------------------------------	
+	//--------------------------------------------------------------------------------------------
+	// draw package body and pins
 	private void PaintPackage(GC gc, int x, int y, String package_name) {
 		int xx=0;
 		int yy=0;
@@ -832,23 +841,8 @@ public class DeviceExplorerView extends ViewPart {
 			// todo: can be error ... if null
 			//chipPin.CreatePin(gc,chipPin.number, chipPin.name,chipPin.orient,x+chipPin.dx, y+chipPin.dy,chipPin.color);
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 			chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, chipPin.color);
-			
+
 			if (core.selectedChip.avrPinsConfig.get(xy-1).getSelectedPinResouce().startsWith("PORT"))
 				if (core.selectedChip.avrPinsConfig.get(xy-1).getSelectedPinIsInput())
 					chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, SWTResourceManager.getColor(0xE0,0xFF,0xE0));
@@ -857,23 +851,30 @@ public class DeviceExplorerView extends ViewPart {
 			xy++;
 		}
 		
-		// obliczanie polozenia srodkowego
+		// obliczanie polozenia srodkowego - do wydrukowania nazwy MCU
 		String text = core.selectedChip.Name; // nazwa mikrokontrolera
 		AffineTransform affinetransform = new AffineTransform();      // obliczenie dlugosci tekstu
 		FontRenderContext frc = new FontRenderContext(affinetransform,true,true);     
-		Font font = new Font("Tahoma", Font.PLAIN, 12);
+		Font font = new Font("Courier New", Font.PLAIN, 10);
 		
 		int textwidth = (int)(font.getStringBounds(text, frc).getWidth());
 		int textheight = (int)(font.getStringBounds(text, frc).getHeight());
+
+		
+		
 		
 		xx=canvas_offset_x+core.selectedChip.chipPackage.body.dx;
 		xx=xx+core.selectedChip.chipPackage.body.width/2;
 		yy=canvas_offset_y+core.selectedChip.chipPackage.body.dy;
 		yy=yy+core.selectedChip.chipPackage.body.height/2;
-		xx=xx-textwidth/2-12;
+		xx=xx-textwidth/2-12; 
+		//if (xx<0) xx=0;
 		yy=yy-textheight/2;
 		
-		gc.setFont(SWTResourceManager.getFont("Tahoma", 12, SWT.NORMAL));
+		//xx = gc.getClipping().width/2;
+		//if (yy<0) yy=0;
+  		  // rysuj nazwe procesora na œrodku
+   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
 		gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 		gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		gc.drawText(core.selectedChip.Name ,xx,yy);

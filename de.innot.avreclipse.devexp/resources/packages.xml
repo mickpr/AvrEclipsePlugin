@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <packages>
   <package>
-    <name>QNF20</name>
-    <body x="0" y="10" width="120" height="120" type="S"></body>
+    <name>QFN20</name>
+    <body x="0" y="10" width="125" height="125" type="S"></body>
     <pins count="20">
 	<pin nr="1"  x="-20" y="22" orient="L"></pin>
 	<pin nr="2"  x="-20" y="42" orient="L"></pin>
@@ -10,17 +10,17 @@
 	<pin nr="4"  x="-20" y="82" orient="L"></pin>
 	<pin nr="5"  x="-20" y="102" orient="L"></pin>
 
-	<pin nr="6"  x="15" y="130" orient="B"></pin>
-	<pin nr="7"  x="35" y="130" orient="B"></pin>
-	<pin nr="8"  x="55" y="130" orient="B"></pin>
-	<pin nr="9"  x="75" y="130" orient="B"></pin>
-	<pin nr="10" x="95" y="130" orient="B"></pin>
+	<pin nr="6"  x="15" y="135" orient="B"></pin>
+	<pin nr="7"  x="35" y="135" orient="B"></pin>
+	<pin nr="8"  x="55" y="135" orient="B"></pin>
+	<pin nr="9"  x="75" y="135" orient="B"></pin>
+	<pin nr="10" x="95" y="135" orient="B"></pin>
 
-	<pin nr="11"  x="120" y="102" orient="R"></pin>
-	<pin nr="12"  x="120" y="82" orient="R"></pin>
-	<pin nr="13"  x="120" y="62" orient="R"></pin>
-	<pin nr="14"  x="120" y="42" orient="R"></pin>
-	<pin nr="15"  x="120" y="22" orient="R"></pin>
+	<pin nr="11"  x="125" y="102" orient="R"></pin>
+	<pin nr="12"  x="125" y="82" orient="R"></pin>
+	<pin nr="13"  x="125" y="62" orient="R"></pin>
+	<pin nr="14"  x="125" y="42" orient="R"></pin>
+	<pin nr="15"  x="125" y="22" orient="R"></pin>
 
 	<pin nr="16"  x="95" y="-10" orient="T"></pin>
 	<pin nr="17"  x="75" y="-10" orient="T"></pin>
@@ -74,7 +74,7 @@
     <name>TQFP44</name>
     <body x="0" y="10" width="235" height="235" type="S"></body>
     <pins count="44">
-    	<pin nr="1"  x="-20" y="20"  orient="L"></pin>
+    <pin nr="1"  x="-20" y="20"  orient="L"></pin>
 	<pin nr="2"  x="-20" y="40"  orient="L"></pin>
 	<pin nr="3"  x="-20" y="60"  orient="L"></pin>
 	<pin nr="4"  x="-20" y="80"  orient="L"></pin>

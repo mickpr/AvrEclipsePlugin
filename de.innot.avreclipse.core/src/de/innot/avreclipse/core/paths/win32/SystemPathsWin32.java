@@ -153,6 +153,26 @@ public class SystemPathsWin32 {
 		}		
 		return new Path(null);
 	}	
+
+//	// mickpr(added by me)	
+//	private static IPath getAvrDudePath(String append) {
+//		// get system path
+//		String path1 = System.getenv("PATH");
+//		Pattern pattern = Pattern.compile("(^|\\G)([^\"]*?)(;|$)|\"(.*?)\"(;|$)");
+//		Matcher matcher = pattern.matcher(path1);
+//		while(matcher.find()){
+//		    String group = matcher.group(2); //przypadek bez cudzyslowow  ([^\"]*?)
+//		    if (group == null){
+//		        group = matcher.group(4);  //z cudzyslowami (.*?)
+//		    }
+//			File f = new File(group + "/" + "avrdude.exe");
+//			if(f.exists() && !f.isDirectory()) { 
+//			    return new Path(group);
+//			}
+//		}		
+//		return new Path(null);
+//	}	
+//	
 	
 //	private static IPath getWinAVRPath(String append) {
 //		IPath basepath = getWinAVRBasePath();

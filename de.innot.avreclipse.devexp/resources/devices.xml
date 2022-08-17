@@ -235,6 +235,7 @@
 	<Package name="DIP8" file="ATtiny25-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny25-SOIC8.xml"></Package>
 	<Package name="QFN20" file="ATtiny25-QFN20.xml"></Package>
+	<Package name="MLDF20" file="ATtiny25-MLF20.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -249,6 +250,7 @@
 	<Package name="DIP8" file="ATtiny45-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny45-SOIC8.xml"></Package>
 	<Package name="QFN20" file="ATtiny45-QFN20.xml"></Package>
+	<Package name="MLF20" file="ATtiny45-MLF20.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -262,6 +264,8 @@
   <Packages>
 	<Package name="DIP8" file="ATtiny85-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny85-SOIC8.xml"></Package>
+	<Package name="QFN20" file="ATtiny85-QFN20.xml"></Package>
+	<Package name="MLF20" file="ATtiny85-MLF20.xml"></Package>
   </Packages>
 </device>
 </dataroot>

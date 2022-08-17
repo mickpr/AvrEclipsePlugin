@@ -17,11 +17,12 @@ import org.w3c.dom.NodeList;
 
 import de.innot.avreclipse.devexp.utils.*;
 
+// klasa definiujaca obudowe ukladu. Obiekt tej klasy zawiera liste pinow
 public class ChipPackage {
 	public String Name;
-	public ArrayList<ChipPin> pins;
-	public ChipBody body;
-	private int pincount =0;
+	public ArrayList<ChipPin> pins;	// 
+	public ChipBody body;		// rodzaj obudowy, szerokosc, wysokosc, dx, dy...
+	private int pincount =0;	// liczba pinow
 	
 	public int getPinCount(){
 		return pincount;

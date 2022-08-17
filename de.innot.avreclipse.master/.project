@@ -3,6 +3,7 @@
 	<name>de.innot.avreclipse.master</name>
 	<comment></comment>
 	<projects>
+		<project>de.innot.avreclipse</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

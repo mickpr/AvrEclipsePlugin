@@ -580,8 +580,6 @@ public class DeviceExplorerView extends ViewPart {
 	    canvas_offset_x=canvas.getBounds().width/2 + 300;
 	    canvas_offset_y=canvas.getBounds().height/2 + 300;
 
-
-	    
 	    tiPackage.setControl(canvas);
 
 	    TabItem tiGPIO = new TabItem(tabFolder,SWT.FILL);

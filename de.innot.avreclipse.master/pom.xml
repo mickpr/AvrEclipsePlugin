@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 
 	<groupId>avreclipse</groupId>
 	<artifactId>master</artifactId>
@@ -27,9 +28,8 @@
 		<tycho-version>0.16.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<platform-version-name>helios</platform-version-name>
-		<orbit-site>http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/</orbit-site>
-		<!-- <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site> -->
-		<swtbot-site>http://download.eclipse.org/technology/swtbot/${platform-version-name}/dev-build/update-site</swtbot-site>
+		<orbit-site>https://download.eclipse.org/tools/orbit/downloads/drops/trash/R20110523182458/repository</orbit-site>
+		<swtbot-site>https://download.eclipse.org/technology/swtbot/helios/dev-build/update-site</swtbot-site>
 	</properties>
 
 	<build>
@@ -249,6 +249,12 @@
 			<organization>Private Developer</organization>
 			<timezone>+2</timezone>
 		</developer>
+		<developer>
+			<id>mickpr</id>
+			<name>Michal Przybyl</name>
+			<organization>Private Developer</organization>
+			<timezone>+1</timezone>
+		</developer>		
 	</developers>
 
 

@@ -5,14 +5,14 @@
 	<role name="PCINT8" resource="EXTINT" desc="Pin change interrupt 8" />	
 	<role name="/OC1A" resource="TIMER1" desc="Output compare matchA output(inverted): The pin can serve as an external output for the Timer/Counter1 output com-pareA. The pin has to be configured as an output to serve this function. The OC1A pin is also the output pin for the PWM mode timer function." />	
 	<role name="SDA" resource="I2C" desc="2-wire Serial Bus Data: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Data I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal, and the pin is driven by an open collector driver with slew rate limitation." />	
-	<role name="DI" resource="USART" desc="Data Input - Universal serial interface" />	
+	<role name="DI" resource="USI(1)" desc="Data Input - Universal serial interface" />	
 	<role name="MOSI" resource="SPI" desc="Data input pin for memory downloading or SPI." />	
     </pin>
     <pin name="2">
 	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1" />	
 	<role name="PCINT9" resource="EXTINT" desc="Pin change interrupt 9" />	
 	<role name="OC1A" resource="TIMER1" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output com-pareA. The pin has to be configured as an output to serve this function. The OC1A pin is also the output pin for the PWM mode timer function." />	
-	<role name="DO" resource="USART" desc="Data Output - Universal serial interface" />	
+	<role name="DO" resource="USI(1)" desc="Data Output - Universal serial interface" />	
 	<role name="MISO" resource="SPI" desc="Data output pin for memory uploading or SPI." />	
     </pin>
     <pin name="3">
@@ -20,7 +20,7 @@
 	<role name="PCINT10" resource="EXTINT" desc="Pin change interrupt 10" />	
 	<role name="/OC1B" resource="TIMER1" desc="Output compare matchB output (inverted). The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function. The OC1B pin is also the output pin for the PWM mode timer function." />	
 	<role name="SCL" resource="I2C" desc="2-wire Serial Interface Clock: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Clock I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal." />	
-	<role name="USCK" resource="UART" desc="3-wire mode Universal serial interface clock" />	
+	<role name="USCK" resource="USI(1)" desc="3-wire mode Universal serial interface clock" />	
 	<role name="SCK" resource="SPI" desc="Clock input pin for memory up/downloading or SPI." />	
     </pin>
     <pin name="4">
@@ -103,21 +103,21 @@
 	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2" />	
 	<role name="PCINT2" resource="EXTINT" desc="Pin change interrupt 2" />
 	<role name="SCL" resource="I2C" desc="2-wire Serial Interface Clock: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Clock I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal." />
-	<role name="USCK" resource="USART" desc="3-wire mode Universal serial interface clock." />
+	<role name="USCK" resource="USI(2)" desc="3-wire mode Universal serial interface clock." />
 	<role name="INT1" resource="EXTINT" desc="External Interrupt source 1 to the MCU." />
 	<role name="ADC2" resource="ADC" desc="Analog-to-Digital input ADC2." />	
     </pin>
     <pin name="19">
 	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1" />	
 	<role name="PCINT1" resource="EXTINT" desc="Pin change interrupt 1" />
-	<role name="DO" resource="USART" desc="Data Output - Universal serial interface." />
+	<role name="DO" resource="USI(2)" desc="Data Output - Universal serial interface." />
 	<role name="ADC1" resource="ADC" desc="Analog-to-Digital input ADC1." />	
     </pin>
     <pin name="20">
 	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0" />	
 	<role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0" />
 	<role name="SDA" resource="I2C" desc="2-wire Serial Bus Data: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Data I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal, and the pin is driven by an open collector driver with slew rate limitation." />
-	<role name="DI" resource="USART" desc="Data Input - Universal serial interface." />
+	<role name="DI" resource="USI(2)" desc="Data Input - Universal serial interface." />
 	<role name="ADC0" resource="ADC" desc="Analog-to-Digital input ADC0." />	
     </pin>
 </pins>

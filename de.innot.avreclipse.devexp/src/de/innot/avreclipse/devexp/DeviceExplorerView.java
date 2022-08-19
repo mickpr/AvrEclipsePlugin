@@ -4,9 +4,6 @@ import java.awt.Font;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -23,7 +20,6 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
-import org.eclipse.swt.custom.ScrolledComposite;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -35,7 +31,6 @@ import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Canvas;
@@ -46,7 +41,6 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.ScrollBar;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
@@ -56,7 +50,6 @@ import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.part.ViewPart;
@@ -68,7 +61,6 @@ import de.innot.avreclipse.devexp.avrchip.AvrPinConfig;
 import de.innot.avreclipse.devexp.avrchip.AvrResource;
 import de.innot.avreclipse.devexp.avrchip.ChipPin;
 import de.innot.avreclipse.devexp.pinconfig.*;
-import de.innot.avreclipse.devexp.timer.*;
 import de.innot.avreclipse.devexp.utils.PinLocation;
 
 
@@ -86,15 +78,15 @@ public class DeviceExplorerView extends ViewPart {
 	private Composite compositeTree;
 	private Composite composResource; 
 	private Composite myViewParent;
-	private Composite compositeTimer;
-	private TIMER t0;
+//	private Composite compositeTimer;
+//	private TIMER t0;
 	
 //	private ScrolledComposite scroller; 
-	private Composite compositeUsart;
-	private Composite compositeExtInt;
+//	private Composite compositeUsart;
+//	private Composite compositeExtInt;
 //	private Composite compositeAcomp;
 //	private Composite compositeAdc;
-	private Composite compositeCode;
+//	private Composite compositeCode;
 
 	
 	private Combo combo_chipname; 
@@ -107,7 +99,7 @@ public class DeviceExplorerView extends ViewPart {
 	private Combo combo_freq;
 
 	private TabFolder tabFolder;
-	private TabItem tiTimer; 
+//	private TabItem tiTimer; 
 	
 	
 	

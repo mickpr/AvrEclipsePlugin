@@ -83,8 +83,6 @@
 			<supportedProperties>
 				<property id="org.eclipse.cdt.build.core.buildType">
 					<value
-						id="org.eclipse.cdt.build.core.buildType.debug" />
-					<value
 						id="org.eclipse.cdt.build.core.buildType.release" />
 				</property>
 			</supportedProperties>
@@ -137,84 +135,6 @@
 				browseType="directory"
 				command="-Wa,-I" />
 
-			<optionCategory id="de.innot.avreclipse.assembler.category.debug" 
-				name="Debugging" />
-			<option id="de.innot.avreclipse.assembler.option.debug.level"
-				name="Generate Debugging Info" 
-				category="de.innot.avreclipse.assembler.category.debug"
-				valueType="enumerated" >
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.assembler.option.debug.level.none"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.release" />
-				</enablement>
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.assembler.option.debug.level.g2"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.debug" />
-				</enablement>
-			    <enumeratedOptionValue
-			    	  command=""
-			          id="de.innot.avreclipse.assembler.option.debug.level.none"
-			          name="No debugging info" />
-			    <enumeratedOptionValue
-			          command="-g1"
-			          id="de.innot.avreclipse.assembler.option.debug.level.g1"
-			          name="Minimal debugging info (-g1)" />
-			    <enumeratedOptionValue
-			          command="-g2"
-			          id="de.innot.avreclipse.assembler.option.debug.level.g2"
-			          isDefault="true"
-			          name="Standard debugging info (-g2)" />
-			    <enumeratedOptionValue
-			          command="-g3"
-			          id="de.innot.avreclipse.assembler.option.debug.level.g3"
-			          name="Extra debugging info (-g3)" />
-			</option>
-			<option id="de.innot.avreclipse.assembler.option.debug.type"
-				name="Debug Info Format" 
-				category="de.innot.avreclipse.assembler.category.debug"
-				valueType="enumerated" >
-			    <enumeratedOptionValue
-			    	  isDefault="true"
-			    	  command="-gstabs"
-			          id="de.innot.avreclipse.assembler.option.debug.level.stabs"
-			          name="stabs (Fully supported format)" />
-			    <enumeratedOptionValue
-			          command="-gdwarf-2"
-			          id="de.innot.avreclipse.assembler.option.debug.level.dwarf-2"
-			          name="dwarf-2 (Experimental)" />
-			    <enumeratedOptionValue
-			          command="-ggdb"
-			          id="de.innot.avreclipse.assembler.option.debug.level.gdb"
-			          name="gdb (for most gdb based debuggers)" />
-			    <enumeratedOptionValue
-			    	  command="-gstabs+"
-			          id="de.innot.avreclipse.assembler.option.debug.level.stabsplus"
-			          name="stabs+ (stabs + gdb extensions)" />
-			    <enumeratedOptionValue
-			          command=""
-			          id="de.innot.avreclipse.assembler.option.debug.level.default"
-			          name="Operating System Default" />
-				<enablement 
-					type="UI_ENABLEMENT|CMD_USAGE" >
-					<not>
-						<checkOption
-							optionId="de.innot.avreclipse.assembler.option.debug.level"
-					  		value="de.innot.avreclipse.assembler.option.debug.level.none" />
-					</not>
-				</enablement>
-			</option>
-			
-				
 			<option id="de.innot.avreclipse.asm.option.targetmcu"
 				name="MCU Type"
 				valueType="string"
@@ -260,8 +180,6 @@
 			
 			<supportedProperties>
 				<property id="org.eclipse.cdt.build.core.buildType">
-					<value
-						id="org.eclipse.cdt.build.core.buildType.debug" />
 					<value
 						id="org.eclipse.cdt.build.core.buildType.release" />
 				</property>
@@ -320,79 +238,6 @@
 				valueType="boolean"
 				defaultValue="false"
 				command="-Werror" />
-				
-			<optionCategory id="de.innot.avreclipse.compiler.category.debug" 
-				name="Debugging" />
-			<option id="de.innot.avreclipse.compiler.option.debug.level"
-				name="Generate Debugging Info" 
-				category="de.innot.avreclipse.compiler.category.debug"
-				valueType="enumerated" >
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.compiler.option.debug.level.none"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.release" />
-				</enablement>
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.compiler.option.debug.level.g2"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.debug" />
-				</enablement>
-			    <enumeratedOptionValue
-			    	  command=""
-			          id="de.innot.avreclipse.compiler.option.debug.level.none"
-			          name="No debugging info" />
-			    <enumeratedOptionValue
-			          command="-g1"
-			          id="de.innot.avreclipse.compiler.option.debug.level.g1"
-			          name="Minimal debugging info (-g1)" />
-			    <enumeratedOptionValue
-			          command="-g2"
-			          id="de.innot.avreclipse.compiler.option.debug.level.g2"
-			          isDefault="true"
-			          name="Standard debugging info (-g2)" />
-			    <enumeratedOptionValue
-			          command="-g3"
-			          id="de.innot.avreclipse.compiler.option.debug.level.g3"
-			          name="Extra debugging info (-g3)" />
-			</option>
-			<option id="de.innot.avreclipse.compiler.option.debug.type"
-				name="Debug Info Format" 
-				category="de.innot.avreclipse.compiler.category.debug"
-				valueType="enumerated" >
-			    <enumeratedOptionValue
-			    	  isDefault="true"
-			    	  command="-gstabs"
-			          id="de.innot.avreclipse.compiler.option.debug.level.stabs"
-			          name="stabs (avr-gdb / Insight)" />
-			    <enumeratedOptionValue
-			          command="-gdwarf-2"
-			          id="de.innot.avreclipse.compiler.option.debug.level.dwarf-2"
-			          name="dwarf-2 (AVR Studio 4.11+ Debugger)" />
-			    <enumeratedOptionValue
-			    	  command="-gstabs+"
-			          id="de.innot.avreclipse.compiler.option.debug.level.stabsplus"
-			          name="stabs+ (stabs + gdb extensions)" />
-			    <enumeratedOptionValue
-			          command=""
-			          id="de.innot.avreclipse.compiler.option.debug.level.default"
-			          name="Operating System Default" />
-				<enablement 
-					type="UI_ENABLEMENT|CMD_USAGE" >
-					<not>
-						<checkOption
-							optionId="de.innot.avreclipse.compiler.option.debug.level"
-					  		value="de.innot.avreclipse.compiler.option.debug.level.none" />
-					</not>
-				</enablement>
-			</option>
 			
 			<optionCategory
 				id="de.innot.avreclipse.compiler.category.optimization"
@@ -425,15 +270,6 @@
 					<checkBuildProperty
 						property="org.eclipse.cdt.build.core.buildType"
 						value="org.eclipse.cdt.build.core.buildType.release" />
-				</enablement>
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value" 
-					value="de.innot.avreclipse.compiler.optimize.none"
-					extensionAdjustment="false">
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.debug" />
 				</enablement>
 			</option>
 			<option id="de.innot.avreclipse.compiler.option.optimize.packstruct"
@@ -563,8 +399,7 @@
 		  
 	        <supportedProperties>
 	            <property id="org.eclipse.cdt.build.core.buildType">
-		            <value id="org.eclipse.cdt.build.core.buildType.debug"/>
-	    	        <value id="org.eclipse.cdt.build.core.buildType.release"/>
+	    	            <value id="org.eclipse.cdt.build.core.buildType.release"/>
 	            </property>
 	        </supportedProperties>
 	         
@@ -624,96 +459,6 @@
 				defaultValue="false"
 				command="-Werror" />
 		
-			<optionCategory id="de.innot.avreclipse.cppcompiler.category.debug" 
-				name="Debugging" />
-			<option id="de.innot.avreclipse.cppcompiler.option.debug.level"
-				name="Generate Debugging Info" 
-				category="de.innot.avreclipse.cppcompiler.category.debug"
-				valueType="enumerated" >
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.cppcompiler.option.debug.level.none"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.release" />
-				</enablement>
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value"
-					value="de.innot.avreclipse.cppcompiler.option.debug.level.g2"
-					extensionAdjustment="false" >
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.debug" />
-				</enablement>
-			    <enumeratedOptionValue
-			    	  command=""
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.none"
-			          name="No debugging info" />
-			    <enumeratedOptionValue
-			          command="-g1"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.g1"
-			          name="Minimal debugging info (-g1)" />
-			    <enumeratedOptionValue
-			          command="-g2"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.g2"
-			          isDefault="true"
-			          name="Standard debugging info (-g2)" />
-			    <enumeratedOptionValue
-			          command="-g3"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.g3"
-			          name="Extra debugging info (-g3)" />
-			</option>
-			<option id="de.innot.avreclipse.cppcompiler.option.debug.type"
-				name="Debug Info Format" 
-				category="de.innot.avreclipse.cppcompiler.category.debug"
-				valueType="enumerated" >
-			    <enumeratedOptionValue
-			    	  isDefault="true"
-			    	  command="-gstabs"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.stabs"
-			          name="stabs (avr-gdb / Insight)" />
-			    <enumeratedOptionValue
-			          command="-gdwarf-2"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.dwarf-2"
-			          name="dwarf-2 (AVR Studio 4.11+ Debugger)" />
-			    <enumeratedOptionValue
-			    	  command="-gstabs+"
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.stabsplus"
-			          name="stabs+ (stabs + gdb extensions)" />
-			    <enumeratedOptionValue
-			          command=""
-			          id="de.innot.avreclipse.cppcompiler.option.debug.level.default"
-			          name="Operating System Default" />
-				<enablement 
-					type="UI_ENABLEMENT|CMD_USAGE" >
-					<not>
-						<checkOption
-							optionId="de.innot.avreclipse.cppcompiler.option.debug.level"
-					  		value="de.innot.avreclipse.cppcompiler.option.debug.level.none" />
-					</not>
-				</enablement>
-			</option>
-			<option id="de.innot.avreclipse.cppcompiler.option.debug.other"
-				name="Other Debug Flags"
-				category="de.innot.avreclipse.cppcompiler.category.debug"
-				valueType="string">
-			</option>
-			<option id="de.innot.avreclipse.cppcompiler.option.debug.prof"
-				name="Generate prof information (-p)"
-				category="de.innot.avreclipse.cppcompiler.category.debug"
-				command="-p"
-				defaultValue="false"
-				valueType="boolean" />
-			<option id="de.innot.avreclipse.cppcompiler.option.debug.gprof"
-				name="Generate gprof information (-pg)"
-				category="de.innot.avreclipse.cppcompiler.category.debug"
-				command="-pg"
-				defaultValue="false"
-				valueType="boolean" />
-		
 			<optionCategory
 				id="de.innot.avreclipse.cppcompiler.category.optimization"
 				name="Optimization" />
@@ -745,15 +490,6 @@
 					<checkBuildProperty
 						property="org.eclipse.cdt.build.core.buildType"
 						value="org.eclipse.cdt.build.core.buildType.release" />
-				</enablement>
-				<enablement 
-					type="CONTAINER_ATTRIBUTE"
-					attribute="value" 
-					value="de.innot.avreclipse.cppcompiler.optimize.none"
-					extensionAdjustment="false">
-					<checkBuildProperty
-						property="org.eclipse.cdt.build.core.buildType"
-						value="org.eclipse.cdt.build.core.buildType.debug" />
 				</enablement>
 			</option>
 			<option id="de.innot.avreclipse.cppcompiler.option.optimize.packstruct"
@@ -1330,7 +1066,6 @@
 
 			<supportedProperties>
 				<property id="de.innot.avreclipse.buildType">
-					<value id="de.innot.avreclipse.buildType.debug" />
 					<value id="de.innot.avreclipse.buildType.release" />
 				</property>
 			</supportedProperties>
@@ -1708,105 +1443,6 @@
 		<projectType id="de.innot.avreclipse.project.winavr.elf_2.1.0"
 			buildArtefactType="de.innot.avreclipse.buildArtefactType.app">
 
-			<configuration id="de.innot.avreclipse.configuration.app.debug"
-				name="Debug"
-				parent="de.innot.avreclipse.config.winavr.base"
-				buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug" >
-				<toolChain id="de.innot.avreclipse.toolchain.winavr.app.debug"
-					superClass="de.innot.avreclipse.toolchain.winavr.base" 
-					secondaryOutputs="de.innot.avreclipse.tool.objdump.output;de.innot.avreclipse.tool.objcopy.flash.output;de.innot.avreclipse.tool.objcopy.eeprom.output;de.innot.avreclipse.tool.size.output;de.innot.avreclipse.tool.avrdude.output" > 
-
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash.app.debug"
-						defaultValue="false"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash" /> 
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom.app.debug"
-						defaultValue="false"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom" /> 
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.objdump.app.debug"
-						defaultValue="true"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.objdump" /> 
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.size.app.debug"
-						defaultValue="true"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.size" /> 
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.avrdude.app.debug"
-						defaultValue="false"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.avrdude" /> 
-
-					<targetPlatform
-						id="de.innot.avreclipse.targetplatform.winavr.app.debug"
-						superClass="de.innot.avreclipse.targetplatform.avr" />
-					<builder
-						id="de.innot.avreclipse.target.builder.winavr.app.debug"
-						superClass="de.innot.avreclipse.target.builder.winavr.base" />
-
-					<tool
-						id="de.innot.avreclipse.tool.assembler.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.assembler.winavr.base" />
-					<tool
-						id="de.innot.avreclipse.tool.compiler.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.compiler.winavr.base" />
-					<tool
-						id="de.innot.avreclipse.tool.cppcompiler.app.debug"
-						superClass="de.innot.avreclipse.tool.cppcompiler.base" />
-					<tool 
-						id="de.innot.avreclipse.tool.linker.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.linker.winavr.base" />
-					<tool 
-						id="de.innot.avreclipse.tool.cpplinker.app.debug"
-						superClass="de.innot.avreclipse.tool.cpplinker.base" />
-					<tool 
-						id="de.innot.avreclipse.tool.objdump.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.objdump.winavr" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.objdump.app.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.app.debug"
-								value="true" />
-						</enablement>
-					</tool>
-					<tool
-						id="de.innot.avreclipse.tool.objcopy.flash.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.objcopy.flash.winavr" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash.app.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.app.debug"
-								value="true" />
-						</enablement>
-					</tool>
-					<tool
-						id="de.innot.avreclipse.tool.objcopy.eeprom.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.objcopy.eeprom.winavr" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom.app.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.app.debug"
-								value="true" />
-						</enablement>
-					</tool>
-					<tool 
-						id="de.innot.avreclipse.tool.size.winavr.app.debug"
-						superClass="de.innot.avreclipse.tool.size.winavr" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.size.app.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.app.debug"
-								value="true" />
-						</enablement>
-					</tool>
-					<tool 
-						id="de.innot.avreclipse.tool.avrdude.app.debug"
-						superClass="de.innot.avreclipse.tool.avrdude" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.avrdude.app.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.app.debug"
-								value="true" />
-						</enablement>
-					</tool>
-				</toolChain>
-			</configuration>
-
 			<configuration id="de.innot.avreclipse.configuration.app.release" 
 				name="Release"
 				parent="de.innot.avreclipse.config.winavr.base"
@@ -1915,69 +1551,6 @@
 		<projectType id="de.innot.avreclipse.project.winavr.staticlib"
 			buildArtefactType="de.innot.avreclipse.buildArtefactType.staticLib">
 			
-			<configuration id="de.innot.avreclipse.configuration.lib.debug"
-				name="Debug"
-				parent="de.innot.avreclipse.config.winavr.base"
-				artifactExtension="a" 
-				cleanCommand="rm -f"
-				buildProperties="org.eclipse.cdt.build.core.buildType=org.eclipse.cdt.build.core.buildType.debug">
-				<toolChain id="de.innot.avreclipse.toolchain.winavr.lib.debug"
-					superClass="de.innot.avreclipse.toolchain.winavr.base" 
-					secondaryOutputs="de.innot.avreclipse.tool.objdump.output;de.innot.avreclipse.tool.size.output" > 
-
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.objdump.lib.debug"
-						defaultValue="true"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.objdump" /> 
-					<option id="de.innot.avreclipse.toolchain.options.toolchain.size.lib.debug"
-						defaultValue="true"
-						superClass="de.innot.avreclipse.toolchain.options.toolchain.size" /> 
-
-					<targetPlatform
-						id="de.innot.avreclipse.targetplatform.winavr.lib.debug"
-						superClass="de.innot.avreclipse.targetplatform.avr" />
-					<builder
-						id="de.innot.avreclipse.target.builder.winavr.lib.debug"
-						superClass="de.innot.avreclipse.target.builder.winavr.base" />
-
-					<tool
-						id="de.innot.avreclipse.tool.assembler.winavr.lib.debug"
-						superClass="de.innot.avreclipse.tool.assembler.winavr.base" />
-					<tool
-						id="de.innot.avreclipse.tool.compiler.winavr.lib.debug"
-						superClass="de.innot.avreclipse.tool.compiler.winavr.base" />
-					<tool
-						id="de.innot.avreclipse.tool.cppcompiler.lib.debug"
-						superClass="de.innot.avreclipse.tool.cppcompiler.base" />
-					<tool
-						id="de.innot.avreclipse.tool.archiver.winavr.lib.debug"
-						superClass="de.innot.avreclipse.tool.archiver.winavr.base" />
-					<tool 
-						id="de.innot.avreclipse.tool.objdump.winavr.lib.debug"
-						superClass="de.innot.avreclipse.tool.objdump.winavr" >
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.objdump.lib.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.lib.debug"
-								value="true" />
-						</enablement>
-					</tool>
-					<tool 
-						id="de.innot.avreclipse.tool.size.winavr.lib.debug"
-						superClass="de.innot.avreclipse.tool.size.winavr" >
-						<option id="de.innot.avreclipse.size.option.format.lib.debug"
-							superClass="de.innot.avreclipse.size.option.format"
-							value="de.innot.avreclipse.size.option.format.berkeley" />
-						<enablement type="ALL">
-							<checkOption
-								optionId="de.innot.avreclipse.toolchain.options.toolchain.size.lib.debug"
-								holderId="de.innot.avreclipse.toolchain.winavr.lib.debug"
-								value="true" />
-						</enablement>
-
-					</tool>
-						
-				</toolChain>
-			</configuration>
 
 			<configuration id="de.innot.avreclipse.configuration.lib.release" 
 				name="Release"

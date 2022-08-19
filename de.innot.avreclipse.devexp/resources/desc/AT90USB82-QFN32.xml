@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<pins>
+    <pin name="1">
+	<role name="XTAL1" resource="CORE" desc="Pin for connecting external clock source (crystal, resonator..) for MCU (input)" />
+    </pin>
+    <pin name="2">        
+	<role name="XTAL2" resource="CORE" desc="XTAL2 - Pin for connecting external clock source (crystal, resonator..) for MCU (output)" />
+	<role name="PC0" resource="PORTC" desc="Generic IO pin PC0" />	
+    </pin>
+    <pin name="3">        
+	<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+    <pin name="4">        
+	<role name="VCC" resource="CORE" desc="Power supply" />
+    </pin>
+    <pin name="5">
+        <role name="PC2" resource="PORTC" desc="Generic IO pin PC2" />
+	<role name="PCINT11" resource="EXTINT" desc="Pin change interrupt 11" />
+    </pin>
+    <pin name="6">        
+	<role name="PD0" resource="PORTD" desc="Generic IO pin PD0" />
+	<role name="INT0" resource="CORE" desc="External Interrupt source 0 to the MCU." />
+	<role name="OC0B" resource="TIMER0" desc="Output compare matchB output. The pin can serve as an external output for the Timer/Counter0 output compareB. The OC0B pin is also the output pin for the PWM mode timer function." />
+    </pin>
+    <pin name="7">        
+	<role name="PD1" resource="PORTD" desc="Generic IO pin PD1." />
+	<role name="INT1" resource="EXTINT" desc="External Interrupt source 1 to the MCU." />
+	<role name="AIN0" resource="AIN0" desc="Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator." />
+    </pin>
+    <pin name="8">        
+	<role name="PD2" resource="PORTD" desc="Generic IO pin PD2." />
+	<role name="INT2" resource="EXTINT" desc="External Interrupt source 2 to the MCU." />
+	<role name="AIN1" resource="PORTD" desc="AIN1, Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator." />
+	<role name="RXD1" resource="USART" desc="Receive Data (data input pin for the UART). When the UART receiver is enabled, this pin is configured as an input. When the UART forces this pin to be an input, a logical state on PORT register will turn on the internal pull-up. Channel 1" />
+    </pin>
+    <pin name="9">        
+	<role name="PD3" resource="PORTD" desc="Generic IO pin PD3." />
+	<role name="INT3" resource="EXTINT" desc="External Interrupt source 3 to the MCU." />
+	<role name="TXD1" resource="USART" desc="Transmit Data (data output pin for the UART). When the UART transmitter is enabled, this pin is configured as an output. Channel 1" />
+    </pin>
+    <pin name="10">        
+	<role name="PD4" resource="PORTD" desc="Generic IO pin PD4." />
+	<role name="INT5" resource="EXTINT" desc="External Interrupt source 5 to the MCU." />
+    </pin>
+    <pin name="11">        
+	<role name="PD5" resource="PORTD" desc="Generic IO pin PD5." />
+	<role name="PCINT12" resource="EXTINT" desc="Pin change interrupt 12." />
+	<role name="XCK" resource="USART" desc="USART external clock." />
+    </pin>
+    <pin name="12">        
+	<role name="PD6" resource="PORTD" desc="Generic IO pin PD6." />
+	<role name="INT6" resource="EXTINT" desc="External Interrupt source 6 to the MCU." />
+	<role name="/RTS" resource="USART" desc="USART1 Receiver Flow Control." />
+    </pin>
+    <pin name="13">        
+	<role name="PD7" resource="PORTD" desc="Generic IO pin PD7." />
+	<role name="INT7" resource="EXTINT" desc="External Interrupt source 7 to the MCU." />
+	<role name="T0" resource="TIMER0" desc="Timer/Counter0 clock source." />
+	<role name="/CTS" resource="USART" desc="USART1 Transmitter Flow Control." />
+	<role name="/HWB" resource="CORE" desc="Hardware Boot." />
+    </pin>
+    <pin name="14">        
+	<role name="PB0" resource="PORTB" desc="Generic IO pin PB0." />
+	<role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0." />
+	<role name="/SS" resource="SPI" desc="Slave Select pin for using with SPI." />
+    </pin>
+    <pin name="15">        
+	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1." />
+	<role name="PCINT1" resource="EXTINT" desc="Pin change interrupt 1." />
+	<role name="SCK" resource="SPI" desc="Clock input pin for memory up/downloading or SPI." />
+    </pin>
+    <pin name="16">        
+	<role name="PB2" resource="PORTB" desc="Generic IO pin PB2." />
+	<role name="PCINT2" resource="EXTINT" desc="Pin change interrupt 2." />
+	<role name="MOSI" resource="SPI" desc="Data input pin for memory downloading or SPI." />
+	<role name="PDI" resource="CORE" desc="SPI Serial Programming Data input. During serial program downloading, this pin is used as data input line." />
+    </pin>
+    <pin name="17">
+	<role name="PB3" resource="PORTB" desc="Generic IO pin PB3." />
+	<role name="PCINT3" resource="EXTINT" desc="Pin change interrupt 3." />
+	<role name="MISO" resource="SPI" desc="Master input/Slave Output pin for SPI or programming" />
+	<role name="PDO" resource="CORE" desc="SPI Serial Programming Data output. During Serial Program Downloading, this pin is used as data output line." />
+    </pin>
+    <pin name="18">
+	<role name="PB4" resource="PORTB" desc="Generic IO pin PB4." />
+	<role name="PCINT4" resource="EXTINT" desc="Pin change interrupt 4." />
+	<role name="T1" resource="TIMER1" desc="Timer/Counter1 clock source." />
+    </pin>
+    <pin name="19">
+	<role name="PB5" resource="PORTB" desc="Generic IO pin PB5." />
+	<role name="PCINT5" resource="EXTINT" desc="Pin change interrupt 5." />
+    </pin>
+    <pin name="20">
+	<role name="PB6" resource="PORTB" desc="Generic IO pin PB6." />
+	<role name="PCINT6" resource="EXTINT" desc="Pin change interrupt 6." />
+    </pin>
+    <pin name="21">
+	<role name="PB7" resource="PORTB" desc="Generic IO pin PB7." />
+	<role name="PCINT7" resource="EXTINT" desc="Pin change interrupt 7." />
+	<role name="OC0A" resource="TIMER0" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output compareA. The OC0A pin is also the output pin for the PWM mode timer function." />
+	<role name="OC1C" resource="TIMER1" desc="Output compare matchC output. The pin can serve as an external output for the Timer/Counter1 output compareB. The OC1C pin is also the output pin for the PWM mode timer function." />
+    </pin>
+    <pin name="22">
+	<role name="PC7" resource="PORTC" desc="Generic IO pin PC7." />
+	<role name="INT4" resource="EXTINT" desc="External Interrupt source 4 to the MCU." />
+	<role name="ICP1" resource="TIMER1" desc="Timer/Counter1 Input Capture pin." />
+	<role name="CLKO" resource="CORE" desc="Clock output" />
+    </pin>
+    <pin name="23">
+	<role name="PC6" resource="PORTC" desc="Generic IO pin PC6." />
+	<role name="OC1A" resource="TIMER1" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output compareA. The OC1A pin is also the output pin for the PWM mode timer function." />
+	<role name="PCINT8" resource="EXTINT" desc="Pin change interrupt 8." />
+    </pin>
+    <pin name="24">
+	<role name="/RESET" resource="CORE" desc="Reset pin for MCU, active at low." />
+	<role name="PC1" resource="PORTC" desc="Generic IO pin PC1." />
+	<role name="dW" resource="CORE" desc="debugWIRE On-chip debug system uses a One-wire, bi-directional interface to control the program flow, execute AVR instructions in the CPU and to program the different non-volatile memories." />
+    </pin>
+    <pin name="25">
+	<role name="PC5" resource="PORTC" desc="Generic IO pin PC5." />
+	<role name="PCINT9" resource="EXTINT" desc="Pin change interrupt 9." />
+	<role name="OC1B" resource="TIMER1" desc="Output compare matchB output. The pin can serve as an external output for the Timer/Counter1 output compareB. The OC1B pin is also the output pin for the PWM mode timer function." />
+    </pin>
+    <pin name="26">
+	<role name="PC4" resource="PORTC" desc="Generic IO pin PC4." />
+	<role name="PCINT10" resource="CORE" desc="Pin change interrupt 10." />
+    </pin>
+    <pin name="27">
+	<role name="UCAP" resource="CORE" desc="USB Pads Internal Regulator Output supply voltage. Should be connected to an external capacitor." />
+    </pin>
+    <pin name="28">
+	<role name="UGND" resource="CORE" desc="USB Ground." />
+    </pin>
+    <pin name="29">
+	<role name="D+/SCK" resource="CORE" desc="USB Full Speed Positive Data Upstream port / Clock port for PS/2." />
+    </pin>
+    <pin name="30">
+	<role name="D-/SDATA" resource="CORE" desc="USB Full Speed Negative Data Upstream port / Data port for PS/2" />
+    </pin>
+    <pin name="31">
+	<role name="UVCC" resource="CORE" desc="USB Pads Internal Regulator Input supply voltage." />
+    </pin>
+    <pin name="32">
+	<role name="AVCC" resource="CORE" desc="Power supply for AD converter." />
+    </pin>
+</pins>       	       	       	       	       	       	       	

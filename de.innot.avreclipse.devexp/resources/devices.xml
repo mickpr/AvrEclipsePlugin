@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Atmel8.xsd" generated="2014-11-11T17:30:37">
 <device>
+  <Name>AT90USB82</Name>
+  <Type>ATMega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>512</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="QFN32" file="AT90USB82-QFN32.xml"></Package>
+	<Package name="TQFP32" file="AT90USB82-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>AT90USB162</Name>
+  <Type>ATMega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>512</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="QFN32" file="AT90USB162-QFN32.xml"></Package>
+	<Package name="TQFP32" file="AT90USB162-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega8</Name>
   <Type>ATmega</Type>
   <Flash>8192</Flash>

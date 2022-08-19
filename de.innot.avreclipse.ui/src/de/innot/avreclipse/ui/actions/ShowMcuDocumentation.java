@@ -75,7 +75,7 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 	private IProject			fProject;
 
 	private final static String	TITLE_SHOW_DOCUMENTATION	= "Show documentation";	
-	private final static String	MSG_NOPROJECT				= "No AVR project selected";
+	private final static String	MSG_NOPROJECT			= "No AVR project selected";
 	
 	/**
 	 * Constructor for this Action.
@@ -169,17 +169,20 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 				//create desired link for documentation web page for given MCU
 				url_string = new String();
 				url_string= "https://www.microchip.com/wwwproducts/en/";
-				url_string=url_string+ selectedChipName.toUpperCase(); // eg. https://www.microchip.com/wwwproducts/en/ATMEGA88 
+				url_string=url_string+ selectedChipName.toUpperCase(); // eg. https://www.microchip.com/wwwproducts/en/ATMEGA88
+				//System.out.println(url_string);
 				boolean webPageExist=false;
 				
 				//check if filepage exists
 			    try {
 			      HttpURLConnection.setFollowRedirects(false);
 			      // note : you may also need
-			      //        HttpURLConnection.setInstanceFollowRedirects(false)
+			      //  HttpURLConnection.setInstanceFollowRedirects(false)
 			      HttpURLConnection con = (HttpURLConnection) new URL(url_string).openConnection();
+			      
 			      con.setRequestMethod("HEAD");
-			      webPageExist= (con.getResponseCode() == HttpURLConnection.HTTP_OK);
+			      webPageExist= (con.getResponseCode() <= 400);  // od 400 zaczynaja sie kody bledow
+			      
 			    }
 			    catch (Exception eee) {
 			       eee.printStackTrace();

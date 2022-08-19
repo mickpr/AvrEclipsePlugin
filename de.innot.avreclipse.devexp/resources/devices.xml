@@ -294,4 +294,45 @@
 	<Package name="MLF20" file="ATtiny85-MLF20.xml"></Package>
   </Packages>
 </device>
+<device>
+  <Name>ATtiny261</Name>
+  <Type>ATtiny</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+	<Package name="SOIC20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny461</Name>
+  <Type>ATtiny</Type>
+  <Flash>4096</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>256</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+	<Package name="SOIC20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny861</Name>
+  <Type>ATtiny</Type>
+  <Flash>8192</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>512</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+	<Package name="SOIC20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+  </Packages>
+</device>
+
+
 </dataroot>

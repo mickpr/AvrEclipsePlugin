@@ -108,7 +108,7 @@
 	<pin nr="29"  x="70" y="-10" orient="T"></pin>
 	<pin nr="30"  x="50" y="-10" orient="T"></pin>
 	<pin nr="31"  x="30" y="-10" orient="T"></pin>
-    <pin nr="32"  x="10" y="-10" orient="T"></pin>
+        <pin nr="32"  x="10" y="-10" orient="T"></pin>
     </pins>
   </package>
   <package>

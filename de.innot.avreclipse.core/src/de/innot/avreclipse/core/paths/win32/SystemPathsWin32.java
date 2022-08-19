@@ -113,7 +113,7 @@ public class SystemPathsWin32 {
 			    return new Path(group);
 			}
 		}		
-		return new Path(null);
+		return new Path("");
 	}
 
 	// mickpr	
@@ -132,7 +132,7 @@ public class SystemPathsWin32 {
 			    return new Path(group);
 			}
 		}		
-		return new Path(null);
+		return new Path("");
 	}
 
 	// mickpr	
@@ -151,7 +151,7 @@ public class SystemPathsWin32 {
 			    return new Path(group);
 			}
 		}		
-		return new Path(null);
+		return new Path("");
 	}	
 
 //	// mickpr(added by me)	

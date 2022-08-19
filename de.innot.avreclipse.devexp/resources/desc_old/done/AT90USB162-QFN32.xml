@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<core>
+      <chip>AT90USB162</chip>
+      <packagecount>1</packagecount>
+      <package1>TQFP32</package1>
+      <file>tqfp32.png</file>
+      <pincount>32</pincount>
+<resourcecount>18</resourcecount>
+<resource1>
+  <resourcename>FLASH</resourcename>
+  <resourcedata>16</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource1>
+<resource2>
+  <resourcename>EEPROM</resourcename>
+  <resourcedata>0.5</resourcedata>
+  <resourceunits>kbytes</resourceunits>
+</resource2>
+<resource3>
+  <resourcename>SRAM</resourcename>
+  <resourcedata>512</resourcedata>
+  <resourceunits>bytes</resourceunits>
+</resource3>
+<resource4>
+  <resourcename>USB</resourcename>
+  <resourcedata>1</resourcedata>
+</resource4>
+<resource5>
+  <resourcename>I/O Pins</resourcename>
+  <resourcedata>22</resourcedata>
+</resource5>
+<resource6>
+  <resourcename>Fmax</resourcename>
+  <resourcedata>16</resourcedata>
+  <resourceunits>MHz</resourceunits>
+</resource6>
+<resource7>
+  <resourcename>Vcc</resourcename>
+  <resourcedata>2.7-5.5</resourcedata>
+  <resourceunits>V</resourceunits>
+</resource7>
+<resource8>
+  <resourcename>Timer 16bit</resourcename>
+  <resourcedata>1</resourcedata>
+</resource8>
+<resource9>
+  <resourcename>Timer 8bit</resourcename>
+  <resourcedata>1</resourcedata>
+</resource9>
+<resource10>
+  <resourcename>PWM channels</resourcename>
+  <resourcedata>3+2</resourcedata>
+</resource10>
+<resource11>
+  <resourcename>SPI</resourcename>
+  <resourcedata>1</resourcedata>
+</resource11>
+<resource12>
+  <resourcename>UART</resourcename>
+  <resourcedata>1</resourcedata>
+</resource12>
+<resource13>
+  <resourcename>ISP</resourcename>
+  <resourcedata>1</resourcedata>
+</resource13>
+<resource14>
+  <resourcename>Analog comparator</resourcename>
+  <resourcedata>1</resourcedata>
+</resource14>
+<resource15>
+  <resourcename>BrownOut</resourcename>
+  <resourcedata>1</resourcedata>
+</resource15>
+<resource16>
+  <resourcename>Watchdog</resourcename>
+  <resourcedata>1</resourcedata>
+</resource16>
+<resource17>
+  <resourcename>Interrupts</resourcename>
+  <resourcedata>29</resourcedata>
+</resource17>
+<resource18>
+  <resourcename>Ext.interrupts</resourcename>
+  <resourcedata>8</resourcedata>
+</resource18>
+<layout>
+       <desc1>
+       <pin>1</pin>
+  		<pindescount>1</pindescount>        <pins1>XTAL1 - Pin for connecting external clock source (crystal, resonator..) for MCU (input)</pins1>
+       </desc1>
+       <desc2>
+       <pin>2</pin>
+  		<pindescount>2</pindescount>        <pins1>XTAL2 - Pin for connecting external clock source (crystal, resonator..) for MCU (output)</pins1>
+        <pins2>PC0 - Generic IO pin PC0</pins2>
+       </desc2>
+       <desc3>
+       <pin>3</pin>
+  		<pindescount>1</pindescount>        <pins1>GND - Common ground</pins1>
+       </desc3>
+       <desc4>
+       <pin>4</pin>
+  		<pindescount>1</pindescount>        <pins1>VCC - Power supply</pins1>
+       </desc4>
+       <desc5>
+       <pin>5</pin>
+  		<pindescount>2</pindescount>        <pins1>PC2 - Generic IO pin PC2</pins1>
+        <pins2>PCINT11 - Pin change interrupt 11</pins2>
+       </desc5>
+       <desc6>
+       <pin>6</pin>
+  		<pindescount>3</pindescount>        <pins1>PD0 - Generic IO pin PD0</pins1>
+        <pins2>INT0 - External Interrupt source 0 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>OC0B - Output compare matchB output. The pin can serve as an external output for the Timer/Counter0 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC0B pin is also the output pin for the PWM mode timer function.</pins3>
+       </desc6>
+       <desc7>
+       <pin>7</pin>
+  		<pindescount>3</pindescount>        <pins1>PD1 - Generic IO pin PD1</pins1>
+        <pins2>INT1 - External Interrupt source 1 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>AIN0 - AIN0, Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator.</pins3>
+       </desc7>
+       <desc8>
+       <pin>8</pin>
+  		<pindescount>4</pindescount>        <pins1>PD2 - Generic IO pin PD2</pins1>
+        <pins2>INT2 - External Interrupt source 2 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>AIN1 - AIN1, Analog Comparator Negative Input. When configured as an input and with the internal MOS pull-up resistor switched off, this pin also serves as the negative input of the on-chip Analog Comparator.</pins3>
+        <pins4>RXD1 - Receive Data (data input pin for the UART). When the UART receiver is enabled, this pin is configured as an input. When the UART forces this pin to be an input, a logical state on PORT register will turn on the internal pull-up. Channel 1</pins4>
+       </desc8>
+       <desc9>
+       <pin>9</pin>
+  		<pindescount>3</pindescount>        <pins1>PD3 - Generic IO pin PD3</pins1>
+        <pins2>INT3 - External Interrupt source 3 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>TXD1 - Transmit Data (data output pin for the UART). When the UART transmitter is enabled, this pin is configured as an output. Channel 1</pins3>
+       </desc9>
+       <desc10>
+       <pin>10</pin>
+  		<pindescount>2</pindescount>        <pins1>PD4 - Generic IO pin PD4</pins1>
+        <pins2>INT5 - External Interrupt source 5 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+       </desc10>
+       <desc11>
+       <pin>11</pin>
+  		<pindescount>3</pindescount>        <pins1>PD5 - Generic IO pin PD5</pins1>
+        <pins2>PCINT12 - Pin change interrupt 12</pins2>
+        <pins3>XCK - USART external clock.</pins3>
+       </desc11>
+       <desc12>
+       <pin>12</pin>
+  		<pindescount>3</pindescount>        <pins1>PD6 - Generic IO pin PD6</pins1>
+        <pins2>INT6 - External Interrupt source 6 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>/RTS - USART1 Receiver Flow Control</pins3>
+       </desc12>
+       <desc13>
+       <pin>13</pin>
+  		<pindescount>5</pindescount>        <pins1>PD7 - Generic IO pin PD7</pins1>
+        <pins2>INT7 - External Interrupt source 7 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>T0 - Timer/Counter0 clock source. See the Timer description for further details.</pins3>
+        <pins4>/CTS - USART1 Transmitter Flow Control</pins4>
+        <pins5>/HWB - Hardware Boot</pins5>
+       </desc13>
+       <desc14>
+       <pin>14</pin>
+  		<pindescount>3</pindescount>        <pins1>PB0 - Generic IO pin PB0</pins1>
+        <pins2>PCINT0 - Pin change interrupt 0</pins2>
+        <pins3>/SS - Slave Select pin for using with SPI.</pins3>
+       </desc14>
+       <desc15>
+       <pin>15</pin>
+  		<pindescount>3</pindescount>        <pins1>PB1 - Generic IO pin PB1</pins1>
+        <pins2>PCINT1 - Pin change interrupt 1</pins2>
+        <pins3>SCK - Clock input pin for memory up/downloading or SPI.</pins3>
+       </desc15>
+       <desc16>
+       <pin>16</pin>
+  		<pindescount>4</pindescount>        <pins1>PB2 - Generic IO pin PB2</pins1>
+        <pins2>PCINT2 - Pin change interrupt 2</pins2>
+        <pins3>MOSI - Data input pin for memory downloading or SPI.</pins3>
+        <pins4>PDI - SPI Serial Programming Data input. During serial program downloading, this pin is used as data input line.</pins4>
+       </desc16>
+       <desc17>
+       <pin>17</pin>
+  		<pindescount>4</pindescount>        <pins1>PB3 - Generic IO pin PB3</pins1>
+        <pins2>PDO - SPI Serial Programming Data output. During Serial Program Downloading, this pin is used as data output line.</pins2>
+        <pins3>MISO - Data output pin for memory uploading or SPI.</pins3>
+        <pins4>PCINT3 - Pin change interrupt 3</pins4>
+       </desc17>
+       <desc18>
+       <pin>18</pin>
+  		<pindescount>3</pindescount>        <pins1>PB4 - Generic IO pin PB4</pins1>
+        <pins2>T1 - Timer/Counter1 clock source. See the Timer description for further details.</pins2>
+        <pins3>PCINT4 - Pin change interrupt 4</pins3>
+       </desc18>
+       <desc19>
+       <pin>19</pin>
+  		<pindescount>2</pindescount>        <pins1>PB5 - Generic IO pin PB5</pins1>
+        <pins2>PCINT5 - Pin change interrupt 5</pins2>
+       </desc19>
+       <desc20>
+       <pin>20</pin>
+  		<pindescount>2</pindescount>        <pins1>PB6 - Generic IO pin PB6</pins1>
+        <pins2>PCINT6 - Pin change interrupt 6</pins2>
+       </desc20>
+       <desc21>
+       <pin>21</pin>
+  		<pindescount>4</pindescount>        <pins1>PB7 - Generic IO pin PB7</pins1>
+        <pins2>PCINT7 - Pin change interrupt 7</pins2>
+        <pins3>OC0A - Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output com-pareA. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC0A pin is also the output pin for the PWM mode timer function.</pins3>
+        <pins4>OC1C - Output compare matchC output. The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC1C pin is also the output pin for the PWM mode timer function.</pins4>
+       </desc21>
+       <desc22>
+       <pin>22</pin>
+  		<pindescount>4</pindescount>        <pins1>PC7 - Generic IO pin PC7</pins1>
+        <pins2>INT4 - External Interrupt source 4 to the MCU. See the interrupt description for further details and how to enable the source.</pins2>
+        <pins3>ICP1 - Timer/Counter1 Input Capture pin. See the Timer/Counter1 description for further details.</pins3>
+        <pins4>CLKO - Clock output</pins4>
+       </desc22>
+       <desc23>
+       <pin>23</pin>
+  		<pindescount>3</pindescount>        <pins1>PC6 - Generic IO pin PC6</pins1>
+        <pins2>OC1A - Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output com-pareA. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC1A pin is also the output pin for the PWM mode timer function.</pins2>
+        <pins3>PCINT8 - Pin change interrupt 8</pins3>
+       </desc23>
+       <desc24>
+       <pin>24</pin>
+  		<pindescount>3</pindescount>        <pins1>/RESET - Reset pin for MCU, active at low.</pins1>
+        <pins2>PC1 - Generic IO pin PC1</pins2>
+        <pins3>dW - debugWIRE On-chip debug system uses a One-wire, bi-directional interface to control the program flow, execute AVR instructions in the CPU and to program the different non-volatile memories.</pins3>
+       </desc24>
+       <desc25>
+       <pin>25</pin>
+  		<pindescount>3</pindescount>        <pins1>PC5 - Generic IO pin PC5</pins1>
+        <pins2>PCINT9 - Pin change interrupt 9</pins2>
+        <pins3>OC1B - Output compare matchB output. The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function. See the timer description on how to enable this function. The OC1B pin is also the output pin for the PWM mode timer function.</pins3>
+       </desc25>
+       <desc26>
+       <pin>26</pin>
+  		<pindescount>2</pindescount>        <pins1>PC4 - Generic IO pin PC4</pins1>
+        <pins2>PCINT10 - Pin change interrupt 10</pins2>
+       </desc26>
+       <desc27>
+       <pin>27</pin>
+  		<pindescount>1</pindescount>        <pins1>UCAP - USB Pads Internal Regulator Output supply voltage. Should be connected to an external capacitor</pins1>
+       </desc27>
+       <desc28>
+       <pin>28</pin>
+  		<pindescount>1</pindescount>        <pins1>UGND - USB Ground</pins1>
+       </desc28>
+       <desc29>
+       <pin>29</pin>
+  		<pindescount>1</pindescount>        <pins1>D+/SCK - USB Full Speed Positive Data Upstream port / Clock port for PS/2</pins1>
+       </desc29>
+       <desc30>
+       <pin>30</pin>
+  		<pindescount>1</pindescount>        <pins1>D-/SDATA - USB Full Speed Negative Data Upstream port / Data port for PS/2</pins1>
+       </desc30>
+       <desc31>
+       <pin>31</pin>
+  		<pindescount>1</pindescount>        <pins1>UVCC - USB Pads Internal Regulator Input supply voltage</pins1>
+       </desc31>
+       <desc32>
+       <pin>32</pin>
+  		<pindescount>1</pindescount>        <pins1>AVCC - Power supply for AD converter.</pins1>
+       </desc32>
+</layout>
+</core>

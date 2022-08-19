@@ -1,5 +1,6 @@
 package de.innot.avreclipse.devexp;
 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Combo;
@@ -32,6 +34,8 @@ import org.w3c.dom.NodeList;
 import de.innot.avreclipse.devexp.avrchip.AvrChip;
 import de.innot.avreclipse.devexp.avrchip.AvrResource;
 import de.innot.avreclipse.devexp.avrchip.ChipPackage;
+import de.innot.avreclipse.core.toolinfo.*;
+import de.innot.avreclipse.core.paths.win32.*;
 
 public class DeviceExplorerCore {
 	public AvailableMCUsList availableChips;	// for store all main device configuration from devices.xml
@@ -213,7 +217,13 @@ public class DeviceExplorerCore {
 
 	//----------------------------------------------------------------------------------------------------	
 	public void ParseProgram() throws IOException, InterruptedException {
-		ProcessBuilder processBuilder = new ProcessBuilder("avr-size.exe","--mlist-devices");
+		
+		// sciezka do pliku wykonywalnego avr-size (avr-size.exe)
+		IPath avrsizepaths = Size.getDefault().getToolPath();
+		//System.out.println("******************************");
+		//System.out.print(avrsizepaths.toOSString());
+		
+		ProcessBuilder processBuilder = new ProcessBuilder(avrsizepaths.toOSString(),"--mlist-devices");
 	    processBuilder.redirectErrorStream(true);
 	    final Process process = processBuilder.start();
 

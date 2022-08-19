@@ -10,13 +10,9 @@
  *******************************************************************************/
 package de.innot.avreclipse.ui.actions;
 
-import java.io.File;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.MessageFormat;
-import java.util.List;
-
 import org.eclipse.cdt.core.model.ICElement;
 import org.eclipse.cdt.core.model.ICProject;
 import org.eclipse.cdt.managedbuilder.core.IConfiguration;
@@ -26,18 +22,12 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IPath;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.core.runtime.SubProgressMonitor;
-import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IActionDelegate;
 import org.eclipse.ui.IWorkbenchWindow;
@@ -45,24 +35,10 @@ import org.eclipse.ui.IWorkbenchWindowActionDelegate;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
-import org.eclipse.ui.console.MessageConsole;
-import org.eclipse.ui.progress.UIJob;
-
 import de.innot.avreclipse.AVRPlugin;
-import de.innot.avreclipse.core.avrdude.AVRDudeAction;
-import de.innot.avreclipse.core.avrdude.AVRDudeException;
-import de.innot.avreclipse.core.avrdude.AVRDudeSchedulingRule;
-import de.innot.avreclipse.core.avrdude.BaseBytesProperties;
-import de.innot.avreclipse.core.avrdude.ProgrammerConfig;
-import de.innot.avreclipse.core.properties.AVRDudeProperties;
 import de.innot.avreclipse.core.properties.AVRProjectProperties;
 import de.innot.avreclipse.core.properties.ProjectPropertyManager;
-import de.innot.avreclipse.core.toolinfo.AVRDude;
-import de.innot.avreclipse.core.toolinfo.fuses.FuseType;
-import de.innot.avreclipse.core.util.AVRMCUidConverter;
 import de.innot.avreclipse.devexp.PluginPreferences;
-import de.innot.avreclipse.mbs.BuildMacro;
-import de.innot.avreclipse.ui.dialogs.AVRDudeErrorDialogJob;
 
 /**
  * @author Thomas Holland

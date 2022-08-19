@@ -424,16 +424,15 @@ public class DeviceExplorerView extends ViewPart {
 	    }); // btnSave listener
 	    
 	    
-	    
 	    MyProgressBar progBar = new MyProgressBar(compositeTop, SWT.LEFT);
 	    progBar.setSize(19, 120);
 	    progBar.setPercent(75);
 	    
-	    Button btnClear = new Button(compositeTop, SWT.NONE);
-	    btnClear.setText("Default config");
-	    btnClear.setLocation(670, 19);
-	    btnClear.setSize(100,25);
-	    btnClear.setEnabled(true);
+	    //Button btnClear = new Button(compositeTop, SWT.NONE);
+	    //btnClear.setText("Default config");
+	    //btnClear.setLocation(670, 19);
+	    //btnClear.setSize(100,25);
+	    //btnClear.setEnabled(true);
 
 	    // wypelnij combobox nazwami chipow.
 	    //---------------------------------------------------
@@ -497,9 +496,6 @@ public class DeviceExplorerView extends ViewPart {
 		            if (core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce().startsWith("PORT") 
 		            		&& core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName().endsWith(tree.getSelection()[0].getText()))
 		            		 {
-		            	
-		            	
-		            	
 		            	
 		            	System.out.println("Selected res " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce());
 		            	MenuItem newItemINP = new MenuItem(menu,SWT.NONE);

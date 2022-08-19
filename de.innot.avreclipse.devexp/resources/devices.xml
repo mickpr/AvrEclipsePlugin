@@ -121,6 +121,7 @@
   <Packages>
 	<Package name="DIP28" file="ATmega88-DIP28.xml"></Package>
 	<Package name="TQFP32" file="ATmega88-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega88-QFN32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -134,6 +135,7 @@
   <Packages>
 	<Package name="DIP28" file="ATmega88P-DIP28.xml"></Package>
 	<Package name="TQFP32" file="ATmega88P-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega88P-QFN32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -171,8 +173,24 @@
   <Packages>
 	<Package name="DIP28" file="ATmega168-DIP28.xml"></Package>
 	<Package name="TQFP32" file="ATmega168-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega168-QFN32.xml"></Package>
   </Packages>
-</device><device>
+</device>
+<device>
+  <Name>ATmega168P</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega168P-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega168P-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega168P-QFN32.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega2560</Name>
   <Type>ATmega</Type>
   <Flash>262144</Flash>
@@ -182,6 +200,20 @@
   <Vcc>4.5 .. 5.5</Vcc>
   <Packages>
 	<Package name="TQFP100" file="ATmega256-TQFP100.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega328</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP28" file="ATmega328-DIP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega328-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega328-QFN32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -195,6 +227,7 @@
   <Packages>
 	<Package name="DIP28" file="ATmega328P-DIP28.xml"></Package>
 	<Package name="TQFP32" file="ATmega328P-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega328P-QFN32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -247,6 +280,19 @@
   <Packages>
 	<Package name="DIP8" file="ATtiny13-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny13-SOIC8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny15</Name>
+  <Type>ATtiny</Type>
+  <Flash>1024</Flash>
+  <EEPROM>64</EEPROM>
+  <RAM>0</RAM>
+  <Freq>1.6MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP8" file="ATtiny15-DIP8.xml"></Package>
+	<Package name="SOIC8" file="ATtiny15-SOIC8.xml"></Package>
   </Packages>
 </device>
 <device>

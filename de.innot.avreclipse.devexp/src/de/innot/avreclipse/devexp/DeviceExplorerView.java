@@ -265,14 +265,15 @@ public class DeviceExplorerView extends ViewPart {
 			// end timers - redraw after selection
 			
 			//mickpr tutaj
-			System.out.println("------------------------");
-			System.out.println(Platform.getLocation());
-			System.out.println("------------------------");
-			System.out.println(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getLocation().append(core.projectName).append("/Release/").append(core.projectName.concat(".elf")));
+			//System.out.println("------------------------");
+			//System.out.println(Platform.getLocation());  // lokalizacja workspace'a projektu
+			//System.out.println("------------------------");
 			
-			System.out.println(core.projectName.concat(".elf"));
+			// nazwa pliku wynikowego (ELF) projektu
+			//System.out.println(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getLocation().append(core.projectName).append("/Release/").append(core.projectName.concat(".elf")));
 			
-		
+			// sama nazwa pliku projektu
+			//System.out.println(core.projectName.concat(".elf"));
 	        canvas.redraw();
 		} else {
 			if (element!=null) {

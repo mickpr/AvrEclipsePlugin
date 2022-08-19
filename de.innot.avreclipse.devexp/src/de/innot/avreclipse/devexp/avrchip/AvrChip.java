@@ -175,7 +175,7 @@ public class AvrChip {
 	public Color getColorDependOnResourceAndName(String resource,String name) {
 	
 		if (name.equalsIgnoreCase("VCC") || name.equalsIgnoreCase("AVCC")|| name.equalsIgnoreCase("AREF"))
-				return SWTResourceManager.getColor(255,100,100);
+			return SWTResourceManager.getColor(255,100,100);
 		if (name.equalsIgnoreCase("GND") )
 			return SWTResourceManager.getColor(90,90,90);
 		if (name.contains("ADC") || name.contains("AIN"))
@@ -188,7 +188,7 @@ public class AvrChip {
 
 		if (resource.contains("ISP") || (resource.contains("SPI")))
 			return SWTResourceManager.getColor(128,255,128);
-		if (resource.contains("UART") || (resource.contains("USART")))
+		if (resource.contains("UART") || resource.contains("USART") || resource.contains("USI"))
 			return SWTResourceManager.getColor(255,190,255);
 		if (resource.contains("I2C"))
 			return SWTResourceManager.getColor(190,255,255);

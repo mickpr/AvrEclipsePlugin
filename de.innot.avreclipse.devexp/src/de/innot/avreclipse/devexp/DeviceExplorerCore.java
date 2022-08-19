@@ -132,7 +132,7 @@ public class DeviceExplorerCore {
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/ac.png"));
     		if (value.ResourceName.equalsIgnoreCase("SPI")) 
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/spi.png"));
-    		if (value.ResourceName.startsWith("UART") || value.ResourceName.startsWith("USART")) 
+    		if (value.ResourceName.startsWith("UART") || value.ResourceName.startsWith("USART") || value.ResourceName.startsWith("USI")) 
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/rs232.png"));
     		if (value.ResourceName.equalsIgnoreCase("I2C")) 
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/i2c.png"));
@@ -166,7 +166,7 @@ public class DeviceExplorerCore {
 				if (pfd.name.startsWith("AIN")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/adc.gif"));
 				if (pfd.name.startsWith("XTAL") || pfd.name.startsWith("TOSC")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/xtal.png"));
 				if (pfd.name.startsWith("VCC") || pfd.name.startsWith("AVCC") || pfd.name.startsWith("AREF")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/power.png"));
-				if (pfd.name.startsWith("PCINT")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/int.png"));
+				if (pfd.name.contains("INT")|| pfd.name.startsWith("PCINT")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/int.png"));
 				
 				// odpowiednie odwzorowanie wejœcia. wyjœcia i pull up dla ikon w Tree.
 				if (value.ResourceName.startsWith("PORT")) { 
@@ -187,7 +187,7 @@ public class DeviceExplorerCore {
 				if (pfd.name.startsWith("GND")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/gnd.gif"));
 				if (pfd.name.startsWith("OC")) 	tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pwm2.png"));
 				if (pfd.name.endsWith("XD")) 	tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/rs232.png"));
-				if (pfd.name.contains("INT") || pfd.name.contains("CLK") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
+				if (pfd.name.contains("CLK") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
 			} // for
 			
 			int ic = selectedChip.getAvrResources().get(key).Pins.size();

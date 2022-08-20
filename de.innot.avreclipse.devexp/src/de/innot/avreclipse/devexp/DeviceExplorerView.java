@@ -9,6 +9,10 @@ import java.util.TreeMap;
 
 
 
+
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import org.eclipse.core.resources.IBuildConfiguration;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -100,7 +104,7 @@ public class DeviceExplorerView extends ViewPart {
 	private TabFolder tabFolder;
 //	private TabItem tiTimer; 
 	
-	
+	PinConfiguration pinconf; 	
 	
 	//private EXTINT tiExtint;
 	
@@ -417,6 +421,9 @@ public class DeviceExplorerView extends ViewPart {
 		        loadDeviceResourcesIntoTree(composResource);
 		        //set checked pins 
 		        core.selectedChip.setCurrentSelectedPinsInTree(tree);
+		        
+		        
+		        savePinConfigToXML();
 		    }
 			@Override
 			public void mouseUp(MouseEvent e) {}
@@ -573,7 +580,7 @@ public class DeviceExplorerView extends ViewPart {
 	    TabItem tiGPIO = new TabItem(tabFolder,SWT.FILL);
 	    tiGPIO.setText("GPIO Pins");
 	    tiGPIO.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/inout.png"));
-	    PinConfiguration pinconf = new PinConfiguration(tabFolder, SWT.NONE);
+	    pinconf = new PinConfiguration(tabFolder, SWT.NONE);
 	    pinconf.setProjectName(this.projectName);
 	    pinconf.setProjectPath(this.projectPath);
 	    tiGPIO.setControl(pinconf);
@@ -1096,6 +1103,27 @@ public class DeviceExplorerView extends ViewPart {
 	    System.out.println("znalezione: " + text2);
 	    //return text2;
 	}
+
+	public void savePinConfigToXML() {
+	  if (this.projectName.length()>0) {  
+		System.out.println("===============================");
+		System.out.println(core.projectName);
+		try {
+			pinconf.configData = new PinConfigData[]{ 
+					new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 
+					new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
+	                new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
+			pinconf.saveConfigData();
+		} catch (TransformerException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ParserConfigurationException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} // try catch
+	  } // if
+	}
+	
 	
 	@Override
 	public void setFocus() {

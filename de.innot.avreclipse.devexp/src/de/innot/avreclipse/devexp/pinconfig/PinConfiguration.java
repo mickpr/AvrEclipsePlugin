@@ -61,12 +61,14 @@ public class PinConfiguration extends Composite {
 
 	public void setProjectPath(String projectPathString) {
 		this.projectPath = projectPathString;
+		//System.out.println("dupa=------------------------");
+		//System.out.println(this.projectName);
 	}
 
 	private String projectName;
 	private String projectPath;
 	
-	PinConfigData[] configData;
+	public PinConfigData[] configData;
 	public PinConfiguration(Composite parent, int style) {
 		super(parent, style);
 		setLayout(new GridLayout(1, false));
@@ -150,7 +152,6 @@ public class PinConfiguration extends Composite {
 		Button btnNewButton = new Button(this, SWT.NONE);
 		btnNewButton.setText("< Generate Config Code");
 
-
 		tableViewer.setContentProvider(new ArrayContentProvider());
 		tableViewer.setLabelProvider(new PinTableLabelProvider());
 		//tableViewer.setColumnProperties(columnProperties);
@@ -160,17 +161,17 @@ public class PinConfiguration extends Composite {
 				new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
                 new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
 		tableViewer.setInput(configData);
-		System.out.println("------------------------------------------------");
-		try {
-			saveConfigData(configData);
-		} catch (TransformerException | ParserConfigurationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("------------------------------------------------");
+//		System.out.println("------------------------------------------------");
+//		try {
+//			saveConfigData();
+//		} catch (TransformerException | ParserConfigurationException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		System.out.println("------------------------------------------------");
 	}
 	
-	private boolean loadConfigData(PinConfigData configData) {
+	public boolean loadConfigData(PinConfigData configData) {
 		//iterate trought pins, and select... GPIO only
 		try {
 			//JOptionPane.showMessageDialog(null, "Load start", "xxx", JOptionPane.INFORMATION_MESSAGE);	
@@ -208,7 +209,7 @@ public class PinConfiguration extends Composite {
 		} // try.catch
 	} // private boolean loadConfigData(PinConfigData configData) {
 	
-	private boolean saveConfigData(PinConfigData[] configData2) throws TransformerException, ParserConfigurationException {
+	public boolean saveConfigData() throws TransformerException, ParserConfigurationException {
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -217,27 +218,27 @@ public class PinConfiguration extends Composite {
         Element rootElement = doc.createElement("pins");
         doc.appendChild(rootElement);
 
-        for (int x=0;x<configData2.length;x++) {
+        for (int x=0;x<configData.length;x++) {
             // numer pinu
         	Element item = doc.createElement("pin");
-            item.setAttribute("nr", configData2[x].getPinNr());
+            item.setAttribute("nr", configData[x].getPinNr());
             
             // nazwa pinu
             Element pinName = doc.createElement("name");
-            pinName.setTextContent(configData2[x].getPinName());
+            pinName.setTextContent(configData[x].getPinName());
 
             //port
             Element pinPort = doc.createElement("port");
-            pinPort.setTextContent(configData2[x].getPort());
+            pinPort.setTextContent(configData[x].getPort());
             
             Element isInput = doc.createElement("in");
-            if (configData2[x].getIsInput())  isInput.setTextContent("true"); else isInput.setTextContent("false");
+            if (configData[x].getIsInput())  isInput.setTextContent("true"); else isInput.setTextContent("false");
             
             Element isPullUp= doc.createElement("IsPullUp"); 
-            if (configData2[x].getIsPullUp()) isPullUp.setTextContent("true"); else isPullUp.setTextContent("false");
+            if (configData[x].getIsPullUp()) isPullUp.setTextContent("true"); else isPullUp.setTextContent("false");
             
             Element pinLabel= doc.createElement("label");
-            pinLabel.setTextContent(configData2[x].getLabel());
+            pinLabel.setTextContent(configData[x].getLabel());
             
             item.appendChild(pinName);
             item.appendChild(pinPort);

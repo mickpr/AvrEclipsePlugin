@@ -35,7 +35,6 @@ import de.innot.avreclipse.devexp.avrchip.AvrChip;
 import de.innot.avreclipse.devexp.avrchip.AvrResource;
 import de.innot.avreclipse.devexp.avrchip.ChipPackage;
 import de.innot.avreclipse.core.toolinfo.*;
-import de.innot.avreclipse.core.paths.win32.*;
 
 public class DeviceExplorerCore {
 	public AvailableMCUsList availableChips;	// for store all main device configuration from devices.xml

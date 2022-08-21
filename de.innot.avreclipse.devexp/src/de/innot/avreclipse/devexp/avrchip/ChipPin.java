@@ -140,7 +140,7 @@ public final class ChipPin {
 	        gc.getTransform(oldTransform);
 			Transform tr = new Transform(gc.getDevice());
 			tr.translate(x, y);
-	        tr.rotate(-92); //bylo -90, ale -92 ³adniej wygl¹da po transformacji.
+	        tr.rotate(-90); //bylo -90, ale -92 ³adniej wygl¹da po transformacji.
 	        tr.translate(-x,-y);
 	        
 	        gc.setFont(SWTResourceManager.getFont("Courier New", 10, SWT.NORMAL));

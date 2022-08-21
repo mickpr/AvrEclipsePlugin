@@ -390,7 +390,7 @@
   <Packages>
 	<Package name="DIP20" file="ATtiny2313-DIP20.xml"></Package>
 	<Package name="SOIC20" file="ATtiny2313-SOIC20.xml"></Package>
-	<Package name="QNF20" file="ATtiny2313-QNF20.xml"></Package>
+	<Package name="QFN20" file="ATtiny2313-QFN20.xml"></Package>
 	<Package name="MLF20" file="ATtiny2313-MLF20.xml"></Package>
   </Packages>
 </device>

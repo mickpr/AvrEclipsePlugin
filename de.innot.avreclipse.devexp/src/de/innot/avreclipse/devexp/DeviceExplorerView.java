@@ -66,8 +66,6 @@ import de.innot.avreclipse.devexp.avrchip.ChipPin;
 import de.innot.avreclipse.devexp.pinconfig.*;
 import de.innot.avreclipse.devexp.utils.PinLocation;
 
-
-
 //enum PinLocation { LEFT,RIGHT, TOP, BOTTOM }; 
 public class DeviceExplorerView extends ViewPart {
 
@@ -81,6 +79,7 @@ public class DeviceExplorerView extends ViewPart {
 	private Composite compositeTree;
 	private Composite composResource; 
 	private Composite myViewParent;
+/*	
 //	private Composite compositeTimer;
 //	private TIMER t0;
 	
@@ -90,8 +89,8 @@ public class DeviceExplorerView extends ViewPart {
 //	private Composite compositeAcomp;
 //	private Composite compositeAdc;
 //	private Composite compositeCode;
-
-	
+*/
+		
 	private Combo combo_chipname; 
 	private Combo combo_package;
 	public Tree tree;
@@ -102,10 +101,10 @@ public class DeviceExplorerView extends ViewPart {
 	private Combo combo_freq;
 
 	private TabFolder tabFolder;
-//	private TabItem tiTimer; 
+ 
 	
 	PinConfiguration pinconf; 	
-	
+	//private TabItem tiTimer;	
 	//private EXTINT tiExtint;
 	
 	public Text descrTxt;	
@@ -155,10 +154,25 @@ public class DeviceExplorerView extends ViewPart {
 //System.out.print("Project name:");
 //System.out.println(((IProject) element).getName());  // Project name
 				projectName = ((IProject) element).getName();
-//System.out.print("Project path:");
+
 //System.out.println(((IProject) element).getLocation().toString());
 				projectPath = ((IProject) element).getLocation().toString();
 				
+				
+				
+				
+				
+				
+				
+// wa¿ne :)				
+//				projectPath = ((IProject) element).,,,,,,,,,,,,
+						
+						
+						
+						
+						
+						
+				System.out.print("Project path:" + projectPath );
 //				System.out.print("Build configs:");
 //				System.out.println(buildConfigs.length);
 //				for (IBuildConfiguration ibc : buildConfigs) {}

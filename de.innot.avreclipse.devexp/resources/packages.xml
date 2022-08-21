@@ -1,6 +1,36 @@
 <?xml version="1.0"?>
 <packages>
   <package>
+    <name>MLF20</name>
+    <body x="0" y="10" width="125" height="125" type="S"></body>
+    <pins count="20">
+	<pin nr="1"  x="-20" y="22" orient="L"></pin>
+	<pin nr="2"  x="-20" y="42" orient="L"></pin>
+	<pin nr="3"  x="-20" y="62" orient="L"></pin>
+	<pin nr="4"  x="-20" y="82" orient="L"></pin>
+	<pin nr="5"  x="-20" y="102" orient="L"></pin>
+
+	<pin nr="6"  x="15" y="135" orient="B"></pin>
+	<pin nr="7"  x="35" y="135" orient="B"></pin>
+	<pin nr="8"  x="55" y="135" orient="B"></pin>
+	<pin nr="9"  x="75" y="135" orient="B"></pin>
+	<pin nr="10" x="95" y="135" orient="B"></pin>
+
+	<pin nr="11"  x="125" y="102" orient="R"></pin>
+	<pin nr="12"  x="125" y="82" orient="R"></pin>
+	<pin nr="13"  x="125" y="62" orient="R"></pin>
+	<pin nr="14"  x="125" y="42" orient="R"></pin>
+	<pin nr="15"  x="125" y="22" orient="R"></pin>
+
+	<pin nr="16"  x="95" y="-10" orient="T"></pin>
+	<pin nr="17"  x="75" y="-10" orient="T"></pin>
+	<pin nr="18"  x="55" y="-10" orient="T"></pin>
+	<pin nr="19"  x="35" y="-10" orient="T"></pin>
+	<pin nr="20"  x="15" y="-10" orient="T"></pin>
+    </pins>
+  </package>
+
+  <package>
     <name>QFN20</name>
     <body x="0" y="10" width="125" height="125" type="S"></body>
     <pins count="20">
@@ -722,44 +752,6 @@
 	    <pin nr="42" x="0" y="0" orient="T"></pin>
 	    <pin nr="43" x="0" y="0" orient="T"></pin>
 	    <pin nr="44" x="0" y="0" orient="T"></pin>
-	</pins>	    
-  </package>
-  <package>
-    <name>QFN32</name>
-    <body x="0" y="10" width="80" height="95" type="S"></body>
-    <pins count="32">
-	    <pin nr="1"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="2"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="3"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="4"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="5"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="6"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="7"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="8"  x="-20" y="20" orient="L"></pin>
-	    <pin nr="9"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="10"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="11"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="12"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="13"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="14"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="15"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="16"  x="-20" y="20" orient="B"></pin>
-	    <pin nr="17"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="18"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="19"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="20"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="21"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="22"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="23"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="24"  x="-20" y="20" orient="R"></pin>
-	    <pin nr="25"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="26"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="27"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="28"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="29"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="30"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="31"  x="-20" y="20" orient="T"></pin>
-	    <pin nr="32"  x="-20" y="20" orient="T"></pin>
 	</pins>	    
   </package>
   <package>

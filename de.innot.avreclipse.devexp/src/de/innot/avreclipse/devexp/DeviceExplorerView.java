@@ -504,6 +504,8 @@ public class DeviceExplorerView extends ViewPart {
 		            		 {
 		            	
 		            	System.out.println("Selected res " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce());
+		            	System.out.println("Selected pin " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName());
+		            	
 		            	MenuItem newItemINP = new MenuItem(menu,SWT.NONE);
 		            	MenuItem newItemINPU = new MenuItem(menu,SWT.NONE);
 		            	MenuItem newItemSEP = new MenuItem(menu,SWT.SEPARATOR);

@@ -379,6 +379,19 @@
 	<Package name="SOIC20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
   </Packages>
 </device>
-
-
+<device>
+  <Name>ATtiny2313</Name>
+  <Type>ATtiny</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP20" file="ATtiny2313-DIP20.xml"></Package>
+	<Package name="SOIC20" file="ATtiny2313-SOIC20.xml"></Package>
+	<Package name="QNF20" file="ATtiny2313-QNF20.xml"></Package>
+	<Package name="MLF20" file="ATtiny2313-MLF20.xml"></Package>
+  </Packages>
+</device>
 </dataroot>

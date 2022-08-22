@@ -523,7 +523,7 @@ public class DeviceExplorerView extends ViewPart {
 		            
 		            
 		            if (core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce().startsWith("PORT") 
-		            		&& core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName().endsWith(tree.getSelection()[0].getText()))
+		            	&& core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName().endsWith(tree.getSelection()[0].getText()))
 		            		 {
 		            	
 		            	System.out.println("Selected res " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce());
@@ -536,6 +536,7 @@ public class DeviceExplorerView extends ViewPart {
 		            	newItemINP.setText("Input "); // + tree.getSelection()[0].getText());
 		            	newItemINP.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
 		            	newItemINPU.setText("Input Pull Up"); // + tree.getSelection()[0].getText());
+		            	newItemINPU.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in_pup.gif"));
 		            	newItemOUT.setText("Output"); 
 		            	newItemOUT.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));
 		            }
@@ -557,6 +558,8 @@ public class DeviceExplorerView extends ViewPart {
 //							} // void widgetDefaultSelected(SelectionEvent e) {
 //		            	}); // addSelectionListener
 //		            } // if (tree.getSelection()[0].getItemCount()>0) {
+
+		            
 		            //tree.getVerticalBar().setSelection(3);
 		            //tree.setTopItem(treeTopItem);
 					} catch (Exception e) { 
@@ -1056,14 +1059,24 @@ public class DeviceExplorerView extends ViewPart {
 				        int pinNr = core.selectedChip.getPinNumberForPinNameInConfiguration(itemText);
 				        if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinResouce().startsWith("PORT")) {
 				        	
-				        	// inwersja 
-				        	core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput());
-				        	if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput()) {
-				        		// input
-				        		item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
+				        	// zmiana  
+				        	if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
+				        		!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+				        			// set as input with pullup
+				        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
+				        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(true);
+				        			item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in_pup.gif"));
+				        	} else if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() &&
+				        		core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+				        			//  set as output without pulllup
+				        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(false);
+				        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(false);
+				        			item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));
 				        	} else {
-				        		// output
-				        		item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));
+				        		// set as input without pullup
+			        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
+			        			core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(false);
+			        			item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
 				        	}
 				        	 
 				        	item.getParent().redraw();

@@ -10,6 +10,8 @@ import java.util.TreeMap;
 
 
 
+
+
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
@@ -157,12 +159,6 @@ public class DeviceExplorerView extends ViewPart {
 
 //System.out.println(((IProject) element).getLocation().toString());
 				projectPath = ((IProject) element).getLocation().toString();
-				
-				
-				
-				
-				
-				
 				
 // wa¿ne :)				
 //				projectPath = ((IProject) element).,,,,,,,,,,,,
@@ -436,8 +432,8 @@ public class DeviceExplorerView extends ViewPart {
 		        //set checked pins 
 		        core.selectedChip.setCurrentSelectedPinsInTree(tree);
 		        
-		        
-		        savePinConfigToXML();
+		        // save pin configuration
+		        savePinConfigToXML(projectPath + "/.settings/pins.xml");
 		    }
 			@Override
 			public void mouseUp(MouseEvent e) {}
@@ -894,6 +890,8 @@ public class DeviceExplorerView extends ViewPart {
 //		}
 		
 	}
+	
+	
 
 	//--------------------------------------------------------------------------------------------
 	public void loadDeviceResourcesIntoTree(Composite composite) {
@@ -901,7 +899,7 @@ public class DeviceExplorerView extends ViewPart {
 		if (tree==null) {
 			tree = new Tree(composite, SWT.BORDER | SWT.V_SCROLL | SWT.H_SCROLL |SWT.CHECK); //
 			//--------------------------------------------------------------------------------------------
-	        tree.addListener(SWT.MouseDown, new Listener() {
+			tree.addListener(SWT.MouseDown, new Listener() {
 				@Override
 				public void handleEvent(Event event) {
 					 
@@ -909,22 +907,24 @@ public class DeviceExplorerView extends ViewPart {
 			        TreeItem item = tree.getItem(point);
 			        if (item != null) {
 			        	//System.out.print("Mouse down :" + item.getText() + " state: " + (item.getChecked()?"checked":"unchecked"));
-			        	
-//			        	//automatyczne odznaczanie dzieci
-//			        	if (item.getItemCount()>0 && !item.getChecked()) {
-//			        		for (TreeItem it : item.getItems()) {
-//			        			it.setChecked(false);
-//			        			// jesli dziecko przeslanialo domyslna funckcje pinu (czyli '0')- trzeba ja przywrocic! :)
-//			        		}
-//			        	}
 
-//			        	//automatyczne zaznaczanie dzieci
-//			        	if (item.getItemCount()>0 && item.getChecked()) {
-//			        		for (TreeItem it : item.getItems()) {
-//			        			it.setChecked(true);
-//			        			// dla kazdego dziecka trzeba sprawdziæ czy nie ma kolizji i poinformowac z mozliwoscia wyboru
-//			        		}
-//			        	}
+/*			        	
+			        	//automatyczne odznaczanie dzieci
+			        	if (item.getItemCount()>0 && !item.getChecked()) {
+			        		for (TreeItem it : item.getItems()) {
+			        			it.setChecked(false);
+			        			// jesli dziecko przeslanialo domyslna funckcje pinu (czyli '0')- trzeba ja przywrocic! :)
+			        		}
+			        	}
+
+			        	//automatyczne zaznaczanie dzieci
+			        	if (item.getItemCount()>0 && item.getChecked()) {
+			        		for (TreeItem it : item.getItems()) {
+			        			it.setChecked(true);
+			        			// dla kazdego dziecka trzeba sprawdziæ czy nie ma kolizji i poinformowac z mozliwoscia wyboru
+			        		}
+			        	}
+*/
 			        	
 			        	// przelaczenie funkcji
 			        	if (item.getItemCount()==0) {
@@ -985,6 +985,35 @@ public class DeviceExplorerView extends ViewPart {
 			    	        canvas.redraw();
 			        	} 
 
+			        	
+			        	// clear current config
+			        	pinconf.configData= new PinConfigData[core.selectedChip.avrPinsConfig.size()];
+			    		for (int a=0;a<core.selectedChip.avrPinsConfig.size();a++) {
+			    			pinconf.configData[a] = new PinConfigData(Integer.toString(core.selectedChip.avrPinsConfig.get(a).getPinNumber()), 
+			    					core.selectedChip.avrPinsConfig.get(a).getSelectedPinResouce(), 
+			    					core.selectedChip.avrPinsConfig.get(a).getSelectedPinName(), 
+			    					core.selectedChip.avrPinsConfig.get(a).getSelectedPinIsInput(), 
+			    					core.selectedChip.avrPinsConfig.get(a).getSelectedPinIsPullUpOrHighState(), 
+			    					"");
+			    			//core.selectedChip.avrPinsConfig..pins.get(a).color = this.getColorDependOnResourceAndName(core.selectedChip.avrPinsConfig.get(a).getSelectedPinResouce(),this.avrPinsConfig.get(a).getSelectedPinName());
+
+			        		//pinBitNumber = Integer.parseInt(pinName.substring(2));
+			        		
+			        		//this.selectedChip.GpioPorts.put(portLetter, port);
+			        		// 
+			        		// get 
+			        		//
+			        	}			        	
+			        	try {
+							pinconf.saveConfigData(projectPath + "/.settings/pins.xml");
+						} catch (TransformerException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (ParserConfigurationException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+			        	
 			        	// pokaz opis
 						ScrollBar scb = tree.getVerticalBar();
 						scb.setSelection(treeTopItemIndex);      
@@ -1120,22 +1149,15 @@ public class DeviceExplorerView extends ViewPart {
 	    //return text2;
 	}
 
-	public void savePinConfigToXML() {
+	public void savePinConfigToXML(String filepath) {
 	  if (this.projectName.length()>0) {  
-		System.out.println("===============================");
-		System.out.println(core.projectName);
+		//System.out.println(core.projectName);
 		try {
-			pinconf.configData = new PinConfigData[]{ 
-					new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 
-					new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
-	                new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
-			//zapis danych
-			pinconf.saveConfigData();
+			//zapis danych o konfiguracji pinow do pliku
+			pinconf.saveConfigData(filepath);
 		} catch (TransformerException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (ParserConfigurationException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} // try catch
 	  } // if

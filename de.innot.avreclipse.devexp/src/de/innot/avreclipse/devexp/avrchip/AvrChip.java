@@ -280,20 +280,9 @@ public class AvrChip {
 	
 	
 	public void updateChipPackagePinsToSelectedInAvrPinsConfig() {
-		String pinName;
-		String portLetter;
-		int    pinBitNumber;
-
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
     		this.chipPackage.pins.get(a).name = this.avrPinsConfig.get(a).getPinNames().get(this.avrPinsConfig.get(a).getSelectedIndex());  // ... o tak
     		this.chipPackage.pins.get(a).color = this.getColorDependOnResourceAndName(this.avrPinsConfig.get(a).getSelectedPinResouce(),this.avrPinsConfig.get(a).getSelectedPinName());
-
-    		//pinBitNumber = Integer.parseInt(pinName.substring(2));
-    		
-    		//this.selectedChip.GpioPorts.put(portLetter, port);
-    		// 
-    		// get 
-    		//
     	}
 	}	
 

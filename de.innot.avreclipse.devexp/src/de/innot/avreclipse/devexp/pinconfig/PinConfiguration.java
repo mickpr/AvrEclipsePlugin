@@ -20,6 +20,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.layout.GridLayout;
@@ -43,8 +44,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import de.innot.avreclipse.devexp.AvailableMCUsListEntity;
-
 public class PinConfiguration extends Composite {
 	
 	public String getProjectName() {
@@ -67,8 +66,9 @@ public class PinConfiguration extends Composite {
 
 	private String projectName;
 	private String projectPath;
+	final TableViewer tableViewer;
 	
-	public PinConfigData[] configData;
+	public PinConfigData[] configData;	// zmienna zapamietujaca aktualna konfiguracje pinow
 	public PinConfiguration(Composite parent, int style) {
 		super(parent, style);
 		setLayout(new GridLayout(1, false));
@@ -104,7 +104,7 @@ public class PinConfiguration extends Composite {
 		pinTable.setLayout(tableLayout);
 		
 		
-		final TableViewer tableViewer=new TableViewer(pinTable);
+		tableViewer=new TableViewer(pinTable);
 		tableViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		TableViewerColumn portColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		portColumn.getColumn().setText("PORT");
@@ -156,10 +156,13 @@ public class PinConfiguration extends Composite {
 		tableViewer.setLabelProvider(new PinTableLabelProvider());
 		//tableViewer.setColumnProperties(columnProperties);
 
-		configData = new PinConfigData[]{ 
-				new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 
-				new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
-                new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
+		
+		
+
+		//configData = new PinConfigData[]{ 
+		//		new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 
+		//		new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
+        //        new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
 		tableViewer.setInput(configData);
 //		System.out.println("------------------------------------------------");
 //		try {
@@ -209,7 +212,8 @@ public class PinConfiguration extends Composite {
 		} // try.catch
 	} // private boolean loadConfigData(PinConfigData configData) {
 	
-	public boolean saveConfigData() throws TransformerException, ParserConfigurationException {
+	
+	public boolean saveConfigData(String filepath) throws TransformerException, ParserConfigurationException {
 
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -239,7 +243,7 @@ public class PinConfiguration extends Composite {
             
             Element pinLabel= doc.createElement("label");
             pinLabel.setTextContent(configData[x].getLabel());
-            
+
             item.appendChild(pinName);
             item.appendChild(pinPort);
             item.appendChild(isInput);
@@ -251,7 +255,7 @@ public class PinConfiguration extends Composite {
         doc.getDocumentElement().normalize();
 
         // write dom document to a file
-        try (FileOutputStream output = new FileOutputStream("D:\\staff-dom.xml")) {
+        try (FileOutputStream output = new FileOutputStream(filepath)) {
             writeXml(doc, output);
         } catch (IOException e) {
             e.printStackTrace();
@@ -270,6 +274,40 @@ public class PinConfiguration extends Composite {
         StreamResult result = new StreamResult(output);
         tr.transform(source, result);
     } // writeXml
-	
+    
+    //iterate trough pin config and set properly IN/OUT, PULLUP and PORT values
+    private void setIoPullAndPort() {
+    	// set IO and PullUp
+        for (int x=0;x<configData.length;x++) {
+        	if (configData[x].getPinName().equals("MOSI") || 
+        		configData[x].getPinName().equals("SCK")  ||
+        		configData[x].getPinName().contains("SS") ||
+        		configData[x].getPinName().contains("TX") ||
+        		configData[x].getPinName().startsWith("CLKO") ||
+        		configData[x].getPinName().startsWith("ALE") ||
+        		configData[x].getPinName().startsWith("OC")) {
+        		configData[x].setIsInput(false);
+        	}
+        	
+        	
+        	if (configData[x].getPinName().equals("MISO") ||
+        		configData[x].getPinName().contains("RX") ||
+        		configData[x].getPinName().contains("XCK") ||
+        		configData[x].getPinName().contains("INT") ||
+        		configData[x].getPinName().startsWith("CLKI") ||
+        		configData[x].getPinName().startsWith("ICP") ||
+        		configData[x].getPinName().startsWith("ADC") ||
+        		configData[x].getPinName().startsWith("AIN") ||
+        		configData[x].getPinName().equals("T0") || 
+        		configData[x].getPinName().equals("T1") ||
+        		configData[x].getPinName().equals("T2") || 
+        		configData[x].getPinName().equals("T3") ||
+            	configData[x].getPinName().equals("")) {	
+        		configData[x].setIsInput(true);
+        	}
+        			
+        }
+    	// change port for non GPIO ports
+    }
 }
 

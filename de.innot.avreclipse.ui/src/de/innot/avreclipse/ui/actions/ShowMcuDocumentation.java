@@ -141,10 +141,10 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 			
 			try {
 				String url_string; // contain url string for documentation portal (if web page exist)
-				
+		
 				//create desired link for documentation web page for given MCU
 				url_string = new String();
-				url_string= "https://www.microchip.com/wwwproducts/en/";
+				url_string= "http://www.microchip.com/wwwproducts/en/";
 				url_string=url_string+ selectedChipName.toUpperCase(); // eg. https://www.microchip.com/wwwproducts/en/ATMEGA88
 				//System.out.println(url_string);
 				boolean webPageExist=false;

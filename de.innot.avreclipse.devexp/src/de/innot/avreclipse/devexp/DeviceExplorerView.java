@@ -1129,6 +1129,7 @@ public class DeviceExplorerView extends ViewPart {
 					new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 
 					new PinConfigData("4","PORTB", "PB6", true,false, "SD_CS"),
 	                new PinConfigData("5","PORTB", "PB7", false, true ,"SD_MOSI")};
+			//zapis danych
 			pinconf.saveConfigData();
 		} catch (TransformerException e1) {
 			// TODO Auto-generated catch block

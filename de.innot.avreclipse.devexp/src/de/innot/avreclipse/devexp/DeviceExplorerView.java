@@ -12,6 +12,11 @@ import java.util.TreeMap;
 
 
 
+
+
+
+
+import javax.swing.MenuSelectionManager;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
@@ -25,6 +30,8 @@ import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
+import org.eclipse.swt.events.MenuEvent;
+import org.eclipse.swt.events.MenuListener;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -504,6 +511,18 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    final Menu menu = new Menu(tree);
 	    tree.setMenu(menu);
+
+
+	    // Do not show menu, when no item is selected
+	    menu.addListener(SWT.MenuDetect, new Listener() {
+	      @Override
+	      public void handleEvent(Event event) {
+//	        if (table.getSelectionCount() <= 0) {
+//	          event.doit = false;
+//	        }
+	      }
+	    });
+	    
 	    tree.addListener(SWT.MouseDown, new Listener() {
 			@Override
 			public void handleEvent(Event event) {
@@ -521,21 +540,51 @@ public class DeviceExplorerView extends ViewPart {
 		            int PinNr=core.selectedChip.getPinNumberForPinNameInConfiguration(tree.getSelection()[0].getText());
 		            //System.out.println("Selected pin" + tree.getSelection()[0].getText() );
 		            
-		            
+	            
 		            if (core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce().startsWith("PORT") 
-		            	&& core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName().endsWith(tree.getSelection()[0].getText()))
-		            		 {
+		                && core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName().endsWith(tree.getSelection()[0].getText())) {
 		            	
-		            	System.out.println("Selected res " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce());
-		            	System.out.println("Selected pin " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName());
+		            	//System.out.println("Selected res " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinResouce());
+		            	//System.out.println("Selected pin " + core.selectedChip.avrPinsConfig.get(PinNr-1).getSelectedPinName());
 		            	
 		            	MenuItem newItemINP = new MenuItem(menu,SWT.NONE);
+		            	newItemINP.addListener(SWT.Selection, new Listener() {
+							@Override
+							public void handleEvent(Event event) {
+								// TODO Auto-generated method stub
+								int pinX=core.selectedChip.getPinNumberForPinNameInConfiguration(tree.getSelection()[0].getText());
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(true);
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(false);
+								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
+							}
+		            	});
 		            	MenuItem newItemINPU = new MenuItem(menu,SWT.NONE);
+		            	newItemINPU.addListener(SWT.Selection, new Listener() {
+							@Override
+							public void handleEvent(Event event) {
+								// TODO Auto-generated method stub
+								int pinX=core.selectedChip.getPinNumberForPinNameInConfiguration(tree.getSelection()[0].getText());
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(true);
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(true);
+								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in_pup.gif"));
+							}
+		            	});
 		            	MenuItem newItemSEP = new MenuItem(menu,SWT.SEPARATOR);
 		            	MenuItem newItemOUT = new MenuItem(menu,SWT.NONE);
+		            	newItemOUT.addListener(SWT.Selection, new Listener() {
+							@Override
+							public void handleEvent(Event event) {
+								// TODO Auto-generated method stub
+								int pinX=core.selectedChip.getPinNumberForPinNameInConfiguration(tree.getSelection()[0].getText());
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(false);
+								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(false);
+								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));
+							}
+		            	});
+	            	
 		            	newItemINP.setText("Input "); // + tree.getSelection()[0].getText());
 		            	newItemINP.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
-		            	newItemINPU.setText("Input Pull Up"); // + tree.getSelection()[0].getText());
+		            	newItemINPU.setText("Input with Internal Pull Up"); // + tree.getSelection()[0].getText());
 		            	newItemINPU.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in_pup.gif"));
 		            	newItemOUT.setText("Output"); 
 		            	newItemOUT.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));

@@ -32,15 +32,21 @@ public class MyProgressBar extends Composite {
 		int height=canvas.getSize().y; 
 		
 		float used = (this.percent*(width-2))/100;
-
-		//if (percent<50) 
-		gc.setBackground(SWTResourceManager.getColor(200,250,200)); 
-		if (percent>95) gc.setBackground(SWTResourceManager.getColor(250,200,200));
+		if (percent<=70)
+			gc.setBackground(SWTResourceManager.getColor(220,255,220));
+		if (percent>70) 
+			gc.setBackground(SWTResourceManager.getColor(255,250,180)); 
+		if (percent>90) 
+			gc.setBackground(SWTResourceManager.getColor(250,220,220));
+		
 		gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_BLACK));
 		gc.fillRectangle(1, 1, Math.round(used), height-2);
 
+		
 		gc.setFont(SWTResourceManager.getFont("Microsoft Sans Serif", 8, SWT.NORMAL));
+		gc.setBackground(SWTResourceManager.getColor(255,255,255));
 		gc.drawText(String.valueOf(percent) + "%", (width/2)-8, 3);
+
 
 		//gc.fillRectangle(used+1, 1, free-2, height-2);
 	}

@@ -101,7 +101,7 @@ public class DeviceExplorerView extends ViewPart {
 	Label lblChipSelect;
 	//Label lblFreq;
 	private Combo combo_freq;
-
+	private MyProgressBar progBar; 
 	private TabFolder tabFolder;
  
 	
@@ -440,15 +440,28 @@ public class DeviceExplorerView extends ViewPart {
 	    }); // btnSave listener
 	    
 	    
-	    MyProgressBar progBar = new MyProgressBar(compositeTop, SWT.LEFT);
+	    progBar = new MyProgressBar(compositeTop, SWT.LEFT);
 	    progBar.setSize(19, 120);
 	    progBar.setPercent(75);
 	    
-	    //Button btnClear = new Button(compositeTop, SWT.NONE);
-	    //btnClear.setText("Default config");
-	    //btnClear.setLocation(670, 19);
-	    //btnClear.setSize(100,25);
-	    //btnClear.setEnabled(true);
+	    Button btnClear = new Button(compositeTop, SWT.NONE);
+	    btnClear.setText("Reset config");
+	    btnClear.setLocation(670, 19);
+	    btnClear.setSize(100,25);
+	    btnClear.setEnabled(true);
+	    
+	    btnClear.addMouseListener(new MouseListener() {
+	    	@Override
+			public void mouseDown(MouseEvent e) { }
+
+			@Override
+			public void mouseDoubleClick(MouseEvent e) { }
+
+			@Override
+			public void mouseUp(MouseEvent e) {
+				progBar.setPercent((progBar.getPercent()+3)%100);
+			}
+	    });
 
 	    // wypelnij combobox nazwami chipow.
 	    //---------------------------------------------------
@@ -1115,7 +1128,7 @@ public class DeviceExplorerView extends ViewPart {
 	    IDocumentProvider dp = editor.getDocumentProvider();
 	    IDocument doc = dp.getDocument(editor.getEditorInput());
 
-	    System.out.println("Wierszy: " + doc.getNumberOfLines());
+	    //System.out.println("Wierszy: " + doc.getNumberOfLines());
 	    
 	    int offset;
 		try {

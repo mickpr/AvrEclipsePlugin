@@ -149,6 +149,8 @@ public class DeviceExplorerCore {
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pwm2.png"));
     		if (value.ResourceName.endsWith("RAM")) 
     			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/chip.png"));
+    		if (value.ResourceName.endsWith("RAM")) 
+    			trtmNewTreeitem.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/chip.png"));
 
 			// sort child nodes by comparator 
 			ArrayList<PinFuncDescr> sorted = selectedChip.getAvrResources().get(key).Pins;
@@ -183,10 +185,15 @@ public class DeviceExplorerCore {
 					}
 				}
 				
+				if (pfd.name.startsWith("ADC")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/ac.png"));
 				if (pfd.name.startsWith("GND")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/gnd.gif"));
-				if (pfd.name.startsWith("OC")) 	tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pwm2.png"));
+				if (pfd.name.contains("OC0") ||pfd.name.contains("OC1") || pfd.name.contains("OC2")|| pfd.name.contains("OC3")|| pfd.name.contains("OC4")) 	tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pwm2.png"));
 				if (pfd.name.endsWith("XD")) 	tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/rs232.png"));
 				if (pfd.name.contains("CLK") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
+				if (pfd.name.contains("XCK") || pfd.name.contains("SCK") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
+				if (pfd.name.contains("IC0") || pfd.name.contains("IC1")|| pfd.name.contains("IC3") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
+				if (pfd.name.startsWith("ICP")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
+				if (pfd.name.equals("T1") || pfd.name.equals("T2") || pfd.name.equals("T3")|| pfd.name.equals("T4") ) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pulse.png"));
 			} // for
 			
 			int ic = selectedChip.getAvrResources().get(key).Pins.size();

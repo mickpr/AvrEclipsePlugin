@@ -111,6 +111,19 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega64</Name>
+  <Type>ATMega</Type>
+  <Flash>65536</Flash>
+  <EEPROM>2048</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP64" file="ATmega64-TQFP64.xml"></Package>
+  </Packages>
+</device>
+
+<device>
   <Name>ATmega88</Name>
   <Type>ATmega</Type>
   <Flash>8192</Flash>

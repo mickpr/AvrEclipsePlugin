@@ -86,14 +86,12 @@ public class PinConfiguration extends Composite {
 		chkUseLabels.setLayoutData(gd_chkUseLabels);
 		chkUseLabels.setText("Use label in generated code");
 
-		
 		TableLayout tableLayout = new TableLayout();
 		tableLayout.addColumnData(new ColumnWeightData(2));
 		tableLayout.addColumnData(new ColumnWeightData(2));
 		tableLayout.addColumnData(new ColumnWeightData(2));
 		tableLayout.addColumnData(new ColumnWeightData(2));
 		tableLayout.addColumnData(new ColumnWeightData(4));
-		
 		
 		Table pinTable = new Table(this, SWT.BORDER | SWT.FULL_SELECTION | SWT.V_SCROLL);
 		GridData gd_pinTable = new GridData(SWT.LEFT, SWT.CENTER, true, false, 1, 1);
@@ -104,7 +102,6 @@ public class PinConfiguration extends Composite {
 		pinTable.setHeaderVisible(true);
 		pinTable.setLayout(tableLayout);
 		
-		
 		tableViewer=new TableViewer(pinTable);
 		tableViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
 		TableViewerColumn portColumn = new TableViewerColumn(tableViewer, SWT.NONE);
@@ -114,7 +111,6 @@ public class PinConfiguration extends Composite {
 		TableViewerColumn pinNameColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		pinNameColumn.getColumn().setText("Pin");
 		pinNameColumn.getColumn().setWidth(85);
-
 		
 		TableViewerColumn isInputColumn = new TableViewerColumn(tableViewer, SWT.NONE);
 		EditingSupport inoutEditingSupport = new InOutEditing(isInputColumn.getViewer());
@@ -123,7 +119,6 @@ public class PinConfiguration extends Composite {
 		isInputColumn.getColumn().setWidth(100);
 		
 		tableViewer.getColumnViewerEditor().addEditorActivationListener(new ColumnViewerEditorActivationListener() {
-
 			@Override
 			public void beforeEditorActivated( ColumnViewerEditorActivationEvent event) { }
 			@Override
@@ -135,7 +130,6 @@ public class PinConfiguration extends Composite {
 					ColumnViewerEditorDeactivationEvent event) {
 				tableViewer.setInput(configData);;
 			}
-			
 		});
 		
 		TableViewerColumn isPullUpColumn = new TableViewerColumn(tableViewer, SWT.NONE);
@@ -160,8 +154,6 @@ public class PinConfiguration extends Composite {
 		tableViewer.setLabelProvider(new PinTableLabelProvider());
 		//tableViewer.setColumnProperties(columnProperties);
 
-		
-		
 
 		//configData = new PinConfigData[]{ 
 		//		new PinConfigData("1","PORTA", "PA0", false, false, "LED"), 

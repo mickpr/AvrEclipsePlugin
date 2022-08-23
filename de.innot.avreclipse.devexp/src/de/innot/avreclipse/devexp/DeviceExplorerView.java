@@ -10,12 +10,6 @@ import java.util.TreeMap;
 
 
 
-
-
-
-
-
-
 import javax.swing.MenuSelectionManager;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -435,6 +429,8 @@ public class DeviceExplorerView extends ViewPart {
 				
 				// uaktualnij konfiguracje wg wybranego pinu
 		        core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
+		        System.out.println("xxxxxxxxxxxxxxxxxxx");
+		        
 		        // show loaded resources into tree :)
 		        loadDeviceResourcesIntoTree(composResource);
 		        //set checked pins 
@@ -800,16 +796,41 @@ public class DeviceExplorerView extends ViewPart {
 							btnSave.setEnabled(true);
 							// get pin functions and show them
 							for(AvrPinConfig apc : core.selectedChip.avrPinsConfig) {
-								if (apc.getPinNumber()==cp.number)
-									if (apc.getSelectedPinIndex()==apc.getPinNames().size()-1) 
-										apc.setSelectedPinIndex(0);
+								if (apc.getPinNumber()==cp.number) {
+									if (apc.getSelectedPinIndex()==apc.getPinNames().size()-1)
+										apc.setSelectedPinIndex(0); 
 									else
 										apc.setSelectedPinIndex(apc.getSelectedPinIndex()+1);
+									
+									// 
+									
+									
+						
+									
+									
+									
+									Integer pn1 = apc.getPinNumber();
+									String pnam1= apc.getSelectedPinName();
+									System.out.println("kliknieto pin numer" + pn1);
+									System.out.println("Wybrana aktualnie pozycja to:" + pnam1);
+									
+									
+									// prawdopodobnie nie istnieje, lub raczej jest pusta 
+									if (pinconf.configData!=null)
+										System.out.println(pinconf.configData[1].getPinName());
+									//pinconf.configData[pn1-1].setPinName(pnam1);
+									// poszukaj, czy pin ma okreslenie portu
+									
+								}	
+								
+								
+						        	
+								
 									// update view tree and chip symbol colors...
 									core.selectedChip.setCurrentSelectedPinsInTree(tree);
 									core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
 									canvas.redraw();
-								}
+								} // for
 							} // if (lastPinNr!-.... 
 						} // if (e.x >=x1...
 					} // for (ChipPin cp...

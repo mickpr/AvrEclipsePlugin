@@ -417,7 +417,8 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    btnSave = new Button(compositeTop,SWT.NONE);
 	    btnSave.setText("Save config");
-	    btnSave.setSize(100,25);
+	    btnSave.setSize(130,25);
+    	
 	    btnSave.setEnabled(false);
 	    btnSave.addMouseListener(new MouseListener() {
 			@Override

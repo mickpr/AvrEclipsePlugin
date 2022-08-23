@@ -26,6 +26,7 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Table;
+import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.core.internal.utils.Convert;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
@@ -150,7 +151,10 @@ public class PinConfiguration extends Composite {
 		labelColumn.getColumn().setWidth(200);
 		
 		Button btnNewButton = new Button(this, SWT.NONE);
-		btnNewButton.setText("< Generate Config Code");
+    	
+		btnNewButton.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/copy.gif"));    	
+
+		btnNewButton.setText("Copy config code");
 
 		tableViewer.setContentProvider(new ArrayContentProvider());
 		tableViewer.setLabelProvider(new PinTableLabelProvider());

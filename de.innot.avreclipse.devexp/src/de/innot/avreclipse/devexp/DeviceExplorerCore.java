@@ -22,8 +22,10 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Combo;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Tree;
 import org.eclipse.swt.widgets.TreeItem;
+import org.eclipse.ui.PlatformUI;
 import org.eclipse.wb.swt.ResourceManager;
 import org.osgi.framework.Bundle;
 import org.w3c.dom.Document;
@@ -244,16 +246,13 @@ public class DeviceExplorerCore {
 	    		System.out.println("jest attiny5");
 	    	}
 	    }
-	    process.waitFor();
-//	    System.out.println("Waiting ...");
+	    process.waitFor(); 	//	    System.out.println("Waiting ...");
 //	    System.out.println("Returned Value :" + process.exitValue());		
 	}
 	//----------------------------------------------------------------------------------------------------	
-//	private Shell getShell() {
-//		return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-//	}
-	//----------------------------------------------------------------------------------------------------
-
+	private Shell getShell() {
+		return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+	}
 	//--------------------------------------------------------------------------------------------
 	
 }

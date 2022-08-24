@@ -170,40 +170,49 @@ public class PinConfiguration extends Composite {
 //		System.out.println("------------------------------------------------");
 	}
 	
-	public boolean loadConfigData(PinConfigData configData) {
-		//iterate trought pins, and select... GPIO only
+	//JOptionPane.showMessageDialog(null, "Load start", "xxx", JOptionPane.INFORMATION_MESSAGE);	
+	
+	
+	
+	// load pin config file (pins.xml) from .settings directory of AVR project
+	// if file doesn't exist - trying to create it.
+	public boolean loadConfigData(String filename) {
 		try {
-			//JOptionPane.showMessageDialog(null, "Load start", "xxx", JOptionPane.INFORMATION_MESSAGE);	
-			//chips = new ArrayList<>();
-			
-			Bundle bundle = Platform.getBundle("de.innot.avreclipse.devexp");
-			URL fileURL = bundle.getEntry("D:\\pins.xml");
-			//File fXmlFile = new File(FileLocator.resolve(fileURL).toURI());
-			File fXmlFile = new File("D:/pins.xml");
-					
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(fXmlFile);		
-			//optional, but recommended
-			//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
- 			//doc.getDocumentElement().normalize();
-			//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-			
-			//NodeList nList = doc.getElementsByTagName("dataroot");
-			NodeList nList= doc.getDocumentElement().getChildNodes();
-			for (int i=0;i<nList.getLength();i++) {
-				Node nNode = nList.item(i);
-				if (nNode.getNodeType()==Node.ELEMENT_NODE) {
-					Element eElement = (Element)nNode;
-					System.out.println(eElement.getElementsByTagName("label").item(0).getTextContent());
-				} // if 
-			} // for
-			
-			//JOptionPane.showMessageDialog(null, chips.size(), "Size of chips: ", JOptionPane.INFORMATION_MESSAGE);
+			File fXmlFile = new File(filename);
+			if (fXmlFile.exists()) {
+				System.out.println("loading .. "+ filename);
+				// file exist try to read it
+				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+				Document doc = dBuilder.parse(fXmlFile);		
+				//optional, but recommended
+				//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+	 			doc.getDocumentElement().normalize();
+	 			
+				System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+
+				NodeList nList = doc.getDocumentElement().getChildNodes();
+				for (int i = 0; i < nList.getLength(); i++) {
+					Node nNode = nList.item(i);
+					if (nNode.getNodeType()==Node.ELEMENT_NODE) {
+						Element eElement = (Element)nNode; // mamy pojedynczy element
+						//System.out.println(eElement.getTextContent());
+						System.out.println("Pin  : " + eElement.getAttribute("nr"));
+						System.out.print("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
+						System.out.println("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
+					}
+				}
+			} else {
+				System.out.println("File doesn't exist. Try to make it and then load :) ");
+				// make file
+				
+				//recursively try it load again :)  
+				//loadConfigData(filename);
+			}
 			return true;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-			JOptionPane.showMessageDialog(null, "Error while loading pins.xml file.", "Exception!", JOptionPane.INFORMATION_MESSAGE);
+			// JOptionPane.showMessageDialog(null, "Error while loading pins.xml file.", "Exception!", JOptionPane.INFORMATION_MESSAGE);
 			return false;
 		} // try.catch
 	} // private boolean loadConfigData(PinConfigData configData) {

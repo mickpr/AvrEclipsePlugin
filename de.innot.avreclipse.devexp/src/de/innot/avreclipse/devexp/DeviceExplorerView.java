@@ -83,15 +83,16 @@ public class DeviceExplorerView extends ViewPart {
 	private Composite composResource; 
 	private Composite myViewParent;
 /*	
-//	private Composite compositeTimer;
 //	private TIMER t0;
-	
-//	private ScrolledComposite scroller; 
+//	private Composite compositeTimer;
 //	private Composite compositeUsart;
 //	private Composite compositeExtInt;
 //	private Composite compositeAcomp;
 //	private Composite compositeAdc;
 //	private Composite compositeCode;
+//	private ScrolledComposite scroller; 
+//	private TabItem tiTimer;	
+//	private EXTINT tiExtint;
 */
 		
 	private Combo combo_chipname; 
@@ -104,11 +105,8 @@ public class DeviceExplorerView extends ViewPart {
 	private Combo combo_freq;
 	private MyProgressBar progBar; 
 	private TabFolder tabFolder;
- 
 	
 	PinConfiguration pinconf; 	
-	//private TabItem tiTimer;	
-	//private EXTINT tiExtint;
 	
 	public Text descrTxt;	
 	public DeviceExplorerCore core = new DeviceExplorerCore();
@@ -126,6 +124,15 @@ public class DeviceExplorerView extends ViewPart {
 			// we ignore our own selections
 			if (sourcepart != DeviceExplorerView.this) {
 				selectProjectFile(sourcepart, selection);
+				
+				
+				if (projectPath!=null) {
+					// load configuration from selected project
+					System.out.println("Trying to load pin config file from project .settings directory...");
+					String fileToLoad = projectPath + "/.settings/pins.xml";
+					pinconf.loadConfigData(fileToLoad);
+				}
+			    
 			}
 		}
 	};	
@@ -409,6 +416,10 @@ public class DeviceExplorerView extends ViewPart {
 			}
 	    });
 	    
+	    
+	    
+	    
+	    
 	    btnSave = new Button(compositeTop,SWT.NONE);
 	    btnSave.setText("Save config");
 	    btnSave.setSize(130,25);
@@ -657,8 +668,16 @@ public class DeviceExplorerView extends ViewPart {
 	    pinconf = new PinConfiguration(tabFolder, SWT.NONE);
 	    pinconf.setProjectName(this.projectName);
 	    pinconf.setProjectPath(this.projectPath);
-	    tiGPIO.setControl(pinconf);
    
+	    
+	    
+	    tiGPIO.setControl(pinconf);
+
+ 
+	    
+	    
+	    
+	    
 //	    ScrolledComposite scroller = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.V_SCROLL);
 //	    canvas = new Canvas(scroller, SWT.NONE);
 //	    canvas_offset_x = canvas_offset_y = 250;

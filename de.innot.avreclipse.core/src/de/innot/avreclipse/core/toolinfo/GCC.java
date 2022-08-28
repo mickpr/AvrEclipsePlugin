@@ -168,12 +168,21 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 						continue;
 					}
 					fMCUmap.put(mcuid, mcuname);
+					System.out.println("MCUID: " + mcuid + " MCUNAME: " + mcuname);
 				}
 			} else {
 				// a line outside of the "Known MCU names:" section
 			}
 		}
-
+		//mickpr: add some newer chips, that Microchip miss...
+		fMCUmap.put("atmega808", "ATmega808");
+		fMCUmap.put("atmega809", "ATmega809");	
+		fMCUmap.put("atmega1608", "ATmega1608");
+		fMCUmap.put("atmega1609", "ATmega1609");	
+		fMCUmap.put("atmega3208", "ATmega3208");
+		fMCUmap.put("atmega3209", "ATmega3209");	
+		fMCUmap.put("atmega4808", "ATmega4808");
+		fMCUmap.put("atmega4809", "ATmega4809");	
 		return fMCUmap;
 	}
 

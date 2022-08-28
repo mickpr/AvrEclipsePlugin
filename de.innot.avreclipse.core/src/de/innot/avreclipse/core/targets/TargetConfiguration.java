@@ -249,14 +249,12 @@ public class TargetConfiguration implements ITargetConfiguration, ITargetConfigu
 		}
 
 		if (gdbservermcus != null) {
-
 			if (filtered && progtoolmcus != null) {
 				allmcus.retainAll(gdbservermcus);
 			} else {
 				allmcus.addAll(gdbservermcus);
 			}
 		}
-
 		return allmcus;
 	}
 

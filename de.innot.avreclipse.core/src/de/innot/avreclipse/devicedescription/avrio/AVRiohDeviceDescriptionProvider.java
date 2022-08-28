@@ -420,7 +420,6 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 		}
 		in.close();
 		fInternalErrorMsg = null;
-
 	}
 
 	/**
@@ -442,7 +441,6 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 
 		IPath includepath = fPathProvider.getPath();
 		return includepath.toOSString();
-
 	}
 
 	public void propertyChange(PropertyChangeEvent event) {

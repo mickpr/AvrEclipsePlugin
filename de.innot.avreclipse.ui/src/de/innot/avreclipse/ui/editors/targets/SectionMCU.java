@@ -224,5 +224,4 @@ public class SectionMCU extends AbstractTCSectionPart implements ITargetConfigCo
 		}
 		return false;
 	}
-
 }

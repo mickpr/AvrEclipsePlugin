@@ -47,8 +47,8 @@ public class AVRDudeActionFactory {
 			{ MemType.lfuse, MemType.hfuse, MemType.efuse },
 			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3 },
 			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4 },
-			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,
-			MemType.fuse5 }							};
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5 }	,
+	};
 
 	/** The name of the lockbit bytes (currently only one) */
 	private final static MemType[][]	LOCKSNAMEMAP	= { {}, { MemType.lock } };

@@ -5,3 +5,9 @@ TODO:
 - ustalanie pozycji chip'a na ekranie w zale¿noœci od wybranej wersji obudowy tak, by piny siê zmiesci³y
 
 
+Przy b³êdach kompilacji nowych MCU czaem wystarczy dodaæ do opcji linkera:
+-Wl,--start-group -Wl,-lm  -Wl,--end-group -Wl,--gc-sections
+rozwi¹zuje ono problemy z odwo³aniami 'circular' w bibliotece (tutaj libm
+W zasadzie czasem wystarczy: 
+-Wl,--gc-sections
+(usuniecie zbednych sekcji)

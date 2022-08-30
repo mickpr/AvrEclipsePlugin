@@ -174,7 +174,7 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 				// a line outside of the "Known MCU names:" section
 			}
 		}
-		//mickpr: add some newer chips, that Microchip miss...
+		//mickpr: add some newer chips, that Microchip miss...(intentially!)
 		fMCUmap.put("atmega808", "ATmega808");
 		fMCUmap.put("atmega809", "ATmega809");	
 		fMCUmap.put("atmega1608", "ATmega1608");
@@ -182,7 +182,24 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 		fMCUmap.put("atmega3208", "ATmega3208");
 		fMCUmap.put("atmega3209", "ATmega3209");	
 		fMCUmap.put("atmega4808", "ATmega4808");
-		fMCUmap.put("atmega4809", "ATmega4809");	
+		fMCUmap.put("atmega4809", "ATmega4809");
+		
+		fMCUmap.put("atmega48pb", "ATmega48PB");
+		fMCUmap.put("atmega88pb", "ATmega88PB");
+		fMCUmap.put("atmega168pb", "ATmega168PB");
+		fMCUmap.put("atmega328pb", "ATmega328PB");
+
+		fMCUmap.put("attiny412", "ATtiny412");
+		fMCUmap.put("attiny414", "ATtiny414");
+		fMCUmap.put("attiny416", "ATtiny416");
+		fMCUmap.put("attiny417", "ATtiny417");
+
+		fMCUmap.put("attiny824", "ATtiny824");
+		fMCUmap.put("attiny826", "ATtiny826");
+		fMCUmap.put("attiny827", "ATtiny827");
+		fMCUmap.put("attiny841", "ATtiny841");
+		
+		
 		return fMCUmap;
 	}
 

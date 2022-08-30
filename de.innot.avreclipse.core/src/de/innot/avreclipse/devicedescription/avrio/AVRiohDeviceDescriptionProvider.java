@@ -219,6 +219,9 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 	private void loadDevices() throws IOException {
 
 		BufferedReader in = null;
+		
+		System.out.println("avrio file is in "+getAVRiohFile());
+		
 		try {
 			in = new BufferedReader(new FileReader(getAVRiohFile()));
 		} catch (FileNotFoundException fnfe) {
@@ -245,6 +248,9 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 				if (m.matches() && curDev.size() != 0) {
 					for (String dev : curDev) {
 						fMCUNamesMap.put(AVRMCUidConverter.name2id(dev), m.group(1));
+						
+						System.out.println("IOH_MCUID:" + AVRMCUidConverter.name2id(dev));
+						
 					}
 					curDev.clear();
 				}

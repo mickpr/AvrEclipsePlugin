@@ -28,11 +28,19 @@ public class AVRDudeAction {
 	public enum MemType {
 		// The names of the ATXmega fusebytes is currently just speculation because avrdude does not
 		// support more than 3 fuse bytes at this time.
-		flash("Flash"), eeprom("EEPROM"), signature("Signature"), fuse("Fuse Byte"), lfuse(
-				"Low Fuse Byte"), hfuse("High Fuse Byte"), efuse("Extended Fuse Byte"), lock(
-				"Lock Byte"), calibration("Calibration Bytes"), fuse0("Fuse Byte 0"), fuse1(
-				"Fuse Byte 1"), fuse2("Fuse Byte 2"), fuse3("Fuse Byte 3"), fuse4("Fuse Byte 4"), fuse5(
-				"Fuse Byte 5");
+		flash("Flash"), eeprom("EEPROM"), signature("Signature"), 
+		fuse("Fuse Byte"), lfuse("Low Fuse Byte"), hfuse("High Fuse Byte"), efuse("Extended Fuse Byte"), 
+		lock("Lock Byte"), calibration("Calibration Bytes"), 
+		fuse0("Fuse Byte 0"), 
+		fuse1("Fuse Byte 1"), 
+		fuse2("Fuse Byte 2"), 
+		fuse3("Fuse Byte 3"), 
+		fuse4("Fuse Byte 4"), 
+		fuse5("Fuse Byte 5"),
+		fuse6("Fuse Byte 6"), 
+		fuse7("Fuse Byte 7"), 
+		fuse8("Fuse Byte 8")
+		;
 
 		private String	name;
 

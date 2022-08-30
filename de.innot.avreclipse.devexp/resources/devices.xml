@@ -407,4 +407,17 @@
 	<Package name="MLF20" file="ATtiny2313-MLF20.xml"></Package>
   </Packages>
 </device>
+<device>
+  <Name>ATmega808</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega808-SSOP28.xml"></Package>
+  </Packages>
+</device>
+
 </dataroot>

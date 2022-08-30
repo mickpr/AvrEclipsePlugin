@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<pins>
+    <pin name="1">
+  	<role name="PA7" resource="PORTA" desc="Generic IO pin PA7." />
+  	<role name="/SS" resource="SPI" desc="Slave Select pin for using with SPI." />
+	<role name="XDIR0" resource="USART0" desc="USART0 Transmit enable for RS-485." />
+	<role name="OUT" resource="ACOMP" desc="Analog comparator output." />
+    </pin>
+    <pin name="2">
+  	<role name="PC0" resource="PORTC" desc="Generic IO pin PC0" />
+    </pin>
+    <pin name="3">
+  	<role name="PC1" resource="PORTC" desc="Generic IO pin PC1" />
+    </pin>
+    <pin name="4">
+  	<role name="PC2" resource="PORTC" desc="Generic IO pin PC2" />
+    </pin>
+    <pin name="5">
+  	<role name="PC3" resource="PORTC" desc="Generic IO pin PC3" />
+    </pin>
+    <pin name="6">
+  	<role name="PD0" resource="PORTD" desc="Generic IO pin PD0" />
+
+    </pin>
+    <pin name="7">
+  	<role name="PD1" resource="PORTD" desc="Generic IO pin PD1" />
+	<role name="AINP3" resource="ACOMP" desc="Analog comparator input 3 (positive)." />
+    </pin>
+    <pin name="8">
+  	<role name="PD2" resource="PORTD" desc="Generic IO pin PD2" />    
+	<role name="AINP0" resource="ACOMP" desc="Analog comparator input 1 (positive)." />
+    </pin>
+    <pin name="9">
+  	<role name="PD3" resource="PORTD" desc="Generic IO pin PD3" />
+	<role name="AINN0" resource="ACOMP" desc="Analog comparator input 0 (negative)." />
+    </pin>
+    <pin name="10">
+  	<role name="PD4" resource="PORTD" desc="Generic IO pin PD4" />
+	<role name="AINP1" resource="ACOMP" desc="Analog comparator input 1 (positive)." />
+    </pin>
+    <pin name="11">
+  	<role name="PD5" resource="PORTD" desc="Generic IO pin PD5" />
+	<role name="AINN1" resource="ACOMP" desc="Analog comparator input 1 (negative)." />
+    </pin>
+    <pin name="12">
+  	<role name="PD6" resource="PORTD" desc="Generic IO pin PD6" />
+	<role name="AINP2" resource="ACOMP" desc="Analog comparator input 2 (positive)." />
+    </pin>      
+    <pin name="13">
+  	<role name="PD7" resource="PORTD" desc="Generic IO pin PD7" />
+	<role name="AINN2" resource="ACOMP" desc="Analog comparator input 2 (negative) ." />
+    </pin>
+    <pin name="14">
+  	<role name="AVDD" resource="ADC" desc="Analog Power Supply" />
+    </pin>
+    <pin name="15">
+  	<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+    <pin name="16">
+  	<role name="PF0" resource="PORTF" desc="Generic IO pin PF0" />
+  	<role name="TOSC1" resource="TIMER1" desc="32768 clock source, can input external clock instead connect crystal oscillator. " />
+    </pin>
+    <pin name="17">
+  	<role name="PF1" resource="PORTF" desc="Generic IO pin PF1" />
+  	<role name="TOSC2" resource="TIMER1" desc="32768 clock source, can input external clock instead connect crystal oscillator. " />
+    </pin>
+    <pin name="18">
+  	<role name="PF6" resource="PORTF" desc="Generic IO pin PF6" />
+    </pin>
+    <pin name="19">
+  	<role name="UPDI" resource="CORE" desc="UPDI programming and debugging i/o" />
+    </pin>
+    <pin name="20">
+  	<role name="VDD" resource="CORE" desc="Power supply." />
+    </pin>
+    <pin name="21">
+  	<role name="GND" resource="CORE" desc="Common ground." />
+    </pin>
+    <pin name="22">
+  	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0." />
+  	<role name="EXTCLK" resource="CORE" desc="External Clock input pin." />
+  	<role name="TXD0" resource="USART0" desc="Transmit Data (data output pin for the USART)." />
+    </pin>
+    <pin name="23">
+  	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1." />
+	<role name="RXD0" resource="USART0" desc="Receive Data (data input pin for the USART). " />
+    </pin>
+    <pin name="24">
+  	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2." />
+	<role name="XCK0" resource="USART0" desc="USART0 External clock." />
+    </pin>
+    <pin name="25">
+  	<role name="PA3" resource="PORTA" desc="Generic IO pin PA3." />
+    </pin>
+    <pin name="26">
+  	<role name="PA4" resource="PORTA" desc="Generic IO pin PA4." />
+	<role name="MOSI" resource="SPI" desc="Data input pin for memory downloading or SPI." />
+  	<role name="TXD0" resource="USART0" desc="Transmit Data (data output pin for the USART)." />
+    </pin>      
+    <pin name="27">
+  	<role name="PA5" resource="PORTA" desc="Generic IO pin PA5." />
+  	<role name="MISO" resource="SPI" desc="Data output pin for memory uploading or SPI." />
+	<role name="RXD0" resource="USART0" desc="Receive Data (data input pin for the USART). " />
+    </pin>
+    <pin name="28">
+  	<role name="PA6" resource="PORTA" desc="Generic IO pin PA6." />
+  	<role name="SCK" resource="SPI" desc="Clock output pin for SPI." />
+	<role name="XCK0" resource="USART0" desc="USART0 External clock." />
+    </pin>
+</pins>

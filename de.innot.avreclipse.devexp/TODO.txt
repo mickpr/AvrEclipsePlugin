@@ -11,3 +11,14 @@ rozwi¹zuje ono problemy z odwo³aniami 'circular' w bibliotece (tutaj libm
 W zasadzie czasem wystarczy: 
 -Wl,--gc-sections
 (usuniecie zbednych sekcji)
+
+... to powyzej nie dzia³a 
+
+To poni¿ej :) DZIA£A :)
+Go find the linker script- avrxmega3.xn (something/avr/lib/ldscripts)
+change this line-
+	data   (rw!x) : ORIGIN = 0x802000, LENGTH = __DATA_REGION_LENGTH__
+to this
+	data   (rw!x) : ORIGIN = __DATA_REGION_ORIGIN__, LENGTH = __DATA_REGION_LENGTH__
+this linker script is in the toolchain, and not in any pack.
+

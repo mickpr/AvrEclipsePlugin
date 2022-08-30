@@ -2,20 +2,20 @@
 <!--Fuse/Lockbit description file for the AVR Eclipse plugin-->
 <!--Author: automatically created by AVR Eclipse plugin-->
 <!--Date: 01.12.11 16:14-->
-<!--Based on: Atmel Device File "ATmega88PB.xml"-->
-<description mcutype="atmega88pb">
+<!--Based on: Atmel Device File "ATmega168PB.xml"-->
+<description mcutype="atmega168pb">
 <version build="20220830"/>
 <fusebyte description="" index="2" name="EXTENDED" size="1">
 <bitfield desc="Select boot size" mask="0x06" name="BOOTSZ">
-<value desc="Boot Flash size=128 words Boot address=$0F80" name="128W_0F80" val="0x03"/>
-<value desc="Boot Flash size=256 words Boot address=$0F00" name="256W_0F00" val="0x02"/>
-<value desc="Boot Flash size=512 words Boot address=$0E00" name="512W_0E00" val="0x01"/>
-<value desc="Boot Flash size=1024 words Boot address=$0C00" name="1024W_0C00" val="0x00"/>
+<value desc="Boot Flash size=128 words start address=$1F80" name="128W_1F80" val="0x03"/>
+<value desc="Boot Flash size=256 words start address=$1F00" name="256W_1F00" val="0x02"/>
+<value desc="Boot Flash size=512 words start address=$1E00" name="512W_1E00" val="0x01"/>
+<value desc="Boot Flash size=1024 words start address=$1C00" name="1024W_1C00" val="0x00"/>
 </bitfield>
 <bitfield desc="Boot Reset vector Enabled" mask="0x01" name="BOOTRST"/>
 </fusebyte>
 <fusebyte description="" index="1" name="HIGH" size="1">
-<bitfield desc="Reset Disabled (Enable PC6 as i/o pin)]" mask="0x80" name="RSTDISBL"/>
+<bitfield desc="Reset Disabled (Enable PC6 as i/o pin)" mask="0x80" name="RSTDISBL"/>
 <bitfield desc="Debug Wire enable" mask="0x40" name="DWEN"/>
 <bitfield desc="Serial program downloading (SPI) enabled" mask="0x20" name="SPIEN"/>
 <bitfield desc="Watch-dog Timer always on" mask="0x10" name="WDTON"/>

@@ -2,20 +2,14 @@
 <!--Fuse/Lockbit description file for the AVR Eclipse plugin-->
 <!--Author: automatically created by AVR Eclipse plugin-->
 <!--Date: 01.12.11 16:14-->
-<!--Based on: Atmel Device File "ATmega88PB.xml"-->
-<description mcutype="atmega88pb">
+<!--Based on: Atmel Device File "ATmega48PB.xml"-->
+<description mcutype="atmega48pa">
 <version build="20220830"/>
 <fusebyte description="" index="2" name="EXTENDED" size="1">
-<bitfield desc="Select boot size" mask="0x06" name="BOOTSZ">
-<value desc="Boot Flash size=128 words Boot address=$0F80" name="128W_0F80" val="0x03"/>
-<value desc="Boot Flash size=256 words Boot address=$0F00" name="256W_0F00" val="0x02"/>
-<value desc="Boot Flash size=512 words Boot address=$0E00" name="512W_0E00" val="0x01"/>
-<value desc="Boot Flash size=1024 words Boot address=$0C00" name="1024W_0C00" val="0x00"/>
-</bitfield>
-<bitfield desc="Boot Reset vector Enabled" mask="0x01" name="BOOTRST"/>
+<bitfield desc="Self Programming enable" mask="0x01" name="SELFPRGEN"/>
 </fusebyte>
 <fusebyte description="" index="1" name="HIGH" size="1">
-<bitfield desc="Reset Disabled (Enable PC6 as i/o pin)]" mask="0x80" name="RSTDISBL"/>
+<bitfield desc="Reset Disabled (Enable PC6 as i/o pin)" mask="0x80" name="RSTDISBL"/>
 <bitfield desc="Debug Wire enable" mask="0x40" name="DWEN"/>
 <bitfield desc="Serial program downloading (SPI) enabled" mask="0x20" name="SPIEN"/>
 <bitfield desc="Watch-dog Timer always on" mask="0x10" name="WDTON"/>
@@ -36,7 +30,7 @@
 <value desc="Ext. Clock; Start-up time PWRDWN/RESET: 6 CK/14 CK + 65 ms" name="EXTCLK_6CK_14CK_65MS" val="0x20"/>
 <value desc="Int. RC Osc. 8 MHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 0 ms" name="INTRCOSC_8MHZ_6CK_14CK_0MS" val="0x02"/>
 <value desc="Int. RC Osc. 8 MHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 4.1 ms" name="INTRCOSC_8MHZ_6CK_14CK_4MS1" val="0x12"/>
-<value desc="Int. RC Osc. 8 MHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 65 ms" name="INTRCOSC_8MHZ_6CK_14CK_65MS" val="0x22"/>
+<value desc="Int. RC Osc. 8 MHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 65 ms; default value" name="INTRCOSC_8MHZ_6CK_14CK_65MS_DEFAULT" val="0x22"/>
 <value desc="Int. RC Osc. 128kHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 0 ms" name="INTRCOSC_128KHZ_6CK_14CK_0MS" val="0x03"/>
 <value desc="Int. RC Osc. 128kHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 4.1 ms" name="INTRCOSC_128KHZ_6CK_14CK_4MS1" val="0x13"/>
 <value desc="Int. RC Osc. 128kHz; Start-up time PWRDWN/RESET: 6 CK/14 CK + 65 ms" name="INTRCOSC_128KHZ_6CK_14CK_65MS" val="0x23"/>
@@ -93,18 +87,6 @@
 <value desc="Further programming and verification disabled" name="PROG_VER_DISABLED" val="0x00"/>
 <value desc="Further programming disabled" name="PROG_DISABLED" val="0x02"/>
 <value desc="No memory lock features enabled" name="NO_LOCK" val="0x03"/>
-</bitfield>
-<bitfield desc="Boot Loader Protection Mode" mask="0x0C" name="BLB0">
-<value desc="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" val="0x00"/>
-<value desc="LPM prohibited in Application Section" name="LPM_DISABLE" val="0x01"/>
-<value desc="SPM prohibited in Application Section" name="SPM_DISABLE" val="0x02"/>
-<value desc="No lock on SPM and LPM in Application Section" name="NO_LOCK" val="0x03"/>
-</bitfield>
-<bitfield desc="Boot Loader Protection Mode" mask="0x30" name="BLB1">
-<value desc="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" val="0x00"/>
-<value desc="LPM prohibited in Boot Section" name="LPM_DISABLE" val="0x01"/>
-<value desc="SPM prohibited in Boot Section" name="SPM_DISABLE" val="0x02"/>
-<value desc="No lock on SPM and LPM in Boot Section" name="NO_LOCK" val="0x03"/>
 </bitfield>
 </lockbitsbyte>
 </description>

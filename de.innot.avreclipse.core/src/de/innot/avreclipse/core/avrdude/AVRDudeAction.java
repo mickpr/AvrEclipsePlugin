@@ -39,7 +39,9 @@ public class AVRDudeAction {
 		fuse5("Fuse Byte 5"),
 		fuse6("Fuse Byte 6"), 
 		fuse7("Fuse Byte 7"), 
-		fuse8("Fuse Byte 8")
+		fuse8("Fuse Byte 8"),
+		fuse9("Fuse Byte 9"),
+		fuseA("Fuse Byte A")
 		;
 
 		private String	name;

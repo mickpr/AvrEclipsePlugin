@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<pins>
+	<pin name="1">
+		<role name="VDD" resource="CORE" descr="Power Supply."/>
+		<role name="/SS" resource="SPI" descr="SPI Slave select."/>
+	</pin>
+	<pin name="2">
+		<role name="PA6" resource="PORTA" descr="Generic IO pin PA6"/>
+		<role name="AIN6" resource="ADC0" descr="Analog input 6."/>
+		<role name="AINN0" resource="ACOMP0" descr="Analog comparator input negative."/>
+		<role name="TXD0" resource="USART0" descr="TXD0"/>
+		<role name="MOSI" resource="SPI" descr="SPI alternative MOSI pin."/>
+		<role name="WO0" resource="TCB0" descr="Timer B. WO0 pin"/>
+		<role name="WOA" resource="TCD0" descr="Timer D. WOA pin"/>
+		<role name="LUT0-OUT" resource="CCL" descr="Lookup table 0 pin output"/>		
+	</pin>
+	<pin name="3">
+		<role name="PA7" resource="PORTA" descr="Generic IO pin PA7"/>
+		<role name="AIN7" resource="ADC0" descr="Analog input 7."/>
+		<role name="AINP0" resource="ACOMP0" descr="Analog comparator input positive."/>
+		<role name="RXD0" resource="USART0" descr="RXD0"/>
+		<role name="MISO" resource="SPI" descr="SPI alternative MISO pin."/>
+		<role name="WO0" resource="TCA0" descr="Timer A. WO0 alternative pin"/>
+		<role name="WOB" resource="TCD0" descr="Timer D. WOB pin"/>
+		<role name="LUT1-OUT" resource="CCL" descr="Lookup table 1 pin output"/>		
+	</pin>
+	<pin name="4">
+		<role name="PA1" resource="PORTA" descr="Generic IO pin PA1"/>
+		<role name="AIN1" resource="ADC0" descr="Analog input 1."/>
+		<role name="TXD0" resource="USART0" descr="Alternative TXD0."/>
+		<role name="MOSI" resource="SPI" descr="SPI Master output, Slave input."/>
+		<role name="SDA" resource="I2C" descr="I2C Data."/>
+		<role name="WO1" resource="TCA0" descr="Timer A."/>
+		<role name="LUT0-IN1" resource="CCL" descr="Lookup table pin 1 input"/>		
+	</pin>
+    	<pin name="5">
+		<role name="PA2" resource="PORTA" descr="Generic IO pin PA2"/>
+		<role name="AIN2" resource="ADC0" descr="Analog input 2."/>
+		<role name="RXD0" resource="USART0" descr="Alternative RXD0."/>
+		<role name="MISO" resource="SPI" descr="SPI Master input, Slave output."/>
+		<role name="SCL" resource="I2C" descr="I2C Clock."/>
+		<role name="WO2" resource="TCA0" descr="Timer A."/>
+		<role name="LUT0-IN2" resource="CCL" descr="Lookup table pin 2 input"/>		
+ 	</pin>
+    	<pin name="6">
+		<role name="PA0" resource="PORTA" descr="Generic IO pin PA0"/>
+		<role name="/RESET" resource="CORE" descr="Reset pin."/>
+		<role name="UPDI" resource="CORE" descr="External Interrupt source 0 to the MCU."/>
+		<role name="AIN0" resource="ADC0" descr="Analog input 0."/>
+		<role name="XDIR" resource="USART0" descr="Analog input 0."/>
+		<role name="LUT0-IN0" resource="CCL" descr="Lookup table pin 0 input"/>		
+ 	</pin>
+	<pin name="7">
+		<role name="PA3" resource="PORTA" descr="Generic IO pin PA3"/>
+		<role name="EXTCLK" resource="CORE" descr="External clock input."/>
+		<role name="AIN3" resource="ADC0" descr="Analog input 3."/>
+		<role name="OUT" resource="ACOMP0" descr="Analog comparator output."/>
+		<role name="XCK0" resource="USART0" descr="External USART0 clock input."/>
+		<role name="SCK" resource="SPI" descr="SPI clock."/>
+		<role name="WO0" resource="TCA0" descr="Timer A."/>
+		<role name="WO3" resource="TCA0" descr="Timer A."/>
+ 	</pin>
+	<pin name="8">
+		<role name="GND" resource="CORE" descr="Common ground."/>
+	</pin>
+</pins>

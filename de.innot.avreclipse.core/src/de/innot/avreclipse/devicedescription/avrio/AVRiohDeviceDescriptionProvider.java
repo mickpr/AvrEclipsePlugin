@@ -220,8 +220,6 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 
 		BufferedReader in = null;
 		
-		System.out.println("avrio file is in "+getAVRiohFile());
-		
 		try {
 			in = new BufferedReader(new FileReader(getAVRiohFile()));
 		} catch (FileNotFoundException fnfe) {

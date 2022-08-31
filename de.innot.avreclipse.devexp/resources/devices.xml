@@ -66,6 +66,19 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega16A</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega16-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega16-TQFP44.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega162</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>

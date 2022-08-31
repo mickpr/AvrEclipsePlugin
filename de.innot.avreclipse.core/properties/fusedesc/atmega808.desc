@@ -12,17 +12,12 @@
 <fusebyte description="BOD Configuration" index="1" name="BODCFG" size="1">
   <bitfield desc="BOD Level" mask="0xE0" name="LVL">
 	<value desc="1.8V"     name="BODLEVEL0" val="0x00"/>
-<!--	<value desc="reserved" name="reserved"  val="0x01"/>-->
 	<value desc="2.6V"     name="BODLEVEL2" val="0x02"/>
-<!--	<value desc="reserved" name="reserved" val="0x03"/>-->
-<!--	<value desc="reserved" name="reserved" val="0x04"/>-->
-<!--	<value desc="reserved" name="reserved" val="0x05"/>-->
-<!--	<value desc="reserved" name="reserved" val="0x06"/>-->
 	<value desc="4.3V"     name="BODLEVEL7" val="0x07"/>
   </bitfield>
   <bitfield desc="BOD Sample Frequency" mask="0x10" name="SAMPFREQ">
-	<value desc="Sample frequency is 1 kHz"   name="SAMP1k"   val="0x00"/>
-	<value desc="Sample frequency is 125 kHz" name="SAMP125k" val="0x01"/>
+	<value desc="Sample frequency is 1 kHz"   name="1k"   val="0x00"/>
+	<value desc="Sample frequency is 125 kHz" name="125k" val="0x01"/>
   </bitfield>
   <bitfield desc="BOD Operation Mode in Active and Idle" mask="0x0C" name="ACTIVE">
 	<value desc="Disabled"   name="DISABLED"   val="0x00"/>
@@ -37,16 +32,14 @@
 <!--	<value desc="Reserved" name="RESERVED" val="0x03"/> -->
   </bitfield>
 </fusebyte>
-<fusebyte description="Oscillator" index="2" name="OSCLOCK" size="1">
+<fusebyte description="Oscillator Lock and Freq select" index="2" name="OSCLOCK" size="1">
   <bitfield desc="Oscillator Lock" mask="0x80" name="BODLEVEL">
 	<value desc="Calibration registers of the 20 MHz oscillator can be modified at run-time" name="NOLOCK" val="0x00"/>
 	<value desc="Calibration registers of the 20 MHz oscillator are locked at run-time" name="LOCK" val="0x01"/>
   </bitfield>
   <bitfield desc="Frequency select" mask="0x03" name="SUT_CKSEL">
-	<value desc="reserved" name="reserved" val="0x00"/>
 	<value desc="Run at 16MHz" name="R16M" val="0x01"/>
 	<value desc="Run at 20MHz" name="R20M" val="0x02"/>
-	<value desc="reserved" name="reserved" val="0x03"/>
   </bitfield>
 </fusebyte>
 <fusebyte description="System configuration 0" index="5" name="SYSCFG0" size="1">
@@ -65,39 +58,4 @@
 	<value desc="EEPROM erased by chip erase" name="NOERASE" val="0x01"/>
   </bitfield>
 </fusebyte>
-<!--
-<fusebyte description="System configuration 1" index="6" name="SYSCFG1" size="1">
-  <bitfield desc="Start-Up Time Setting" mask="0x03" name="SUT">
-	<value desc="0 mS" name="0mS" val="0x00"/>
-	<value desc="1 mS" name="1mS" val="0x01"/>
-	<value desc="2 mS" name="2mS" val="0x02"/>
-	<value desc="4 mS" name="4mS" val="0x03"/>
-	<value desc="8 mS" name="8mS" val="0x04"/>
-	<value desc="16 mS" name="16mS" val="0x05"/>
-	<value desc="32 mS" name="32mS" val="0x06"/>
-	<value desc="64 mS" name="64mS" val="0x07"/>
-  </bitfield>
-</fusebyte>
--->
-<!--
-<lockbitsbyte description="" index="0" name="LOCKBIT" size="1">
-  <bitfield desc="Memory Lock" mask="0x03" name="LB">
-	<value desc="Further programming and verification disabled" name="PROG_VER_DISABLED" val="0x00"/>
-	<value desc="Further programming disabled" name="PROG_DISABLED" val="0x02"/>
-	<value desc="No memory lock features enabled" name="NO_LOCK" val="0x03"/>
-  </bitfield>
-  <bitfield desc="Boot Loader Protection Mode" mask="0x0C" name="BLB0">
-	<value desc="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" val="0x00"/>
-	<value desc="LPM prohibited in Application Section" name="LPM_DISABLE" val="0x01"/>
-	<value desc="SPM prohibited in Application Section" name="SPM_DISABLE" val="0x02"/>
-	<value desc="No lock on SPM and LPM in Application Section" name="NO_LOCK" val="0x03"/>
-  </bitfield>
-  <bitfield desc="Boot Loader Protection Mode" mask="0x30" name="BLB1">
-	<value desc="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" val="0x00"/>
-	<value desc="LPM prohibited in Boot Section" name="LPM_DISABLE" val="0x01"/>
-	<value desc="SPM prohibited in Boot Section" name="SPM_DISABLE" val="0x02"/>
-	<value desc="No lock on SPM and LPM in Boot Section" name="NO_LOCK" val="0x03"/>
-  </bitfield>
-</lockbitsbyte>
--->
 </description>

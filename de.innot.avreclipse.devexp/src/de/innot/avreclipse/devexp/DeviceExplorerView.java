@@ -125,7 +125,6 @@ public class DeviceExplorerView extends ViewPart {
 			if (sourcepart != DeviceExplorerView.this) {
 				selectProjectFile(sourcepart, selection);
 				
-				
 				if (projectPath!=null) {
 					// load configuration from selected project
 					System.out.println("Trying to load pin config file from project .settings directory...");
@@ -157,18 +156,19 @@ public class DeviceExplorerView extends ViewPart {
 			// tylko jesli wskazemy projekt otwarty...
 			if (PluginPreferences.SwitchProject(core.projectName)==true)
 			{
-				tree.setVisible(true);
-				canvas.setVisible(true);
-				lblChipSelect.setEnabled(true);
-				combo_chipname.setEnabled(true);
-				combo_freq.setEnabled(true);
-				combo_package.setEnabled(true);
-				tabFolder.setEnabled(true);
-				btnSave.setEnabled(true);
+				setEnableDeviceView(true);
 				
 				// get chip, if chip doesn't exist set Atmega8
 				String avrName = PluginPreferences.get("MCUType");
-				if (avrName.length()==0) avrName="ATmega8";
+				// exit if no chip is selected yet
+				if (avrName.length()==0) {
+					combo_chipname.setBackground(SWTResourceManager.getColor(255,200,200));
+					combo_chipname.deselectAll();
+					combo_freq.deselectAll();
+					combo_package.deselectAll();
+					return;
+				}
+				
 			
 				// Get the build configurations for a project
 				try {
@@ -303,14 +303,7 @@ public class DeviceExplorerView extends ViewPart {
 			}
 			else {
 				System.out.println("projekt jest zamkniety");
-				tree.setVisible(false);
-				canvas.setVisible(false);
-				lblChipSelect.setEnabled(false);
-				combo_chipname.setEnabled(false);
-				combo_freq.setEnabled(false);
-				combo_package.setEnabled(false);
-				tabFolder.setEnabled(false);
-				btnSave.setEnabled(false);
+				setEnableDeviceView(false); // pozamykaj kontrolki, zeby nie bylo bledu			
 			}
 		} else {
 			if (element!=null) {
@@ -382,6 +375,13 @@ public class DeviceExplorerView extends ViewPart {
 	    			//odczytaj jakie obudowy s¹ w wybranym mikrokontrolerze i je wpisz do combo_package
 		    		reloadPackageComboAndSetFirstPackageAsDefault(combo_chipname.getItem(combo_chipname.getSelectionIndex()));
 		    	}
+		    	// clear potentially red warting colour
+		    	combo_chipname.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		    	// jesli czestotliwosc nie jest wybrana - wybierz jakas
+		    	// (obudowa jest juz automatycznie ustawiana podczas wyboruu MCU) 
+		    	if (combo_freq.getSelectionIndex()==-1)
+		    		combo_freq.select(0);
+		    	// odblokuj mozliwosc zapisu
 		    	btnSave.setEnabled(true);
 		    	compositeTop.redraw();
 		    }
@@ -1306,4 +1306,23 @@ public class DeviceExplorerView extends ViewPart {
 		getSite().getWorkbenchWindow().getSelectionService().removeSelectionListener(listenerProject);
 		super.dispose();
 	} // of void dispose
+	
+
+	private void setEnableDeviceView(boolean enable) {
+		if (!enable) {
+			combo_chipname.deselectAll();
+			combo_freq.deselectAll();
+			combo_package.deselectAll();
+		}
+		combo_chipname.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		tree.setVisible(enable);
+		canvas.setVisible(enable);
+		lblChipSelect.setEnabled(enable);
+		combo_chipname.setEnabled(enable);
+		combo_freq.setEnabled(enable);
+		combo_package.setEnabled(enable);
+		tabFolder.setEnabled(enable);
+		btnSave.setEnabled(enable);
+	}
+	
 } //of class

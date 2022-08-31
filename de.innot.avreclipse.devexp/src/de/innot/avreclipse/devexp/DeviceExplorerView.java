@@ -141,35 +141,38 @@ public class DeviceExplorerView extends ViewPart {
 		IStructuredSelection ss = null;
 		Object element = null;
 
-		// get what we are pointing at Project/Package Explorer window 
+		// sprawdz co wskazalismy w oknie Projekt/Package Explorer  
 		if (selection instanceof IStructuredSelection) {
 			ss = (IStructuredSelection) selection;
 			element=ss.getFirstElement();
 		}
 		
-		// if we point at project
+		// jesli wskazalismy projekt
 		if (element instanceof IProject) {
-			// get name of pointed project 
+			// pobierz jego nazwa 
 			core.projectName = ((IProject) element).getName();
 			// setup for preference access
-			
+			tree.setVisible(true);
 			// tylko jesli wskazemy projekt otwarty...
 			if (PluginPreferences.SwitchProject(core.projectName)==true)
 			{
 				setEnableDeviceView(true);
-				
-				// get chip, if chip doesn't exist set Atmega8
+				canvas.setVisible(true);
+				// sprawdz jaki jest typ projektu
 				String avrName = PluginPreferences.get("MCUType");
-				// exit if no chip is selected yet
+				// jesli nie mozna odczytac zmiennej MCUType z podkatalogu ./settings projektu
+				// znaczy to, ze najprawdopodobniej nie ma takiego pliku
 				if (avrName.length()==0) {
 					combo_chipname.setBackground(SWTResourceManager.getColor(255,200,200));
 					combo_chipname.deselectAll();
 					combo_freq.deselectAll();
 					combo_package.deselectAll();
+					tree.setVisible(false);
+					canvas.setVisible(false);
 					return;
 				}
 				
-			
+
 				// Get the build configurations for a project
 				try {
 					IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
@@ -281,7 +284,7 @@ public class DeviceExplorerView extends ViewPart {
 				//			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
 				//		    tiTimer.setControl(compositeTimer);
 			
-				int sel=tabFolder.getSelectionIndex();
+				// int sel=tabFolder.getSelectionIndex();
 
 				//			compositeTimer.redraw();
 				//			tabFolder.redraw();
@@ -808,6 +811,17 @@ public class DeviceExplorerView extends ViewPart {
 			} // public mouseMove..
 		});  
 	    // ...........................................canvas.addMouseMoveListener...
+
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
 	    
 	    canvas.addMouseListener(new MouseListener() {
 
@@ -837,18 +851,11 @@ public class DeviceExplorerView extends ViewPart {
 									else
 										apc.setSelectedPinIndex(apc.getSelectedPinIndex()+1);
 									
-									// 
-									
-									
-						
-									
-									
-									
 									Integer pn1 = apc.getPinNumber();
+									
 									String pnam1= apc.getSelectedPinName();
 									System.out.println("kliknieto pin numer" + pn1);
 									System.out.println("Wybrana aktualnie pozycja to:" + pnam1);
-									
 									
 									// prawdopodobnie nie istnieje, lub raczej jest pusta 
 									if (pinconf.configData!=null)
@@ -857,9 +864,6 @@ public class DeviceExplorerView extends ViewPart {
 									// poszukaj, czy pin ma okreslenie portu
 									
 								}	
-								
-								
-						        	
 								
 									// update view tree and chip symbol colors...
 									core.selectedChip.setCurrentSelectedPinsInTree(tree);
@@ -874,33 +878,22 @@ public class DeviceExplorerView extends ViewPart {
 			
 				
 			public void mouseDown(MouseEvent e) {
-				// TODO Auto-generated method stub
 				if (e.button == 3 && core.selectedChip.chipPackage.pins != null) {
-			
+				System.out.println("Kliknieto prawy klawisz myszy");	
 					
-					
-//pinMenuShape=null;
+					//pinMenuShape=null;
 					//pinMenuShape=new PinMenuShape(e.x,e.y,30,30,"dupa");
 					//System.out.println("Right click !");
 					canvas.redraw();
-					
-//	    	        for (ChipPin chipPin: core.selectedChip.chipPackage.pins) {
-//	    	        	System.out.println(chipPin.color.toString());
-//	    	        }
-					//Image img = ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/wykrzyknik.png");
-					
-	    	        
 				} else {
-//					pinMenuShape = null;
+					//pinMenuShape = null;
 					canvas.redraw();
 				}
 			}
 			public void mouseUp(MouseEvent e) {
 				// TODO Auto-generated method stub
-				
 			}
 	    });
-	    
 	    
 	    sashForm.setWeights(new int[] {120, 421});
 	    sashFormTop.setWeights(new int[] {40, 500});
@@ -1313,8 +1306,10 @@ public class DeviceExplorerView extends ViewPart {
 			combo_chipname.deselectAll();
 			combo_freq.deselectAll();
 			combo_package.deselectAll();
+			combo_chipname.setBackground(SWTResourceManager.getColor(255,200,200));
+		} else {
+			combo_chipname.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		}
-		combo_chipname.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		tree.setVisible(enable);
 		canvas.setVisible(enable);
 		lblChipSelect.setEnabled(enable);

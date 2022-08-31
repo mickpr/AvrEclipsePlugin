@@ -5,6 +5,8 @@ import org.eclipse.core.resources.IWorkspace;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ProjectScope;
 import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.IScopeContext;
 import org.eclipse.core.runtime.preferences.InstanceScope;
@@ -13,11 +15,15 @@ public class PluginPreferences {
 	private static IEclipsePreferences preferences; 
 	
 	
-	public static void SwitchProject(String projectName) {
+	public static boolean SwitchProject(String projectName) {
+		
+		
 		IWorkspace workspace = ResourcesPlugin.getWorkspace();
 	    IWorkspaceRoot root = workspace.getRoot();
 	    IProject project = root.getProject(projectName); // wskazany otwarty projekt
 	    PluginPreferences.preferences = getPreferences(project);
+	    // return true if project is open, otherwise return false
+	    return project.isOpen();
 	}
 	
 	public static String get(String name) {

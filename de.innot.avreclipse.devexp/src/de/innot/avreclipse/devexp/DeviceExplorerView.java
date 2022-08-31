@@ -153,153 +153,168 @@ public class DeviceExplorerView extends ViewPart {
 			// get name of pointed project 
 			core.projectName = ((IProject) element).getName();
 			// setup for preference access
-			PluginPreferences.SwitchProject(core.projectName);
-			// get chip, if chip doesn't exist set Atmega8
-			String avrName = PluginPreferences.get("MCUType");
-			if (avrName.length()==0) avrName="ATmega8";
 			
-			// Get the build configurations for a project
-			try {
-				IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
-//System.out.print("Project name:");
-//System.out.println(((IProject) element).getName());  // Project name
-				projectName = ((IProject) element).getName();
-
-//System.out.println(((IProject) element).getLocation().toString());
-				projectPath = ((IProject) element).getLocation().toString();
+			// tylko jesli wskazemy projekt otwarty...
+			if (PluginPreferences.SwitchProject(core.projectName)==true)
+			{
+				tree.setVisible(true);
+				canvas.setVisible(true);
+				lblChipSelect.setEnabled(true);
+				combo_chipname.setEnabled(true);
+				combo_freq.setEnabled(true);
+				combo_package.setEnabled(true);
+				tabFolder.setEnabled(true);
 				
-// wa¿ne :)				
-//				projectPath = ((IProject) element).,,,,,,,,,,,,
-						
-						
-						
-						
-						
-						
-				System.out.print("Project path:" + projectPath );
-//				System.out.print("Build configs:");
-//				System.out.println(buildConfigs.length);
-//				for (IBuildConfiguration ibc : buildConfigs) {}
-				System.out.println();  // Project name
+				// get chip, if chip doesn't exist set Atmega8
+				String avrName = PluginPreferences.get("MCUType");
+				if (avrName.length()==0) avrName="ATmega8";
+			
+				// Get the build configurations for a project
+				try {
+					IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
+					//System.out.print("Project name:");
+					//System.out.println(((IProject) element).getName());  // Project name
+					projectName = ((IProject) element).getName();
+
+					//System.out.println(((IProject) element).getLocation().toString());
+					projectPath = ((IProject) element).getLocation().toString();
 				
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				IProjectDescription projDesc = ((IProject) element).getDescription();
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+					// wa¿ne :)				
+					//				projectPath = ((IProject) element).,,,,,,,,,,,,
+						
+					System.out.print("Project path:" + projectPath );
+					//	System.out.print("Build configs:");
+					//	System.out.println(buildConfigs.length);
+					//	for (IBuildConfiguration ibc : buildConfigs) {}
+					System.out.println();  // Project name
+				
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				try {
+					IProjectDescription projDesc = ((IProject) element).getDescription();
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			
-//			IProjectDescription projDesc = project.getDescription();
-//			  ... 
-//			  // Creating a build configuration
-//			  ResourcesPlugin().getWorkspace().newBuildConfig(project.getName(), "myNewBuildConfig");
-//			  ...
-//			  // Set new build configurations on a project
-//			  projDesc.setBuildConfigs(buildConfigs);
-//
-//			  // Set the description
-//			  project.setDescription(projDesc, null);			
-//
-//			projDesc.setActiveBuildConfig(String buildConfigName);			
-			
+				//	IProjectDescription projDesc = project.getDescription();
+				//	... 
+				// Creating a build configuration
+				//	ResourcesPlugin().getWorkspace().newBuildConfig(project.getName(), "myNewBuildConfig");
+				//...
+				//	Set new build configurations on a project
+				//projDesc.setBuildConfigs(buildConfigs);
+				//
+				//	Set the description
+				//project.setDescription(projDesc, null);			
+				//			projDesc.setActiveBuildConfig(String buildConfigName);			
 
-	        // System.out.println("Chip z tego " + PluginPreferences.get("MCUType","ATmega8"));
-			//convert to name in special form (2 Capital letrers at the begining)
-	        avrName = avrName.substring(0, 2).toUpperCase() + avrName.substring(2, avrName.length());
-	        // enter chipname into field
-	        combo_chipname.setText(avrName);
-	        //set selectedChip.Name
-	        core.selectedChip.Name = avrName;
-	        // reload available packages for current selected chip
-	        reloadPackageComboAndSetFirstPackageAsDefault(avrName); // combo_chipname.getItem(combo_chipname.getSelectionIndex())
+				// System.out.println("Chip z tego " + PluginPreferences.get("MCUType","ATmega8"));
+				//convert to name in special form (2 Capital letrers at the begining)
+				avrName = avrName.substring(0, 2).toUpperCase() + avrName.substring(2, avrName.length());
+				// enter chipname into field
+				combo_chipname.setText(avrName);
+				//set selectedChip.Name
+				core.selectedChip.Name = avrName;
+				// reload available packages for current selected chip
+				reloadPackageComboAndSetFirstPackageAsDefault(avrName); // combo_chipname.getItem(combo_chipname.getSelectionIndex())
 
-			//MessageDialog.openInformation(getShell(), "tytu³", "tekst");	        
+				//MessageDialog.openInformation(getShell(), "tytu³", "tekst");	        
 	        
-	        // if exist Package =then select it  
-	        if (PluginPreferences.get("Package").length()>0) {
-				combo_package.setText(PluginPreferences.get("Package"));
-			}
-	        // setSelected chip and repaint it
-			core.SetupSelectedChip(combo_chipname.getText(),combo_package.getText());
-			// freq
-			this.mcuFreq=core.getMcuFrequency();
-			//lblFreq.setText( "@ " + this.mcuFreq/1000000 + " MHz");
-			combo_freq.setText(this.mcuFreq/1000000+"");
+				// if exist Package =then select it  
+				if (PluginPreferences.get("Package").length()>0) {
+					combo_package.setText(PluginPreferences.get("Package"));
+				}
+				// setSelected chip and repaint it
+				core.SetupSelectedChip(combo_chipname.getText(),combo_package.getText());
+				// freq
+				this.mcuFreq=core.getMcuFrequency();
+				//lblFreq.setText( "@ " + this.mcuFreq/1000000 + " MHz");
+				combo_freq.setText(this.mcuFreq/1000000+"");
 			
-			// show loaded resources into tree :)
-			loadDeviceResourcesIntoTree(composResource);
-			//set checked pins 
-			core.selectedChip.setCurrentSelectedPinsInTree(tree);
+				// show loaded resources into tree :)
+				loadDeviceResourcesIntoTree(composResource);
+				//set checked pins 
+				core.selectedChip.setCurrentSelectedPinsInTree(tree);
 
-			// TODO: musimy przelaczyc na package, inaczej timery sie nie odswieza - nie wiem dlaczego - poprawic
-			tabFolder.setSelection(0);
-			
-		    //-------------------------------------------------------------------------
-//			TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
-//		    
-//		    compositeExtInt = new Composite(tabFolder,SWT.FILL);
-//		    compositeExtInt.setLayout(new FillLayout());
-//
-//
-//		    if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
-//		    	tiExtInt.dispose();
-//		    }
-//		    
-		    //tiExtint = new EXTINT(compositeExtInt,tree,SWT.FILL);
+				// TODO: musimy przelaczyc na package, inaczej timery sie nie odswieza - nie wiem dlaczego - poprawic
+				tabFolder.setSelection(0);
+				
+				//-------------------------------------------------------------------------
+				//			TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
+				//		    
+				//		    compositeExtInt = new Composite(tabFolder,SWT.FILL);
+				// compositeExtInt.setLayout(new FillLayout());
+				//
+				//
+				//if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
+				//	tiExtInt.dispose();
+				//		    }
+				//		    
+				//tiExtint = new EXTINT(compositeExtInt,tree,SWT.FILL);
 		    
-		    //tiExtInt.setText("EXTINT");
-		    //tiExtInt.setControl(compositeExtInt);
-		    //tiExtInt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/wykrzyknik.png"));			
+				//tiExtInt.setText("EXTINT");
+				//tiExtInt.setControl(compositeExtInt);
+				//tiExtInt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/wykrzyknik.png"));			
 			
-//			// timers - redraw after selection
-//			if ((compositeTimer != null) && (!compositeTimer.isDisposed())) {
-//				compositeTimer.dispose();
-//		    }			
-//		    
-//			if ((tiTimer !=null)&&(!tiTimer.isDisposed())) {
-//				tabFolder.getTabList()[1].dispose();
-//			}
-			//TabItem tiTimer = new TabItem(tabFolder,SWT.FILL);
-//		    compositeTimer = new Composite(tabFolder, SWT.FILL);
-//		    compositeTimer.setLayout(new FillLayout()); 	    
-//		    
-//		    if ((t0 != null) && (!t0.isDisposed())) {
-//		    	t0.dispose();
-//		    }
-//	    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
+				// timers - redraw after selection
+				//	if ((compositeTimer != null) && (!compositeTimer.isDisposed())) {
+				//	compositeTimer.dispose();
+				//		    }			
+				//			if ((tiTimer !=null)&&(!tiTimer.isDisposed())) {
+				//				tabFolder.getTabList()[1].dispose();
+				//	}
+				//TabItem tiTimer = new TabItem(tabFolder,SWT.FILL);
+				//compositeTimer = new Composite(tabFolder, SWT.FILL);
+				//compositeTimer.setLayout(new FillLayout()); 	    
 
-//	    	tiTimer.setText("TIMERS/COUNTERS");
-//			tiTimer.setControl(compositeTimer);
-//			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
-//		    tiTimer.setControl(compositeTimer);
-			
-			int sel=tabFolder.getSelectionIndex();
+				//		    if ((t0 != null) && (!t0.isDisposed())) {
+				//    		t0.dispose();
+				//		    }
+				//	    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
 
-//			compositeTimer.redraw();
-//			tabFolder.redraw();
-//			tabFolder.setSelection(sel);
+				//	    	tiTimer.setText("TIMERS/COUNTERS");
+				//			tiTimer.setControl(compositeTimer);
+				//			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
+				//		    tiTimer.setControl(compositeTimer);
 			
-			// end timers - redraw after selection
+				int sel=tabFolder.getSelectionIndex();
+
+				//			compositeTimer.redraw();
+				//			tabFolder.redraw();
+				//			tabFolder.setSelection(sel);
 			
-			//mickpr tutaj
-			//System.out.println("------------------------");
-			//System.out.println(Platform.getLocation());  // lokalizacja workspace'a projektu
-			//System.out.println("------------------------");
+				// end timers - redraw after selection
 			
-			// nazwa pliku wynikowego (ELF) projektu
-			//System.out.println(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getLocation().append(core.projectName).append("/Release/").append(core.projectName.concat(".elf")));
+				//mickpr tutaj
+				//System.out.println("------------------------");
+				//System.out.println(Platform.getLocation());  // lokalizacja workspace'a projektu
+				//System.out.println("------------------------");
 			
-			// sama nazwa pliku projektu
-			//System.out.println(core.projectName.concat(".elf"));
-	        canvas.redraw();
+				// nazwa pliku wynikowego (ELF) projektu
+				//System.out.println(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getLocation().append(core.projectName).append("/Release/").append(core.projectName.concat(".elf")));
+			
+				// sama nazwa pliku projektu
+				//System.out.println(core.projectName.concat(".elf"));
+				canvas.redraw();
+			}
+			else {
+				System.out.println("projekt jest zamkniety");
+				tree.setVisible(false);
+				canvas.setVisible(false);
+				lblChipSelect.setEnabled(false);
+				combo_chipname.setEnabled(false);
+				combo_freq.setEnabled(false);
+				combo_package.setEnabled(false);
+				tabFolder.setEnabled(false);
+				
+			}
 		} else {
 			if (element!=null) {
-				// show type of selected item in project explorer 
-				System.out.println("Klasa: " + element.getClass().getName());
+			// show type of selected item in project explorer 
+			System.out.println("Klasa: " + element.getClass().getName());
 			}
 		}
 	}	

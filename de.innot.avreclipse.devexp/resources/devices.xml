@@ -64,8 +64,6 @@
 	<Package name="DIP40"  file="ATmega16-DIP40.xml"></Package>
 	<Package name="TQFP44" file="ATmega16-TQFP44.xml"></Package>
   </Packages>
-  <Resources>
-  </Resources>
 </device>
 <device>
   <Name>ATmega162</Name>
@@ -79,8 +77,6 @@
 	<Package name="DIP40"  file="ATmega162-DIP40.xml"></Package>
 	<Package name="TQFP44"  file="ATmega162-TQFP44.xml"></Package>
   </Packages>
-  <Resources>
-  </Resources>
 </device>
 <device>
   <Name>ATmega32</Name>
@@ -94,8 +90,6 @@
 	<Package name="DIP40"  file="ATmega32-DIP40.xml"></Package>
 	<Package name="TQFP44" file="ATmega32-TQFP44.xml"></Package>
   </Packages>
-  <Resources>
-  </Resources>
 </device>
 <device>
   <Name>ATmega48</Name>
@@ -417,6 +411,42 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="SSOP28" file="ATmega808-SSOP28.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega1608</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega1608-SSOP28.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega809</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega809-SSOP28.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega1609</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega1609-SSOP28.xml"></Package>
   </Packages>
 </device>
 

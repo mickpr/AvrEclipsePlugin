@@ -411,6 +411,7 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="SSOP28" file="ATmega808-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega808-TQFP32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -423,6 +424,7 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="SSOP28" file="ATmega1608-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega1608-TQFP32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -435,6 +437,7 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="SSOP28" file="ATmega809-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega809-TQFP32.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -447,6 +450,7 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="SSOP28" file="ATmega1609-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega1609-TQFP32.xml"></Package>
   </Packages>
 </device>
 </dataroot>

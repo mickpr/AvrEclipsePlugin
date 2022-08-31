@@ -10,6 +10,7 @@ import java.util.TreeMap;
 
 
 
+
 import javax.swing.MenuSelectionManager;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -18,6 +19,7 @@ import org.eclipse.core.resources.IBuildConfiguration;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
@@ -131,7 +133,6 @@ public class DeviceExplorerView extends ViewPart {
 					String fileToLoad = projectPath + "/.settings/pins.xml";
 					pinconf.loadConfigData(fileToLoad);
 				}
-			    
 			}
 		}
 	};	
@@ -172,36 +173,26 @@ public class DeviceExplorerView extends ViewPart {
 					return;
 				}
 				
-
 				// Get the build configurations for a project
 				try {
 					IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
 					//System.out.print("Project name:");
 					//System.out.println(((IProject) element).getName());  // Project name
-					projectName = ((IProject) element).getName();
+					//projectName = ((IProject) element).getName();
+					//projectPath = ((IProject) element).getLocation().toString();
+					// lokalizacja projektu
+					//System.out.println("Lokalizacja projektu: " +((IProject) element).getLocation().toString());
+					//System.out.println(buildConfigs.length);
+					//for (IBuildConfiguration ibc : buildConfigs) {}
+					//System.out.println();  // Project name
+				
+				} catch (CoreException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
-					//System.out.println(((IProject) element).getLocation().toString());
-					projectPath = ((IProject) element).getLocation().toString();
-				
-					// wa¿ne :)				
-					//				projectPath = ((IProject) element).,,,,,,,,,,,,
-						
-					System.out.print("Project path:" + projectPath );
-					//	System.out.print("Build configs:");
-					//	System.out.println(buildConfigs.length);
-					//	for (IBuildConfiguration ibc : buildConfigs) {}
-					System.out.println();  // Project name
-				
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				try {
-					IProjectDescription projDesc = ((IProject) element).getDescription();
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				try { IProjectDescription projDesc = ((IProject) element).getDescription();
+				} catch (CoreException e) { e.printStackTrace(); }
 			
 				//	IProjectDescription projDesc = project.getDescription();
 				//	... 
@@ -225,8 +216,6 @@ public class DeviceExplorerView extends ViewPart {
 				// reload available packages for current selected chip
 				reloadPackageComboAndSetFirstPackageAsDefault(avrName); // combo_chipname.getItem(combo_chipname.getSelectionIndex())
 
-				//MessageDialog.openInformation(getShell(), "tytu³", "tekst");	        
-	        
 				// if exist Package =then select it  
 				if (PluginPreferences.get("Package").length()>0) {
 					combo_package.setText(PluginPreferences.get("Package"));
@@ -245,63 +234,55 @@ public class DeviceExplorerView extends ViewPart {
 
 				// TODO: musimy przelaczyc na package, inaczej timery sie nie odswieza - nie wiem dlaczego - poprawic
 				tabFolder.setSelection(0);
-				
+
+				/* 
 				//-------------------------------------------------------------------------
-				//			TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
-				//		    
-				//		    compositeExtInt = new Composite(tabFolder,SWT.FILL);
-				// compositeExtInt.setLayout(new FillLayout());
-				//
-				//
-				//if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
-				//	tiExtInt.dispose();
-				//		    }
-				//		    
-				//tiExtint = new EXTINT(compositeExtInt,tree,SWT.FILL);
-		    
-				//tiExtInt.setText("EXTINT");
-				//tiExtInt.setControl(compositeExtInt);
-				//tiExtInt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/wykrzyknik.png"));			
-			
-				// timers - redraw after selection
-				//	if ((compositeTimer != null) && (!compositeTimer.isDisposed())) {
-				//	compositeTimer.dispose();
-				//		    }			
-				//			if ((tiTimer !=null)&&(!tiTimer.isDisposed())) {
-				//				tabFolder.getTabList()[1].dispose();
-				//	}
+							TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);
+						    compositeExtInt = new Composite(tabFolder,SWT.FILL);
+				 compositeExtInt.setLayout(new FillLayout());
+				if ((tiExtInt !=null) && (!tiExtInt.isDisposed())) {
+					tiExtInt.dispose(); }
+						    
+				tiExtint = new EXTINT(compositeExtInt,tree,SWT.FILL);
+				tiExtInt.setText("EXTINT");
+				tiExtInt.setControl(compositeExtInt);
+				tiExtInt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/wykrzyknik.png"));			
+				 timers - redraw after selection
+					if ((compositeTimer != null) && (!compositeTimer.isDisposed())) {
+					compositeTimer.dispose();
+						    }			
+							if ((tiTimer !=null)&&(!tiTimer.isDisposed())) {
+								tabFolder.getTabList()[1].dispose();
+					}
+				
 				//TabItem tiTimer = new TabItem(tabFolder,SWT.FILL);
 				//compositeTimer = new Composite(tabFolder, SWT.FILL);
 				//compositeTimer.setLayout(new FillLayout()); 	    
 
-				//		    if ((t0 != null) && (!t0.isDisposed())) {
-				//    		t0.dispose();
-				//		    }
-				//	    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
+						    if ((t0 != null) && (!t0.isDisposed())) {
+				    		t0.dispose();
+						    }
+					    	t0 = new TIMER(compositeTimer,SWT.FILL,core.selectedChip.Name, core.getMcuFrequency());
 
-				//	    	tiTimer.setText("TIMERS/COUNTERS");
-				//			tiTimer.setControl(compositeTimer);
-				//			tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
-				//		    tiTimer.setControl(compositeTimer);
+					    	tiTimer.setText("TIMERS/COUNTERS");
+							tiTimer.setControl(compositeTimer);
+							tiTimer.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/clock.png"));		    
+						    tiTimer.setControl(compositeTimer);
 			
-				// int sel=tabFolder.getSelectionIndex();
+				int sel=tabFolder.getSelectionIndex();
 
-				//			compositeTimer.redraw();
-				//			tabFolder.redraw();
-				//			tabFolder.setSelection(sel);
+							compositeTimer.redraw();
+							tabFolder.redraw();
+							tabFolder.setSelection(sel);
 			
-				// end timers - redraw after selection
-			
-				//mickpr tutaj
-				//System.out.println("------------------------");
-				//System.out.println(Platform.getLocation());  // lokalizacja workspace'a projektu
-				//System.out.println("------------------------");
-			
+				 end timers - redraw after selection
 				// nazwa pliku wynikowego (ELF) projektu
 				//System.out.println(org.eclipse.core.resources.ResourcesPlugin.getWorkspace().getRoot().getLocation().append(core.projectName).append("/Release/").append(core.projectName.concat(".elf")));
-			
+		
 				// sama nazwa pliku projektu
 				//System.out.println(core.projectName.concat(".elf"));
+
+				*/
 				canvas.redraw();
 			}
 			else {

@@ -428,6 +428,18 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega809</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega809-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega1608</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>
@@ -441,19 +453,6 @@
   </Packages>
 </device>
 <device>
-  <Name>ATmega809</Name>
-  <Type>ATmega</Type>
-  <Flash>8192</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="SSOP28" file="ATmega809-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega809-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
   <Name>ATmega1609</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>
@@ -462,8 +461,57 @@
   <Freq>20MHz</Freq>
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
-	<Package name="SSOP28" file="ATmega1609-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega1609-TQFP32.xml"></Package>
+	<Package name="TQFP48" file="ATmega1609-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega3208</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega3208-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega3208-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega3209</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega3209-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega4808</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega4808-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega4808-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega4809</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega4809-TQFP48.xml"></Package>
   </Packages>
 </device>
 </dataroot>

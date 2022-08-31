@@ -174,13 +174,14 @@ public class PinConfiguration extends Composite {
 	
 	
 	
-	// load pin config file (pins.xml) from .settings directory of AVR project
-	// if file doesn't exist - trying to create it.
+	// Wczytujemy plik konfiguracyjny pinow (pins.xml) z katalogu .settings naszego wybranego projektu
 	public boolean loadConfigData(String filename) {
+		// w przypadku bledu (np. parsowania pliku XML, albo problemem z odczytem pliku) 
+		// otaczamy wszystko klauzula try..catch...
 		try {
 			File fXmlFile = new File(filename);
 			if (fXmlFile.exists()) {
-				System.out.println("loading .. "+ filename);
+				//System.out.println("loading .. "+ filename);
 				// file exist try to read it
 				DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -189,7 +190,7 @@ public class PinConfiguration extends Composite {
 				//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
 	 			doc.getDocumentElement().normalize();
 	 			
-				System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+				//System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
 				NodeList nList = doc.getDocumentElement().getChildNodes();
 				for (int i = 0; i < nList.getLength(); i++) {
@@ -197,9 +198,9 @@ public class PinConfiguration extends Composite {
 					if (nNode.getNodeType()==Node.ELEMENT_NODE) {
 						Element eElement = (Element)nNode; // mamy pojedynczy element
 						//System.out.println(eElement.getTextContent());
-						System.out.println("Pin  : " + eElement.getAttribute("nr"));
-						System.out.print("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
-						System.out.println("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
+						//System.out.println("Pin  : " + eElement.getAttribute("nr"));
+						//System.out.print("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
+						//System.out.println("name: " + eElement.getElementsByTagName("name").item(0).getTextContent());
 					}
 				}
 			} else {

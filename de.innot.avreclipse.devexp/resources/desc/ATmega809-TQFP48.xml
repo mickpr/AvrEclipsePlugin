@@ -1,0 +1,296 @@
+<?xml version="1.0"?>
+<pins>
+    <pin name="1">
+	<role name="PA5" resource="PORTA" desc="Generic IO pin PA5" />
+	<role name="RXD0" resource="USART0" desc="USART0 RXD pin (alternative)."/>
+	<role name="MISO" resource="SPI" desc="SPI Master input, slave output pin."/>
+	<role name="0-WO5" resource="TCA0" desc="Timer counter A pin"/>
+    </pin>
+    <pin name="2">
+	<role name="PA6" resource="PORTA" desc="Generic IO pin PA6" />
+	<role name="XCK0" resource="USART0" desc="USART0 external clock pin (alternative)."/>
+	<role name="SCK" resource="SPI" desc="SPI clock pin."/>
+	<role name="0-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin (alternative)."/>
+    </pin>
+    <pin name="3">
+	<role name="PA7" resource="PORTA" desc="Generic IO pin PA7" />
+	<role name="CLKOUT" resource="CORE" desc="Clock output pin" />
+	<role name="OUT" resource="ACOMP0" desc="Clock output pin" />
+	<role name="XDIR0" resource="USART0" desc="USART0 XDIR pin (alternative)."/>
+	<role name="/SS" resource="SPI" desc="SPI slave select pin."/>
+	<role name="EVOUTA" resource="EVSYS" desc="Event system output A. (alternative)"/>
+    </pin>
+    <pin name="4">
+	<role name="PB0" resource="PORTB" desc="Generic IO pin PB0" />
+	<role name="TXD3" resource="USART3" desc="USART3 XDIR pin."/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="5">
+	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1" />
+	<role name="RXD3" resource="USART3" desc="USART3 XDIR pin."/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="6">
+	<role name="PB2" resource="PORTB" desc="Generic IO pin PB2" />
+	<role name="XCK3" resource="USART3" desc="USART3 external clock pin."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="EVOUTB" resource="EVSYS" desc="Event system output B."/>
+    </pin>
+    <pin name="7">
+	<role name="PB3" resource="PORTB" desc="Generic IO pin PB3" />
+	<role name="XDIR3" resource="USART3" desc="USART3 XDIR pin."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="8">
+	<role name="PB4" resource="PORTB" desc="Generic IO pin PB4" />
+	<role name="TXD3" resource="USART3" desc="USART3 transsmit pin (alternative)."/>
+	<role name="0-WO4" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="2-WO" resource="TCBn" desc="Timer counter B pin (alternative)."/>
+    </pin>
+    <pin name="9">
+	<role name="PB5" resource="PORTB" desc="Generic IO pin PB5" />
+	<role name="RXD3" resource="USART3" desc="USART3 receive pin (alternative)."/>
+	<role name="0-WO5" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="3-WO" resource="TCBn" desc="Timer counter B pin."/>
+    </pin>
+    <pin name="10">
+	<role name="PC0" resource="PORTC" desc="Generic IO pin PC0" />
+	<role name="TXD1" resource="USART1" desc="USART1 transmitt pin."/>
+	<role name="MOSI" resource="SPI" desc="SPI Master output, Slave input pin (alternative)."/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="2-WO" resource="TCBn" desc="Timer counter B pin."/>
+	<role name="1-IN0" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="11">
+	<role name="PC1" resource="PORTC" desc="Generic IO pin PC1" />
+	<role name="RXD1" resource="USART1" desc="USART1 transmitt pin."/>
+	<role name="MISO" resource="SPI" desc="SPI Master input, Slave output pin (alternative)."/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="3-WO" resource="TCBn" desc="Timer counter B pin (alternative)."/>
+	<role name="1-IN1" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="12">
+	<role name="PC2" resource="PORTC" desc="Generic IO pin PC2" />
+	<role name="XCK1" resource="USART1" desc="USART1 external clock pin."/>
+	<role name="SCK" resource="SPI" desc="SPI clock (alternative)."/>
+	<role name="SDA" resource="I2C" desc="I2C data (alternative)."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="EVOUTC" resource="EVSYS" desc="Event system output C pin."/>
+	<role name="1-IN2" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="13">
+	<role name="PC3" resource="PORTC" desc="Generic IO pin PC3" />
+	<role name="XDIR1" resource="USART1" desc="USART1 XDIR pin."/>
+	<role name="/SS" resource="SPI" desc="SPI Slave select pin (alternative)."/>
+	<role name="SCL" resource="I2C" desc="I2C clock (alternative)."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="1-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin."/>
+    </pin>
+    <pin name="14">
+	<role name="VDD" resource="CORE" desc="Power Supply" />
+    </pin>
+    <pin name="15">
+	<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+    <pin name="16">
+	<role name="PC4" resource="PORTC" desc="Generic IO pin PC4" />
+	<role name="TXD1" resource="USART1" desc="USART1 transmit pin (alternative)."/>
+	<role name="0-WO4" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="17">
+	<role name="PC5" resource="PORTC" desc="Generic IO pin PC5" />
+	<role name="RXD1" resource="USART1" desc="USART1 transmit pin (alternative)."/>
+	<role name="0-WO5" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="18">
+	<role name="PC6" resource="PORTC" desc="Generic IO pin PC6" />
+	<role name="XCK1" resource="USART1" desc="USART1 external clock pin (alternative)."/>
+	<role name="1-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin (alternative)."/>
+    </pin>
+    <pin name="19">
+	<role name="PC7" resource="PORTC" desc="Generic IO pin PC7" />
+	<role name="XDIR1" resource="USART1" desc="USART1 XDIR pin (alternative)."/>
+	<role name="EVOUTC" resource="EVSYS" desc="Event system output C pin (alternative)."/>
+    </pin>
+    <pin name="20">
+	<role name="PD0" resource="PORTD" desc="Generic IO pin PD0" />
+	<role name="AIN0" resource="ADC0" desc="ADC input pin 0."/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="2-IN0" resource="CCL" desc="CCLlogic / LUT-Table input pin ."/>
+    </pin>
+    <pin name="21">
+	<role name="PD1" resource="PORTD" desc="Generic IO pin PD1" />
+	<role name="AIN1" resource="ADC0" desc="ADC input pin 1."/>
+	<role name="P3" resource="ACOMP0" desc="AD comparator input positive pin."/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="2-IN1" resource="CCL" desc="CCLlogic / LUT-Table input pin ."/>
+    </pin>
+    <pin name="22">
+	<role name="PD2" resource="PORTD" desc="Generic IO pin PD2" />
+	<role name="AIN2" resource="ADC0" desc="ADC input pin 2."/>
+	<role name="P0" resource="ACOMP0" desc="AD comparator input positive pin."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="EVOUTD" resource="EVSYS" desc="Event system output D pin."/>
+	<role name="2-IN2" resource="CCL" desc="CCLlogic / LUT-Table input pin ."/>
+    </pin>
+    <pin name="23">
+	<role name="PD3" resource="PORTD" desc="Generic IO pin PD3" />
+	<role name="AIN3" resource="ADC0" desc="ADC input pin 3."/>
+	<role name="N0" resource="ACOMP0" desc="AD comparator input negative pin."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="2-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin ."/>
+    </pin>
+    <pin name="24">
+	<role name="PD4" resource="PORTD" desc="Generic IO pin PD4" />
+	<role name="AIN4" resource="ADC0" desc="ADC input pin 4."/>
+	<role name="P1" resource="ACOMP0" desc="AD comparator input positive pin."/>
+	<role name="0-WO4" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="25">
+  	<role name="PD5" resource="PORTD" desc="Generic IO pin PD5" />
+	<role name="AIN5" resource="ADC0" desc="ADC input pin 5."/>
+	<role name="N1" resource="ACOMP0" desc="AD comparator input negative pin."/>
+	<role name="0-WO5" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="26">
+  	<role name="PD6" resource="PORTD" desc="Generic IO pin PD6" />
+	<role name="AIN6" resource="ADC0" desc="ADC input pin 6."/>
+	<role name="P2" resource="ACOMP0" desc="AD comparator input positive pin."/>
+	<role name="2-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin ."/>
+    </pin>
+    <pin name="27">
+  	<role name="PD7" resource="PORTD" desc="Generic IO pin PD7" />
+	<role name="VREFA" resource="ADC0" desc="Voltage reference pin."/>
+	<role name="AIN7" resource="ADC0" desc="ADC input pin 7."/>
+	<role name="N2" resource="ACOMP0" desc="AD comparator input negative pin."/>
+	<role name="EVOUTD" resource="EVSYS" desc="Event system output D pin (alternative)."/>
+    </pin>
+    <pin name="28">
+	<role name="AVDD" resource="CORE" desc="Analog power supply"/>
+    </pin>
+    <pin name="29">
+	<role name="GND" resource="CORE" desc="Common ground"/>
+    </pin>
+    <pin name="30">
+	<role name="PE0" resource="PORTE" desc="Generic IO pin PE0"/>
+	<role name="AIN8" resource="ADC0" desc="ADC input pin 8."/>
+	<role name="MOSI" resource="SPI" desc="SPI Master output, Slave input pin (alternative)."/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="31">
+	<role name="PE1" resource="PORTE" desc="Generic IO pin PE1"/>
+	<role name="AIN9" resource="ADC0" desc="ADC input pin 9."/>
+	<role name="MISO" resource="SPI" desc="SPI Master input, Slave output pin (alternative)."/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="32">
+	<role name="PE2" resource="PORTE" desc="Generic IO pin PE2"/>
+	<role name="AIN10" resource="ADC0" desc="ADC input pin 10."/>
+	<role name="SCK" resource="SPI" desc="SPI clock pin (alternative)."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="EVOUTE" resource="EVSYS" desc="Event system output E pin."/>
+    </pin>
+    <pin name="33">
+	<role name="PE3" resource="PORTE" desc="Generic IO pin PE3"/>
+	<role name="AIN11" resource="ADC0" desc="ADC input pin 11."/>
+	<role name="/SS" resource="SPI" desc="SPI slave select pin (alternative)."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+    </pin>
+    <pin name="34">
+	<role name="PF0" resource="PORTF" desc="Generic IO pin PF0"/>
+	<role name="TOSC1" resource="CORE" desc="32768Hz external crystal pin"/>
+	<role name="TXD2" resource="USART2" desc="USART2 transmit pin."/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="3-IN0" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="35">
+	<role name="PF1" resource="PORTF" desc="Generic IO pin PF1"/>
+	<role name="TOSC2" resource="CORE" desc="32768Hz external crystal pin"/>
+	<role name="RXD2" resource="USART2" desc="USART2 receive pin."/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="3-IN0" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="36">
+	<role name="PF2" resource="PORTF" desc="Generic IO pin PF2"/>
+	<role name="AIN12" resource="ADC0" desc="ADC input pin 12."/>
+	<role name="XCK2" resource="USART2" desc="USART2 external clock pin."/>
+	<role name="SDA" resource="I2C" desc="I2C data pin (alternative)."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="EVOUTF" resource="EVSYS" desc="Event system output F pin."/>
+	<role name="3-IN2" resource="CCL" desc="CCLlogic / LUT-Table input pin."/>
+    </pin>
+    <pin name="37">
+	<role name="PF3" resource="PORTF" desc="Generic IO pin PF3"/>
+	<role name="AIN13" resource="ADC0" desc="ADC input pin 13."/>
+	<role name="XDIR2" resource="USART2" desc="USART2 XDIR pin."/>
+	<role name="SCL" resource="I2C" desc="I2C clock pin (alternative)."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="3-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin."/>
+    </pin>
+    <pin name="38">
+	<role name="PF4" resource="PORTF" desc="Generic IO pin PF4"/>
+	<role name="AIN14" resource="ADC0" desc="ADC input pin 14."/>
+	<role name="TXD2" resource="USART2" desc="USART2 transmit pin (alternative)."/>
+	<role name="0-WO4" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="0-WO" resource="TCBn" desc="Timer counter B pin (alternative)."/>
+    </pin>
+    <pin name="39">
+	<role name="PF5" resource="PORTF" desc="Generic IO pin PF5"/>
+	<role name="AIN15" resource="ADC0" desc="ADC input pin 15."/>
+	<role name="RXD2" resource="USART2" desc="USART2 receive pin (alternative)."/>
+	<role name="0-WO5" resource="TCA0" desc="Timer counter A pin (alternative)."/>
+	<role name="1-WO" resource="TCBn" desc="Timer counter B pin (alternative)."/>
+    </pin>
+    <pin name="40">
+	<role name="PF6" resource="PORTF" desc="Generic IO pin PF6"/>
+	<role name="/RESET" resource="CORE" desc="Reset pin."/>
+	<role name="XCK2" resource="USART2" desc="USART2 external clock pin (alternative)."/>
+	<role name="3-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin (alternative)."/>
+    </pin>
+    <pin name="41">
+	<role name="UPDI" resource="CORE" desc="UPDI programming pin"/>
+    </pin>
+    <pin name="42">
+	<role name="VDD" resource="CORE" desc="Power supply"/>
+    </pin>
+    <pin name="43">
+	<role name="GND" resource="CORE" desc="Common ground"/>
+    </pin>
+    <pin name="44">
+	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0"/>
+	<role name="EXTCLK" resource="CORE" desc="External clock"/>
+	<role name="TXD0" resource="USART0" desc="USART0 TXD pin"/>
+	<role name="0-WO0" resource="TCA0" desc="Timer counter A pin"/>
+	<role name="0-IN0" resource="CCL" desc="CCLlogic / LUT-Table input pin"/>
+    </pin>
+    <pin name="45">
+	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1"/>
+	<role name="RXD0" resource="USART0" desc="USART0 RXD pin"/>
+	<role name="0-WO1" resource="TCA0" desc="Timer counter A pin"/>
+	<role name="0-IN1" resource="CCL" desc="CCLlogic / LUT-Table input pin"/>
+    </pin>
+    <pin name="46">
+	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2."/>
+	<role name="XCLK0" resource="USART0" desc="USART0 External clock pin."/>
+	<role name="SDA" resource="I2C" desc="I2C data pin."/>
+	<role name="0-WO2" resource="TCA0" desc="Timer counter A pin"/>
+	<role name="0-WO" resource="TCBn" desc="Timer counter B pin"/>
+	<role name="EVOUTA" resource="EVSYS" desc="Event system output A"/>
+	<role name="0-IN2" resource="CCL" desc="CCLlogic / LUT-Table input pin"/>
+    </pin>
+    <pin name="47">
+	<role name="PA3" resource="PORTA" desc="Generic IO pin PA3"/>
+	<role name="XDIR0" resource="USART0" desc="USART0 XDIR  pin."/>
+	<role name="SCL" resource="I2C" desc="I2C clock pin."/>
+	<role name="0-WO3" resource="TCA0" desc="Timer counter A pin"/>
+	<role name="1-WO" resource="TCBn" desc="Timer counter B pin"/>
+	<role name="0-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin"/>
+    </pin>
+    <pin name="48">
+	<role name="PA4" resource="PORTA" desc="Generic IO pin PA4"/>
+	<role name="TXD0" resource="USART0" desc="USART0 TXD pin (alternative)."/>
+	<role name="MOSI" resource="SPI" desc="SPI Master output, slave input pin."/>
+	<role name="0-WO4" resource="TCA0" desc="Timer counter A pin"/>
+	<role name="0-OUT" resource="CCL" desc="CCLlogic / LUT-Table output pin"/>
+    </pin>
+</pins>

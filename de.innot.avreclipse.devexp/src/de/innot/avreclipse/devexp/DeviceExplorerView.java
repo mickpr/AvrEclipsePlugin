@@ -164,6 +164,7 @@ public class DeviceExplorerView extends ViewPart {
 				combo_freq.setEnabled(true);
 				combo_package.setEnabled(true);
 				tabFolder.setEnabled(true);
+				btnSave.setEnabled(true);
 				
 				// get chip, if chip doesn't exist set Atmega8
 				String avrName = PluginPreferences.get("MCUType");
@@ -309,7 +310,7 @@ public class DeviceExplorerView extends ViewPart {
 				combo_freq.setEnabled(false);
 				combo_package.setEnabled(false);
 				tabFolder.setEnabled(false);
-				
+				btnSave.setEnabled(false);
 			}
 		} else {
 			if (element!=null) {

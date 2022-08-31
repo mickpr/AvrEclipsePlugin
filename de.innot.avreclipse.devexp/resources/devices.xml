@@ -449,5 +449,4 @@
 	<Package name="SSOP28" file="ATmega1609-SSOP28.xml"></Package>
   </Packages>
 </device>
-
 </dataroot>

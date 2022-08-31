@@ -89,7 +89,8 @@
     </pin>      
     <pin name="13">
   	<role name="PD7" resource="PORTD" desc="Generic IO pin PD7" />
-  	<role name="AIN7/VREFA" resource="ADC" desc="AIN7 input pin of ADC0 or VREF pin" />
+  	<role name="VREFA" resource="ADC" desc="Voltage reference pin for ADC" />
+  	<role name="AIN7" resource="ADC" desc="AIN7 input pin of ADC0 or VREF pin" />
 	<role name="AINN2" resource="ACOMP" desc="Analog comparator input 2 (negative) ." />
   	<role name="EVOUTD" resource="EVSYS" desc="Event system ouptut (alternative pin)." />
     </pin>

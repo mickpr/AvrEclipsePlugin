@@ -446,7 +446,8 @@ public class DeviceExplorerView extends ViewPart {
 				System.out.println(core.selectedChip.getDDRportValue("PORTD"));
 				System.out.println(core.selectedChip.getDDRportValue("PORTE"));
 				System.out.println(core.selectedChip.getDDRportValue("PORTF"));
-		        
+				
+				core.selectedChip.printAllPorts();
 		    }
 			@Override
 			public void mouseUp(MouseEvent e) {}

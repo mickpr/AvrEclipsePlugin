@@ -5,8 +5,10 @@
 package de.innot.avreclipse.devexp.avrchip;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -321,5 +323,42 @@ public class AvrChip {
 		} // for
 		return bits;
 	}	
+	
+	// funkcja zwraca  istniej¹ce (wykorzystane) zasoby o nazwie PORTx w wybranym MCU
+	public ArrayList<String> getAssignedPorts(){
+		ArrayList<String> al = new ArrayList<>();
+		for (int x=0;x< this.avrPinsConfig.size();x++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(x);
+			for(int j=0;j<apc.pinNames.size();j++) {
+				if (apc.getSelectedPinResouce().startsWith("PORT") && !al.contains(apc.getSelectedPinResouce()))  {
+					al.add(apc.getSelectedPinResouce());
+				}
+			}
+		} // for
+		return al;
+	}
+
+	// funkcja zwraca  istniej¹ce (wykorzystane) zasoby o nazwie PORTx w wybranym MCU
+	public ArrayList<String> getExistingPorts(){
+		ArrayList<String> al = new ArrayList<>();
+		for (int x=0;x< this.avrPinsConfig.size();x++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(x);
+			for(int j=0;j<apc.pinResources.size();j++) {
+				if (apc.pinResources.get(j).startsWith("PORT") && !al.contains(apc.pinResources.get(j)))  {
+					al.add(apc.pinResources.get(j));
+				}
+			}
+		} // for
+		return al;
+	}
+	
+	// print sorted existing (also not assigned) PORTs
+	public void printAllPorts() {
+		ArrayList alpc = getExistingPorts();
+		Collections.sort(alpc);
+		for (int i=0;i<alpc.size();i++){
+			System.out.println(alpc.get(i));
+		}
+	}
 
 } // end of class

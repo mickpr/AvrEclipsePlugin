@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class AvrPinConfig {
 	private Integer pinNumber;
-	private ArrayList<String> pinNames;
-	private ArrayList<String> pinResources;
-	private ArrayList<String> pinDescriptions;
+	public ArrayList<String> pinNames;
+	public  ArrayList<String> pinResources;
+	public ArrayList<String> pinDescriptions;
 	private boolean pinIsInput;
 	private boolean pinIsPullUpOrHighState;
 	private Integer selectedPinIndex; // wybrany pin (nazwa, zasob, oraz opis)
@@ -28,7 +28,7 @@ public class AvrPinConfig {
 		this.pinIsPullUpOrHighState = false;
 		this.selectedPinIndex =0; //domyslnie pierwszy wczytany jest (ArrayList jest zero indexed) 
 	}
-	
+
 	public Integer getPinNumber() {
 		return this.pinNumber;
 	}

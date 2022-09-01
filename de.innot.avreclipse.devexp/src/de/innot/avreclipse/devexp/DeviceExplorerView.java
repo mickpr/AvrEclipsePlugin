@@ -7,10 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-
-
-
-
 import javax.swing.MenuSelectionManager;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
@@ -74,7 +70,6 @@ import de.innot.avreclipse.devexp.utils.PinLocation;
 //enum PinLocation { LEFT,RIGHT, TOP, BOTTOM }; 
 public class DeviceExplorerView extends ViewPart {
 
-
 	private SashForm sashFormTop;
 	private SashForm sashForm; 
 	private Composite compositeTop; 
@@ -96,7 +91,6 @@ public class DeviceExplorerView extends ViewPart {
 //	private TabItem tiTimer;	
 //	private EXTINT tiExtint;
 */
-		
 	private Combo combo_chipname; 
 	private Combo combo_package;
 	public Tree tree;
@@ -161,6 +155,7 @@ public class DeviceExplorerView extends ViewPart {
 				canvas.setVisible(true);
 				// sprawdz jaki jest typ projektu
 				String avrName = PluginPreferences.get("MCUType");
+				
 				// jesli nie mozna odczytac zmiennej MCUType z podkatalogu ./settings projektu
 				// znaczy to, ze najprawdopodobniej nie ma takiego pliku
 				if (avrName.length()==0) {
@@ -416,10 +411,6 @@ public class DeviceExplorerView extends ViewPart {
 			}
 	    });
 	    
-	    
-	    
-	    
-	    
 	    btnSave = new Button(compositeTop,SWT.NONE);
 	    btnSave.setText("Save config");
 	    btnSave.setSize(130,25);
@@ -448,7 +439,14 @@ public class DeviceExplorerView extends ViewPart {
 		        core.selectedChip.setCurrentSelectedPinsInTree(tree);
 		        
 		        // save pin configuration
-		        savePinConfigToXML(projectPath + "/.settings/pins.xml");
+		        //savePinConfigToXML(projectPath + "/.settings/pins.xml");
+				System.out.println(core.selectedChip.getDDRportValue("PORTA"));
+				System.out.println(core.selectedChip.getDDRportValue("PORTB"));
+				System.out.println(core.selectedChip.getDDRportValue("PORTC"));
+				System.out.println(core.selectedChip.getDDRportValue("PORTD"));
+				System.out.println(core.selectedChip.getDDRportValue("PORTE"));
+				System.out.println(core.selectedChip.getDDRportValue("PORTF"));
+		        
 		    }
 			@Override
 			public void mouseUp(MouseEvent e) {}
@@ -1256,7 +1254,10 @@ public class DeviceExplorerView extends ViewPart {
 	}
 
 	public void savePinConfigToXML(String filepath) {
-	  if (this.projectName.length()>0) {  
+
+	  updatePinConfigDataFromAvrPinsConfig();
+	  if (this.projectName !=null)
+		if (this.projectName.length()>0) {  
 		//System.out.println(core.projectName);
 		try {
 			//zapis danych o konfiguracji pinow do pliku
@@ -1270,6 +1271,15 @@ public class DeviceExplorerView extends ViewPart {
 	}
 	
 	
+	private void updatePinConfigDataFromAvrPinsConfig() {
+		for (int x=0;x<core.selectedChip.avrPinsConfig.size();x++) {
+			AvrPinConfig apc = core.selectedChip.avrPinsConfig.get(x);
+			if (apc.getSelectedPinResouce().startsWith("PORT")) {
+				//System.out.println(apc.getPinNumber() + " -> " + apc.getSelectedPinName() + " " + apc.getSelectedPinResouce() );
+			} // if
+		} // for
+	} // method
+
 	@Override
 	public void setFocus() {
 		// Set the focus

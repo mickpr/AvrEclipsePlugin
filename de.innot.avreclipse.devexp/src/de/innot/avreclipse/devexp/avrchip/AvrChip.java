@@ -276,8 +276,6 @@ public class AvrChip {
 		//flush
 		PluginPreferences.set("PinIsPullUpOrHighState", config.toString());  
 	}
-
-	
 	
 	public void updateChipPackagePinsToSelectedInAvrPinsConfig() {
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
@@ -286,5 +284,42 @@ public class AvrChip {
     	}
 	}	
 
+	// funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji DDR - czyli konfiguracji maski bitowej gdzie
+	// 1 oznacza pin jako ustawiony jako wyjscie, a 0 oznacza pin jako wejscie (domyslnie) podanego port-u)
+	// jako argument podajemy cala nazwe portu.. np. PORTA, PORTF
+	// jesli dany port nie jest uzywany (lub nie istnieje), lub ma wszystkie piny wejsciowe - zwracane jest zero
+	// poniewaz jest to wartosc domyslna - nie trzeba (ale mozna) ustawiac jej przy inicjalizacji rejestru DDRx
+	public byte getDDRportValue(String portName) {
+		byte bits=0;
+		for (int x=0;x< this.avrPinsConfig.size();x++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(x);
+			if (apc.getSelectedPinResouce().equalsIgnoreCase(portName)) {
+				byte bitmask = (byte) (1 << Byte.parseByte(apc.getSelectedPinName().substring(2)));
+				if (apc.getSelectedPinIsInput())
+					bits |= bitmask; 
+			} // if
+		} // for
+		return bits;
+	}	
+	
+	// funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji pull-up (lub high-state
+	// czyli pinow w porcie (PORTA..PORTn) gdzie  1 oznacza pin w stanie HIGH, a 0 w stanie LOW
+	// podczas konfiguracji pull-up-ow to wlasnie ta wartosc powinna byc wpisana (po ustawieniu DDR)
+	// jako wartosc okreslonego rejestru PORTx. 
+	// Argumentem jet cala nazwe portu.. np. PORTA, PORTF 
+	// jesli dany port nie jest uzywany (lub nie istnieje), lub ma wszystkie bity zerowe - zwracane jest zero
+	// poniewaz jest to wartosc domyslna - nie trzeba (ale mozna) ustawiac jej przy inicjalizacji rejestru PORTx
+	public byte getPullUpOrHighStatePortValue(String portName) {
+		byte bits=0;
+		for (int x=0;x< this.avrPinsConfig.size();x++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(x);
+			if (apc.getSelectedPinResouce().equalsIgnoreCase(portName)) {
+				byte bitmask = (byte) (1 << Byte.parseByte(apc.getSelectedPinName().substring(2)));
+				if (apc.getSelectedPinIsPullUpOrHighState())
+					bits |= bitmask; 
+			} // if
+		} // for
+		return bits;
+	}	
 
 } // end of class

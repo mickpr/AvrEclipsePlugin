@@ -830,21 +830,23 @@ public class DeviceExplorerView extends ViewPart {
 					
 					
 					// dla pinow oznaczonych jako PORT
-					if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinResouce().startsWith("PORT")) {
-						// dla pinu INPUT - przelaczamy na input-pull-up
-						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
-							!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
-							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(true);
-						} else
-						// dla pinu INPUT + PULL-UP - przelaczamy na OUTPUT
-						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
-							core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
-							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(false);
-							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(false);
-						} else
-						// dla pinu OUTPUT - przelaczamy na INPUT
-						if (!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput()) {
-							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
+					if (pinNr>0) {
+						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinResouce().startsWith("PORT")) {
+							// dla pinu INPUT - przelaczamy na input-pull-up
+							if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
+								!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+								core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(true);
+							} else
+							// dla pinu INPUT + PULL-UP - przelaczamy na OUTPUT
+							if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
+								core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+								core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(false);
+								core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(false);
+							} else
+							// dla pinu OUTPUT - przelaczamy na INPUT
+							if (!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput()) {
+								core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
+							}
 						}
 					}
 //					if (pinNr!=0) {
@@ -954,16 +956,15 @@ public class DeviceExplorerView extends ViewPart {
 		gc.setLineWidth(1);
 		int xy=1;
 		for (ChipPin chipPin  : core.selectedChip.chipPackage.pins) {
+
 			// todo: can be error ... if null
-			//chipPin.CreatePin(gc,chipPin.number, chipPin.name,chipPin.orient,x+chipPin.dx, y+chipPin.dy,chipPin.color);
-			
 			chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, chipPin.color);
 
 			if (core.selectedChip.avrPinsConfig.get(xy-1).getSelectedPinResouce().startsWith("PORT"))
 				if (core.selectedChip.avrPinsConfig.get(xy-1).getSelectedPinIsInput())
-					chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, SWTResourceManager.getColor(0xE0,0xFF,0xE0));
+					chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, SWTResourceManager.getColor(0xA0,0xFF,0xA0));
 				else
-					chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, SWTResourceManager.getColor(0xFF,0xE0,0xE0));
+					chipPin.CreatePinWithWideDescription(core, gc,chipPin.number, chipPin.orient, x+chipPin.dx,y+chipPin.dy, SWTResourceManager.getColor(0xFF,0xA0,0xA0));
 			xy++;
 		}
 		
@@ -995,12 +996,12 @@ public class DeviceExplorerView extends ViewPart {
 		        tr.rotate(-90); 
 		        tr.translate(-x,-y);	
 		        gc.setTransform(tr);			
-			        // here we go :)
+			        // here we draw (rotated)
 			   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
 					gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 					gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 					gc.drawText(core.selectedChip.Name ,xx,yy);
-		        gc.setTransform(oldTransform);
+		        gc.setTransform(oldTransform); // back to normal rotation
 				tr.dispose();		
 		} else {
 			// dla pozostalych obudow rysuj nazwe procesora na œrodku, bez rotacji :)

@@ -195,7 +195,6 @@ public final class ChipPin {
 					gc.setBackground(old_color);
 			}			
 		}
-		
 		gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 		gc.setFont(SWTResourceManager.getFont("Courier New", 10, SWT.NORMAL));
 	}

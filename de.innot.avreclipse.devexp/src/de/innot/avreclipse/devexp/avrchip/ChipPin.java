@@ -66,7 +66,8 @@ public final class ChipPin {
 */
 	// lokacja pinu: w zaleznosci od lokacji tak beda dukowane napisy
 	public void CreatePinWithWideDescription(DeviceExplorerCore core, GC gc,int pin_number, PinLocation pin_location, int x,int y,Color  color) {
-
+		Color old_color;
+		
 		// ktory ciag uzupelniamy 0 - normal1, 1-bold 2-normal2
 		int ktoryciag=0;
 		
@@ -125,35 +126,74 @@ public final class ChipPin {
 			gc.setBackground(color);
 			gc.fillRectangle(x, y, 20, 15);
 			gc.drawRectangle(x, y, 20, 15);
+			
+			
+			//gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
 			gc.setFont(SWTResourceManager.getFont("Courier New", 8, SWT.NORMAL));
+
 			gc.drawText(Integer.toString(pin_number),x+8-(pin_number>9?3:0), y+1);
-			if (pin_location==PinLocation.LEFT) drawNormalBoldNormalString(gc, normal1, bold, normal2, x-10-sizeOfAll, y+1, pin_location, color); //(name,x-10-gc.stringExtent(name).x,y+1,true);  
-			if (pin_location==PinLocation.RIGHT) drawNormalBoldNormalString(gc, normal1, bold, normal2, x+30, y+1, pin_location, color); // gc.drawText(name,x+30,y+1,true);
+			if (pin_location==PinLocation.LEFT) { 
+				drawNormalBoldNormalString(gc, normal1, bold, normal2, x-10-sizeOfAll, y+1, pin_location, color); //(name,x-10-gc.stringExtent(name).x,y+1,true);
+				if (core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinResouce().contains("PORT") 
+					&& core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinIsPullUpOrHighState()) {
+					old_color=gc.getBackground();
+					gc.setBackground(SWTResourceManager.getColor(255,100,100));
+					gc.fillOval(x-5, y+4 , 8, 8);
+					gc.setBackground(old_color);
+				}			
+				
+			}
+			if (pin_location==PinLocation.RIGHT){ 
+				drawNormalBoldNormalString(gc, normal1, bold, normal2, x+30, y+1, pin_location, color); // gc.drawText(name,x+30,y+1,true);
+				if (core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinResouce().contains("PORT") 
+					&& core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinIsPullUpOrHighState()) {
+					old_color=gc.getBackground();
+					gc.setBackground(SWTResourceManager.getColor(255,100,100));
+					gc.fillOval(x+18, y+4 , 8, 8);
+					gc.setBackground(old_color);
+				}			
+			}
+			//gc.setBackground(color);
 		} else {
 			
 			// top and bottom pins are rotated
 			gc.setBackground(color);
 			gc.fillRectangle(x, y, 15,20);
 			gc.drawRectangle(x, y, 15,20);
-
-			Transform oldTransform = new Transform(gc.getDevice());  
-	        gc.getTransform(oldTransform);
-			Transform tr = new Transform(gc.getDevice());
-			tr.translate(x, y);
-	        tr.rotate(-90); //bylo -90, ale -92 ³adniej wygl¹da po transformacji.
-	        tr.translate(-x,-y);
-	        
-	        gc.setFont(SWTResourceManager.getFont("Courier New", 10, SWT.NORMAL));
-	        gc.setTransform(tr);
-			if (pin_location==PinLocation.BOTTOM) drawNormalBoldNormalString(gc, normal1, bold, normal2, x-30-sizeOfAll, y+1, pin_location, color); //gc.drawText(name,x-30-gc.stringExtent(name).x,y+1,true);
-			if (pin_location==PinLocation.TOP)  drawNormalBoldNormalString(gc, normal1, bold, normal2, x+10,y+1, pin_location,color); // gc.drawText(name,x+10,y+1,true);
-	        gc.setTransform(oldTransform);
-
-			tr.dispose();
-			oldTransform.dispose();
+				Transform oldTransform = new Transform(gc.getDevice());  
+		        gc.getTransform(oldTransform);
+				Transform tr = new Transform(gc.getDevice());
+				tr.translate(x, y);
+		        tr.rotate(-90); //bylo -90, ale -92 ³adniej wygl¹da po transformacji.
+		        tr.translate(-x,-y);
+			        gc.setFont(SWTResourceManager.getFont("Courier New", 10, SWT.NORMAL));
+			        gc.setTransform(tr);
+					if (pin_location==PinLocation.BOTTOM) drawNormalBoldNormalString(gc, normal1, bold, normal2, x-30-sizeOfAll, y+1, pin_location, color); //gc.drawText(name,x-30-gc.stringExtent(name).x,y+1,true);
+					if (pin_location==PinLocation.TOP)  drawNormalBoldNormalString(gc, normal1, bold, normal2, x+10,y+1, pin_location,color); // gc.drawText(name,x+10,y+1,true);
+				gc.setTransform(oldTransform);
+				tr.dispose();
+				oldTransform.dispose();
+			
 			gc.setBackground(color);
 			gc.setFont(SWTResourceManager.getFont("Courier New", 8, SWT.NORMAL));
 			gc.drawText(Integer.toString(pin_number),x+4-(pin_number>9?3:0), y+1);
+			
+			if ((pin_location==PinLocation.TOP) && 
+					(core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinResouce().contains("PORT") && 
+					 core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinIsPullUpOrHighState())) {
+						old_color=gc.getBackground();
+						gc.setBackground(SWTResourceManager.getColor(255,100,100));
+						gc.fillOval(x+4, y-5 , 8, 8);
+						gc.setBackground(old_color);
+				}			
+			if ((pin_location==PinLocation.BOTTOM) && 
+				(core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinResouce().contains("PORT") && 
+				 core.selectedChip.avrPinsConfig.get(pin_number-1).getSelectedPinIsPullUpOrHighState())) {
+					old_color=gc.getBackground();
+					gc.setBackground(SWTResourceManager.getColor(255,100,100));
+					gc.fillOval(x+4, y+20 , 8, 8);
+					gc.setBackground(old_color);
+			}			
 		}
 		
 		gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));

@@ -847,13 +847,11 @@ public class DeviceExplorerView extends ViewPart {
 							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
 						}
 					}
-					
-					tree.redraw();
-					//pinMenuShape=null;
-					//pinMenuShape=new PinMenuShape(e.x,e.y,30,30,"dupa");
-					if (pinNr!=0) {
-						System.out.println("Right click on pin " + pinNr.toString());
-					}
+//					if (pinNr!=0) {
+//						System.out.println("Right click on pin " + pinNr.toString());
+//					}
+					//tree.notify();
+					//tree.redraw();
 					canvas.redraw();
 				} else {
 					//pinMenuShape = null;

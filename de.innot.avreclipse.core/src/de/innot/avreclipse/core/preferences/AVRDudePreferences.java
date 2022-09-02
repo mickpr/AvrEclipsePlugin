@@ -54,6 +54,7 @@ public class AVRDudePreferences {
 	 * 
 	 * @return IPreferenceStore with the properties
 	 */
+	@SuppressWarnings("deprecation")
 	public static IPreferenceStore getPreferenceStore() {
 		// The instance Path PreferenceStore is cached
 		if (fInstanceStore != null) {
@@ -71,6 +72,7 @@ public class AVRDudePreferences {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public static IEclipsePreferences getConfigPreferences() {
 		IEclipsePreferences root = new InstanceScope().getNode(CONFIGQUALIFIER);
 		return root;
@@ -96,6 +98,7 @@ public class AVRDudePreferences {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public static IEclipsePreferences getDefaultPreferences() {
 		return new DefaultScope().getNode(QUALIFIER);
 	}

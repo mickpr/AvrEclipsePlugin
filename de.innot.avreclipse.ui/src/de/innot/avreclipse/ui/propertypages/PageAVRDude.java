@@ -94,6 +94,7 @@ public class PageAVRDude extends AbstractAVRPage {
 	 * part for the normal tabs and a avrdude command line preview box below it.
 	 * </p>
 	 */
+	@SuppressWarnings("deprecation")
 	@Override
 	public void createWidgets(Composite c) {
 
@@ -230,6 +231,7 @@ public class PageAVRDude extends AbstractAVRPage {
 		}
 
 		// Save the current GUI state
+		@SuppressWarnings("deprecation")
 		IEclipsePreferences prefs = new InstanceScope().getNode(QUALIFIER);
 		prefs.putBoolean(KEY_ISEXPANDED, isexpanded);
 		prefs.putInt(KEY_WEIGHT_TOP_EXP, fSashWeights[EXPANDED][0]);

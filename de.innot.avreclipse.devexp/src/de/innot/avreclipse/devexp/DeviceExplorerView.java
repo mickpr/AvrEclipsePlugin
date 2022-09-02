@@ -7,23 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-import javax.swing.MenuSelectionManager;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerException;
-
-import org.eclipse.core.resources.IBuildConfiguration;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.SashForm;
-import org.eclipse.swt.events.MenuEvent;
-import org.eclipse.swt.events.MenuListener;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.events.MouseListener;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -123,9 +113,9 @@ public class DeviceExplorerView extends ViewPart {
 				
 				if (projectPath!=null) {
 					// load configuration from selected project
-					System.out.println("Trying to load pin config file from project .settings directory...");
-					String fileToLoad = projectPath + "/.settings/pins.xml";
-					pinconf.loadConfigData(fileToLoad);
+					//System.out.println("Trying to load pin config file from project .settings directory...");
+					//String fileToLoad = projectPath + "/.settings/pins.xml";
+					//pinconf.loadConfigData(fileToLoad);
 				}
 			}
 		}
@@ -168,26 +158,26 @@ public class DeviceExplorerView extends ViewPart {
 					return;
 				}
 				
-				// Get the build configurations for a project
-				try {
-					IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
-					//System.out.print("Project name:");
-					//System.out.println(((IProject) element).getName());  // Project name
-					//projectName = ((IProject) element).getName();
-					//projectPath = ((IProject) element).getLocation().toString();
-					// lokalizacja projektu
-					//System.out.println("Lokalizacja projektu: " +((IProject) element).getLocation().toString());
-					//System.out.println(buildConfigs.length);
-					//for (IBuildConfiguration ibc : buildConfigs) {}
-					//System.out.println();  // Project name
-				
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+//				// Get the build configurations for a project
+//				try {
+//					//IBuildConfiguration[] buildConfigs = ((IProject) element).getBuildConfigs();
+//					//System.out.print("Project name:");
+//					//System.out.println(((IProject) element).getName());  // Project name
+//					//projectName = ((IProject) element).getName();
+//					//projectPath = ((IProject) element).getLocation().toString();
+//					// lokalizacja projektu
+//					//System.out.println("Lokalizacja projektu: " +((IProject) element).getLocation().toString());
+//					//System.out.println(buildConfigs.length);
+//					//for (IBuildConfiguration ibc : buildConfigs) {}
+//					//System.out.println();  // Project name
+//				
+//				} catch (CoreException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 
-				try { IProjectDescription projDesc = ((IProject) element).getDescription();
-				} catch (CoreException e) { e.printStackTrace(); }
+//				try { IProjectDescription projDesc = ((IProject) element).getDescription();
+//				} catch (CoreException e) { e.printStackTrace(); }
 			
 				//	IProjectDescription projDesc = project.getDescription();
 				//	... 
@@ -667,15 +657,9 @@ public class DeviceExplorerView extends ViewPart {
 	    pinconf = new PinConfiguration(tabFolder, SWT.NONE);
 	    pinconf.setProjectName(this.projectName);
 	    pinconf.setProjectPath(this.projectPath);
-   
 	    
 	    
 	    tiGPIO.setControl(pinconf);
-
- 
-	    
-	    
-	    
 	    
 //	    ScrolledComposite scroller = new ScrolledComposite(tabFolder, SWT.BORDER | SWT.V_SCROLL);
 //	    canvas = new Canvas(scroller, SWT.NONE);
@@ -742,7 +726,7 @@ public class DeviceExplorerView extends ViewPart {
 	    });	  
 	    
 	    canvas.addMouseMoveListener(new MouseMoveListener() {
-	    	int lastPinNr=0;
+	    	//int lastPinNr=0;
 			@Override
 			public void mouseMove(MouseEvent e) {
 
@@ -801,12 +785,19 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    
 	    
+			
+	    
+	    
 	    
 	    
 	    canvas.addMouseListener(new MouseListener() {
 
 			@Override
 			public void mouseDoubleClick(MouseEvent e) {
+				
+				// podwojne klikniecie prawym klawiszem myszy? - nie robimy nic
+				if (e.button == 3) return;				
+				
 				// TODO Auto-generated method stub
 				//JOptionPane.showMessageDialog(null, "dupa at (" + e.x + ", " + e.y + ")");
 				if (core.selectedChip.chipPackage.pins != null) {
@@ -859,11 +850,16 @@ public class DeviceExplorerView extends ViewPart {
 				
 			public void mouseDown(MouseEvent e) {
 				if (e.button == 3 && core.selectedChip.chipPackage.pins != null) {
-				System.out.println("Kliknieto prawy klawisz myszy");	
+				//System.out.println("Kliknieto prawy klawisz myszy");	
+					
+					Integer pinNr=isMouseClickedAtPinPosition(e);
+					
 					
 					//pinMenuShape=null;
 					//pinMenuShape=new PinMenuShape(e.x,e.y,30,30,"dupa");
-					//System.out.println("Right click !");
+					if (pinNr!=0) {
+						System.out.println("Right click on pin " + pinNr.toString());
+					}
 					canvas.redraw();
 				} else {
 					//pinMenuShape = null;
@@ -911,6 +907,45 @@ public class DeviceExplorerView extends ViewPart {
 		// listener for selecting project in ProjectExplorer Window 
 		getSite().getWorkbenchWindow().getSelectionService().addSelectionListener(listenerProject);
 	}
+	
+    
+    //-------------------------------------------------------------------------
+    // sprawdzenie, czy kliknieto na pin w okreslonej pozycji, zwraca numer wskazanego pinu, lub 0 (brak wskazanego pinu)
+    private Integer isMouseClickedAtPinPosition(MouseEvent e) {
+		for (ChipPin cp : core.selectedChip.chipPackage.pins) {
+			
+			int x1 = cp.dx+canvas_offset_x; // lewy gorny rog obrysu pinu
+			int y1 = cp.dy+canvas_offset_y;
+			int x2 = cp.dx+canvas_offset_x+15; // prawy dolny rog obrysu pinu
+			int y2 = cp.dy+canvas_offset_y+15;
+			
+			if (cp.orient ==PinLocation.LEFT || cp.orient==PinLocation.RIGHT) x2=x2+5;
+			if (cp.orient ==PinLocation.TOP || cp.orient==PinLocation.BOTTOM) y2=y2+5;
+
+			if (e.x >= x1 && e.x<=x2 && e.y>=y1 && e.y<=y2) {
+				for(AvrPinConfig apc : core.selectedChip.avrPinsConfig) {
+					if (apc.getPinNumber()==cp.number) {
+
+						Integer pinNr = apc.getPinNumber();
+						
+						String pnam1= apc.getSelectedPinName();
+						
+						//System.out.println("kliknieto pin ----> " + pn1);
+						//System.out.println("jego nazwa to:" + pnam1);
+						// prawdopodobnie nie istnieje, lub raczej jest pusta 
+						//if (pinconf.configData!=null)
+						//	System.out.println(pinconf.configData[1].getPinName());
+						//pinconf.configData[pn1-1].setPinName(pnam1);
+						// poszukaj, czy pin ma okreslenie portu
+						return pinNr;
+					}
+				} // for
+			} // if
+		} //for
+		return 0;
+    }
+	//-------------------------------------------------------------------------		
+	
 	
 	//--------------------------------------------------------------------------------------------
 	// draw package body and pins
@@ -1038,7 +1073,7 @@ public class DeviceExplorerView extends ViewPart {
 			        		
 			        		// teraz wystarczy sprawdzic, ktora funckcja jest wybrana aktualnie dla tego pinu
 			        		// pinu numerowane s¹ od 1, ale index w ArrayList od 0 - stad "pinNr-1" 
-			        		int funcIndex = core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedIndex();
+//			        		int funcIndex = core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedIndex();
 //			        		System.out.println("Current selected index =" + funcIndex);
 //			        		System.out.println("pinNr=" + pinNr +", name=" + item.getText());	
 
@@ -1099,15 +1134,15 @@ public class DeviceExplorerView extends ViewPart {
 			        		// get 
 			        		//
 			        	}			        	
-			        	try {
-							pinconf.saveConfigData(projectPath + "/.settings/pins.xml");
-						} catch (TransformerException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						} catch (ParserConfigurationException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+//			        	try {
+//							pinconf.saveConfigData(projectPath + "/.settings/pins.xml");
+//						} catch (TransformerException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						} catch (ParserConfigurationException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
 			        	
 			        	// pokaz opis
 						ScrollBar scb = tree.getVerticalBar();
@@ -1170,7 +1205,7 @@ public class DeviceExplorerView extends ViewPart {
 		core.FillTreeWithResources(tree);
 		// liczba elementow typu Resource * wysokosc elementu tree.
     	//core.selectedChip.avrResources.keySet().size()*tree.getItemHeight();
-    	Integer height1 = core.selectedChip.avrResources.keySet().size()*tree.getItemHeight();
+    //Integer height1 = core.selectedChip.avrResources.keySet().size()*tree.getItemHeight();
     	//compositeTree.setSize(compositeTree.getSize().x, 8+ height1);
         //xpndItemResources.setHeight(8+ height1);
 	}
@@ -1253,33 +1288,6 @@ public class DeviceExplorerView extends ViewPart {
 	    System.out.println("znalezione: " + text2);
 	    //return text2;
 	}
-
-	public void savePinConfigToXML(String filepath) {
-
-	  updatePinConfigDataFromAvrPinsConfig();
-	  if (this.projectName !=null)
-		if (this.projectName.length()>0) {  
-		//System.out.println(core.projectName);
-		try {
-			//zapis danych o konfiguracji pinow do pliku
-			pinconf.saveConfigData(filepath);
-		} catch (TransformerException e1) {
-			e1.printStackTrace();
-		} catch (ParserConfigurationException e1) {
-			e1.printStackTrace();
-		} // try catch
-	  } // if
-	}
-	
-	
-	private void updatePinConfigDataFromAvrPinsConfig() {
-		for (int x=0;x<core.selectedChip.avrPinsConfig.size();x++) {
-			AvrPinConfig apc = core.selectedChip.avrPinsConfig.get(x);
-			if (apc.getSelectedPinResouce().startsWith("PORT")) {
-				//System.out.println(apc.getPinNumber() + " -> " + apc.getSelectedPinName() + " " + apc.getSelectedPinResouce() );
-			} // if
-		} // for
-	} // method
 
 	@Override
 	public void setFocus() {

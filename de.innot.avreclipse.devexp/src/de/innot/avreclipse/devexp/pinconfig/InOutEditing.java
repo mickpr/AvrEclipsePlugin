@@ -16,7 +16,8 @@ public final class InOutEditing extends EditingSupport {
     
     private ComboBoxViewerCellEditor cellEditor = null;
     
-    InOutEditing(ColumnViewer viewer) {
+    @SuppressWarnings("deprecation")
+	InOutEditing(ColumnViewer viewer) {
         super(viewer);
         cellEditor = new ComboBoxViewerCellEditor((Composite) getViewer().getControl(), SWT.READ_ONLY);
         cellEditor.setLabelProvider(new LabelProvider());

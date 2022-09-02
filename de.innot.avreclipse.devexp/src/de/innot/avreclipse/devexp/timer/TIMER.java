@@ -35,7 +35,7 @@ public class TIMER extends Composite {
 	
 		
 		if (mcuName.equalsIgnoreCase("atmega8")) { 
-			Timer0Atmega8 t0= new Timer0Atmega8(compos,mcuFreq);
+			//Timer0Atmega8 t0= new Timer0Atmega8(compos,mcuFreq);
 			//Timer1Atmega8 t1= new Timer1Atmega8(compos,mcuFreq);
 			
 		

@@ -15,7 +15,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import org.eclipse.cdt.core.model.ICElement;
 import org.eclipse.cdt.core.model.ICProject;
-import org.eclipse.cdt.managedbuilder.core.IConfiguration;
 import org.eclipse.cdt.managedbuilder.core.IManagedBuildInfo;
 import org.eclipse.cdt.managedbuilder.core.ManagedBuildManager;
 import org.eclipse.core.resources.IProject;
@@ -36,8 +35,6 @@ import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.actions.ActionDelegate;
 import de.innot.avreclipse.AVRPlugin;
-import de.innot.avreclipse.core.properties.AVRProjectProperties;
-import de.innot.avreclipse.core.properties.ProjectPropertyManager;
 import de.innot.avreclipse.devexp.PluginPreferences;
 
 /**
@@ -129,11 +126,11 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 
 		// Get the active build configuration
 		IManagedBuildInfo bi = ManagedBuildManager.getBuildInfo(fProject);
-		IConfiguration activecfg = bi.getDefaultConfiguration();
+//		IConfiguration activecfg = bi.getDefaultConfiguration();
 
 		// Get the avr properties for the active configuration
-		AVRProjectProperties targetprops = ProjectPropertyManager.getPropertyManager(fProject)
-				.getActiveProperties();
+//		AVRProjectProperties targetprops = ProjectPropertyManager.getPropertyManager(fProject)
+//				.getActiveProperties();
 
 		String selectedChipName = PluginPreferences.get("MCUType","ERR");
 		

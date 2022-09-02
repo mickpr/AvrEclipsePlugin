@@ -1,35 +1,13 @@
 package de.innot.avreclipse.devexp.pinconfig;
 
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.URL;
-import java.util.ArrayList;
-
-import javax.swing.JOptionPane;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.OutputKeys;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.TreeItem;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.wb.swt.ResourceManager;
-import org.eclipse.core.internal.utils.Convert;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.ColumnViewerEditorActivationEvent;
 import org.eclipse.jface.viewers.ColumnViewerEditorActivationListener;
@@ -39,11 +17,6 @@ import org.eclipse.jface.viewers.EditingSupport;
 import org.eclipse.jface.viewers.TableLayout;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TableViewerColumn;
-import org.osgi.framework.Bundle;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 public class PinConfiguration extends Composite {
 	
@@ -173,7 +146,7 @@ public class PinConfiguration extends Composite {
 	//JOptionPane.showMessageDialog(null, "Load start", "xxx", JOptionPane.INFORMATION_MESSAGE);	
 	
 	
-	
+/*	
 	// Wczytujemy plik konfiguracyjny pinow (pins.xml) z katalogu .settings naszego wybranego projektu
 	public boolean loadConfigData(String filename) {
 		// w przypadku bledu (np. parsowania pliku XML, albo problemem z odczytem pliku) 
@@ -315,5 +288,6 @@ public class PinConfiguration extends Composite {
         }
     	// change port for non GPIO ports
     }
+    */
 }
 

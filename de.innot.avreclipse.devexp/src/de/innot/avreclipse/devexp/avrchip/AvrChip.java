@@ -5,7 +5,6 @@
 package de.innot.avreclipse.devexp.avrchip;
 
 import java.io.File;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,8 +45,7 @@ public class AvrChip {
 	public Map<String, AvrResource> avrResources; 	// zasoby zawiera wszystkie wybrane zasoby - odswiezane podczas zmiany pinow
 													// i w drug¹ stronê - zmiana w zasobach zmienia piny.
 	public ChipPackage chipPackage;					// Obudowa 
-
-	
+	//-------------------------------------------------------------------------------------------
 	//konstruktor 
 	public AvrChip() {
 		Name  = "";
@@ -57,17 +55,17 @@ public class AvrChip {
 		RAM   = "";
 		Freq  = "";
 		Vcc   = ""; 
-		Packages = new ArrayList<ChipPackage>();
-		avrPinsConfig = new ArrayList<AvrPinConfig>();
-		avrResources = new HashMap<String,AvrResource>();
-		chipPackage = new ChipPackage();
+		Packages = new ArrayList<ChipPackage>();		// mo¿liwe obudowy
+		avrPinsConfig = new ArrayList<AvrPinConfig>();	// mo¿liwe konfiguracje pinow
+		avrResources = new HashMap<String,AvrResource>();	// zasoby
+		chipPackage = new ChipPackage();				// tworzenie obudowy chip'a
 	}
-	
+	//-------------------------------------------------------------------------------------------	
 	// pobiera dostêpne zasoby w postaci hashmap
 	public Map<String, AvrResource> getAvrResources() {
 		return avrResources;
 	};
-
+	//-------------------------------------------------------------------------------------------
 	// wczytanie domyslnej konfiguracji pinow i zasobów z pliku bedacego wybranym chipem i podan¹ obudow¹ 
 	public void LoadDefaultPinsAndResources(String selectedPackage)  {
 		avrPinsConfig.clear();
@@ -138,6 +136,7 @@ public class AvrChip {
 		}
 	} // end of LoadResourcesOfMCU
 
+	//-------------------------------------------------------------------------------------------
 	//zwraca numer pinu dla podanej nazwy pinu w uk³adzie (konfiguracji)
 	public int getPinNumberForPinNameInConfiguration(String pinName) {
 		int i=1;
@@ -153,6 +152,7 @@ public class AvrChip {
 		return -1;
 	}
 	
+	//-------------------------------------------------------------------------------------------	
 	// pinu numerowane od 1, ale index w tablicy od 0, st¹d "pinNr-1"
 	public void setSelectedPinFunction(int pinNr, String pinName) {
 		//System.out.println("...invoked setSelectedPinFunction("+pinNr+","+pinName+")");
@@ -172,7 +172,7 @@ public class AvrChip {
 			nr++;
 		} //for
 	} // function	
-	
+	//-------------------------------------------------------------------------------------------	
 	// ustalanie koloru pinu na podstawie resource i name.
 	public Color getColorDependOnResourceAndName(String resource,String name) {
 	
@@ -198,12 +198,9 @@ public class AvrChip {
 			return SWTResourceManager.getColor(255,150,0);
 		if (name.startsWith("OC")) 
 			return SWTResourceManager.getColor(0,153,255);
-		
+		// otherwise...
 			return SWTResourceManager.getColor(255,255,200);
 	}
-	
-	
-	
 	//-----------------------------------------------------------------------------------------------
 	// przelatuje selectedChip.avrPinsConfig i wg ustawionej tam konfiguracji - ustawia checkboxy
 	// w oknie zasobów, jesli jakis zasob ma uzyty choc jeden pin - zaznacza ten zasob
@@ -233,25 +230,27 @@ public class AvrChip {
 		}
 		return false;
 	}
-	
-	
+	//-------------------------------------------------------------------------------------------
+	// wczytanie konfiguracji pinow
 	public String LoadPinConfigFunctions() {
 		String config = PluginPreferences.get("PinFunc","ERR");
 		char conf[];
-		
+		// jesli próba wczytania zakonczyla sie bledem - zwroc pusty string
 		if (config.equals("ERR")) return "";
+		
+		// jesli ok.. zamien String na tablice znakow.
 		conf = config.toCharArray();
 		for (int a=0;a<conf.length;a++) {
 			AvrPinConfig apc = this.avrPinsConfig.get(a);
 			int chr = conf[a] -'0'; // zamiana 0123456789 na odpowiednia wartosc int
-			apc.setSelectedIndex(chr); 			//System.out.print(chr);
+			apc.setSelectedIndex(chr); 			
+			// ustaw 
 			this.avrPinsConfig.set(a, apc);
 		}
 		//System.out.println("size:" + selectedChip.avrPinsConfig.size());
 		return config;
 	}
-
-	
+	//-------------------------------------------------------------------------------------------	
 	public void SavePinConfigFunctions() {
 		StringBuilder config = new StringBuilder();
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
@@ -260,7 +259,7 @@ public class AvrChip {
 		//flush
 		PluginPreferences.set("PinFunc", config.toString());  
 	}
-	
+	//-------------------------------------------------------------------------------------------	
 	public void SavePinConfigIsPullUpOrHighState() {
 		StringBuilder config = new StringBuilder();
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
@@ -269,7 +268,7 @@ public class AvrChip {
 		//flush
 		PluginPreferences.set("PinIsInput", config.toString());  
 	}
-
+	//-------------------------------------------------------------------------------------------
 	public void SavePinConfigIsInput() {
 		StringBuilder config = new StringBuilder();
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
@@ -278,14 +277,14 @@ public class AvrChip {
 		//flush
 		PluginPreferences.set("PinIsPullUpOrHighState", config.toString());  
 	}
-	
+	//-------------------------------------------------------------------------------------------	
 	public void updateChipPackagePinsToSelectedInAvrPinsConfig() {
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
     		this.chipPackage.pins.get(a).name = this.avrPinsConfig.get(a).getPinNames().get(this.avrPinsConfig.get(a).getSelectedIndex());  // ... o tak
     		this.chipPackage.pins.get(a).color = this.getColorDependOnResourceAndName(this.avrPinsConfig.get(a).getSelectedPinResouce(),this.avrPinsConfig.get(a).getSelectedPinName());
     	}
 	}	
-
+	//-------------------------------------------------------------------------------------------
 	// funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji DDR - czyli konfiguracji maski bitowej gdzie
 	// 1 oznacza pin jako ustawiony jako wyjscie, a 0 oznacza pin jako wejscie (domyslnie) podanego port-u)
 	// jako argument podajemy cala nazwe portu.. np. PORTA, PORTF
@@ -303,7 +302,7 @@ public class AvrChip {
 		} // for
 		return bits;
 	}	
-	
+	//-------------------------------------------------------------------------------------------	
 	// funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji pull-up (lub high-state
 	// czyli pinow w porcie (PORTA..PORTn) gdzie  1 oznacza pin w stanie HIGH, a 0 w stanie LOW
 	// podczas konfiguracji pull-up-ow to wlasnie ta wartosc powinna byc wpisana (po ustawieniu DDR)
@@ -323,7 +322,7 @@ public class AvrChip {
 		} // for
 		return bits;
 	}	
-	
+	//-------------------------------------------------------------------------------------------	
 	// funkcja zwraca  istniej¹ce (wykorzystane) zasoby o nazwie PORTx w wybranym MCU
 	public ArrayList<String> getAssignedPorts(){
 		ArrayList<String> al = new ArrayList<>();
@@ -337,7 +336,7 @@ public class AvrChip {
 		} // for
 		return al;
 	}
-
+	//-------------------------------------------------------------------------------------------
 	// funkcja zwraca  istniej¹ce (wykorzystane) zasoby o nazwie PORTx w wybranym MCU
 	public ArrayList<String> getExistingPorts(){
 		ArrayList<String> al = new ArrayList<>();
@@ -351,14 +350,15 @@ public class AvrChip {
 		} // for
 		return al;
 	}
-	
+	//-------------------------------------------------------------------------------------------	
 	// print sorted existing (also not assigned) PORTs
 	public void printAllPorts() {
-		ArrayList alpc = getExistingPorts();
+		ArrayList<String> alpc = getExistingPorts();
 		Collections.sort(alpc);
 		for (int i=0;i<alpc.size();i++){
 			System.out.println(alpc.get(i));
 		}
 	}
-
+	//-------------------------------------------------------------------------------------------
+	
 } // end of class

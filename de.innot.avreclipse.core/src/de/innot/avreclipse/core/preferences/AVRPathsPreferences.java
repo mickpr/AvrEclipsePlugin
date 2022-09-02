@@ -66,6 +66,7 @@ public class AVRPathsPreferences {
 	 * 
 	 * @return IPreferenceStore with the properties
 	 */
+	@SuppressWarnings("deprecation")
 	public static IPreferenceStore getPreferenceStore() {
 		// The instance Path PreferenceStore is cached
 		if (fInstanceStore != null) {
@@ -88,6 +89,7 @@ public class AVRPathsPreferences {
 	 *            The project for which to get the properties
 	 * @return IPreferenceStore with the properties
 	 */
+	@SuppressWarnings("deprecation")
 	public static IPreferenceStore getPreferenceStore(IProject project) {
 		Assert.isNotNull(project);
 
@@ -123,6 +125,7 @@ public class AVRPathsPreferences {
 	 * 
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	public static IEclipsePreferences getDefaultPreferences() {
 		return new DefaultScope().getNode(QUALIFIER);
 	}

@@ -63,6 +63,7 @@ public class DatasheetPreferences {
 	 * 
 	 * @return IPreferenceStore with the properties
 	 */
+	@SuppressWarnings("deprecation")
 	public static IPreferenceStore getPreferenceStore() {
 		// The instance Path PreferenceStore is cached
 		if (fInstanceStore != null) {
@@ -82,6 +83,7 @@ public class DatasheetPreferences {
 	 * @return Array of <code>String</code> with all MCU IDs or
 	 *         <code>null</code> if the preferences could not be read.
 	 */
+	@SuppressWarnings("deprecation")
 	public static Set<String> getAllMCUs() {
 
 		// Make a new Set, add all default mcu ids to it

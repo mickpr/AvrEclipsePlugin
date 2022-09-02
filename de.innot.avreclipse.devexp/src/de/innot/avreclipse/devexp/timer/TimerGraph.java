@@ -4,7 +4,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.PaintEvent;
 import org.eclipse.swt.events.PaintListener;
 import org.eclipse.swt.graphics.GC;
-import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Composite;
@@ -35,7 +34,7 @@ public class TimerGraph extends Canvas {
           public void paintControl(PaintEvent e) {
             // Do some drawing
             
-        	  Rectangle rect = ((Canvas) e.widget).getBounds();
+        	//Rectangle rect = ((Canvas) e.widget).getBounds();
             e.gc.setForeground(e.display.getSystemColor(SWT.COLOR_WHITE));
             e.gc.setBackground(e.display.getSystemColor(SWT.COLOR_DARK_GRAY));
             e.gc.fillRectangle(0,0,e.width,e.height);

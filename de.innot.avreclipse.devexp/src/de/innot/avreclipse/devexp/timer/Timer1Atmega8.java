@@ -182,8 +182,8 @@ public class Timer1Atmega8 extends Composite {
 	private Label lblOCR1B; 		// wartosc OCR1B rejestru porownajacego B 
 	private Spinner spiOCR1B;	   	// 
 	
-	private Label lblTIMERCOMPBFreq;   	// wynikowa czestotliwosc (Hz) przerwan TIMER1_COMPB
-	private Text txtTIMERCOMPBFreq; 
+//	private Label lblTIMERCOMPBFreq;   	// wynikowa czestotliwosc (Hz) przerwan TIMER1_COMPB
+//	private Text txtTIMERCOMPBFreq; 
 
 	private Label lblTIMERCOMPBPeriod;   // wynikowy okres (ms) przerwan TIMER1_COMPB
 	private Text txtTIMERCOMPBPeriod;
@@ -500,10 +500,7 @@ public class Timer1Atmega8 extends Composite {
 	}
  
     
-    private void drawWave(int clockMode) {
-    	
-    }
-    
+ 
 	private void getTextFromCursor() {
 	    IEditorPart part = PlatformUI.getWorkbench().getActiveWorkbenchWindow()
 	            .getActivePage().getActiveEditor();

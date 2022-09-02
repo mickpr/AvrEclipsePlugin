@@ -311,6 +311,7 @@ public class ProjectPropertyManager {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private static IEclipsePreferences getDefaultPreferences() {
 		return new DefaultScope().getNode(QUALIFIER);
 	}

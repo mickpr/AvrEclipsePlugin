@@ -27,7 +27,7 @@ public class USART extends Composite {
 		gl_compos.marginHeight = 10;
 		compos.setLayout(gl_compos);		
 		
-		Usart1 com1 = new Usart1(compos,SWT.FILL);
+		//Usart1 com1 = new Usart1(compos,SWT.FILL);
 		//Usart1 com2 = new Usart1(compos,SWT.FILL);
 
 		scrolledComposite.setContent(compos);

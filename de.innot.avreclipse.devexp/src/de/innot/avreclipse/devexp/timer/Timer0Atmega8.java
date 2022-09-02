@@ -341,7 +341,7 @@ public class Timer0Atmega8 extends Composite {
     
     private void calcValuesByFrequencyAndSetAllControls(double freq) {
     	Pair<Integer, Double> retPair;
-    	Map<Integer,Double> pom = new HashMap<Integer,Double>();
+    	//Map<Integer,Double> pom = new HashMap<Integer,Double>();
     	double diff = 0; // duza wartosc prescalera, przy niej blad jest zawsze mniejszy
     	int valueTCNT0 = 1000000000; 
     	int x1=-1,x2=-1, x3=-1, x4=-1, x5=-1;

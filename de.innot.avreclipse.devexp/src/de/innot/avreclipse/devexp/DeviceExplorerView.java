@@ -24,6 +24,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.graphics.Transform;
 import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -962,21 +963,56 @@ public class DeviceExplorerView extends ViewPart {
 		
 		
 		
-		xx=canvas_offset_x+core.selectedChip.chipPackage.body.dx;
-		xx=xx+core.selectedChip.chipPackage.body.width/2;
-		yy=canvas_offset_y+core.selectedChip.chipPackage.body.dy;
-		yy=yy+core.selectedChip.chipPackage.body.height/2;
-		xx=xx-textwidth/2-12; 
-		//if (xx<0) xx=0;
-		yy=yy-textheight/2;
 		
-		//xx = gc.getClipping().width/2;
-		//if (yy<0) yy=0;
-  		  // rysuj nazwe procesora na œrodku
-   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
-		gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
-		gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-		gc.drawText(core.selectedChip.Name ,xx,yy);
+		if(core.selectedChip.chipPackage.Name.contains("DIP") || 
+		   core.selectedChip.chipPackage.Name.contains("SOP") || 
+		   core.selectedChip.chipPackage.Name.contains("SOIC")) {
+
+	        // oblicz xx i yy do wlasciwego rysowania przy rotacji napisu
+			xx=canvas_offset_x+core.selectedChip.chipPackage.body.dx;
+			xx=xx-core.selectedChip.chipPackage.body.height/2;
+			yy=canvas_offset_y+core.selectedChip.chipPackage.body.dy;
+			yy=yy+core.selectedChip.chipPackage.body.width/2;
+			xx=xx-textwidth; 
+			yy=yy-textwidth/2 + 12;
+				Transform oldTransform = new Transform(gc.getDevice());  
+		        gc.getTransform(oldTransform);
+				Transform tr = new Transform(gc.getDevice());
+				tr.translate(x, y);
+		        tr.rotate(-90); 
+		        tr.translate(-x,-y);	
+		        gc.setTransform(tr);			
+			        // here we go :)
+			   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
+					gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
+					gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+					gc.drawText(core.selectedChip.Name ,xx,yy);
+		        gc.setTransform(oldTransform);
+				tr.dispose();		
+		} else {
+			// rysuj nazwe procesora na œrodku
+			xx=canvas_offset_x+core.selectedChip.chipPackage.body.dx;
+			xx=xx+core.selectedChip.chipPackage.body.width/2;
+			yy=canvas_offset_y+core.selectedChip.chipPackage.body.dy;
+			yy=yy+core.selectedChip.chipPackage.body.height/2;
+			xx=xx-textwidth/2-12; 
+			//if (xx<0) xx=0;
+			yy=yy-textheight/2;
+			
+	   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
+			gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
+			gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+			gc.drawText(core.selectedChip.Name ,xx,yy);
+		}
+		
+
+		
+					//xx = gc.getClipping().width/2;
+					//if (yy<0) yy=0;
+		
+//      gc.setTransform(oldTransform);
+//		tr.dispose();		
+		
 		
 //		// draw menu if visible.
 //		if (pinMenuShape != null) {

@@ -4,13 +4,14 @@ import java.awt.Font;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Properties;
 import java.util.TreeMap;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.equinox.internal.app.MainApplicationLauncher;
 import org.eclipse.jface.preference.PreferenceDialog;
+import org.eclipse.jface.preference.PreferenceManager;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
@@ -57,6 +58,7 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 
+import de.innot.avreclipse.core.preferences.AVRDudePreferences;
 import de.innot.avreclipse.devexp.avrchip.AvrPinConfig;
 import de.innot.avreclipse.devexp.avrchip.AvrResource;
 import de.innot.avreclipse.devexp.avrchip.ChipPin;
@@ -320,12 +322,12 @@ public class DeviceExplorerView extends ViewPart {
 		sashFormTop = new SashForm(parent, SWT.SMOOTH | SWT.VERTICAL);
 	    sashFormTop.setBackground(SWTResourceManager.getColor(SWT.COLOR_GRAY));
 	    sashFormTop.setDragDetect(false);
-	    sashFormTop.setSashWidth(2);
-	    
+	    sashFormTop.setSashWidth(1);
 	    
 	    compositeTop = new Composite(sashFormTop, SWT.NONE);
 	    compositeTop.setBackground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-	    compositeTop.setLayout(new GridLayout(8, false));
+	    compositeTop.setLayout(new GridLayout(7, false));
+	    
 
 	    lblChipSelect = new Label(compositeTop, SWT.NONE);
 	    lblChipSelect.setLocation(3, 3);
@@ -431,7 +433,7 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    
 	    progBar = new MyProgressBar(compositeTop, SWT.LEFT);
-	    progBar.setSize(19, 120);
+	    progBar.setSize(190, 20);
 	    progBar.setPercent(75);
 	    
 	    Button btnClear = new Button(compositeTop, SWT.NONE);
@@ -442,7 +444,29 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    btnClear.addMouseListener(new MouseListener() {
 	    	@Override
-			public void mouseDown(MouseEvent e) { }
+			public void mouseDown(MouseEvent e) { 	
+	    		
+	    		//PreferenceDialog pd = new PreferenceDialog(PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(), new PreferenceManager());
+	    		//pd.open();
+	    		/*
+	    		String id = "de.innot.avreclipse.core.preferences.AVRDudePreferences";
+	    		String id2 = "de.innot.avreclipse.core.preferences.DatasheetPreferences";
+	    	    //String id2 = "org.eclipse.wst.server.ui.runtime.preferencePage";
+	    	    //final PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(null, id2, new String[] { id, id2 }, null);
+	    	    final PreferenceDialog dialog = PreferencesUtil.createPreferenceDialogOn(null, id2, new String[] { id, id2 }, null);
+	    		dialog.open();
+	    		*/
+	    		
+	    		Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+	    		//MessageDialog.openInformation(shell, "Project Proeperties", "Properties window will open next");
+
+	    		String propertyPageId = "de.innot.avreclipse.core.properties.AVRProjectProperties";
+	    		String id = "Target";
+	    		//PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(shell, currentProject, propertyPageId, new String[] {id}, null);
+	    		PreferenceDialog dialog = PreferencesUtil.createPropertyDialogOn(shell, currentProject, propertyPageId, null, null);
+	    		dialog.open();
+	    	    //return (dialog.open() == Window.OK);	    		
+	    	}
 
 			@Override
 			public void mouseDoubleClick(MouseEvent e) { }
@@ -469,7 +493,6 @@ public class DeviceExplorerView extends ViewPart {
 	    
 	    final Menu menu = new Menu(tree);
 	    tree.setMenu(menu);
-
 
 	    // Do not show menu, when no item is selected
 	    menu.addListener(SWT.MenuDetect, new Listener() {

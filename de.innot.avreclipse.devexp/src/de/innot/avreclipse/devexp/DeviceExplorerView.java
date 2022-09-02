@@ -824,12 +824,31 @@ public class DeviceExplorerView extends ViewPart {
 			
 				
 			public void mouseDown(MouseEvent e) {
+				// jesli kliknieto prawym klawiszem (e.button=3)
 				if (e.button == 3 && core.selectedChip.chipPackage.pins != null) {
-				//System.out.println("Kliknieto prawy klawisz myszy");	
-					
 					Integer pinNr=isMouseClickedAtPinPosition(e);
 					
 					
+					// dla pinow oznaczonych jako PORT
+					if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinResouce().startsWith("PORT")) {
+						// dla pinu INPUT - przelaczamy na input-pull-up
+						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
+							!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(true);
+						} else
+						// dla pinu INPUT + PULL-UP - przelaczamy na OUTPUT
+						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput() && 
+							core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsPullUpOrHighState()) {
+							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsPullUpOrHighState(false);
+							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(false);
+						} else
+						// dla pinu OUTPUT - przelaczamy na INPUT
+						if (!core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinIsInput()) {
+							core.selectedChip.avrPinsConfig.get(pinNr-1).setSelectedPinIsInput(true);
+						}
+					}
+					
+					tree.redraw();
 					//pinMenuShape=null;
 					//pinMenuShape=new PinMenuShape(e.x,e.y,30,30,"dupa");
 					if (pinNr!=0) {

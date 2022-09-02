@@ -176,7 +176,7 @@ public class AvrChip {
 	// ustalanie koloru pinu na podstawie resource i name.
 	public Color getColorDependOnResourceAndName(String resource,String name) {
 	
-		if (name.equalsIgnoreCase("VCC") || name.equalsIgnoreCase("AVCC")|| name.equalsIgnoreCase("AREF"))
+		if (name.equalsIgnoreCase("VCC") || name.equalsIgnoreCase("AVCC")|| name.equalsIgnoreCase("AREF") ||name.contains("VDD"))
 			return SWTResourceManager.getColor(255,100,100);
 		if (name.equalsIgnoreCase("GND") )
 			return SWTResourceManager.getColor(90,90,90);

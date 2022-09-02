@@ -166,7 +166,7 @@ public class DeviceExplorerCore {
 				if (pfd.name.substring(0, 2).equalsIgnoreCase("ADC")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/AC.png")); 
 				if (pfd.name.startsWith("AIN")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/adc.gif"));
 				if (pfd.name.startsWith("XTAL") || pfd.name.startsWith("TOSC")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/xtal.png"));
-				if (pfd.name.startsWith("VCC") || pfd.name.startsWith("AVCC") || pfd.name.startsWith("AREF")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/power.png"));
+				if (pfd.name.startsWith("VCC") || pfd.name.startsWith("AVCC") || pfd.name.startsWith("AREF") || pfd.name.contains("VDD")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/power.png"));
 				if (pfd.name.contains("INT")|| pfd.name.startsWith("PCINT")) tt.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/int.png"));
 				
 				// odpowiednie odwzorowanie wejœcia. wyjœcia i pull up dla ikon w Tree.

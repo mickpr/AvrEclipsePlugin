@@ -933,8 +933,7 @@ public class DeviceExplorerView extends ViewPart {
 		gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
 		gc.fillRectangle(x +core.selectedChip.chipPackage.body.dx, x +core.selectedChip.chipPackage.body.dy, core.selectedChip.chipPackage.body.width, core.selectedChip.chipPackage.body.height);
 		gc.drawRectangle(x +core.selectedChip.chipPackage.body.dx, x +core.selectedChip.chipPackage.body.dy, core.selectedChip.chipPackage.body.width, core.selectedChip.chipPackage.body.height);
-		
-		//if  (chip_package.body.body_type == ChipBodyType.DIL) gc.drawRectangle(x+30, y+10, 20,10);
+
 		gc.setLineWidth(1);
 		int xy=1;
 		for (ChipPin chipPin  : core.selectedChip.chipPackage.pins) {
@@ -960,10 +959,7 @@ public class DeviceExplorerView extends ViewPart {
 		int textwidth = (int)(font.getStringBounds(text, frc).getWidth());
 		int textheight = (int)(font.getStringBounds(text, frc).getHeight());
 
-		
-		
-		
-		
+		// rotuj napisy dla wybranych obudow...
 		if(core.selectedChip.chipPackage.Name.contains("DIP") || 
 		   core.selectedChip.chipPackage.Name.contains("SOP") || 
 		   core.selectedChip.chipPackage.Name.contains("SOIC")) {
@@ -990,19 +986,17 @@ public class DeviceExplorerView extends ViewPart {
 		        gc.setTransform(oldTransform);
 				tr.dispose();		
 		} else {
-			// rysuj nazwe procesora na œrodku
+			// dla pozostalych obudow rysuj nazwe procesora na œrodku, bez rotacji :)
 			xx=canvas_offset_x+core.selectedChip.chipPackage.body.dx;
 			xx=xx+core.selectedChip.chipPackage.body.width/2;
 			yy=canvas_offset_y+core.selectedChip.chipPackage.body.dy;
 			yy=yy+core.selectedChip.chipPackage.body.height/2;
 			xx=xx-textwidth/2-12; 
-			//if (xx<0) xx=0;
 			yy=yy-textheight/2;
-			
-	   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
-			gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
-			gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
-			gc.drawText(core.selectedChip.Name ,xx,yy);
+			   	    gc.setFont(SWTResourceManager.getFont("Courier New", 12, SWT.NORMAL));
+					gc.setBackground(SWTResourceManager.getColor(SWT.COLOR_DARK_GRAY));
+					gc.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+					gc.drawText(core.selectedChip.Name ,xx,yy);
 		}
 		
 

@@ -797,55 +797,29 @@ public class DeviceExplorerView extends ViewPart {
 				
 				// podwojne klikniecie prawym klawiszem myszy? - nie robimy nic
 				if (e.button == 3) return;				
-				
-				// TODO Auto-generated method stub
-				//JOptionPane.showMessageDialog(null, "dupa at (" + e.x + ", " + e.y + ")");
-				if (core.selectedChip.chipPackage.pins != null) {
-					// sprawdz czy wskazywany punkt jest na jakimœ pinie.
-					for (ChipPin cp : core.selectedChip.chipPackage.pins) {
-						
-						int x1 = cp.dx+canvas_offset_x; // lewy gorny rog obrysu pinu
-						int y1 = cp.dy+canvas_offset_y;
-						int x2 = cp.dx+canvas_offset_x+15; // prawy dolny rog obrysu pinu
-						int y2 = cp.dy+canvas_offset_y+15;
-						
-						if (cp.orient ==PinLocation.LEFT || cp.orient==PinLocation.RIGHT) x2=x2+5;
-						if (cp.orient ==PinLocation.TOP || cp.orient==PinLocation.BOTTOM) y2=y2+5;
-
-						if (e.x >= x1 && e.x<=x2 && e.y>=y1 && e.y<=y2) {
-							btnSave.setEnabled(true);
-							// get pin functions and show them
-							for(AvrPinConfig apc : core.selectedChip.avrPinsConfig) {
-								if (apc.getPinNumber()==cp.number) {
-									if (apc.getSelectedPinIndex()==apc.getPinNames().size()-1)
-										apc.setSelectedPinIndex(0); 
-									else
-										apc.setSelectedPinIndex(apc.getSelectedPinIndex()+1);
-									
-									Integer pn1 = apc.getPinNumber();
-									
-									String pnam1= apc.getSelectedPinName();
-									System.out.println("kliknieto pin numer" + pn1);
-									System.out.println("Wybrana aktualnie pozycja to:" + pnam1);
-									
-									// prawdopodobnie nie istnieje, lub raczej jest pusta 
-									if (pinconf.configData!=null)
-										System.out.println(pinconf.configData[1].getPinName());
-									//pinconf.configData[pn1-1].setPinName(pnam1);
-									// poszukaj, czy pin ma okreslenie portu
-									
-								}	
-								
-									// update view tree and chip symbol colors...
-									core.selectedChip.setCurrentSelectedPinsInTree(tree);
-									core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
-									canvas.redraw();
-								} // for
-							} // if (lastPinNr!-.... 
-						} // if (e.x >=x1...
-					} // for (ChipPin cp...
-
-				} // if (core.selectedChip...
+				// odczytaj na ktorym pinie klknieto
+				Integer pinNr = isMouseClickedAtPinPosition(e);
+				// .. i jesli wogole kliknieto na jakims pinie - pinNr zwraca jego numer (>0)
+				if (pinNr>0) {
+					for(AvrPinConfig apc : core.selectedChip.avrPinsConfig)
+						if (apc.getPinNumber()==pinNr) {
+							if (apc.getSelectedPinIndex()==apc.getPinNames().size()-1)
+								apc.setSelectedPinIndex(0); 
+							else
+								apc.setSelectedPinIndex(apc.getSelectedPinIndex()+1);
+							
+							Integer pn1 = apc.getPinNumber();
+							String pnam1= apc.getSelectedPinName();
+							System.out.println("kliknieto pin numer" + pn1);
+							System.out.println("Wybrana aktualnie pozycja to:" + pnam1);
+							// prawdopodobnie nie istnieje, lub raczej jest pusta 
+							if (pinconf.configData!=null)
+								System.out.println(pinconf.configData[1].getPinName());
+							//pinconf.configData[pn1-1].setPinName(pnam1);
+							// poszukaj, czy pin ma okreslenie portu
+						}
+				}
+			} // end of: public void mouseDouble
 			
 				
 			public void mouseDown(MouseEvent e) {
@@ -912,37 +886,27 @@ public class DeviceExplorerView extends ViewPart {
     //-------------------------------------------------------------------------
     // sprawdzenie, czy kliknieto na pin w okreslonej pozycji, zwraca numer wskazanego pinu, lub 0 (brak wskazanego pinu)
     private Integer isMouseClickedAtPinPosition(MouseEvent e) {
-		for (ChipPin cp : core.selectedChip.chipPackage.pins) {
+    	if (core.selectedChip.chipPackage.pins != null) {
+    		for (ChipPin cp : core.selectedChip.chipPackage.pins) {
 			
-			int x1 = cp.dx+canvas_offset_x; // lewy gorny rog obrysu pinu
-			int y1 = cp.dy+canvas_offset_y;
-			int x2 = cp.dx+canvas_offset_x+15; // prawy dolny rog obrysu pinu
-			int y2 = cp.dy+canvas_offset_y+15;
+    			int x1 = cp.dx+canvas_offset_x; // lewy gorny rog obrysu pinu
+    			int y1 = cp.dy+canvas_offset_y;
+    			int x2 = cp.dx+canvas_offset_x+15; // prawy dolny rog obrysu pinu
+    			int y2 = cp.dy+canvas_offset_y+15;
 			
-			if (cp.orient ==PinLocation.LEFT || cp.orient==PinLocation.RIGHT) x2=x2+5;
-			if (cp.orient ==PinLocation.TOP || cp.orient==PinLocation.BOTTOM) y2=y2+5;
+    			if (cp.orient ==PinLocation.LEFT || cp.orient==PinLocation.RIGHT) x2=x2+5;
+    			if (cp.orient ==PinLocation.TOP || cp.orient==PinLocation.BOTTOM) y2=y2+5;
 
-			if (e.x >= x1 && e.x<=x2 && e.y>=y1 && e.y<=y2) {
-				for(AvrPinConfig apc : core.selectedChip.avrPinsConfig) {
-					if (apc.getPinNumber()==cp.number) {
-
-						Integer pinNr = apc.getPinNumber();
-						
-						String pnam1= apc.getSelectedPinName();
-						
-						//System.out.println("kliknieto pin ----> " + pn1);
-						//System.out.println("jego nazwa to:" + pnam1);
-						// prawdopodobnie nie istnieje, lub raczej jest pusta 
-						//if (pinconf.configData!=null)
-						//	System.out.println(pinconf.configData[1].getPinName());
-						//pinconf.configData[pn1-1].setPinName(pnam1);
-						// poszukaj, czy pin ma okreslenie portu
-						return pinNr;
-					}
-				} // for
-			} // if
-		} //for
-		return 0;
+    			if (e.x >= x1 && e.x<=x2 && e.y>=y1 && e.y<=y2) {
+    				for(AvrPinConfig apc : core.selectedChip.avrPinsConfig) {
+    					if (apc.getPinNumber()==cp.number) {
+							return apc.getPinNumber();
+    					} // if
+    				} // for
+    			} // if
+    		} //for
+    	} // if	
+    	return 0;
     }
 	//-------------------------------------------------------------------------		
 	

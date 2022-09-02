@@ -4,10 +4,13 @@ import java.awt.Font;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.jface.preference.PreferenceDialog;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
@@ -37,6 +40,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.ScrollBar;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.swt.widgets.Text;
@@ -46,6 +50,7 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.ISelectionListener;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.dialogs.PreferencesUtil;
 import org.eclipse.ui.editors.text.TextEditor;
 import org.eclipse.ui.part.ViewPart;
 import org.eclipse.ui.texteditor.IDocumentProvider;
@@ -103,6 +108,8 @@ public class DeviceExplorerView extends ViewPart {
 	public String projectPath;
 	public String projectName;
 	
+	public IProject currentProject;
+	
 	//=============================================================================
 	// obsluga wskazywania projektu w oknie projektu
 	// the listener we register with the selection service 
@@ -135,6 +142,9 @@ public class DeviceExplorerView extends ViewPart {
 		
 		// jesli wskazalismy projekt
 		if (element instanceof IProject) {
+			// set pointer to current project
+			currentProject = (IProject)element;
+			
 			// pobierz jego nazwa 
 			core.projectName = ((IProject) element).getName();
 			// setup for preference access
@@ -412,34 +422,9 @@ public class DeviceExplorerView extends ViewPart {
 			public void mouseDoubleClick(MouseEvent e) {}
 			@Override
 			public void mouseDown(MouseEvent e) {
-				PluginPreferences.set("Package", combo_package.getText());
-				Double f = Double.parseDouble(combo_freq.getText())*1000000;
-				core.setMcuFrequency(f);
-				//PluginPreferences.set("ClockFrequency", Double.toString(f));
+				saveClick();
 				btnSave.setEnabled(false);
-				// zapisz konfiguracje pinow
-				core.selectedChip.SavePinConfigFunctions();
-				
-				// uaktualnij konfiguracje wg wybranego pinu
-		        core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
-		        System.out.println("xxxxxxxxxxxxxxxxxxx");
-		        
-		        // show loaded resources into tree :)
-		        loadDeviceResourcesIntoTree(composResource);
-		        //set checked pins 
-		        core.selectedChip.setCurrentSelectedPinsInTree(tree);
-		        
-		        // save pin configuration
-		        //savePinConfigToXML(projectPath + "/.settings/pins.xml");
-				System.out.println(core.selectedChip.getDDRportValue("PORTA"));
-				System.out.println(core.selectedChip.getDDRportValue("PORTB"));
-				System.out.println(core.selectedChip.getDDRportValue("PORTC"));
-				System.out.println(core.selectedChip.getDDRportValue("PORTD"));
-				System.out.println(core.selectedChip.getDDRportValue("PORTE"));
-				System.out.println(core.selectedChip.getDDRportValue("PORTF"));
-				
-				core.selectedChip.printAllPorts();
-		    }
+			}
 			@Override
 			public void mouseUp(MouseEvent e) {}
 	    }); // btnSave listener
@@ -461,7 +446,7 @@ public class DeviceExplorerView extends ViewPart {
 
 			@Override
 			public void mouseDoubleClick(MouseEvent e) { }
-
+			
 			@Override
 			public void mouseUp(MouseEvent e) {
 				progBar.setPercent((progBar.getPercent()+3)%100);
@@ -481,31 +466,6 @@ public class DeviceExplorerView extends ViewPart {
 	    compositeTree.setLayout(new FillLayout(SWT.FILL));
 
 	    loadDeviceResourcesIntoTree(compositeTree);
-
-//	    //----------------------------------------------------------------------------------------
-//	    tree.addMouseListener(new MouseListener() {
-//			@Override
-//			public void mouseDoubleClick(MouseEvent e) {
-//			}
-//
-//			@Override
-//			public void mouseDown(MouseEvent e) {
-//				// TODO Auto-generated method stub
-//				System.out.print("f:");
-//				try {
-//			        Point point = new Point(e.x, e.y);
-//			        TreeItem item = tree.getItem(point);
-//				    if (item != null) {
-//				        	System.out.println("Click =>:" + item.getText());
-//				    }
-//				} finally {
-//				}
-//			}
-//
-//			@Override
-//			public void mouseUp(MouseEvent e) {
-//			}
-//	    });
 	    
 	    final Menu menu = new Menu(tree);
 	    tree.setMenu(menu);
@@ -554,6 +514,7 @@ public class DeviceExplorerView extends ViewPart {
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(true);
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(false);
 								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
+								saveClick();
 							}
 		            	});
 		            	MenuItem newItemINPU = new MenuItem(menu,SWT.NONE);
@@ -565,6 +526,7 @@ public class DeviceExplorerView extends ViewPart {
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(true);
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(true);
 								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in_pup.gif"));
+								saveClick();
 							}
 		            	});
 		            	MenuItem newItemSEP = new MenuItem(menu,SWT.SEPARATOR);
@@ -577,6 +539,7 @@ public class DeviceExplorerView extends ViewPart {
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsInput(false);
 								core.selectedChip.avrPinsConfig.get(pinX-1).setSelectedPinIsPullUpOrHighState(false);
 								tree.getSelection()[0].setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_out.gif"));
+								saveClick();
 							}
 		            	});
 	            	
@@ -589,30 +552,10 @@ public class DeviceExplorerView extends ViewPart {
 		            }
 
 		            
-//		            if (tree.getSelection()[0].getItemCount()>0) {
-//		            	MenuItem newItem1 = new MenuItem(menu, SWT.NONE);
-//		            	newItem1.setText("expand");
-//		            	newItem1.addSelectionListener(new SelectionListener() {
-//							@Override
-//							public void widgetSelected(SelectionEvent e) {
-//								System.out.println(e.getSource().toString());
-//								TreeItem tit = tree.getSelection()[0];
-//								tit.setExpanded(true);
-//							}
-//							@Override
-//							public void widgetDefaultSelected(SelectionEvent e) {
-//								// TODO Auto-generated method stub
-//							} // void widgetDefaultSelected(SelectionEvent e) {
-//		            	}); // addSelectionListener
-//		            } // if (tree.getSelection()[0].getItemCount()>0) {
-
-		            
-		            //tree.getVerticalBar().setSelection(3);
-		            //tree.setTopItem(treeTopItem);
-					} catch (Exception e) { 
-						//System.out.println("You not hit any TreeItem, ignore click!");
-						//System.out.println(e.getMessage());
-					}
+				} catch (Exception e) { 
+					//System.out.println("You not hit any TreeItem, ignore click!");
+					//System.out.println(e.getMessage());
+				}
 				
 	            //tree.setTopItem(tree.getItem(2));
 	            //tree.redraw();
@@ -634,6 +577,7 @@ public class DeviceExplorerView extends ViewPart {
 			public void widgetDefaultSelected(SelectionEvent e) {
 			}
 		});
+	    
 	    //------------------------------------------------------------------------------
 	    // ... oraz druga czesc = composite a w srodku canvas
 	    myViewParent = new Composite(sashForm, SWT.NONE);
@@ -820,6 +764,7 @@ public class DeviceExplorerView extends ViewPart {
 							// poszukaj, czy pin ma okreslenie portu
 						}
 				}
+				saveClick();
 			} // end of: public void mouseDouble
 			
 				
@@ -829,7 +774,7 @@ public class DeviceExplorerView extends ViewPart {
 					Integer pinNr=isMouseClickedAtPinPosition(e);
 					
 					
-					// dla pinow oznaczonych jako PORT
+					// dla pinow oznaczonych jako PORT przelaczamy INPUT/INPUT-PULLUP/OUTPUT...
 					if (pinNr>0) {
 						if (core.selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinResouce().startsWith("PORT")) {
 							// dla pinu INPUT - przelaczamy na input-pull-up
@@ -849,11 +794,8 @@ public class DeviceExplorerView extends ViewPart {
 							}
 						}
 					}
-//					if (pinNr!=0) {
-//						System.out.println("Right click on pin " + pinNr.toString());
-//					}
-					//tree.notify();
-					//tree.redraw();
+					saveClick();
+					tree.redraw();					
 					canvas.redraw();
 				} else {
 					//pinMenuShape = null;
@@ -1033,7 +975,6 @@ public class DeviceExplorerView extends ViewPart {
 		
 	}
 	
-	
 
 	//--------------------------------------------------------------------------------------------
 	public void loadDeviceResourcesIntoTree(Composite composite) {
@@ -1205,7 +1146,8 @@ public class DeviceExplorerView extends ViewPart {
 			        			item.setImage(ResourceManager.getPluginImage("de.innot.avreclipse.devexp", "icons/pin_in.gif"));
 				        	}
 				        	 
-				        	item.getParent().redraw();
+				        	//item.getParent().redraw();
+				        	tree.redraw();
 				        } // if
 			        } // if (item != null) 
 				} // handleEvent
@@ -1215,11 +1157,6 @@ public class DeviceExplorerView extends ViewPart {
 			tree.removeAll();
 		}
 		core.FillTreeWithResources(tree);
-		// liczba elementow typu Resource * wysokosc elementu tree.
-    	//core.selectedChip.avrResources.keySet().size()*tree.getItemHeight();
-    //Integer height1 = core.selectedChip.avrResources.keySet().size()*tree.getItemHeight();
-    	//compositeTree.setSize(compositeTree.getSize().x, 8+ height1);
-        //xpndItemResources.setHeight(8+ height1);
 	}
 	
 	public void reloadPackageComboAndSetFirstPackageAsDefault(String chipName) {
@@ -1330,6 +1267,66 @@ public class DeviceExplorerView extends ViewPart {
 		combo_package.setEnabled(enable);
 		tabFolder.setEnabled(enable);
 		btnSave.setEnabled(enable);
+	}
+
+	/**
+	 * Save current configuration to the properties
+	 */
+	private void saveClick() {
+		PluginPreferences.set("Package", combo_package.getText());
+		Double f = Double.parseDouble(combo_freq.getText())*1000000;
+		core.setMcuFrequency(f);
+		//PluginPreferences.set("ClockFrequency", Double.toString(f));
+				
+		storeUnfoldedTreeElements(tree);
+		
+		// zapisz konfiguracje pinow
+		core.selectedChip.SavePinConfigFunctions();
+		
+		// uaktualnij konfiguracje wg wybranego pinu
+        core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
+        //System.out.println("xxxxxxxxxxxxxxxxxxx");
+        
+        // show loaded resources into tree :)
+        loadDeviceResourcesIntoTree(composResource);
+        //set checked pins 
+        core.selectedChip.setCurrentSelectedPinsInTree(tree);
+
+        // odtworz ustawienia drzewka
+        restoreUnfoldedTreeElements(tree);
+        
+        // save pin configuration
+        //savePinConfigToXML(projectPath + "/.settings/pins.xml");
+		System.out.println(core.selectedChip.getDDRportValue("PORTA"));
+		System.out.println(core.selectedChip.getDDRportValue("PORTB"));
+		System.out.println(core.selectedChip.getDDRportValue("PORTC"));
+		System.out.println(core.selectedChip.getDDRportValue("PORTD"));
+		System.out.println(core.selectedChip.getDDRportValue("PORTE"));
+		System.out.println(core.selectedChip.getDDRportValue("PORTF"));
+		
+		core.selectedChip.printAllPorts();
+		canvas.redraw();
+	}
+	
+	
+	
+	ArrayList<Boolean> unfolded;
+	/**
+	 * Store unfolded tree elements
+	 */
+	public void storeUnfoldedTreeElements(Tree tree) {
+		unfolded = new ArrayList<Boolean>();
+		int itemCount = tree.getItemCount(); 
+		
+		for (int i =0;i<itemCount;i++) {
+			unfolded.add(tree.getItem(i).getExpanded());
+		}
+	} // end of : public void storeUnfoldedTreeElements.....
+	
+	public void restoreUnfoldedTreeElements(Tree tree) {
+		for (int i =0;i<unfolded.size();i++) {
+			tree.getItem(i).setExpanded(unfolded.get(i));
+		}
 	}
 	
 } //of class

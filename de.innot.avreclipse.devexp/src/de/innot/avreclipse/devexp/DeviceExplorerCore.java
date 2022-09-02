@@ -107,6 +107,12 @@ public class DeviceExplorerCore {
 	
 	//-------------------- TUTAJ JEST SYF-------------------------------------------
 	// -----------------------------------------------------
+	
+	
+	/**
+	* Wype³nia obiekt tree danymi
+	*   
+	*/	
 	public void FillTreeWithResources(Tree tree) {
 		//JOptionPane.showMessageDialog(null, "jestem", "jestem", JOptionPane.INFORMATION_MESSAGE);
 

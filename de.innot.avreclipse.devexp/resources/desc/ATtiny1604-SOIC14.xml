@@ -1,0 +1,113 @@
+<pins>
+    <pin name="1">
+       	<role name="VDD" resource="CORE" desc="Power supply" />
+    </pin>
+    <pin name="2">        
+	<role name="PA4" resource="PORTA" desc="Generic IO pin PA4" />
+	<role name="S(PA4)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN4" resource="ADC" desc="Analog-to-Digital input AIN4" />
+	<role name="XDIR0" resource="USART0" desc="USART0 XDIR pin (alternative)" />
+        <role name="/SS" resource="SPI" desc="SPI slave select pin." />
+        <role name="W04" resource="TCA0" desc="Timer A output pin." />
+	<role name="LUT0-OUT" resource="CCL" desc="Configurable Custom Logic/LUT-Table output pin" />
+	<role name="SO2" resource="CRCSCAN" desc="CRC - SO2 pin" />
+    </pin>
+    <pin name="3">        
+	<role name="PA5" resource="PORTA" desc="Generic IO pin PA5" />
+	<role name="S(PA5)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN5" resource="ADC" desc="Analog-to-Digital input AIN5" />
+	<role name="OUT" resource="ACOMP0" desc="USART0 XDIR pin" />
+        <role name="W05" resource="TCA0" desc="Timer A output pin." />
+        <role name="W00" resource="TCB0" desc="Timer B output pin." />
+	<role name="SO3" resource="CRCSCAN" desc="CRC - SO3 pin" />
+    </pin>
+    <pin name="4">        
+	<role name="PA6" resource="PORTA" desc="Generic IO pin PA6" />
+	<role name="A(PA6)" resource="EXTINT" desc="External Interrupt - asynchronus detection" />
+	<role name="AIN6" resource="ADC" desc="Analog-to-Digital input AIN6" />
+	<role name="AINN0" resource="ACOMP0" desc="Analog comparator negative 0 pin" />
+	<role name="SI0/SER" resource="CRCSCAN" desc="CRC - SI0/SER pin" />
+    </pin>
+    <pin name="5">
+	<role name="PA7" resource="PORTA" desc="Generic IO pin PA7" />
+	<role name="S(PA7)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN7" resource="ADC" desc="Analog-to-Digital input AIN7" />
+	<role name="AINP0" resource="ACOMP0" desc="Analog comparator positive 0 pin" />
+	<role name="LUT1-OUT" resource="CCL" desc="Configurable Custom Logic/LUT-Table output pin" />
+	<role name="SO0/SER" resource="CRCSCAN" desc="CRC - SO0/SER pin" />
+    </pin>
+    <pin name="6">
+	<role name="PB3" resource="PORTB" desc="Generic IO pin PB3" />
+	<role name="S(PB3)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="RXD" resource="USART0" desc="USART0 receive pin" />
+        <role name="W00" resource="TCA0" desc="Timer A output pin (alternative)." />
+	<role name="SO1/SER" resource="CRCSCAN" desc="CRC - SO1/SER pin" />
+    </pin>
+    <pin name="7">
+	<role name="PB2" resource="PORTB" desc="Generic IO pin PB2" />
+	<role name="A(PB2)" resource="EXTINT" desc="External Interrupt - asynchronus detection" />
+	<role name="TXD" resource="USART0" desc="USART0 transmitt pin" />
+        <role name="W02" resource="TCA0" desc="Timer A output pin." />
+        <role name="EVOUT" resource="EVSYS" desc="Event system, output pin." />
+	<role name="SI1/SER" resource="CRCSCAN" desc="CRC - SI1/SER pin" />
+    </pin>
+    <pin name="8">
+	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1" />
+	<role name="S(PB1)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN10" resource="ADC" desc="Analog-to-Digital input AIN10" />
+	<role name="XCK" resource="USART0" desc="USART0 external clock pin" />
+	<role name="SDA" resource="I2C" desc="I2C data pin" />
+        <role name="W01" resource="TCA0" desc="Timer A output pin." />
+	<role name="SI2" resource="CRCSCAN" desc="CRC - SI2 pin" />
+    </pin>
+    <pin name="9">
+	<role name="PB0" resource="PORTB" desc="Generic IO pin PB0" />
+	<role name="S(PB0)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN11" resource="ADC" desc="Analog-to-Digital input AIN11" />
+	<role name="XDIR" resource="USART0" desc="USART0 external clock pin" />
+	<role name="SCL" resource="I2C" desc="I2C clock pin" />
+        <role name="W00" resource="TCA0" desc="Timer A output pin." />
+	<role name="SI3" resource="CRCSCAN" desc="CRC - SI2 pin" />
+    </pin>
+    <pin name="10">
+	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0" />
+	<role name="/RESET" resource="CORE" desc="Reset Pin" />
+	<role name="UPDI" resource="CORE" desc="UPDI programming pin" />
+	<role name="S(10)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN0" resource="ADC" desc="Analog-to-Digital input AIN0" />
+	<role name="LUT0-IN0" resource="CCL" desc="Configurable Custom Logic/LUT-Table input IN0" />
+	<role name="/RESET" resource="CRCSCAN" desc="CRC - Reset pin" />
+    </pin>
+    <pin name="11">
+	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1" />
+	<role name="S(11)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN1" resource="ADC" desc="Analog-to-Digital input AIN1" />
+	<role name="TXD0" resource="USART0" desc="USART0 transmitt pin (alternative)" />
+        <role name="MOSI" resource="SPI" desc="SPI Master output, slave input pin." />
+        <role name="BREAK" resource="EVSYS" desc="Event system, Break Pin." />
+	<role name="LUT0-IN1" resource="CCL" desc="Configurable Custom Logic/LUT-Table input IN1" />
+    </pin>             
+    <pin name="12">
+	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2" />
+	<role name="A(PA2)" resource="EXTINT" desc="External Interrupt - asynchronus detection" />
+	<role name="AIN2" resource="ADC" desc="Analog-to-Digital input AIN2" />
+	<role name="RXD0" resource="USART0" desc="USART0 receive pin (alternative)" />
+        <role name="MISO" resource="SPI" desc="SPI Master input, Slave output pin." />
+        <role name="EVOUT" resource="EVSYS" desc="Event system, Break Pin." />
+	<role name="LUT0-IN2" resource="CCL" desc="Configurable Custom Logic/LUT-Table input IN2" />
+	<role name="ENABLE" resource="CRCSCAN" desc="CRC - Enable pin" />
+    </pin>
+    <pin name="13">
+	<role name="PA3" resource="PORTA" desc="Generic IO pin PA3" />
+	<role name="CLKI" resource="CORE" desc="External clock input" />
+	<role name="S(PA3)" resource="EXTINT" desc="External Interrupt - synchronus detection" />
+	<role name="AIN3" resource="ADC" desc="Analog-to-Digital input AIN3" />
+	<role name="XCK0" resource="USART0" desc="USART0 external clock pin (alternative)" />
+        <role name="SCK" resource="SPI" desc="SPI clock pin." />
+        <role name="W03" resource="TCA0" desc="Timer A output pin." />
+	<role name="CLOCK" resource="CRCSCAN" desc="CRC - Clock pin" />
+    </pin>
+    <pin name="14">
+	<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+</pins>       	       	       	       	       	       	       	

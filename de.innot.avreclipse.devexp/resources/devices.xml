@@ -316,6 +316,18 @@
   </Packages>
 </device>
 <device>
+  <Name>ATtiny1604</Name>
+  <Type>ATtiny</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SOIC14" file="ATtiny1604-SOIC14.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny25</Name>
   <Type>ATtiny</Type>
   <Flash>2048</Flash>
@@ -343,6 +355,18 @@
 	<Package name="SOIC8" file="ATtiny45-SOIC8.xml"></Package>
 	<Package name="QFN20" file="ATtiny45-QFN20.xml"></Package>
 	<Package name="MLF20" file="ATtiny45-MLF20.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny804</Name>
+  <Type>ATtiny</Type>
+  <Flash>8192</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>512</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SOIC14" file="ATtiny804-SOIC14.xml"></Package>
   </Packages>
 </device>
 <device>

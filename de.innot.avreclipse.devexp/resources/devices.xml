@@ -40,33 +40,7 @@
   </Packages>
 </device>
 <device>
-  <Name>ATmega8A</Name>
-  <Type>ATmega</Type>
-  <Flash>8192</Flash>
-  <EEPROM>512</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>16MHz</Freq>
-  <Vcc>2.7 .. 5.5</Vcc>
-  <Packages>
-	<Package name="DIP28" file="ATmega8-DIP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega8-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
   <Name>ATmega16</Name>
-  <Type>ATmega</Type>
-  <Flash>16384</Flash>
-  <EEPROM>512</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>16MHz</Freq>
-  <Vcc>2.7 .. 5.5</Vcc>
-  <Packages>
-	<Package name="DIP40"  file="ATmega16-DIP40.xml"></Package>
-	<Package name="TQFP44" file="ATmega16-TQFP44.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega16A</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>
   <EEPROM>512</EEPROM>
@@ -165,21 +139,9 @@
   <EEPROM>4096</EEPROM>
   <RAM>4096</RAM>
   <Freq>16MHz</Freq>
-  <Vcc>4.5 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP64" file="ATmega128-TQFP64.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega128A</Name>
-  <Type>ATmega</Type>
-  <Flash>131072</Flash>
-  <EEPROM>4096</EEPROM>
-  <RAM>4096</RAM>
-  <Freq>16MHz</Freq>
   <Vcc>2.7 .. 5.5</Vcc>
   <Packages>
-	<Package name="TQFP64" file="ATmega128A-TQFP64.xml"></Package>
+	<Package name="TQFP64" file="ATmega128-TQFP64.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -284,19 +246,6 @@
   <RAM>64</RAM>
   <Freq>20MHz</Freq>
   <Vcc>2.7 .. 5.5</Vcc>
-  <Packages>
-	<Package name="DIP8" file="ATtiny13-DIP8.xml"></Package>
-	<Package name="SOIC8" file="ATtiny13-SOIC8.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATtiny13V</Name>
-  <Type>ATtiny</Type>
-  <Flash>1024</Flash>
-  <EEPROM>64</EEPROM>
-  <RAM>64</RAM>
-  <Freq>10MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="DIP8" file="ATtiny13-DIP8.xml"></Package>
 	<Package name="SOIC8" file="ATtiny13-SOIC8.xml"></Package>

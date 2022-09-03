@@ -411,7 +411,7 @@
         <role name="ADC0" resource="ADC" descr="Analog-to-Digital input ADC0"/>
    </pin>
    <pin name="98">
-  		<role name="AREF" resource="CORE" descr="Reference voltage for AD converter."/>
+  		<role name="AREF" resource="ADC" descr="Reference voltage for AD converter."/>
    </pin>
    <pin name="99">
   		<role name="GND" resource="CORE" descr="Common ground"/>

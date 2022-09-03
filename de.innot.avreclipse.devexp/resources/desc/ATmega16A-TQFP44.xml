@@ -104,7 +104,7 @@
 		<role name="GND" resource="CORE" desc="Common ground"/>
     </pin>
     <pin name="29">
-		<role name="AREF" resource="CORE" desc="Reference voltage for AD converter"/>
+		<role name="AREF" resource="ADC" desc="Reference voltage for AD converter"/>
     </pin>
     <pin name="30">
   		<role name="PA7" resource="PORTA" desc="Generic IO pin PA7"/>

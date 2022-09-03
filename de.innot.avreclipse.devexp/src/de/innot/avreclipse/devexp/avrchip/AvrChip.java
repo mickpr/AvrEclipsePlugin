@@ -148,26 +148,19 @@ public class AvrChip {
 			}
 			i++;
 		}
-		//System.out.println("Brak pinu o podanej w getSelectedPinFunction konfiguracji " + pinName );
 		return -1;
 	}
 	
 	//-------------------------------------------------------------------------------------------	
 	// pinu numerowane od 1, ale index w tablicy od 0, st¹d "pinNr-1"
 	public void setSelectedPinFunction(int pinNr, String pinName) {
-		//System.out.println("...invoked setSelectedPinFunction("+pinNr+","+pinName+")");
-		
 		int nr=0;
 		for (String pn : this.avrPinsConfig.get(pinNr-1).getPinNames()) {
-			
-			//System.out.println("pn " + pn + " - pinname " + pinName + " pinNr:" + pinNr);	
 			if (pn.equalsIgnoreCase(pinName)) {
 			
 				AvrPinConfig pincfg = this.avrPinsConfig.get(pinNr-1);
 				pincfg.setSelectedIndex(nr);
 				this.avrPinsConfig.set(pinNr-1, pincfg);
-				
-				//System.out.println("...po aktualizacji: " + selectedChip.avrPinsConfig.get(pinNr-1).getSelectedPinName());
 			} // if
 			nr++;
 		} //for
@@ -180,7 +173,7 @@ public class AvrChip {
 			return SWTResourceManager.getColor(255,100,100);
 		if (name.equalsIgnoreCase("GND") )
 			return SWTResourceManager.getColor(90,90,90);
-		if (name.contains("ADC") || name.contains("AIN"))
+		if (name.contains("ADC") || name.contains("AIN")) 
 			return SWTResourceManager.getColor(150,150,250);
 		if (name.contains("TCK") || name.contains("TDI")|| name.contains("TDO") || name.contains("TMS"))
 			return SWTResourceManager.getColor(150,250,250);
@@ -257,25 +250,77 @@ public class AvrChip {
 			config.append(this.avrPinsConfig.get(a).getSelectedIndex().toString());
 		}
 		//flush
-		PluginPreferences.set("PinFunc", config.toString());  
+		//PluginPreferences.set("PinFunc", config.toString());  
+	}
+	//-------------------------------------------------------------------------------------------
+	public String LoadPinConfigIsPullUpOrHighState() {
+		String config = PluginPreferences.get("PinIsPullUpOrHighState","ERR");
+		char conf[];
+		// jesli próba wczytania zakonczyla sie bledem - zwroc pusty string
+		if (config.equals("ERR")) return "";
+		
+		// jesli ok.. zamien String na tablice znakow.
+		conf = config.toCharArray();
+		for (int a=0;a<conf.length;a++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(a);
+			int chr = conf[a] -'0'; // zamiana 01 na odpowiednia wartosc int
+			// tylko dla pinow oznaczonych jako PORT
+			if (apc.getSelectedPinResouce().startsWith("PORT")) {
+				if (chr==1) { 
+					apc.setSelectedPinIsPullUpOrHighState(true);
+				} else { 
+					apc.setSelectedPinIsPullUpOrHighState(false); 
+				}
+			}
+			// ustaw 
+			this.avrPinsConfig.set(a, apc);
+		}
+		//System.out.println("pin pull up config:" + config);
+		return config;		
 	}
 	//-------------------------------------------------------------------------------------------	
 	public void SavePinConfigIsPullUpOrHighState() {
-		StringBuilder config = new StringBuilder();
-		for (int a=0;a<this.avrPinsConfig.size();a++) {
-			config.append(this.avrPinsConfig.get(a).getSelectedPinIsInput()?"1":"0");
-		}
-		//flush
-		PluginPreferences.set("PinIsInput", config.toString());  
-	}
-	//-------------------------------------------------------------------------------------------
-	public void SavePinConfigIsInput() {
 		StringBuilder config = new StringBuilder();
 		for (int a=0;a<this.avrPinsConfig.size();a++) {
 			config.append(this.avrPinsConfig.get(a).getSelectedPinIsPullUpOrHighState()?"1":"0");
 		}
 		//flush
 		PluginPreferences.set("PinIsPullUpOrHighState", config.toString());  
+	}
+	//-------------------------------------------------------------------------------------------
+	public String LoadPinConfigIsInput() {
+		String config = PluginPreferences.get("PinIsInput","ERR");
+		char conf[];
+		// jesli próba wczytania zakonczyla sie bledem - zwroc pusty string
+		if (config.equals("ERR")) return "";
+		
+		// jesli ok.. zamien String na tablice znakow.
+		conf = config.toCharArray();
+		for (int a=0;a<conf.length;a++) {
+			AvrPinConfig apc = this.avrPinsConfig.get(a);
+			int chr = conf[a] -'0'; // zamiana 01 na odpowiednia wartosc int
+			// tylko dla pinow oznaczonych jako PORT
+			if (apc.getSelectedPinResouce().startsWith("PORT")) {
+				if (chr==1) { 
+					apc.setSelectedPinIsInput(true);
+				} else { 
+					apc.setSelectedPinIsInput(false); 
+				}
+			}
+			// ustaw 
+			this.avrPinsConfig.set(a, apc);
+		}
+		//System.out.println("pin input config:" + config);
+		return config;		
+	}	
+	//-------------------------------------------------------------------------------------------
+	public void SavePinConfigIsInput() {
+		StringBuilder config = new StringBuilder();
+		for (int a=0;a<this.avrPinsConfig.size();a++) {
+			config.append(this.avrPinsConfig.get(a).getSelectedPinIsInput()?"1":"0");
+		}
+		//flush
+		PluginPreferences.set("PinIsInput", config.toString());  
 	}
 	//-------------------------------------------------------------------------------------------	
 	public void updateChipPackagePinsToSelectedInAvrPinsConfig() {
@@ -285,11 +330,13 @@ public class AvrChip {
     	}
 	}	
 	//-------------------------------------------------------------------------------------------
-	// funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji DDR - czyli konfiguracji maski bitowej gdzie
-	// 1 oznacza pin jako ustawiony jako wyjscie, a 0 oznacza pin jako wejscie (domyslnie) podanego port-u)
-	// jako argument podajemy cala nazwe portu.. np. PORTA, PORTF
-	// jesli dany port nie jest uzywany (lub nie istnieje), lub ma wszystkie piny wejsciowe - zwracane jest zero
-	// poniewaz jest to wartosc domyslna - nie trzeba (ale mozna) ustawiac jej przy inicjalizacji rejestru DDRx
+	/** 
+	 * Funkcja zwraca bajt (bedacy odzwierciedleniem konfiguracji DDR - czyli konfiguracji maski bitowej gdzie
+	 * 1 oznacza pin jako ustawiony jako wyjscie, a 0 oznacza pin jako wejscie (domyslnie) podanego port-u)
+	 * jako argument podajemy cala nazwe portu.. np. PORTA, PORTF
+	 * jesli dany port nie jest uzywany (lub nie istnieje), lub ma wszystkie piny wejsciowe - zwracane jest zero
+	 * poniewaz jest to wartosc domyslna - nie trzeba (ale mozna) ustawiac jej przy inicjalizacji rejestru DDRx
+	 */
 	public byte getDDRportValue(String portName) {
 		byte bits=0;
 		for (int x=0;x< this.avrPinsConfig.size();x++) {

@@ -95,7 +95,7 @@
   	<role name="EVOUTD" resource="EVSYS" desc="Event system ouptut (alternative pin)." />
     </pin>
     <pin name="14">
-  	<role name="AVDD" resource="ADC" desc="Analog Power Supply" />
+  	<role name="AVDD" resource="CORE" desc="Analog Power Supply" />
     </pin>
     <pin name="15">
   	<role name="GND" resource="CORE" desc="Common ground" />

@@ -5,13 +5,10 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.TreeMap;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.equinox.internal.app.MainApplicationLauncher;
 import org.eclipse.jface.preference.PreferenceDialog;
-import org.eclipse.jface.preference.PreferenceManager;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.jface.viewers.ISelection;
@@ -58,7 +55,6 @@ import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.wb.swt.ResourceManager;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-import de.innot.avreclipse.core.preferences.AVRDudePreferences;
 import de.innot.avreclipse.devexp.avrchip.AvrPinConfig;
 import de.innot.avreclipse.devexp.avrchip.AvrResource;
 import de.innot.avreclipse.devexp.avrchip.ChipPin;
@@ -1305,6 +1301,8 @@ public class DeviceExplorerView extends ViewPart {
 		
 		// zapisz konfiguracje pinow
 		core.selectedChip.SavePinConfigFunctions();
+		core.selectedChip.SavePinConfigIsInput();
+		core.selectedChip.SavePinConfigIsPullUpOrHighState();
 		
 		// uaktualnij konfiguracje wg wybranego pinu
         core.selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();

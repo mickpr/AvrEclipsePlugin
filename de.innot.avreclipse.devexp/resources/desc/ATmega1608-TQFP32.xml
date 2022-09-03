@@ -121,7 +121,7 @@
   	<role name="EVOUTD" resource="EVSYS" desc="Event system out D pin (alternative)." />
 </pin>
 <pin name="18">
-  	<role name="AVDD" resource="ADC" desc="Power supply for AD converter." />
+  	<role name="AVDD" resource="CORE" desc="Power supply for AD converter." />
 </pin>
 <pin name="19">
   	<role name="GND" resource="CORE" desc="Common ground." />

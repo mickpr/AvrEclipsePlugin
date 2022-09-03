@@ -63,6 +63,8 @@ public class DeviceExplorerCore {
 		// load configuration tylko w przypadku zmiany chipa
 		selectedChip.LoadPinConfigFunctions();		
 		selectedChip.updateChipPackagePinsToSelectedInAvrPinsConfig();
+		selectedChip.LoadPinConfigIsInput();
+		selectedChip.LoadPinConfigIsPullUpOrHighState();
 	}
 
 	//-----------------------------------------------------------------------------------------------	

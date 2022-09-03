@@ -67,6 +67,8 @@ public class TabTargetHardware extends AbstractAVRPropertyTab {
 	private static final String		LABEL_FCPU				= "MCU Clock Frequency";
 	private static final String		TEXT_LOADBUTTON			= "Load from MCU";
 	private static final String		TEXT_LOADBUTTON_BUSY	= "Loading...";
+	//mickpr
+	private static final String		LABEL_PACKAGE			= "MCU Package";
 
 	private final static String		TITLE_FUSEBYTEWARNING	= "{0} Conflict";
 	private final static String		TEXT_FUSEBYTEWARNING	= "Selected MCU is not compatible with the currently set {0}.\n"
@@ -92,6 +94,9 @@ public class TabTargetHardware extends AbstractAVRPropertyTab {
 
 	private Combo					fFCPUcombo;
 
+	//mickpr
+	private Combo 					fPackagecombo;
+	
 	private Set<String>				fMCUids;
 	private String[]				fMCUNames;
 
@@ -143,9 +148,9 @@ public class TabTargetHardware extends AbstractAVRPropertyTab {
 		}
 
 		addMCUSection(usercomp);
+		//mickpr:addPackageSection(usercomp);
 		addFCPUSection(usercomp);
 		addSeparator(usercomp);
-
 	}
 
 	private void addMCUSection(Composite parent) {
@@ -256,6 +261,43 @@ public class TabTargetHardware extends AbstractAVRPropertyTab {
 		});
 	}
 
+	//mickpr
+	/*
+	private void addPackageSection(Composite parent) {
+		GridData gd = new GridData();
+		FontMetrics fm = getFontMetrics(parent);
+		gd.widthHint = Dialog.convertWidthInCharsToPixels(fm, 14);
+
+		setupLabel(parent, LABEL_PACKAGE, 1, SWT.NONE);
+
+		fPackagecombo = new Combo(parent, SWT.DROP_DOWN);
+		fPackagecombo.setLayoutData(gd);
+		fPackagecombo.setTextLimit(10); // 
+		fPackagecombo.setToolTipText("Selected MCU Package");
+		
+		//fPackagecombo.setVisibleItemCount(FCPU_VALUES.length);
+		//fFCPUcombo.setItems(FCPU_VALUES);
+
+//		fFCPUcombo.addModifyListener(new ModifyListener() {
+//			public void modifyText(ModifyEvent e) {
+//				if (fTargetProps != null) {
+//					fTargetProps.setFCPU(fFCPUcombo.getText());
+//				}
+//			}
+//		});
+//
+//		// Ensure that only integer values are entered
+//		fFCPUcombo.addVerifyListener(new VerifyListener() {
+//			public void verifyText(VerifyEvent event) {
+//				String text = event.text;
+//				if (!text.matches("[0-9]*")) {
+//					event.doit = false;
+//				}
+//			}
+//		});
+	}
+	*/
+	
 	/*
 	 * (non-Javadoc)
 	 * @see

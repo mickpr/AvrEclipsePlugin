@@ -51,7 +51,7 @@
         <role name="AIN0" resource="ACOMP" desc="Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator." />
         <role name="OC0A" resource="PWM" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output compareA. The pin has to be configured as an output to serve this function. The OC0A pin is also the output pin for the PWM mode timer function." />
         <role name="/OC1A" resource="PWM" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter1 output compareA. " />
-        <role name="AREF" resource="CORE" desc="Reference voltage for AD converter." />
+        <role name="AREF" resource="ADC" desc="Reference voltage for AD converter." />
         <role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0" />
     </pin>
     <pin name="12">

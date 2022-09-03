@@ -29,7 +29,7 @@
         <role name="SDA" resource="I2C" desc="2-wire Serial Bus Data: When the TWEN bit in TWCR is set (one) to enable the 2-wire Serial Interface, pin is disconnected from the port and becomes the Serial Data I/O pin for the 2-wire Serial Interface. In this mode, there is a spike filter on the pin to capture spikes shorter than 50 ns on the input signal, and the pin is driven by an open collector driver with slew rate limitation." />
         <role name="AIN0" resource="ACOMP" desc="Analog Comparator Positive Input. When configured as an input  and with the internal MOS pull-up resistor switched off, this pin also serves as the positive input of the on-chip Analog Comparator." />
         <role name="OC0A" resource="PWM" desc="Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output com-pareA. The pin has to be configured as an output to serve this function. The OC0A pin is also the output pin for the PWM mode timer function." />
-        <role name="AREF" resource="CORE" desc="Reference voltage for AD converter." />
+        <role name="AREF" resource="ADC" desc="Reference voltage for AD converter." />
         <role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0" />
     </pin>
     <pin name="6">

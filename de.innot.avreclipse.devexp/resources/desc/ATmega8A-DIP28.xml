@@ -83,7 +83,7 @@
   	<role name="AVCC" resource="CORE" desc="Power supply for AD converter." />
     </pin>
     <pin name="21">
-  	<role name="AREF" resource="CORE" desc="Reference voltage for AD converter." />
+  	<role name="AREF" resource="ADC" desc="Reference voltage for AD converter." />
     </pin>
     <pin name="22">
   	<role name="GND" resource="CORE" desc="Common ground." />

@@ -213,6 +213,19 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega328PB</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP32" file="ATmega328PB-TQFP32.xml"></Package>
+	<Package name="QFN32" file="ATmega328PB-QFN32.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny11</Name>
   <Type>ATtiny</Type>
   <Flash>1024</Flash>

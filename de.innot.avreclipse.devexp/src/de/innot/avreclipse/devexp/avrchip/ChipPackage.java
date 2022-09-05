@@ -17,23 +17,35 @@ import org.w3c.dom.NodeList;
 
 import de.innot.avreclipse.devexp.utils.*;
 
-// klasa definiujaca obudowe ukladu. Obiekt tej klasy zawiera liste pinow
+/** klasa definiujaca obudowe ukladu. Obiekt tej klasy zawiera liste pinow
+ * 
+ * @author mickpr
+ */
 public class ChipPackage {
 	public String Name;
 	public ArrayList<ChipPin> pins;	// 
 	public ChipBody body;		// rodzaj obudowy, szerokosc, wysokosc, dx, dy...
 	private int pincount =0;	// liczba pinow
 	
+	/** zwroc liczbe pinow
+	 * 
+	 * @return - liczba pinow
+	 */
 	public int getPinCount(){
 		return pincount;
 	}
 	
+	/** konstruktor domyslny - pusty
+	 * 
+	 */
 	public ChipPackage() {
 		
 	}
 	
-	
-	// load package pins into array
+	/** Wczytaj ustawienia pinow podanej obudowy do tablicy pins
+	 * 
+	 * @param packageName - nazwa obudowy (TQFP32, DIP40.. itd).
+	 */
 	public void LoadPackage(String packageName) {
 		this.Name=packageName;
 		pins = new ArrayList<ChipPin>();
@@ -110,9 +122,6 @@ public class ChipPackage {
 									} // try...catch 
 								} // if (nNodePin.getNodeType() == Node.ELEMENT_NODE)
 							} //for (int j=0;j<nPinList.getLength();j++) {
-							
-							
-							
 						} // if(eElement.getElementsByTagName("name").item(0).getTextContent().equals(packageName)) {
 					} // if (nNode.getNodeType()==Node.ELEMENT_NODE) {
 				} // for .. po obudowach (packages.. DIP8,.... etc)
@@ -125,15 +134,6 @@ public class ChipPackage {
 
 		//MessageDialog.openError(getShell(), "dupa", "dupa content");
 		//MessageDialog.openConfirm((getShell(), "dupa", "dupa content");
-	}
-	
-//	private Shell getShell() {
-//		return PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
-//	}
-//	
-	
-	public String toString() {
-		return this.Name;
 	}
 
 }

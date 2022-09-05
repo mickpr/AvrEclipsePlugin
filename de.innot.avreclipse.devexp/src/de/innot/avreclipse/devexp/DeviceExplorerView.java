@@ -229,6 +229,12 @@ public class DeviceExplorerView extends ViewPart {
 				// TODO: musimy przelaczyc na package, inaczej timery sie nie odswieza - nie wiem dlaczego - poprawic
 				tabFolder.setSelection(0);
 
+				
+				
+				
+				
+				
+				
 				/* 
 				//-------------------------------------------------------------------------
 							TabItem tiExtInt = new TabItem(tabFolder,SWT.FILL);

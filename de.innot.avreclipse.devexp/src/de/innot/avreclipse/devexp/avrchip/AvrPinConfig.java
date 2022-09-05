@@ -4,11 +4,8 @@
  * 
  * 
  */
-
 package de.innot.avreclipse.devexp.avrchip;
-
 import java.util.ArrayList;
-
 
 public class AvrPinConfig {
 	private Integer pinNumber;
@@ -61,10 +58,10 @@ public class AvrPinConfig {
 	public void setSelectedPinIsInput(boolean isInput) {
 		this.pinIsInput = isInput;
 	}
+	
 	public void setSelectedPinIsPullUpOrHighState(boolean isPullUpOrHighState) {
 		this.pinIsPullUpOrHighState= isPullUpOrHighState;
 	}
-	
 	
 	public String getSelectedPinName() {
 		//System.out.println("selected PinIndex " + selectedPinIndex);
@@ -88,7 +85,6 @@ public class AvrPinConfig {
 		return this.pinIsPullUpOrHighState;
 	}
 	
-	
 	public void AddNewFunction(String pinName, String pinResource, String pinDescription) {
 		this.pinNames.add(pinName);
 		this.pinResources.add(pinResource);
@@ -105,15 +101,6 @@ public class AvrPinConfig {
 		this.pinIsPullUpOrHighState = false;
 		this.selectedPinIndex=0; // first (default) selected
 	}
-	
-//	public Integer SelectNextFunction(Integer PinNumer) {
-//		if (this.selectedPinIndex >= this.pinNames.size()) { 
-//			this.selectedPinIndex=0; }
-//		else {
-//			this.selectedPinIndex++;
-//		}
-//		return this.selectedPinIndex;
-//	}
 	
 	public Integer getSelectedIndex() {
 		return this.selectedPinIndex;

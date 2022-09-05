@@ -137,7 +137,11 @@ public class AvrChip {
 	} // end of LoadResourcesOfMCU
 
 	//-------------------------------------------------------------------------------------------
-	//zwraca numer pinu dla podanej nazwy pinu w uk³adzie (konfiguracji)
+	/** zwraca numer pinu dla podanej nazwy pinu w uk³adzie (konfiguracji)
+	 * 
+	 * @param pinName	Nazwa szukanego pinu
+	 * @return numer pinu (1..n)
+	 */
 	public int getPinNumberForPinNameInConfiguration(String pinName) {
 		int i=1;
 		// przelatujemy konfiguracje - piny
@@ -166,7 +170,12 @@ public class AvrChip {
 		} //for
 	} // function	
 	//-------------------------------------------------------------------------------------------	
-	// ustalanie koloru pinu na podstawie resource i name.
+	/** ustalanie koloru pinu na podstawie resource i name.
+	 * 
+	 * @param resource - nazwa zasobu MCU (PORTx, SPI, I2C... )
+	 * @param name - nazwa pinu np. PA0, MOSI, SDA,...)
+	 * @return - kolor przypisany, lub domyslny dla zasobu/pinu
+	 */
 	public Color getColorDependOnResourceAndName(String resource,String name) {
 	
 		if (name.equalsIgnoreCase("VCC") || name.equalsIgnoreCase("AVCC")|| name.equalsIgnoreCase("AREF") ||name.contains("VDD"))
@@ -195,8 +204,10 @@ public class AvrChip {
 			return SWTResourceManager.getColor(255,255,200);
 	}
 	//-----------------------------------------------------------------------------------------------
-	// przelatuje selectedChip.avrPinsConfig i wg ustawionej tam konfiguracji - ustawia checkboxy
-	// w oknie zasobów, jesli jakis zasob ma uzyty choc jeden pin - zaznacza ten zasob
+	/**  przelatuje selectedChip.avrPinsConfig i wg ustawionej tam konfiguracji - ustawia checkboxy
+	 * w oknie zasobów, jesli jakis zasob ma uzyty choc jeden pin - zaznacza ten zasob
+	 * @param tree - SWT tree (drzewko obrazkowo/tekstowe do reprezentacji zasobow i pinow MCU)
+	 */
 	public void setCurrentSelectedPinsInTree(Tree tree) {
 		String pinName;
 		for (TreeItem tiResourceItem : tree.getItems()) {
@@ -215,7 +226,11 @@ public class AvrChip {
 		}
 	}
 	//-----------------------------------------------------------------------------------------------
-	// czy wybrany pin jest w obecnej konfiguracji
+	/** czy wybrany pin jest w obecnej konfiguracji
+	 * 
+	 * @param pinName - nazwa PINu
+	 * @return - true - tak, false - nie
+	 */
 	public boolean isSelectedPinInCurrentConfiguration(String pinName) {
 		for(AvrPinConfig pincfg : this.avrPinsConfig) {
 			if (pinName.equalsIgnoreCase(pincfg.getSelectedPinName())) 

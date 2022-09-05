@@ -406,6 +406,20 @@
   </Packages>
 </device>
 <device>
+  <Name>ATtiny26</Name>
+  <Type>ATtiny</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP20" file="ATtiny26-DIP20.xml"></Package>
+	<Package name="SOIC20" file="ATtiny26-SOIC20.xml"></Package>
+	<Package name="MLF32" file="ATtiny26-MLF32.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny44</Name>
   <Type>ATtiny</Type>
   <Flash>4096</Flash>

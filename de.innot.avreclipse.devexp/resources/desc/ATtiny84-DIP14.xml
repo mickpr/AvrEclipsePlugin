@@ -1,0 +1,88 @@
+<pins>
+    <pin name="1">
+       	<role name="VCC" resource="CORE" desc="Power supply" />
+    </pin>
+    <pin name="2">        
+	<role name="PB0" resource="PORTB" desc="Generic IO pin PB0" />
+	<role name="PCINT8" resource="EXTINT" desc="External Interrupt" />
+	<role name="XTAL1" resource="CORE" desc="External crystal - input." />
+	<role name="CLKI" resource="CORE" desc="Clock input" />
+    </pin>
+    <pin name="3">        
+	<role name="PB1" resource="PORTB" desc="Generic IO pin PB1." />
+	<role name="PCINT9" resource="EXTINT" desc="External Interrupt." />
+	<role name="XTAL2" resource="CORE" desc="External crystal - output." />
+    </pin>
+    <pin name="4">        
+	<role name="PB3" resource="PORTB" desc="Generic IO pin PB3" />
+	<role name="PCINT11" resource="EXTINT" desc="External Interrupt." />
+	<role name="/RESET" resource="CORE" desc="Reset pin" />
+	<role name="dW" resource="CORE" desc="Debug Wire - debugger pin" />
+    </pin>
+    <pin name="5">
+	<role name="PB2" resource="PORTB" desc="Generic IO pin PB2" />
+	<role name="PCINT10" resource="EXTINT" desc="External Interrupt." />
+	<role name="INT0" resource="EXTINT" desc="External Interrupt INT0." />
+	<role name="OC0A" resource="TIMER0" desc="Output compare Timer 0 - pin A." />
+	<role name="CKOUT" resource="CORE" desc="Clock output." />
+    </pin>
+    <pin name="6">
+	<role name="PA7" resource="PORTA" desc="Generic IO pin PA7" />
+	<role name="PCINT7" resource="EXTINT" desc="External Interrupt." />
+	<role name="ICP1" resource="TIMER1" desc="Timer 1 Input capture pin." />
+	<role name="OC0B" resource="TIMER0" desc="Output compare Timer 0 - pin B." />
+	<role name="ADC7" resource="ADC" desc="Analog digital converter pin 7." />
+    </pin>
+    <pin name="7">
+	<role name="PA6" resource="PORTA" desc="Generic IO pin PA6." />
+	<role name="PCINT6" resource="EXTINT" desc="External Interrupt." />
+	<role name="OC1A" resource="TIMER1" desc="Output compare Timer 1 - pin A." />
+	<role name="SDA" resource="I2C" desc="I2C - data pin." />
+	<role name="MOSI" resource="SPI" desc="SPI master output, slave input pin." />
+	<role name="DI" resource="USI" desc="USI Data Input (Three Wire Mode)." />
+	<role name="ADC6" resource="ADC" desc="Analog digital converter pin 6." />
+    </pin>
+    <pin name="8">
+	<role name="PA5" resource="PORTA" desc="Generic IO pin PA5." />
+	<role name="PCINT5" resource="EXTINT" desc="External Interrupt." />
+	<role name="OC1B" resource="TIMER1" desc="Output compare Timer 1 - pin B." />
+	<role name="MISO" resource="SPI" desc="SPI master input, slave output pin." />
+	<role name="DO" resource="USI" desc="USI Data Output (Three Wire Mode)." />
+	<role name="ADC5" resource="ADC" desc="Analog digital converter pin 5." />
+    </pin>
+    <pin name="9">
+	<role name="PA4" resource="PORTA" desc="Generic IO pin PA4." />
+	<role name="PCINT4" resource="EXTINT" desc="External Interrupt." />
+	<role name="T1" resource="TIMER1" desc="Timer 1 input (source) pin." />
+	<role name="SCL" resource="I2C" desc="I2C - clock pin." />
+	<role name="USCK" resource="USI" desc="USI clock (Three Wire Mode)." />
+	<role name="ADC4" resource="ADC" desc="Analog digital converter pin 4." />
+    </pin>
+    <pin name="10">
+	<role name="PA3" resource="PORTA" desc="Generic IO pin PA3." />
+	<role name="PCINT3" resource="EXTINT" desc="External Interrupt." />
+	<role name="T0" resource="TIMER0" desc="Timer 0 input (source) pin." />
+	<role name="ADC3" resource="ADC" desc="Analog digital converter pin 3." />
+    </pin>
+    <pin name="11">
+	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2." />
+	<role name="PCINT2" resource="EXTINT" desc="External Interrupt." />
+	<role name="AIN1" resource="ACOMP" desc="Analog comparator pin 1." />
+	<role name="ADC2" resource="ADC" desc="Analog digital converter pin 2." />
+    </pin>             
+    <pin name="12">
+	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1." />
+	<role name="PCINT1" resource="EXTINT" desc="External Interrupt." />
+	<role name="AIN0" resource="ACOMP" desc="Analog comparator pin 0." />
+	<role name="ADC1" resource="ADC" desc="Analog digital converter pin 1." />
+    </pin>
+    <pin name="13">
+	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0." />
+	<role name="PCINT0" resource="EXTINT" desc="External Interrupt." />
+	<role name="AREF" resource="ADC" desc="Analog reference voltage." />
+	<role name="ADC0" resource="ADC" desc="Analog digital converter pin 0." />
+    </pin>
+    <pin name="14">
+	<role name="GND" resource="CORE" desc="Common ground" />
+    </pin>
+</pins>       	       	       	       	       	       	       	

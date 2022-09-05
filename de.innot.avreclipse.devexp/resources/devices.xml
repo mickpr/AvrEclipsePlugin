@@ -53,19 +53,6 @@
   </Packages>
 </device>
 <device>
-  <Name>ATmega162</Name>
-  <Type>ATmega</Type>
-  <Flash>16384</Flash>
-  <EEPROM>512</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>16MHz</Freq>
-  <Vcc>2.7 .. 5.5</Vcc>
-  <Packages>
-	<Package name="DIP40"  file="ATmega162-DIP40.xml"></Package>
-	<Package name="TQFP44"  file="ATmega162-TQFP44.xml"></Package>
-  </Packages>
-</device>
-<device>
   <Name>ATmega32</Name>
   <Type>ATmega</Type>
   <Flash>32768</Flash>
@@ -103,7 +90,6 @@
 	<Package name="TQFP64" file="ATmega64-TQFP64.xml"></Package>
   </Packages>
 </device>
-
 <device>
   <Name>ATmega88</Name>
   <Type>ATmega</Type>
@@ -145,6 +131,19 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega162</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>2.7 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega162-DIP40.xml"></Package>
+	<Package name="TQFP44"  file="ATmega162-TQFP44.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega168</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>
@@ -170,18 +169,6 @@
 	<Package name="DIP28" file="ATmega168P-DIP28.xml"></Package>
 	<Package name="TQFP32" file="ATmega168P-TQFP32.xml"></Package>
 	<Package name="QFN32" file="ATmega168P-QFN32.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega2560</Name>
-  <Type>ATmega</Type>
-  <Flash>262144</Flash>
-  <EEPROM>4096</EEPROM>
-  <RAM>8192</RAM>
-  <Freq>16MHz</Freq>
-  <Vcc>4.5 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP100" file="ATmega256-TQFP100.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -223,6 +210,118 @@
   <Packages>
 	<Package name="TQFP32" file="ATmega328PB-TQFP32.xml"></Package>
 	<Package name="QFN32" file="ATmega328PB-QFN32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega808</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega808-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega808-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega809</Name>
+  <Type>ATmega</Type>
+  <Flash>8192</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega809-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega1608</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega1608-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega1608-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega1609</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega1609-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega2560</Name>
+  <Type>ATmega</Type>
+  <Flash>262144</Flash>
+  <EEPROM>4096</EEPROM>
+  <RAM>8192</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>4.5 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP100" file="ATmega256-TQFP100.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega3208</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega3208-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega3208-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega3209</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega3209-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega4808</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SSOP28" file="ATmega4808-SSOP28.xml"></Package>
+	<Package name="TQFP32" file="ATmega4808-TQFP32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega4809</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP48" file="ATmega4809-TQFP48.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -278,15 +377,17 @@
   </Packages>
 </device>
 <device>
-  <Name>ATtiny1604</Name>
+  <Name>ATtiny24</Name>
   <Type>ATtiny</Type>
-  <Flash>16384</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>1024</RAM>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
   <Freq>20MHz</Freq>
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
-	<Package name="SOIC14" file="ATtiny1604-SOIC14.xml"></Package>
+	<Package name="DIP14" file="ATtiny24-DIP14.xml"></Package>
+	<Package name="SOIC14" file="ATtiny24-SOIC14.xml"></Package>
+	<Package name="QNF20" file="ATtiny24-QNF20.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -305,6 +406,20 @@
   </Packages>
 </device>
 <device>
+  <Name>ATtiny44</Name>
+  <Type>ATtiny</Type>
+  <Flash>4096</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>256</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP14" file="ATtiny44-DIP14.xml"></Package>
+	<Package name="SOIC14" file="ATtiny44-SOIC14.xml"></Package>
+	<Package name="QNF20" file="ATtiny44-QNF20.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny45</Name>
   <Type>ATtiny</Type>
   <Flash>4096</Flash>
@@ -320,15 +435,17 @@
   </Packages>
 </device>
 <device>
-  <Name>ATtiny804</Name>
+  <Name>ATtiny84</Name>
   <Type>ATtiny</Type>
   <Flash>8192</Flash>
-  <EEPROM>128</EEPROM>
+  <EEPROM>512</EEPROM>
   <RAM>512</RAM>
   <Freq>20MHz</Freq>
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
-	<Package name="SOIC14" file="ATtiny804-SOIC14.xml"></Package>
+	<Package name="DIP14" file="ATtiny84-DIP14.xml"></Package>
+	<Package name="SOIC14" file="ATtiny84-SOIC14.xml"></Package>
+	<Package name="QNF20" file="ATtiny84-QNF20.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -373,6 +490,18 @@
   </Packages>
 </device>
 <device>
+  <Name>ATtiny804</Name>
+  <Type>ATtiny</Type>
+  <Flash>8192</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>512</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SOIC14" file="ATtiny804-SOIC14.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATtiny861</Name>
   <Type>ATtiny</Type>
   <Flash>8192</Flash>
@@ -383,6 +512,18 @@
   <Packages>
 	<Package name="DIP20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
 	<Package name="SOIC20" file="ATtiny261-461-861-DIP20-SOIC20.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATtiny1604</Name>
+  <Type>ATtiny</Type>
+  <Flash>16384</Flash>
+  <EEPROM>256</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="SOIC14" file="ATtiny1604-SOIC14.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -398,106 +539,6 @@
 	<Package name="SOIC20" file="ATtiny2313-SOIC20.xml"></Package>
 	<Package name="QFN20" file="ATtiny2313-QFN20.xml"></Package>
 	<Package name="MLF20" file="ATtiny2313-MLF20.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega808</Name>
-  <Type>ATmega</Type>
-  <Flash>8192</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="SSOP28" file="ATmega808-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega808-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega809</Name>
-  <Type>ATmega</Type>
-  <Flash>8192</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>1024</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP48" file="ATmega809-TQFP48.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega1608</Name>
-  <Type>ATmega</Type>
-  <Flash>16384</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>2048</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="SSOP28" file="ATmega1608-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega1608-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega1609</Name>
-  <Type>ATmega</Type>
-  <Flash>16384</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>2048</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP48" file="ATmega1609-TQFP48.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega3208</Name>
-  <Type>ATmega</Type>
-  <Flash>32768</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>4096</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="SSOP28" file="ATmega3208-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega3208-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega3209</Name>
-  <Type>ATmega</Type>
-  <Flash>32768</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>4096</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP48" file="ATmega3209-TQFP48.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega4808</Name>
-  <Type>ATmega</Type>
-  <Flash>32768</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>4096</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="SSOP28" file="ATmega4808-SSOP28.xml"></Package>
-	<Package name="TQFP32" file="ATmega4808-TQFP32.xml"></Package>
-  </Packages>
-</device>
-<device>
-  <Name>ATmega4809</Name>
-  <Type>ATmega</Type>
-  <Flash>32768</Flash>
-  <EEPROM>256</EEPROM>
-  <RAM>4096</RAM>
-  <Freq>20MHz</Freq>
-  <Vcc>1.8 .. 5.5</Vcc>
-  <Packages>
-	<Package name="TQFP48" file="ATmega4809-TQFP48.xml"></Package>
   </Packages>
 </device>
 </dataroot>

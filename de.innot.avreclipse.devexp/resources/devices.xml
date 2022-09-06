@@ -1,8 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Atmel8.xsd" generated="2014-11-11T17:30:37">
 <device>
+  <Name>AT90S2323</Name>
+  <Type>AT90</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>10MHz</Freq>
+  <Vcc>2.7 .. 6.0</Vcc>
+  <Packages>
+	<Package name="SOIC8" file="AT90S2323-SOIC8.xml"></Package>
+	<Package name="DIP8" file="AT90S2323-DIP8.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>AT90S2343</Name>
+  <Type>AT90</Type>
+  <Flash>2048</Flash>
+  <EEPROM>128</EEPROM>
+  <RAM>128</RAM>
+  <Freq>10MHz</Freq>
+  <Vcc>2.7 .. 6.0</Vcc>
+  <Packages>
+	<Package name="SOIC8" file="AT90S2343-SOIC8.xml"></Package>
+	<Package name="DIP8" file="AT90S2343-DIP8.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>AT90USB82</Name>
-  <Type>ATMega</Type>
+  <Type>AT90</Type>
   <Flash>8192</Flash>
   <EEPROM>512</EEPROM>
   <RAM>512</RAM>
@@ -15,7 +41,7 @@
 </device>
 <device>
   <Name>AT90USB162</Name>
-  <Type>ATMega</Type>
+  <Type>AT90</Type>
   <Flash>16384</Flash>
   <EEPROM>512</EEPROM>
   <RAM>512</RAM>
@@ -88,6 +114,7 @@
   <Vcc>2.7 .. 5.5</Vcc>
   <Packages>
 	<Package name="TQFP64" file="ATmega64-TQFP64.xml"></Package>
+	<Package name="TQFP64" file="ATmega64-MLF64.xml"></Package>
   </Packages>
 </device>
 <device>

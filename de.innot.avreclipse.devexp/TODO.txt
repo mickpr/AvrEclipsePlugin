@@ -3,6 +3,7 @@ B£EDY :
 - export pluginu nie dziala - "cycle"
 TODO:
 - ustalanie pozycji chip'a na ekranie w zale¿noœci od wybranej wersji obudowy tak, by piny siê zmiesci³y
+- odznaczanie pinow alternatywnych na zmiane z podstawowymi (jak?)
 
 
 Przy b³êdach kompilacji nowych MCU czaem wystarczy dodaæ do opcji linkera:
@@ -24,4 +25,6 @@ change this line-
 to this
 	data   (rw!x) : ORIGIN = __DATA_REGION_ORIGIN__, LENGTH = __DATA_REGION_LENGTH__
 this linker script is in the toolchain, and not in any pack.
+
+
 

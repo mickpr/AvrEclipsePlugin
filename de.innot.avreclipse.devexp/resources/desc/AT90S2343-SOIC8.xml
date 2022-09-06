@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<pins>
+    <pin name="1">
+	<role name="/RESET" resource="CORE" descr="Reset pin."/>
+    </pin>
+    <pin name="2">
+	<role name="PB3" resource="PORTB" descr="Generic IO pin PB3."/>
+	<role name="CLOCK" resource="CORE" descr="Clock in."/>
+    </pin>
+    <pin name="3">
+	<role name="PB4" resource="PORTB" descr="Generic IO pin PB4."/>
+    </pin>
+    <pin name="4">
+	<role name="GND" resource="CORE" descr="Common ground."/>
+    </pin>
+    <pin name="5">
+	<role name="PB0" resource="PORTB" descr="Generic IO pin PB0."/>
+	<role name="MOSI" resource="SPI" descr="SPI master output, slave input pin."/>
+    </pin>
+    <pin name="6">
+	<role name="PB1" resource="PORTB" descr="Generic IO pin PB1."/>
+	<role name="MISO" resource="SPI" descr="SPI master input, slave output pin."/>
+	<role name="INT0" resource="EXTINT" descr="External interrupt pin 0."/>
+    </pin>
+    <pin name="7">
+	<role name="PB2" resource="PORTB" descr="Generic IO pin PB2."/>
+	<role name="SCK" resource="SPI" descr="SPI clock pin."/>
+	<role name="T0" resource="TIMER0" descr="Timer 0 input pin."/>
+    </pin>
+    <pin name="8">
+	<role name="VCC" resource="CORE" descr="Power supply."/>
+    </pin>
+</pins>

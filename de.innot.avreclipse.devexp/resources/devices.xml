@@ -186,7 +186,7 @@
   </Packages>
 </device>
 <device>
-  <Name>ATmega324</Name>
+  <Name>ATmega324PB</Name>
   <Type>ATmega</Type>
   <Flash>32768</Flash>
   <EEPROM>1024</EEPROM>

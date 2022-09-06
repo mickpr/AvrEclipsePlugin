@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<pins>
+    <pin name="1">
+        <role name="PB5" resource="PORTB" desc="Generic IO pin PB5" />
+        <role name="PCINT13" resource="EXTINT" desc="Pin change interrupt 13." />
+	<role name="Y29" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="ICP3" resource="TIMER3" desc="Timer counter 3 Input Capture pin." />
+	<role name="MOSI0" resource="SPI0" desc="SPI0 Master output, slave input." />
+    </pin>
+    <pin name="2">
+        <role name="PB6" resource="PORTB" desc="Generic IO pin PB6" />
+        <role name="PCINT14" resource="EXTINT" desc="Pin change interrupt 14." />
+	<role name="Y30" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC3A" resource="TIMER3" desc="Timer/Counter 3 Output compare A Pin." />
+	<role name="MISO0" resource="SPI0" desc="SPI Master input, slave output." />
+    </pin>
+    <pin name="3">
+        <role name="PB7" resource="PORTB" desc="Generic IO pin PB7" />
+        <role name="PCINT15" resource="EXTINT" desc="Pin change interrupt 15." />
+	<role name="Y31" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC3B" resource="TIMER3" desc="Timer/Counter 3 Output compare B Pin." />
+	<role name="OC4B" resource="TIMER4" desc="Timer/Counter 3 Output compare B Pin." />
+	<role name="SCK0" resource="SPI0" desc="SPI0 clock pin." />
+    </pin>
+    <pin name="4">
+	<role name="/RESET" resource="CORE" desc="Reset pin for MCU, active at low." />
+    </pin>
+    <pin name="5">
+    	<role name="VCC" resource="CORE" desc="Power supply." />
+    </pin>
+    <pin name="6">
+    	<role name="GND" resource="CORE" desc="Common ground." />
+    </pin>
+    <pin name="7">
+        <role name="PE0" resource="PORTE" desc="Generic IO pin PE0" />
+        <role name="PCINT32" resource="EXTINT" desc="Pin change interrupt 32." />
+    	<role name="XTAL2" resource="CORE" desc="Pin for connecting external clock source (crystal, resonator..) for MCU (output)" />
+    </pin>
+    <pin name="8">
+        <role name="PE1" resource="PORTE" desc="Generic IO pin PE1" />
+        <role name="PCINT33" resource="EXTINT" desc="Pin change interrupt 33." />
+    	<role name="XTAL1" resource="CORE" desc="Pin for connecting external clock source (crystal, resonator..) for MCU (input)" />
+    </pin>
+    <pin name="9">
+        <role name="PD0" resource="PORTD" desc="Generic IO pin PD0" />
+        <role name="PCINT24" resource="EXTINT" desc="Pin change interrupt 24." />
+	<role name="X0" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y8" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="T3" resource="TIMER3" desc="Timer/Counter input Pin." />
+	<role name="RXD0" resource="USART0" desc="USART0 Receive Data pin." />
+    </pin>
+    <pin name="10">
+        <role name="PD1" resource="PORTD" desc="Generic IO pin PD1" />
+        <role name="PCINT25" resource="EXTINT" desc="Pin change interrupt 25." />
+	<role name="X1" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y9" resource="PTCy" desc="Peripheral Touch Controller." />
+ 	<role name="TXD0" resource="USART0" desc="USART0 transmit pin." />
+    </pin>
+    <pin name="11">
+        <role name="PD2" resource="PORTD" desc="Generic IO pin PD2" />
+        <role name="INT0" resource="EXTINT" desc="External Interrupt source 0 to the MCU." />
+        <role name="PCINT26" resource="EXTINT" desc="Pin change interrupt 26." />
+	<role name="X2" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y10" resource="PTCy" desc="Peripheral Touch Controller." />
+  	<role name="RXD1" resource="USART1" desc="USART1 receive pin." />
+    </pin>
+    <pin name="12">
+        <role name="PD3" resource="PORTD" desc="Generic IO pin PD3" />
+        <role name="INT1" resource="EXTINT" desc="External Interrupt source 1 to the MCU." />
+        <role name="PCINT27" resource="EXTINT" desc="Pin change interrupt 27." />
+	<role name="X3" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y11" resource="PTCy" desc="Peripheral Touch Controller." />
+  	<role name="TXD1" resource="USART1" desc="USART1 transmit pin." />
+    </pin>
+    <pin name="13">
+    	<role name="PD4" resource="PORTD" desc="Generic IO pin PD4" />
+        <role name="PCINT28" resource="EXTINT" desc="Pin change interrupt 28." />
+	<role name="X4" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y12" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC1B" resource="TIMER1" desc="Output compare matchB output" />
+        <role name="XCK1" resource="USART1" desc="USART1 external clock." />
+    </pin>
+    <pin name="14">
+    	<role name="PD5" resource="PORTD" desc="Generic IO pin PD5" />
+        <role name="PCINT29" resource="EXTINT" desc="Pin change interrupt 29." />
+	<role name="X5" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y13" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC1A" resource="TIMER1" desc="Output compare match A output." />
+    </pin>
+    <pin name="15">
+    	<role name="PD6" resource="PORTD" desc="Generic IO pin PD6" />
+        <role name="PCINT30" resource="EXTINT" desc="Pin change interrupt 30." />
+	<role name="X6" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y14" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC2B" resource="TIMER2" desc="Output compare match B output." />
+	<role name="ICP1" resource="TIMER1" desc="Timer/Counter1 Input Capture pin." />
+	<role name="/SS1" resource="SPI1" desc="SPI1 select slave." />
+    </pin>
+    <pin name="16">
+    	<role name="PD7" resource="PORTD" desc="Generic IO pin PD7" />
+        <role name="PCINT31" resource="EXTINT" desc="Pin change interrupt 31." />
+	<role name="X7" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y15" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC2A" resource="TIMER2" desc="Output compare matchA output." />
+        <role name="XCK2" resource="USART2" desc="USART2 external clock." />
+	<role name="SCK1" resource="SPI1" desc="SPI1 clock pin." />
+    </pin>    
+    <pin name="17">
+    	<role name="PE2" resource="PORTE" desc="Generic IO pin PE2" />
+	<role name="X8" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y16" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="RXD2" resource="USART2" desc="USART2 receive pin." />
+	<role name="MISO1" resource="SPI1" desc="SPI1 master input slave output pin." />
+    </pin>
+    <pin name="18">
+    	<role name="PE3" resource="PORTE" desc="Generic IO pin PE3" />
+	<role name="X9" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y17" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="TXD2" resource="USART2" desc="USART2 transmit pin." />
+	<role name="MOSI1" resource="SPI1" desc="SPI1 master output slave input pin." />
+    </pin>
+    <pin name="19">
+    	<role name="PC0" resource="PORTC" desc="Generic IO pin PC0" />
+	<role name="PCINT16" resource="EXTINT" desc="Pin change interrupt 16." />
+	<role name="X10" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y18" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="SCL0" resource="I2C0" desc="I2C0 clock pin." />
+    </pin>    
+    <pin name="20">
+    	<role name="PC1" resource="PORTC" desc="Generic IO pin PC1" />
+	<role name="PCINT17" resource="EXTINT" desc="Pin change interrupt 17." />
+	<role name="X11" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y19" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="SDA0" resource="I2C0" desc="I2C0 data pin." />
+    </pin>    
+    <pin name="21">
+    	<role name="PC2" resource="PORTC" desc="Generic IO pin PC2" />
+	<role name="PCINT18" resource="EXTINT" desc="Pin change interrupt 18." />
+	<role name="X12" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y20" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="T4" resource="TIMER4" desc="Timer 4 input pin." />
+        <role name="TCK" resource="JTAG" desc="JTAG clock pin." />
+    </pin>    
+    <pin name="22">
+    	<role name="PC3" resource="PORTC" desc="Generic IO pin PC3" />
+	<role name="PCINT19" resource="EXTINT" desc="Pin change interrupt 19." />
+	<role name="X13" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y21" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="ICP4" resource="TIMER4" desc="Timer 4 input compare pin." />
+        <role name="TMS" resource="JTAG" desc="JTAG TMS pin" />
+    </pin>
+    <pin name="23">
+    	<role name="PC4" resource="PORTC" desc="Generic IO pin PC4" />
+	<role name="PCINT20" resource="EXTINT" desc="Pin change interrupt 20." />
+	<role name="X14" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y22" resource="PTCy" desc="Peripheral Touch Controller." />
+        <role name="OC4A" resource="TIMER4" desc="Timer 4 output compare match A pin." />
+        <role name="TDO" resource="JTAG" desc="JTAG Tap output pin" />
+    </pin>
+    <pin name="24">
+    	<role name="PC5" resource="PORTC" desc="Generic IO pin PC5" />
+	<role name="PCINT21" resource="EXTINT" desc="Pin change interrupt 21." />
+	<role name="ACO" resource="ACOMP" desc="Analog compare output." />
+	<role name="X15" resource="PTCx" desc="Peripheral Touch Controller." />
+	<role name="Y23" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="TDI" resource="JTAG" desc="JTAG Tap data input pin." />
+    </pin>
+    <pin name="25">
+    	<role name="PC6" resource="PORTC" desc="Generic IO pin PC6" />
+	<role name="PCINT22" resource="EXTINT" desc="Pin change interrupt 22." />
+        <role name="TOSC1" resource="TIMER2" desc="Timer Oscillator pin 1" />
+    </pin>
+    <pin name="26">
+    	<role name="PC7" resource="PORTC" desc="Generic IO pin PC7" />
+	<role name="PCINT23" resource="EXTINT" desc="Pin change interrupt 23." />
+        <role name="TOSC2" resource="TIMER2" desc="Timer Oscillator pin 2." />
+    </pin>
+    <pin name="27">
+    	<role name="AVCC" resource="CORE" desc="Analog power supply." />
+    </pin>
+    <pin name="28">
+    	<role name="GND" resource="CORE" desc="Common ground." />
+    </pin>
+    <pin name="29">
+    	<role name="PE4" resource="PORTE" desc="Generic IO pin PE4" />
+    	<role name="AREF" resource="ADC" desc="Analog reference voltage." />
+    </pin>
+    <pin name="30">
+    	<role name="PA7" resource="PORTA" desc="Generic IO pin PA7" />
+        <role name="PCINT7" resource="EXTINT" desc="Pin change interrupt 6." />
+        <role name="ADC7" resource="ADC" desc="Analog pin ADC 7." />
+	<role name="Y7" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="31">
+    	<role name="PA6" resource="PORTA" desc="Generic IO pin PA6" />
+        <role name="PCINT6" resource="EXTINT" desc="Pin change interrupt 6." />
+        <role name="ADC6" resource="ADC" desc="Analog pin ADC 6." />
+ 	<role name="Y6" resource="PTCy" desc="Peripheral Touch Controller." />
+   </pin>
+    <pin name="32">
+    	<role name="PA5" resource="PORTA" desc="Generic IO pin PA5" />
+        <role name="PCINT5" resource="EXTINT" desc="Pin change interrupt 5." />
+        <role name="ADC5" resource="ADC" desc="Analog pin 5." />
+ 	<role name="Y5" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="33">
+    	<role name="PA4" resource="PORTA" desc="Generic IO pin PA4" />
+        <role name="PCINT4" resource="EXTINT" desc="Pin change interrupt 4." />
+        <role name="ADC4" resource="ADC" desc="Analog pin 4." />
+ 	<role name="Y4" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="34">
+    	<role name="PA3" resource="PORTA" desc="Generic IO pin PA3" />
+        <role name="PCINT3" resource="EXTINT" desc="Pin change interrupt 3." />
+        <role name="ADC3" resource="ADC" desc="Analog pin 3." />
+ 	<role name="Y3" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="35">
+    	<role name="PA2" resource="PORTA" desc="Generic IO pin PA2" />
+        <role name="PCINT2" resource="EXTINT" desc="Pin change interrupt 2." />
+        <role name="ADC2" resource="ADC" desc="Analog pin 2." />
+ 	<role name="Y2" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="36">
+    	<role name="PA1" resource="PORTA" desc="Generic IO pin PA1" />
+        <role name="PCINT1" resource="EXTINT" desc="Pin change interrupt 1." />
+        <role name="ADC1" resource="ADC" desc="Analog pin 1." />
+ 	<role name="Y1" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="37">
+    	<role name="PA0" resource="PORTA" desc="Generic IO pin PA0" />
+        <role name="PCINT0" resource="EXTINT" desc="Pin change interrupt 0." />
+        <role name="ADC0" resource="ADC" desc="Analog pin 0." />
+ 	<role name="Y0" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="38">
+    	<role name="PE5" resource="PORTE" desc="Generic IO pin PE5" />
+    	<role name="SDA1" resource="I2C1" desc="SDA1 data pin." />
+    </pin>
+    <pin name="39">
+    	<role name="PE6" resource="PORTE" desc="Generic IO pin PE5" />
+    	<role name="SCL1" resource="I2C1" desc="SCL1 clock pin." />
+    </pin>
+    <pin name="40">
+        <role name="PB0" resource="PORTB" desc="Generic IO pin PB0" />
+        <role name="PCINT8" resource="EXTINT" desc="Pin change interrupt 8." />
+ 	<role name="Y24" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="T0" resource="TIMER0" desc="Timer/Counter0 clock source." />
+	<role name="XCK0" resource="USART0" desc="USART0 external clock." />
+    </pin>
+    <pin name="41">
+        <role name="PB1" resource="PORTB" desc="Generic IO pin PB1" />
+        <role name="PCINT9" resource="EXTINT" desc="Pin change interrupt 8." />
+ 	<role name="Y25" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="CLKO" resource="CORE" desc="Clock output." />
+	<role name="T1" resource="TIMER1" desc="Timer/Counter1 clock source." />
+    </pin>
+    <pin name="42">
+        <role name="PB2" resource="PORTB" desc="Generic IO pin PB2" />
+        <role name="INT2" resource="EXTINT" desc="External interrupt 2." />
+        <role name="PCINT10" resource="EXTINT" desc="Pin change interrupt 10." />
+	<role name="AIN0" resource="ACOMP" desc="Analog Comparator Input 0." />
+ 	<role name="Y26" resource="PTCy" desc="Peripheral Touch Controller." />
+    </pin>
+    <pin name="43">
+        <role name="PB3" resource="PORTB" desc="Generic IO pin PB3" />
+        <role name="PCINT11" resource="EXTINT" desc="Pin change interrupt 11." />
+	<role name="AIN1" resource="ACOMP" desc="Analog Comparator Input 1." />
+ 	<role name="Y27" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC0A" resource="TIMER0" desc="Output Compare MatchA Output." />
+    </pin>
+    <pin name="44">
+        <role name="PB4" resource="PORTB" desc="Generic IO pin PB4" />
+        <role name="PCINT12" resource="EXTINT" desc="Pin change interrupt 12." />
+ 	<role name="Y28" resource="PTCy" desc="Peripheral Touch Controller." />
+	<role name="OC0B" resource="TIMER0" desc="Output compare matchB output." />
+	<role name="/SS0" resource="SPI0" desc="Slave Select pin for using with SPI0." />
+    </pin>
+</pins>

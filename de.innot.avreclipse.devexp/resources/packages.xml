@@ -70,7 +70,59 @@
         <pin nr="32"  x="10" y="-10" orient="T"></pin>
     </pins>
   </package>
+  <package>
+    <name>MLF44</name>
+    <body x="0" y="10" width="235" height="235" type="S"></body>
+    <pins count="44">
+    <pin nr="1"  x="-20" y="20"  orient="L"></pin>
+	<pin nr="2"  x="-20" y="40"  orient="L"></pin>
+	<pin nr="3"  x="-20" y="60"  orient="L"></pin>
+	<pin nr="4"  x="-20" y="80"  orient="L"></pin>
+	<pin nr="5"  x="-20" y="100" orient="L"></pin>
+	<pin nr="6"  x="-20" y="120" orient="L"></pin>
+	<pin nr="7"  x="-20" y="140" orient="L"></pin>
+	<pin nr="8"  x="-20" y="160" orient="L"></pin>
+	<pin nr="9"  x="-20" y="180" orient="L"></pin>
+	<pin nr="10" x="-20" y="200" orient="L"></pin>
+	<pin nr="11" x="-20" y="220" orient="L"></pin>
 
+	<pin nr="12" x="10"  y="245" orient="B"></pin>
+	<pin nr="13" x="30"  y="245" orient="B"></pin>
+	<pin nr="14" x="50"  y="245" orient="B"></pin>
+	<pin nr="15" x="70"  y="245" orient="B"></pin>
+	<pin nr="16" x="90"  y="245" orient="B"></pin>
+	<pin nr="17" x="110" y="245" orient="B"></pin>
+	<pin nr="18" x="130" y="245" orient="B"></pin>
+	<pin nr="19" x="150" y="245" orient="B"></pin>
+	<pin nr="20" x="170" y="245" orient="B"></pin>
+	<pin nr="21" x="190" y="245" orient="B"></pin>
+	<pin nr="22" x="210" y="245" orient="B"></pin>
+
+	<pin nr="23" x="235" y="220" orient="R"></pin>
+	<pin nr="24" x="235" y="200" orient="R"></pin>
+	<pin nr="25" x="235" y="180" orient="R"></pin>
+	<pin nr="26" x="235" y="160" orient="R"></pin>
+	<pin nr="27" x="235" y="140" orient="R"></pin>
+	<pin nr="28" x="235" y="120" orient="R"></pin>
+	<pin nr="29" x="235" y="100" orient="R"></pin>
+	<pin nr="30" x="235" y="80"  orient="R"></pin>
+	<pin nr="31" x="235" y="60"  orient="R"></pin>
+	<pin nr="32" x="235" y="40"  orient="R"></pin>
+	<pin nr="33" x="235" y="20"  orient="R"></pin>
+
+	<pin nr="34" x="210" y="-10" orient="T"></pin>
+	<pin nr="35" x="190" y="-10" orient="T"></pin>
+	<pin nr="36" x="170" y="-10" orient="T"></pin>
+	<pin nr="37" x="150" y="-10" orient="T"></pin>
+	<pin nr="38" x="130" y="-10" orient="T"></pin>
+	<pin nr="39" x="110" y="-10" orient="T"></pin>
+	<pin nr="40" x="90"  y="-10" orient="T"></pin>
+	<pin nr="41" x="70"  y="-10" orient="T"></pin>
+	<pin nr="42" x="50"  y="-10" orient="T"></pin>
+	<pin nr="43" x="30"  y="-10" orient="T"></pin>
+	<pin nr="44" x="10"  y="-10" orient="T"></pin>
+    </pins>
+  </package>
   <package>
     <name>QFN20</name>
     <body x="0" y="10" width="125" height="125" type="S"></body>

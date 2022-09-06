@@ -186,6 +186,20 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega324</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP44" file="ATmega324PB-TQFP44.xml"></Package>
+	<Package name="QFN44" file="ATmega324PB-QFN44.xml"></Package>
+	<Package name="MLF44" file="ATmega324PB-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega328</Name>
   <Type>ATmega</Type>
   <Flash>32768</Flash>

@@ -144,6 +144,36 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega164</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega164-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega164-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega164-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega164-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega164A</Name>
+  <Type>ATmega</Type>
+  <Flash>16384</Flash>
+  <EEPROM>512</EEPROM>
+  <RAM>1024</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega164A-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega164A-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega164A-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega164A-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega168</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>
@@ -180,9 +210,25 @@
   <Freq>20MHz</Freq>
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
-	<Package name="DIP40" file="ATmega324-DIP40.xml"></Package>
+	<Package name="DIP40"  file="ATmega324-DIP40.xml"></Package>
 	<Package name="TQFP44" file="ATmega324-TQFP44.xml"></Package>
-	<Package name="QFN44" file="ATmega324-QFN44.xml"></Package>
+	<Package name="QFN44"  file="ATmega324-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega324-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega324A</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega324A-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega324A-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega324A-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega324A-MLF44.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -238,6 +284,36 @@
   <Packages>
 	<Package name="TQFP32" file="ATmega328PB-TQFP32.xml"></Package>
 	<Package name="QFN32" file="ATmega328PB-QFN32.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega644</Name>
+  <Type>ATmega</Type>
+  <Flash>65536</Flash>
+  <EEPROM>2048</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega644-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega644-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega644-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega644-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega644A</Name>
+  <Type>ATmega</Type>
+  <Flash>65536</Flash>
+  <EEPROM>2048</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega644A-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega644A-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega644A-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega644A-MLF44.xml"></Package>
   </Packages>
 </device>
 <device>

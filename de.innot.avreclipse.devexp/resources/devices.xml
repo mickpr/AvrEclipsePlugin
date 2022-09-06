@@ -342,6 +342,21 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega1284</Name>
+  <Type>ATmega</Type>
+  <Flash>131072</Flash>
+  <EEPROM>4096</EEPROM>
+  <RAM>16384</RAM>
+  <Freq>20MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="DIP40"  file="ATmega1284-DIP40.xml"></Package>
+	<Package name="TQFP44" file="ATmega1284-TQFP44.xml"></Package>
+	<Package name="QFN44"  file="ATmega1284-QFN44.xml"></Package>
+	<Package name="MLF44"  file="ATmega1284-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega1608</Name>
   <Type>ATmega</Type>
   <Flash>16384</Flash>

@@ -167,13 +167,14 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 						// included
 						continue;
 					}
-					fMCUmap.put(mcuid, mcuname);
-					System.out.println("MCUID: " + mcuid + " MCUNAME: " + mcuname);
+// mickpr					fMCUmap.put(mcuid, mcuname);
+// System.out.println("MCUID: " + mcuid + " MCUNAME: " + mcuname);
 				}
 			} else {
 				// a line outside of the "Known MCU names:" section
 			}
 		}
+		
 		//mickpr: add some newer chips, that Microchip miss...(intentially!)
 		fMCUmap.put("atmega808", "ATmega808");
 		fMCUmap.put("atmega809", "ATmega809");	
@@ -198,7 +199,55 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 		fMCUmap.put("attiny826", "ATtiny826");
 		fMCUmap.put("attiny827", "ATtiny827");
 		fMCUmap.put("attiny841", "ATtiny841");
+
+		fMCUmap.put("avr16dd14", "AVR16DD14");
+		fMCUmap.put("avr16dd20", "AVR16DD20");
+		fMCUmap.put("avr16dd28", "AVR16DD28");
+		fMCUmap.put("avr16dd32", "AVR16DD32");
+		fMCUmap.put("avr16dd32", "AVR16DD32");
+
+		fMCUmap.put("avr32da28", "AVR32DA28");
+		fMCUmap.put("avr32da32", "AVR32DA32");
+		fMCUmap.put("avr32da48", "AVR32DA48");
 		
+
+		fMCUmap.put("avr32db28", "AVR32DB28");
+		fMCUmap.put("avr32db32", "AVR32DB32");
+		fMCUmap.put("avr32db48", "AVR32DB48");
+
+		fMCUmap.put("avr32dd14", "AVR32DD14");
+		fMCUmap.put("avr32dd20", "AVR32DD20");
+		fMCUmap.put("avr32dd28", "AVR32DD28");
+		fMCUmap.put("avr32dd32", "AVR32DD32");
+		
+		fMCUmap.put("avr64da28", "AVR64DA28");
+		fMCUmap.put("avr64da32", "AVR64DA32");
+		fMCUmap.put("avr64da48", "AVR64DA48");
+		fMCUmap.put("avr64da64", "AVR64DA64");
+
+		fMCUmap.put("avr64db28", "AVR64DB28");
+		fMCUmap.put("avr64db32", "AVR64DB32");
+		fMCUmap.put("avr64db48", "AVR64DB48");
+		fMCUmap.put("avr64db64", "AVR64DB64");
+
+		fMCUmap.put("avr64dd14", "AVR64DD14");
+		fMCUmap.put("avr64dd20", "AVR64DD20");
+		fMCUmap.put("avr64dd28", "AVR64DD28");
+		fMCUmap.put("avr64dd32", "AVR64DD32");
+		
+		fMCUmap.put("avr64ea28", "AVR64EA28");
+		fMCUmap.put("avr64ea32", "AVR64EA32");
+		fMCUmap.put("avr64ea48", "AVR64EA48");
+		
+		fMCUmap.put("avr128da28", "AVR128DA28");
+		fMCUmap.put("avr128da32", "AVR128DA32");
+		fMCUmap.put("avr128da48", "AVR128DA48");
+		fMCUmap.put("avr128da64", "AVR128DA64");
+
+		fMCUmap.put("avr128db28", "AVR128DB28");
+		fMCUmap.put("avr128db32", "AVR128DB32");
+		fMCUmap.put("avr128db48", "AVR128DB48");
+		fMCUmap.put("avr128db64", "AVR128DB64");
 		
 		return fMCUmap;
 	}

@@ -68,11 +68,15 @@ public class AVRMCUidConverter {
 // mickpr: was that		
 //		if (mcuid.startsWith("avr")) {
 //			// don't include the generic family names
-//			return null;
+//			return mcuid.toUpperCase();
 //		}
-//		
+		
 // ..but now is that
-		if (mcuid.startsWith("avr16") || mcuid.startsWith("avr32") || mcuid.startsWith("avr64") || mcuid.startsWith("avr128d") || mcuid.startsWith("avr8e") || mcuid.startsWith("avr128")) {
+		if (mcuid.startsWith("avr16") || 
+			mcuid.startsWith("avr32") || 
+			mcuid.startsWith("avr64") || 
+			mcuid.startsWith("avr8e") || 
+			mcuid.startsWith("avr128")) {
 			return mcuid.toUpperCase();
 		}
 

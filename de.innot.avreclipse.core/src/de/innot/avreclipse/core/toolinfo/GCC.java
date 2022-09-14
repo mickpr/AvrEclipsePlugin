@@ -167,7 +167,7 @@ public class GCC extends BaseToolInfo implements IMCUProvider {
 						// included
 						continue;
 					}
-// mickpr					fMCUmap.put(mcuid, mcuname);
+					fMCUmap.put(mcuid, mcuname);
 // System.out.println("MCUID: " + mcuid + " MCUNAME: " + mcuname);
 				}
 			} else {

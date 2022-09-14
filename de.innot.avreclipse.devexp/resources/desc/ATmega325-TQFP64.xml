@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<pins>
+   <pin name="1">
+  	<role name="DNC"  resource="CORE" descr="Do not connect"/>
+   </pin>
+   <pin name="2">
+  	<role name="PE0" resource="PORTE" descr="Generic IO pin PE0"/>
+        <role name="PCINT0" resource="EXTINT" descr="Pin change interrupt 0"/>
+        <role name="RXD0" resource="USART0" descr="Receive Data (data input pin for the UART)."/>
+   </pin>
+   <pin name="3">
+  	<role name="PE1" resource="PORTE" descr="Generic IO pin PE1"/>
+        <role name="PCINT1" resource="EXTINT" descr="Pin change interrupt 1"/>
+        <role name="TXD0" resource="USART0" descr="Transmit Data (data output pin for the UART)."/>
+   </pin>
+   <pin name="4">
+  	<role name="PE2" resource="PORTE" descr="Generic IO pin PE2"/>
+        <role name="PCINT2" resource="EXTINT" descr="Pin change interrupt 2"/>
+        <role name="AIN0" resource="ACOMP" descr="AIN0, Analog Comparator Positive Input."/>
+        <role name="XCK0" resource="UART" descr="USART external clock. Channel 0"/>
+   </pin>
+   <pin name="5">
+  	<role name="PE3" resource="PORTE" descr="Generic IO pin PE3"/>
+        <role name="PCINT3" resource="EXTINT" descr="Pin change interrupt 3"/>
+        <role name="AIN1" resource="ACOMP" descr="AIN1, Analog Comparator Negative Input."/>
+   </pin>
+   <pin name="6">
+  	<role name="PE4" resource="PORTE" descr="Generic IO pin PE4"/>
+        <role name="PCINT4" resource="EXTINT" descr="Pin change interrupt 4"/>
+        <role name="SCL" resource="I2C" descr="I2C clock pin"/>
+        <role name="USCK" resource="USI" descr="USI - Universal Serial Interface Clock pin"/>
+   </pin>
+   <pin name="7">
+  	<role name="PE5" resource="PORTE" descr="Generic IO pin PE5"/>
+        <role name="PCINT5" resource="EXTINT" descr="Pin change interrupt 5"/>
+        <role name="SDA" resource="I2C" descr="I2C Data pin. "/>
+        <role name="DI" resource="USI" descr="USI - Universal Serial Interface data input pin."/>
+   </pin>
+   <pin name="8">
+	<role name="PE6" resource="PORTE" descr="Generic IO pin PE6"/>
+        <role name="PCINT6" resource="EXTINT" descr="Pin change interrupt 6"/>
+        <role name="DO" resource="USI" descr="USI - Universal Serial Interface data output pin."/>
+   </pin>
+   <pin name="9">
+	<role name="PE7" resource="PORTE" descr="Generic IO pin PE7"/>
+        <role name="PCINT7" resource="EXTINT" descr="Pin change interrupt 7"/>
+        <role name="CLKO" resource="CORE" descr="Clock output"/>
+   </pin>
+   <pin name="10">
+	<role name="PB0" resource="PORTB" descr="Generic IO pin PB0"/>
+        <role name="PCINT8" resource="EXTINT" descr="Pin change interrupt 8"/>
+        <role name="/SS" resource="SPI" descr="Slave Select pin for using with SPI."/>
+   </pin>
+   <pin name="11">
+	<role name="PB1" resource="PORTB" descr="Generic IO pin PB1"/>
+        <role name="PCINT9" resource="EXTINT" descr="Pin change interrupt 9"/>
+        <role name="SCK" resource="SPI" descr="SPI Clock pin."/>
+   </pin>
+   <pin name="12">
+	<role name="PB2" resource="PORTB" descr="Generic IO pin PB2"/>
+        <role name="PCINT10" resource="EXTINT" descr="Pin change interrupt 10"/>
+        <role name="MOSI" resource="SPI" descr="SPI Master output slave input pin."/>
+   </pin>
+   <pin name="13">
+	<role name="PB3" resource="PORTB" descr="Generic IO pin PB3"/>
+        <role name="PCINT11" resource="EXTINT" descr="Pin change interrupt 11"/>
+        <role name="MISO" resource="SPI" descr="SPI Master input, slave output pin."/>
+   </pin>
+   <pin name="14">
+  	<role name="PB4" resource="PORTB" descr="Generic IO pin PB4"/>
+        <role name="PCINT12" resource="EXTINT" descr="Pin change interrupt 12"/>
+        <role name="OC0A" resource="TIMER0" descr="Timer/Counter0 Output compare matchA output"/>
+   </pin>
+   <pin name="15">
+  	<role name="PB5" resource="PORTB" descr="Generic IO pin PB5"/>
+        <role name="PCINT13" resource="EXTINT" descr="Pin change interrupt 13"/>
+        <role name="OC1A" resource="TIMER1" descr="Timer/Counter1 Output compare matchA output."/>
+   </pin>
+   <pin name="16">
+  	<role name="PB6" resource="PORTB" descr="Generic IO pin PB6"/>
+        <role name="PCINT14" resource="EXTINT" descr="Pin change interrupt 14"/>
+        <role name="OC1B" resource="TIMER1" descr="Timer/Counter1 Output compare matchB output."/>
+   </pin>
+   <pin name="17">
+  	<role name="PB7" resource="PORTB" descr="Generic IO pin PB7"/>
+        <role name="PCINT15" resource="EXTINT" descr="Pin change interrupt 15"/>
+        <role name="OC2A" resource="TIMER2" descr="Timer/Counter2 Output compare matchA output."/>
+   </pin>
+   <pin name="18">
+  	<role name="PG3" resource="PORTG" descr="Generic IO pin PG3."/>
+  	<role name="T1" resource="TIMER1" descr="Timer 1 input pin."/>
+   </pin>
+   <pin name="19">
+  	<role name="PG4" resource="PORTG" descr="Generic IO pin PG4"/>
+  	<role name="T0" resource="TIMER0" descr="Timer 0 input pin."/>
+   </pin>
+   <pin name="20">
+  	<role name="/RESET" resource="CORE" descr="Reset pin for MCU, active at low."/>
+  	<role name="PG5" resource="PORTG" descr="Generic IO pin PG5"/>
+   </pin>
+   <pin name="21">
+ 	<role name="VCC" resource="CORE" descr="Power supply"/>
+   </pin>
+   <pin name="22">
+  	<role name="GND" resource="CORE" descr="Common ground"/>
+   </pin>
+   <pin name="23">
+  	<role name="XTAL2" resource="CORE" descr="Pin for connecting external clock source (crystal, resonator..) for MCU (output)"/>
+  	<role name="TOSC2" resource="CORE" descr="Pin for connecting external low freq clock source (crystal, resonator..) additional"/>
+   </pin>
+   <pin name="24">
+  	<role name="XTAL1" resource="CORE" descr="Pin for connecting external clock source (crystal, resonator..) for MCU (input)"/>
+  	<role name="TOSC1" resource="CORE" descr="Pin for connecting external low freq clock source (crystal, resonator..) additional"/>
+   </pin>
+   <pin name="25">
+  	<role name="PD0" resource="PORTD" descr="Generic IO pin PD0"/>
+        <role name="ICP1" resource="TIMER1" descr="Timer/Counter1 input compare pin ."/>
+   </pin>
+   <pin name="26">
+  	<role name="PD1" resource="PORTD" descr="Generic IO pin PD1"/>
+        <role name="INT0" resource="EXTINT" descr="External Interrupt source 0 to the MCU."/>
+   </pin>
+   <pin name="27">
+  	<role name="PD2" resource="PORTD" descr="Generic IO pin PD2"/>
+   </pin>
+   <pin name="28">
+  	<role name="PD3" resource="PORTD" descr="Generic IO pin PD3"/>
+   </pin>
+   <pin name="29">
+  	<role name="PD4" resource="PORTD" descr="Generic IO pin PD4"/>
+   </pin>
+   <pin name="30">
+  	<role name="PD5" resource="PORTD" descr="Generic IO pin PD5"/>
+   </pin>
+   <pin name="31">
+  	<role name="PD6" resource="PORTD" descr="Generic IO pin PD6"/>
+   </pin>
+   <pin name="32">
+  	<role name="PD7" resource="PORTD" descr="Generic IO pin PD7"/>
+   </pin>
+   <pin name="33">
+  	<role name="PG0" resource="PORTG" descr="Generic IO pin PG0"/>
+   </pin>
+   <pin name="34">
+  	<role name="PG1" resource="PORTG" descr="Generic IO pin PG1"/>
+   </pin>
+   <pin name="35">
+  	<role name="PC0" resource="PORTC" descr="Generic IO pin PC0"/>
+   </pin>
+   <pin name="36">
+  	<role name="PC1" resource="PORTC" descr="Generic IO pin PC1"/>
+   </pin>
+   <pin name="37">
+  	<role name="PC2" resource="PORTC" descr="Generic IO pin PC2"/>
+   </pin>
+   <pin name="38">
+  	<role name="PC3" resource="PORTC" descr="Generic IO pin PC3"/>
+   </pin>
+   <pin name="39">
+  	<role name="PC4" resource="PORTC" descr="Generic IO pin PC4"/>
+   </pin>
+   <pin name="40">
+  	<role name="PC5" resource="PORTC" descr="Generic IO pin PC5"/>
+   </pin>
+   <pin name="41">
+  	<role name="PC6" resource="PORTC" descr="Generic IO pin PC6"/>
+   </pin>
+   <pin name="42">
+  	<role name="PC7" resource="PORTC" descr="Generic IO pin PC7"/>
+   </pin>
+   <pin name="43">
+  	<role name="PG2" resource="PORTG" descr="Generic IO pin PG2"/>
+   </pin>
+   <pin name="44">
+  	<role name="PA7" resource="PORTA" descr="Generic IO pin PA7"/>
+   </pin>
+   <pin name="45">
+  	<role name="PA6" resource="PORTA" descr="Generic IO pin PA6"/>
+   </pin>
+   <pin name="46">
+  	<role name="PA5" resource="PORTA" descr="Generic IO pin PA5"/>
+   </pin>
+   <pin name="47">
+  	<role name="PA4" resource="PORTA" descr="Generic IO pin PA4"/>
+   </pin>
+   <pin name="48">
+  	<role name="PA3" resource="PORTA" descr="Generic IO pin PA3"/>
+   </pin>
+   <pin name="49">
+  	<role name="PA2" resource="PORTA" descr="Generic IO pin PA2"/>
+   </pin>
+   <pin name="50">
+  	<role name="PA1" resource="PORTA" descr="Generic IO pin PA1"/>
+   </pin>
+   <pin name="51">
+  	<role name="PA0" resource="PORTA" descr="Generic IO pin PA0"/>
+   </pin>
+   <pin name="52">
+  	<role name="VCC" resource="CORE" descr="Power supply"/>
+   </pin>
+   <pin name="53">
+  	<role name="GND" resource="CORE" descr="Common ground"/>
+   </pin>
+   <pin name="54">
+  	<role name="PF7" resource="PORTF" descr="Generic IO pin PF7"/>
+        <role name="ADC7" resource="ADC" descr="Analog-to-Digital input ADC7"/>
+        <role name="TDI" resource="JTAG" descr="Test Data In. Serial input data to be shifted in to the Instruction Register or Data Register (Scan Chains)."/>
+   </pin>
+   <pin name="55">
+  	<role name="PF6" resource="PORTF" descr="Generic IO pin PF6"/>
+        <role name="ADC6" resource="ADC" descr="Analog-to-Digital input ADC6"/>
+        <role name="TDO" resource="JTAG" descr="Test Data Out. Serial output data from Instruction register or Data Register."/>
+   </pin>
+   <pin name="56">
+  	<role name="PF5" resource="PORTF" descr="Generic IO pin PF5"/>
+        <role name="ADC5" resource="ADC" descr="Analog-to-Digital input ADC5"/>
+        <role name="TMS" resource="JTAG" descr="Test Mode Select. This pin is used for navigating through the TAP-controller."/>
+   </pin>
+   <pin name="57">
+  	<role name="PF4" resource="PORTF" descr="Generic IO pin PF4"/>
+        <role name="ADC4" resource="ADC" descr="Analog-to-Digital input ADC4"/>
+        <role name="TCK" resource="JTAG" descr="Test Clock. JTAG operation is synchronous to TCK."/>
+   </pin>
+   <pin name="58">
+  	<role name="PF3" resource="PORTF" descr="Generic IO pin PF3"/>
+        <role name="ADC3" resource="ADC" descr="Analog-to-Digital input ADC3"/>
+   </pin>
+   <pin name="59">
+ 	<role name="PF2" resource="PORTF" descr="Generic IO pin PF2"/>
+        <role name="ADC2" resource="ADC" descr="Analog-to-Digital input ADC2"/>
+   </pin>
+   <pin name="60">
+ 	<role name="PF1" resource="PORTF" descr="Generic IO pin PF1"/>
+        <role name="ADC1" resource="ADC" descr="Analog-to-Digital input ADC1"/>
+   </pin>
+   <pin name="61">
+	<role name="PF0" resource="PORTF" descr="Generic IO pin PF0"/>
+        <role name="ADC0" resource="ADC" descr="Analog-to-Digital input ADC0"/>
+   </pin>
+   <pin name="62">
+	<role name="AREF" resource="ADC" descr="Reference voltage for AD converter."/>
+   </pin>
+   <pin name="63">
+	<role name="AGND" resource="CORE" descr="Analog ground"/>
+   </pin>
+   <pin name="64">
+	<role name="AVCC" resource="CORE" descr="Power supply for AD converter."/>
+   </pin>
+</pins>

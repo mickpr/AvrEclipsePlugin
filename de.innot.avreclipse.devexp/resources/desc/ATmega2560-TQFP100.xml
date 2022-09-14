@@ -115,7 +115,7 @@
    </pin>
    <pin name="26">
   	<role name="PB7" resource="PORTB" descr="Generic IO pin PB7"/>
-        <ro2le name="PCINT7" resource="EXTINT" descr="Pin change interrupt 7"/>
+        <role name="PCINT7" resource="EXTINT" descr="Pin change interrupt 7"/>
         <role name="OC1C" resource="TIMER1" descr="16-bit Timer/Counter1 Output compare matchC output. The pin can serve as an external output for the Timer/Counter1 output compareB. The pin has to be configured as an output to serve this function. The OC1C pin is also the output pin for the PWM mode timer function."/>
         <role name="OC0A" resource="TIMER0" descr="8-bit Timer/Counter0 Output compare matchA output: The pin can serve as an external output for the Timer/Counter0 output com-pareA. The pin has to be configured as an output to serve this function. The OC0A pin is also the output pin for the PWM mode timer function."/>
    </pin>

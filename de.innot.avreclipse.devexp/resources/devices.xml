@@ -273,6 +273,18 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega325</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP64" file="ATmega325-TQFP64.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega328</Name>
   <Type>ATmega</Type>
   <Flash>32768</Flash>
@@ -341,6 +353,18 @@
 	<Package name="TQFP44" file="ATmega644A-TQFP44.xml"></Package>
 	<Package name="QFN44"  file="ATmega644A-QFN44.xml"></Package>
 	<Package name="MLF44"  file="ATmega644A-MLF44.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega645</Name>
+  <Type>ATmega</Type>
+  <Flash>65536</Flash>
+  <EEPROM>2048</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP64" file="ATmega645-TQFP64.xml"></Package>
   </Packages>
 </device>
 <device>
@@ -446,6 +470,18 @@
   </Packages>
 </device>
 <device>
+  <Name>ATmega3250</Name>
+  <Type>ATmega</Type>
+  <Flash>32768</Flash>
+  <EEPROM>1024</EEPROM>
+  <RAM>2048</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+	<Package name="TQFP100" file="ATmega3250-TQFP100.xml"></Package>
+  </Packages>
+</device>
+<device>
   <Name>ATmega4808</Name>
   <Type>ATmega</Type>
   <Flash>32768</Flash>
@@ -468,6 +504,18 @@
   <Vcc>1.8 .. 5.5</Vcc>
   <Packages>
 	<Package name="TQFP48" file="ATmega4809-TQFP48.xml"></Package>
+  </Packages>
+</device>
+<device>
+  <Name>ATmega6450</Name>
+  <Type>ATmega</Type>
+  <Flash>65536</Flash>
+  <EEPROM>2048</EEPROM>
+  <RAM>4096</RAM>
+  <Freq>16MHz</Freq>
+  <Vcc>1.8 .. 5.5</Vcc>
+  <Packages>
+    <Package name="TQFP100" file="ATmega6450-TQFP100.xml"></Package>
   </Packages>
 </device>
 <device>

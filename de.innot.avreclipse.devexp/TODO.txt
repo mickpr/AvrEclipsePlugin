@@ -26,5 +26,6 @@ to this
 	data   (rw!x) : ORIGIN = __DATA_REGION_ORIGIN__, LENGTH = __DATA_REGION_LENGTH__
 this linker script is in the toolchain, and not in any pack.
 
-
+then tell your linker to use modified linker script
+-Wl,-script=avrxmega3.xn
 

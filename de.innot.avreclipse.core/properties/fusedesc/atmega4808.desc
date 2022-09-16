@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Fuse/Lockbit description file for the AVR Eclipse plugin-->
+<description mcutype="atmega4808">
+<version build="20220916"/>
+<fusebyte description="Watchdog configuration" index="0" name="WDTCFG" size="1">
+<bitfield desc="Watchdog Window Time-out Period" mask="0xF0" name="WINDOW">
+<value desc="-" name="OFF" val="0x00"/>
+<value desc="0.008s" name="8CLK" val="0x01"/>
+<value desc="0.016s" name="16CLK" val="0x02"/>
+<value desc="0.031s" name="32CLK" val="0x03"/>
+<value desc="0.063s" name="64CLK" val="0x04"/>
+<value desc="0.125s" name="128CLK" val="0x05"/>
+<value desc="0.25s" name="256CLK" val="0x06"/>
+<value desc="0.5s" name="512CLK" val="0x07"/>
+<value desc="1s" name="1KCLK" val="0x08"/>
+<value desc="2s" name="2KCLK" val="0x09"/>
+<value desc="4s" name="4KCLK" val="0x0A"/>
+<value desc="8s" name="8KCLK" val="0x0B"/>
+<value desc="reserved" name="-" val="0x0C"/>
+<value desc="reserved" name="-" val="0x0D"/>
+<value desc="reserved" name="-" val="0x0E"/>
+<value desc="reserved" name="-" val="0x0F"/>
+</bitfield>
+<bitfield desc="Watchdog Time-out Period" mask="0x0F" name="PERIOD">
+<value desc="-" name="OFF" val="0x00"/>
+<value desc="0.008s" name="8CLK" val="0x01"/>
+<value desc="0.016s" name="16CLK" val="0x02"/>
+<value desc="0.031s" name="32CLK" val="0x03"/>
+<value desc="0.063s" name="64CLK" val="0x04"/>
+<value desc="0.125s" name="128CLK" val="0x05"/>
+<value desc="0.25s" name="256CLK" val="0x06"/>
+<value desc="0.5s" name="512CLK" val="0x07"/>
+<value desc="1s" name="1KCLK" val="0x08"/>
+<value desc="2s" name="2KCLK" val="0x09"/>
+<value desc="4s" name="4KCLK" val="0x0A"/>
+<value desc="8s" name="8KCLK" val="0x0B"/>
+</bitfield>
+</fusebyte>
+
+<fusebyte description="BOD Configuration" index="1" name="BODCFG" size="1">
+<bitfield desc="BOD Level" mask="0xE0" name="LVL">
+<value desc="1.8V" name="BODLEVEL0" val="0x0"/>
+<value desc="2.6V" name="BODLEVEL2" val="0x2"/>
+<value desc="4.3V" name="BODLEVEL7" val="0x7"/>
+</bitfield>
+<bitfield desc="BOD Sample Frequency" mask="0x10" name="SAMPFREQ">
+<value desc="Sample frequency is 1 kHz" name="1KHZ" val="0x00"/>
+<value desc="Sample frequency is 125 Hz" name="125HZ" val="0x01"/>
+</bitfield>
+<bitfield desc="BOD Operation Mode in Active and Idle" mask="0x0C" name="ACTIVE">
+<value desc="Disabled" name="DIS" val="0x00"/>
+<value desc="Enabled" name="ENA" val="0x01"/>
+<value desc="Sampled" name="SAM" val="0x02"/>
+<value desc="Enabled with wake-up halted until BOD is ready" name="EWK" val="0x03"/>
+</bitfield>
+<bitfield desc="BOD Operation Mode in Sleep" mask="0x03" name="SLEEP">
+<value desc="Disabled" name="DIS" val="0x00"/>
+<value desc="Enabled" name="ENA" val="0x01"/>
+<value desc="Sampled" name="SAM" val="0x02"/>
+</bitfield>
+</fusebyte>
+
+<lockbitsbyte description="" index="0" name="LOCKBIT" size="1">
+<bitfield desc="Memory Lock" mask="0x03" name="LB">
+<value desc="Further programming and verification disabled" name="PROG_VER_DISABLED" val="0x00"/>
+<value desc="Further programming disabled" name="PROG_DISABLED" val="0x02"/>
+<value desc="No memory lock features enabled" name="NO_LOCK" val="0x03"/>
+</bitfield>
+</lockbitsbyte>
+</description>

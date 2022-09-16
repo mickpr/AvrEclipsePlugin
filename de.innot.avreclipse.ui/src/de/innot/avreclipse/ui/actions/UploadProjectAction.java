@@ -75,29 +75,29 @@ public class UploadProjectAction extends ActionDelegate implements IWorkbenchWin
 	private final static String	MSG_NOPROJECT			= "No AVR project selected";
 
 	private final static String	MSG_NOPROGRAMMER		= "No Programmer has been set for the {0}.\n\n"
-																+ "Please select a Programmer in the project properties\n"
-																+ "(Properties -> AVRDude -> Programmer)";
+									+ "Please select a Programmer in the project properties\n"
+									+ "(Properties -> AVRDude -> Programmer)";
 
 	private final static String	MSG_WRONGMCU			= "AVRDude does not support the project target MCU [{0}]\n\n"
-																+ "Please select a different target MCU if you want to use AVRDude.\n"
-																+ "(Properties -> Target Hardware)";
+									+ "Please select a different target MCU if you want to use AVRDude.\n"
+									+ "(Properties -> Target Hardware)";
 
 	private final static String	MSG_NOACTIONS			= "The {0} has no options set to upload anything to the device.\n\n"
-																+ "Please select at least one item to upload (flash / eeprom / fuses / lockbits)";
+									+ "Please select at least one item to upload (flash / eeprom / fuses / lockbits)";
 
 	private final static String	MSG_MISSING_FILE		= "The file [{0}] for the {1} memory does not exist or is not readable\n\n"
-																+ "Maybe the project needs to be build first.";
+									+ "Maybe the project needs to be build first.";
 
 	private final static String	MSG_MISSING_FUSES_FILE	= "The selected {0} file [{1}] does not exist or is not readable\n\n"
-																+ "Please select a different {0} source.\n"
-																+ "(Properties -> AVRDude -> {0}";
+									+ "Please select a different {0} source.\n"
+									+ "(Properties -> AVRDude -> {0}";
 
 	private final static String	MSG_INVALIDFUSEBYTE		= "The {0} byte(s) to upload are for an {1} MCU, "
-																+ "which is not compatible with the {3} target MCU [{2}]\n\n"
-																+ "Please check the fuse byte settings.\n"
-																+ "(Properties -> AVRDude -> {0})";
+									+ "which is not compatible with the {3} target MCU [{2}]\n\n"
+									+ "Please check the fuse byte settings.\n"
+									+ "(Properties -> AVRDude -> {0})";
 
-	private IProject			fProject;
+	private IProject		fProject;
 
 	/**
 	 * Constructor for this Action.

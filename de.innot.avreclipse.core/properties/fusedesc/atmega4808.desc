@@ -59,6 +59,17 @@
 <value desc="Sampled" name="SAM" val="0x02"/>
 </bitfield>
 </fusebyte>
+<fusebyte description="Oscillator Configuration" index="2" name="OSCCFG" size="1">
+<bitfield desc="Oscilator Lock" mask="0x70" name="OSCLOCK">
+<value desc="Calibration registers of the 20 MHz oscillator can be modified at run-time" name="UNLOCKED" val="0x0"/>
+<value desc="Calibration registers of the 20 MHz oscillator are locked at run-time" name="LOCKED" val="0x1"/>
+</bitfield>
+<bitfield desc="Frequency Select" mask="0x03" name="FREQSEL">
+<value desc="Run at 16MHz" name="16MHZ" val="0x01"/>
+<value desc="Run at 20MHz" name="25MHZ" val="0x02"/>
+</bitfield>
+</fusebyte>
+
 
 <lockbitsbyte description="" index="0" name="LOCKBIT" size="1">
 <bitfield desc="Memory Lock" mask="0x03" name="LB">

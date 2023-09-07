@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="AVRPlugin251"
+      label="AVRPlugin251"
+      version="2.5.1"
+      provider-name="mickpr">
+
+   <description url="http://www.example.com/description">
+      Plugin version 2.5.1 is the extension of original Plugin by Thomas Holland.
+It has been rewritten, and expanded to new Microchip chips, and it&apos;s in beta stage yet.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="http://www.example.com/license">
+      [Enter License Description here.]
+   </license>
+
+   <plugin
+         id="de.innot.avreclipse.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.innot.avreclipse.core.managedbuildsystem"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.innot.avreclipse.devexp"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.innot.avreclipse.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.innot.avreclipse.root"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="de.innot.avreclipse.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.innot.avreclipse.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+</feature>

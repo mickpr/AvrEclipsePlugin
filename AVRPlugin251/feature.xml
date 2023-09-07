@@ -6,8 +6,10 @@
       provider-name="mickpr">
 
    <description url="http://www.example.com/description">
-      Plugin version 2.5.1 is the extension of original Plugin by Thomas Holland.
-It has been rewritten, and expanded to new Microchip chips, and it&apos;s in beta stage yet.
+      Plugin version 2.5.1 is the expanded version of original Plugin
+by Thomas Holland. 
+It has been rewritten, and expanded to new Microchip chips, and
+it&apos;s in beta stage yet.
    </description>
 
    <copyright url="http://www.example.com/copyright">

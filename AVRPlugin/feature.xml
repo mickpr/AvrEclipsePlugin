@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="AVRPlugin250"
+      id="AVRPlugin"
       label="AVR Plugin"
       version="2.5.0"
       provider-name="mickpr">
@@ -24,7 +24,7 @@ it&apos;s in beta stage yet.
          id="de.innot.avreclipse.core"
          download-size="0"
          install-size="0"
-         version="2.5.0"
+         version="0.0.0"
          unpack="false"/>
 
    <plugin

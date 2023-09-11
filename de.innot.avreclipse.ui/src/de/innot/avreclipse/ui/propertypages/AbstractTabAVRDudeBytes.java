@@ -940,6 +940,7 @@ public abstract class AbstractTabAVRDudeBytes extends AbstractAVRDudePropertyTab
 		int[] values = fBytes.getValuesFromImmediate();
 		int count = getType().getMaxBytes();
 
+		//mickpr count = 7;
 		for (int i = 0; i < count; i++) {
 			if (i < values.length) {
 				String newvalue = "";
@@ -1143,7 +1144,7 @@ public abstract class AbstractTabAVRDudeBytes extends AbstractAVRDudePropertyTab
 				ByteValuesEditorDialog dialog = new ByteValuesEditorDialog(tab.fActionsToolBar
 						.getShell(), tab.fBytes.getByteValues());
 				dialog.create();
-				// dialog.getShell().setSize(100, 100);
+				//dialog.getShell().setSize(100, 100);
 				dialog.optimizeSize();
 				int result = dialog.open();
 				if (result == Dialog.OK) {

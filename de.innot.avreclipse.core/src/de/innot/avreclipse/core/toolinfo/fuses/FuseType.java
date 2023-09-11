@@ -30,8 +30,9 @@ package de.innot.avreclipse.core.toolinfo.fuses;
  */
 public enum FuseType {
 
+	//mickpr - ostatnia liczba to maksymalna liczba bajtow fusebit (0-8 teraz) 
 	/** Fuse byte type */
-	FUSE("Fuse", "fusebyte", "FUSE", "fuses", 6),
+	FUSE("Fuse", "fusebyte", "FUSE", "fuses", 9),
 
 	/** Lockbits byte type */
 	LOCKBITS("Lockbits", "lockbitsbyte", "LOCKBIT", "locks", 1);

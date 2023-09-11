@@ -48,7 +48,7 @@ import de.innot.avreclipse.mbs.BuildMacro;
  * values from a supplied file or immediate values stored in a byte values object. The mode is
  * selected by the user in the Properties user interface.
  * </p>
- * <p>
+ * <p>G
  * This class can be used either standalone or as part of the AVRProjectProperties structure.
  * </p>
  * 

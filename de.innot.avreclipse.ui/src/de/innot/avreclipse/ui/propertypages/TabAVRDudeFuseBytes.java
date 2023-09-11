@@ -61,6 +61,7 @@ public class TabAVRDudeFuseBytes extends AbstractTabAVRDudeBytes {
 	 */
 	@Override
 	protected String getByteEditorLabel(int index) {
+		
 		int fusecount = fBytes.getValues().length;
 
 		if (fusecount == 1) {
@@ -77,7 +78,8 @@ public class TabAVRDudeFuseBytes extends AbstractTabAVRDudeBytes {
 			return "";
 		}
 
-		// new ATXmega format: more than three fusebytes, just numbered 1...n
+		// new ATXmega format: more than three fusebytes, just numbered 1...n\
+		// mickpr (also new Microchip have more fuses...)
 		return Integer.toString(index);
 	}
 

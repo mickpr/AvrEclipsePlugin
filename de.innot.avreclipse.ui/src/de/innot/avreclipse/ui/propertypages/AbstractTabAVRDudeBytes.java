@@ -529,9 +529,7 @@ public abstract class AbstractTabAVRDudeBytes extends AbstractAVRDudePropertyTab
 				updateFields();
 			}
 		});
-
 		fHexWarningCompo.setVisible(false);
-
 	}
 
 	/**

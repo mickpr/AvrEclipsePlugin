@@ -47,7 +47,12 @@ public class AVRDudeActionFactory {
 			{ MemType.lfuse, MemType.hfuse, MemType.efuse },
 			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3 },
 			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4 },
-			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5 }
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5 },
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5,MemType.fuse6 },
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5,MemType.fuse6,MemType.fuse7 },
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5,MemType.fuse6,MemType.fuse7,MemType.fuse8 },
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5,MemType.fuse6,MemType.fuse7,MemType.fuse8, MemType.fuse9 },
+			{ MemType.fuse0, MemType.fuse1, MemType.fuse2, MemType.fuse3, MemType.fuse4,MemType.fuse5,MemType.fuse6,MemType.fuse7,MemType.fuse8, MemType.fuse9, MemType.fuseA }
 	};
 
 	// todo: mickpr: here we need to add fuse (fuse 6,7,8,9,A) for editing 

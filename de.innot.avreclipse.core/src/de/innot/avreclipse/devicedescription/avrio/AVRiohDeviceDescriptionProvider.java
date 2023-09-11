@@ -247,7 +247,7 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 					for (String dev : curDev) {
 						fMCUNamesMap.put(AVRMCUidConverter.name2id(dev), m.group(1));
 						
-						System.out.println("IOH_MCUID:" + AVRMCUidConverter.name2id(dev));
+						//System.out.println("IOH_MCUID:" + AVRMCUidConverter.name2id(dev));
 						
 					}
 					curDev.clear();
@@ -286,7 +286,7 @@ public class AVRiohDeviceDescriptionProvider implements IDeviceDescriptionProvid
 		Pattern ivecPatNew = Pattern.compile("^#define ([A-Z0-9_]+_vect)\\s+_VECTOR\\((\\d+)\\).*");
 		Pattern ivecPatOld = Pattern.compile("^#define (SIG_[A-Z0-9_]+)\\s+_VECTOR\\((\\d+)\\).*");
 		Pattern portPat = Pattern
-				.compile("^#define ((?:PORT|PIN|DDR)[A-Z])\\s+_SFR_IO(\\d+)\\s*\\((0[xX].*)\\).*");
+				.compile("^#define ((?:PORT|VPORT|PIN|DDR)[A-Z])\\s+_SFR_IO(\\d+)\\s*\\((0[xX].*)\\).*");
 		Pattern regPat = Pattern
 				.compile("^#define ([A-Z0-9]+)\\s+_SFR_(IO|MEM)(\\d+)\\s*\\((0[xX].*)\\).*");
 

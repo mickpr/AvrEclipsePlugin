@@ -7,9 +7,6 @@ AVR Plugin for Eclipse - my own remake.
 
 
 
-
-
-
 How to generate plugin archive:
 - Select from menu File->Export->Plug-in development->Deployable features, Click Next
 - Check in AVR Plugin250, select "Archive file" -> Click Browse, enter Zip filename for plug-in archive

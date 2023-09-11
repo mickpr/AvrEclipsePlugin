@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="AVRPlugin251"
-      label="AVRPlugin251"
-      version="2.5.1"
+      id="AVRPlugin250"
+      label="AVR Plugin"
+      version="2.5.0"
       provider-name="mickpr">
 
    <description url="http://www.example.com/description">
-      Plugin version 2.5.1 is the expanded version of original Plugin
+      Plugin version 2.5.0 is the expanded version of original Plugin
 by Thomas Holland. 
 It has been rewritten, and expanded to new Microchip chips, and
 it&apos;s in beta stage yet.
@@ -24,7 +24,7 @@ it&apos;s in beta stage yet.
          id="de.innot.avreclipse.core"
          download-size="0"
          install-size="0"
-         version="0.0.0"
+         version="2.5.0"
          unpack="false"/>
 
    <plugin

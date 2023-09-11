@@ -132,6 +132,7 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 //		AVRProjectProperties targetprops = ProjectPropertyManager.getPropertyManager(fProject)
 //				.getActiveProperties();
 
+		PluginPreferences.SwitchProject(fProject.getName());
 		String selectedChipName = PluginPreferences.get("MCUType","ERR");
 		
 		if (!selectedChipName.equals("ERR")) {
@@ -139,13 +140,16 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 			try {
 				String url_string; // contain url string for documentation portal (if web page exist)
 		
+			
 				//create desired link for documentation web page for given MCU
 				url_string = new String();
 				url_string= "http://www.microchip.com/wwwproducts/en/";
 				url_string=url_string+ selectedChipName.toUpperCase(); // eg. https://www.microchip.com/wwwproducts/en/ATMEGA88
 				//System.out.println(url_string);
-				boolean webPageExist=false;
 				
+				boolean webPageExist=false;
+				webPageExist=true;
+				/* mickpr- 
 				//check if filepage exists
 			    try {
 			      HttpURLConnection.setFollowRedirects(false);
@@ -161,6 +165,7 @@ public class ShowMcuDocumentation extends ActionDelegate implements IWorkbenchWi
 			       eee.printStackTrace();
 			       webPageExist=false;
 			    }
+			    */
 			    if (webPageExist) 
 					PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(new URL(url_string));
 			    

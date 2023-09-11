@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Fuse/Lockbit description file for the AVR Eclipse plugin-->
+<!--Based on: Atmel Device File "ATmega32A.xml"-->
+<description mcutype="avr32DA48">
+<version build="20230909"/>
+
+<fusebyte description="Watchdog Configuration" index="0" name="WDTCFG" size="1">
+	<bitfield desc="This value is loaded into the WINDOW bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0xF0" name="WINDOW"/>
+	<bitfield desc="This value is loaded into the PERIOD bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0x0F" name="PERIOD"/>
+</fusebyte>
+<fusebyte description="Brown-out Detector Configuration" index="1" name="BODCFG" size="1">
+	<bitfield desc="The bit values of this fuse register are written to the corresponding BOD configuration registers at power-up" mask="0xE0" name="LVL">
+		<value desc="1.9V" 	name="BODLEVEL0" val="0x00"/>
+		<value desc="2.45V" name="BODLEVEL1" val="0x01"/>
+		<value desc="2.7V" 	name="BODLEVEL2" val="0x02"/>
+		<value desc="2.85V" name="BODLEVEL3" val="0x03"/>
+	</bitfield>
+	<bitfield desc="This value is loaded into the Sample Frequency (SAMPFREQ) bit of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x10" name="SAMPFREQ">
+		<value desc="The sample frequency is 128 Hz" name="128HZ" val="0x01"/>
+		<value desc="The sample frequency is 32 Hz" name="32HZ" val="0x01"/>
+	</bitfield>
+	<bitfield desc="This value is loaded into the ACTIVE bit field of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x0C" name="ACTIVE">
+		<value desc="BOD disabled" 	name="DISABLE" val="0x00"/>
+		<value desc="BOD enabled in Continuous mode" name="ENABLE" val="0x01"/>
+		<value desc="BOD enabled in Sampled mode" name="SAMPLE" val="0x02"/>
+		<value desc="BOD enabled in Continuous mode. Execution is halted at wake-up until BOD is running" name="ENABLEWAIT" val="0x03"/>
+	</bitfield>
+	<bitfield desc="The value is loaded into the SLEEP bit field of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x03" name="SLEEP">
+		<value desc="BOD disabled" 	name="DISABLE" val="0x00"/>
+		<value desc="BOD enabled in Continuous mode" name="ENABLE" val="0x01"/>
+		<value desc="BOD enabled in Sampled mode" 	name="SAMPLE" val="0x02"/>
+	</bitfield>
+</fusebyte>
+<fusebyte description="Oscillator Configuration" index="2" name="OSCCFG" size="1">
+	<bitfield desc="This bit field controls the default oscillator of the device." mask="0x0F" name="CLKSEL">
+		<value desc="Device running on internal high-frequency oscillator" 	name="OSCHF" val="0x00"/>
+		<value desc="Device running on internal 32.768 kHz oscillator" name="OSC32K" val="0x01"/>
+	</bitfield>	
+</fusebyte>
+<fusebyte description="Oscillator Configuration" index="2" name="SYSCFG0" size="1">
+	<bitfield desc="This bit field controls the default oscillator of the device." mask="0xC0" name="CRCSRC">
+		<value desc="CRC of full Flash (boot, application code, and application data)" 	name="FLASH" val="0x00"/>
+		<value desc="CRC of the Boot section" name="BOOT" val="0x01"/>
+		<value desc="CRC of the Application code and Boot sections" 	name="BOOTAPP" val="0x02"/>
+		<value desc="No CRC" name="NOCRC" val="0x03"/>
+	</bitfield>
+	<bitfield desc="This bit field controls the default oscillator of the device." mask="0x20" name="CRCSEL">
+		<value desc="CRC 16-bit CCITT" 	name="CRC16" val="0x00"/>
+		<value desc="CRC 32-bit (IEE802.3)" name="CRC32" val="0x01"/>
+	</bitfield>
+	<bitfield desc="This bit field controls the pin configuration of the Reset pin" mask="0x0C" name="RSTPINCFG">
+		<value desc="PF6 configured as general input pin" 	name="INPUT" val="0x00"/>
+		<value desc="External Reset enabled on PF6" 	name="RESET" val="0x02"/>
+	</bitfield>
+	<bitfield desc="This bit controls if the EEPROM will be erased or not during a Chip Erase. If the device is locked, the EEPROM is
+always erased by a Chip Erase regardless of this bit" mask="0x01" name="EESAVE">
+		<value desc="EEPROM erased during Chip erase" 	name="ERASED" val="0x00"/>
+		<value desc="EEPROM not erased during Chip erase" 	name="NOTERASED" val="0x01"/>
+	</bitfield>
+	
+
+		
+</fusebyte>
+
+<lockbitsbyte description="" index="0" name="LOCKBIT" size="1">
+<bitfield desc="Memory Lock" mask="0x03" name="LB">
+<value desc="Further programming and verification disabled" name="PROG_VER_DISABLED" val="0x00"/>
+<value desc="Further programming disabled" name="PROG_DISABLED" val="0x02"/>
+<value desc="No memory lock features enabled" name="NO_LOCK" val="0x03"/>
+</bitfield>
+<bitfield desc="Boot Loader Protection Mode" mask="0x0C" name="BLB0">
+<value desc="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" val="0x00"/>
+<value desc="LPM prohibited in Application Section" name="LPM_DISABLE" val="0x01"/>
+<value desc="SPM prohibited in Application Section" name="SPM_DISABLE" val="0x02"/>
+<value desc="No lock on SPM and LPM in Application Section" name="NO_LOCK" val="0x03"/>
+</bitfield>
+<bitfield desc="Boot Loader Protection Mode" mask="0x30" name="BLB1">
+<value desc="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" val="0x00"/>
+<value desc="LPM prohibited in Boot Section" name="LPM_DISABLE" val="0x01"/>
+<value desc="SPM prohibited in Boot Section" name="SPM_DISABLE" val="0x02"/>
+<value desc="No lock on SPM and LPM in Boot Section" name="NO_LOCK" val="0x03"/>
+</bitfield>
+</lockbitsbyte>
+</description>

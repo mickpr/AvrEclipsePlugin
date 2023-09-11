@@ -34,11 +34,11 @@ public class AVRProjectProperties {
 	private static final String NODE_AVRDUDE = "avrdude";
 
 	private static final String KEY_MCUTYPE = "MCUType";
-	private static final String DEFAULT_MCUTYPE = "atmega16";
+	private static final String DEFAULT_MCUTYPE = "atmega8";
 	private String fMCUid;
 
 	private static final String KEY_FCPU = "ClockFrequency";
-	private static final int DEFAULT_FCPU = 1000000;
+	private static final int DEFAULT_FCPU = 8000000;
 	private int fFCPU;
 
 	private static final String KEY_USE_EXT_RAM = "ExtendedRAM";

@@ -60,10 +60,4 @@ it&apos;s in beta stage yet.
          version="0.0.0"
          unpack="false"/>
 
-   <plugin
-         id="de.innot.avreclipse.utils"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"/>
-
 </feature>

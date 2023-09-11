@@ -1,5 +1,4 @@
 /*******************************************************************************
- * Copyright (c) 2008, 2011 Thomas Holland (thomas@innot.de) and others.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v1.0
  * which accompanies this distribution, and is available at
@@ -58,7 +57,13 @@ public class AVRDudeActionFactory {
 	// todo: mickpr: here we need to add fuse (fuse 6,7,8,9,A) for editing 
 	
 	/** The name of the lockbit bytes (currently only one) */
-	private final static MemType[][]	LOCKSNAMEMAP	= { {}, { MemType.lock } };
+	private final static MemType[][]	LOCKSNAMEMAP	= { 
+		{}, 
+		{ MemType.lock },
+		{ MemType.lock, MemType.lock },
+		{ MemType.lock, MemType.lock, MemType.lock },
+		{ MemType.lock, MemType.lock, MemType.lock, MemType.lock }
+	};
 
 	/**
 	 * Get a list of actions to read all readable elements of an MCU and write them to the given

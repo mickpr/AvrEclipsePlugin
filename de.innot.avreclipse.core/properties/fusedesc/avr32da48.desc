@@ -1,50 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--Fuse/Lockbit description file for the AVR Eclipse plugin-->
-<description mcutype="avr32DA48">
+<description mcutype="avr32da48">
 <version build="20230909"/>
 
 <fusebyte default="0x00" description="Watchdog Configuration" index="0" name="WDTCFG" size="1">
-	<bitfield desc="This value is loaded into the WINDOW bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0xF0" name="WINDOW"/>
-	<bitfield desc="This value is loaded into the PERIOD bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0x0F" name="PERIOD"/>
+	<bitfield desc="Value loaded into the WINDOW bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0xF0" name="WDTCFG.WINDOW"/>
+	<bitfield desc="Value loaded into the PERIOD bit field of the Watchdog Control A (WDT.CTRLA) register during Reset" mask="0x0F" name="WDTCFG.PERIOD"/>
 </fusebyte>
-<lockbitsbyte description="" index="0" name="LOCKBIT" size="1">
-<bitfield desc="Memory Lock" mask="0x03" name="LB">
-<value desc="Further programming and verification disabled" name="PROG_VER_DISABLED" val="0x00"/>
-<value desc="Further programming disabled" name="PROG_DISABLED" val="0x02"/>
-<value desc="No memory lock features enabled" name="NO_LOCK" val="0x03"/>
-</bitfield>
-<bitfield desc="Boot Loader Protection Mode" mask="0x0C" name="BLB0">
-<value desc="LPM and SPM prohibited in Application Section" name="LPM_SPM_DISABLE" val="0x00"/>
-<value desc="LPM prohibited in Application Section" name="LPM_DISABLE" val="0x01"/>
-<value desc="SPM prohibited in Application Section" name="SPM_DISABLE" val="0x02"/>
-<value desc="No lock on SPM and LPM in Application Section" name="NO_LOCK" val="0x03"/>
-</bitfield>
-<bitfield desc="Boot Loader Protection Mode" mask="0x30" name="BLB1">
-<value desc="LPM and SPM prohibited in Boot Section" name="LPM_SPM_DISABLE" val="0x00"/>
-<value desc="LPM prohibited in Boot Section" name="LPM_DISABLE" val="0x01"/>
-<value desc="SPM prohibited in Boot Section" name="SPM_DISABLE" val="0x02"/>
-<value desc="No lock on SPM and LPM in Boot Section" name="NO_LOCK" val="0x03"/>
-</bitfield>
-</lockbitsbyte>
-
 <fusebyte default="0x00" description="Brown-out Detector Configuration" index="1" name="BODCFG" size="1">
-	<bitfield desc="The bit values of this fuse register are written to the corresponding BOD configuration registers at power-up" mask="0xE0" name="LVL">
-		<value desc="1.9V" 	name="BODLEVEL0" val="0x00"/>
+	<bitfield desc="Values of voltage level for BOD" mask="0xE0" name="LVL">
+		<value desc="1.9V"  name="BODLEVEL0" val="0x00"/>
 		<value desc="2.45V" name="BODLEVEL1" val="0x01"/>
-		<value desc="2.7V" 	name="BODLEVEL2" val="0x02"/>
+		<value desc="2.7V"  name="BODLEVEL2" val="0x02"/>
 		<value desc="2.85V" name="BODLEVEL3" val="0x03"/>
 	</bitfield>
-	<bitfield desc="This value is loaded into the Sample Frequency (SAMPFREQ) bit of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x10" name="SAMPFREQ">
+	<bitfield desc="Sample Frequency (SAMPFREQ) bit of the BOD Control A (BOD.CTRLA)" mask="0x10" name="SAMPFREQ">
 		<value desc="The sample frequency is 128 Hz" name="128HZ" val="0x00"/>
 		<value desc="The sample frequency is 32 Hz" name="32HZ" val="0x01"/>
 	</bitfield>
-	<bitfield desc="This value is loaded into the ACTIVE bit field of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x0C" name="ACTIVE">
+	<bitfield desc="ACTIVE bit field of the BOD Control A (BOD.CTRLA)" mask="0x0C" name="ACTIVE">
 		<value desc="BOD disabled" 	name="DISABLE" val="0x00"/>
 		<value desc="BOD enabled in Continuous mode" name="ENABLE" val="0x01"/>
 		<value desc="BOD enabled in Sampled mode" name="SAMPLE" val="0x02"/>
 		<value desc="BOD enabled in Continuous mode. Execution is halted at wake-up until BOD is running" name="ENABLEWAIT" val="0x03"/>
 	</bitfield>
-	<bitfield desc="The value is loaded into the SLEEP bit field of the BOD Control A (BOD.CTRLA) register during Reset." mask="0x03" name="SLEEP">
+	<bitfield desc="SLEEP BOD mode" mask="0x03" name="SLEEP">
 		<value desc="BOD disabled" 	name="DISABLE" val="0x00"/>
 		<value desc="BOD enabled in Continuous mode" name="ENABLE" val="0x01"/>
 		<value desc="BOD enabled in Sampled mode" 	name="SAMPLE" val="0x02"/>
@@ -56,35 +36,34 @@
 		<value desc="Device running on internal 32.768 kHz oscillator" name="OSC32K" val="0x01"/>
 	</bitfield>	
 </fusebyte>
-<fusebyte default="0x00" description="(Reserved at index 3)" index="3" name="(Reserved #3)" size="1">
-	<bitfield desc="Reserved (unused) " mask="0x00" name="Reserved3"/>
+<fusebyte default="0x00" description="(Reserved fuse at index 3)" index="3" name="(Reserved #3)" size="1">
+	<bitfield desc="Reserved (unused) fuse" mask="0x00" name="Reserved3"/>
 </fusebyte>
-<fusebyte default="0x00" description="(Reserved at index 4)" index="4" name="(Reserved #4)" size="1">
-	<bitfield desc="Reserved (unused) " mask="0x00" name="Reserved4"/>
+<fusebyte default="0x00" description="(Reserved fuse at index 4)" index="4" name="(Reserved #4)" size="1">
+	<bitfield desc="Reserved (unused) fuse" mask="0x00" name="Reserved4"/>
 </fusebyte>
 <fusebyte default="0xC0" description="System Configuration 0" index="5" name="SYSCFG0" size="1">
-	<bitfield desc="This bit field control which section of the Flash will be checked by the CRCSCAN peripheral during Reset Initialization." mask="0xC0" name="CRCSRC">
+	<bitfield desc="Which section of the Flash will be checked by the CRCSCAN peripheral during Reset Initialization." mask="0xC0" name="CRCSRC">
 		<value desc="CRC of full Flash (boot, application code, and application data)" 	name="FLASH" val="0x00"/>
 		<value desc="CRC of the Boot section" name="BOOT" val="0x01"/>
 		<value desc="CRC of the Application code and Boot sections" 	name="BOOTAPP" val="0x02"/>
 		<value desc="No CRC" name="NOCRC" val="0x03"/>
 	</bitfield>
-	<bitfield desc="This bit controls the type of CRC performed by the CRCSCAN peripheral" mask="0x20" name="CRCSEL"/>
 	<bitfield desc="This bit field controls the default oscillator of the device." mask="0x20" name="CRCSEL">
 		<value desc="CRC 16-bit CCITT" 	name="CRC16" val="0x00"/>
 		<value desc="CRC 32-bit (IEE802.3)" name="CRC32" val="0x01"/>
 	</bitfield>
-	<bitfield desc="This bit field controls the pin configuration of the Reset pin" mask="0x0C" name="RSTPINCFG">
-		<value desc="PF6 configured as general input pin" 	name="INPUT" val="0x00"/>
+	<bitfield desc="The RESET pin configuration" mask="0x0C" name="RSTPINCFG">
+		<value desc="PF6 configured as general input pin" name="INPUT" val="0x00"/>
 		<value desc="External Reset enabled on PF6" 	name="RESET" val="0x02"/>
 	</bitfield>
-	<bitfield desc="This bit controls if the EEPROM will be erased or not during a Chip Erase. If the device is locked, the EEPROM is always erased by a Chip Erase regardless of this bit" mask="0x01" name="EESAVE">
+	<bitfield desc="Will be EEPROM erased or not during a Chip Erase. If the device is locked, the EEPROM is always erased by a Chip Erase regardless of this bit" mask="0x01" name="EESAVE">
 		<value desc="EEPROM erased during Chip erase" 	name="ERASED" val="0x00"/>
 		<value desc="EEPROM not erased during Chip erase" 	name="NOTERASED" val="0x01"/>
 	</bitfield>
 </fusebyte>
 <fusebyte default="0x00" description="System Configuration 1" index="6" name="SYSCFG1" size="1">
-	<bitfield desc="This bit field controls the start-up time between power-on and code execution" mask="0x07" name="SUT">
+	<bitfield desc="Start-up time between power-on and code execution" mask="0x07" name="SUT">
 		<value desc="0ms" name="0ms" val="0x00"/>
 		<value desc="1ms" name="1ms" val="0x01"/>
 		<value desc="2ms" name="2ms" val="0x02"/>
@@ -101,5 +80,18 @@
 <fusebyte default="0x00" description="Boot Size" index="8" name="BOOTSIZE" size="1">
 	<bitfield desc="This bit field controls the size of the boot section in blocks of 512 bytes. A value of 0x00 defines the entire Flash as Boot Code section." mask="0xFF" name="BOOTSIZE"/>
 </fusebyte>
+
+<lockbitsbyte default="0x5C" description="Lock bit 7:0" index="0" name="LOCKBITS0" size="1">
+<bitfield desc="Lock bits 7:0" mask="0xFF" name="LB0"/>
+</lockbitsbyte>
+<lockbitsbyte default="0xC5" description="Lock bit 15:8" index="1" name="LOCKBITS1" size="1">
+<bitfield desc="Lock bits 15:8" mask="0xFF" name="LB1"/>
+</lockbitsbyte>
+<lockbitsbyte default="0xC5" description="Lock bit 23:16" index="2" name="LOCKBITS2" size="1">
+<bitfield desc="Lock bits 23:16" mask="0xFF" name="LB2"/>
+</lockbitsbyte>
+<lockbitsbyte default="0x5C" description="Lock bit 31:24" index="3" name="LOCKBITS4" size="1">
+<bitfield desc="Lock bits 31:24" mask="0xFF" name="LB3"/>
+</lockbitsbyte>
 
 </description>

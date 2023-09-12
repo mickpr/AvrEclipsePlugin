@@ -117,6 +117,17 @@
 				id="de.innot.avreclipse.actions.AvrShowMCUDoc">
 			</action>
 			<action
+         class="de.innot.avreclipse.ui.actions.InsertCodeSnippet"
+         definitionId="de.innot.avreclipse.commands.InsertCodeSnippet"
+         disabledIcon="icons/codeblocks_disabled.jpg"
+         icon="icons/codeblocks.jpg"
+         id="de.innot.avreclipse.actions.AvrInsertCodeSnippet"
+         label="Insert Code Snippet"
+         menubarPath="de.innot.avreclipse.targetmenu/mainGroup"
+         toolbarPath="mainGroup"
+         tooltip="Insert Code Snippet">
+			</action>
+			<action
 				toolbarPath="mainGroup"
 				label="&amp;Upload Project to Target Device"
 				tooltip="Upload current project to Atmel target MCU."
